@@ -1,0 +1,64 @@
+#######################################################################
+#
+# WebSourceScript for Mp3tag, fetching Metadata from MusicBrainz.org
+# Version v2.00
+#
+#######################################################################
+#
+# Search by existing (or manually entered) ARTIST and ALBUM data
+#
+# Tested with Mp3tag (v3.26) parsing JSON-Format from WebService API
+#
+#######################################################################
+#
+# Created by Mp3tag-User "LyricsLover"
+# based on various existing Mp3tag *.src scripts
+# ----------------------------------------------------------------
+# Fills the same metadata into tags as MusicBrainz Picard (v2.11)
+#
+# Special notes:
+# --------------
+# There is NO data manipulation in this script, no Apostrophe
+# ' with ’ replacement, no GB->UK replacement, no ISRC formatting
+# The only optional available modification is Upper-/lowercase
+# for MUSICBRAINZ_ALBUMSTATUS and MUSICBRAINZ_ALBUMTYPE:
+# Album -> album, Official -> official, EP -> ep
+#
+# To get exactly the same (special) metadata characters as from
+# MB Picard, you have to set Mp3tag Tools->Options->Tags->Mpeg
+# Write section to
+#       ID3v2.3 UTF-16
+# The preview window of MB Picard always show UTF-16 characters.
+# You can see this with the very similar apostrophes ’'
+# Check the MB Picard settings in Options->Options->Tags->ID3->
+# ID3v2 Text Encoding: UTF-16
+# This setting is only valid for WRITTEN characters into tags,
+# not for the displayed ones.
+#
+# This Websource Script will add tags to your selected files.
+# Existing metadata in the same tags will be overwritten without
+# any further information or reconfirmation.
+#
+#######################################################################
+# Using the free available https://musicbrainz.org/doc/MusicBrainz_API
+#
+# Websouce-Help online https://help.mp3tag.de/main_online.html
+#######################################################################
+# This *.src file together with the linked *.inc files must be placed
+# in your Mp3tag sources directory, on Windows 10 found in this folder:
+# %appdata%\Mp3tag\data\sources
+# Since Mp3tag v3.12 you can also open the configuration folder via
+# File -> Open configuration folder, then navigate to data\sources
+# and there extract the downloaded Tag Source files with the extensions
+# .inc, .src and .settings
+#
+# History:
+# --------
+#
+# 2022-01-15    v1.00
+# 2024-06-01    v2.00   adjusted for newest .inc WSS script
+#
+#######################################################################
+# Remove some non-working special characters from pre-filled search string
+[SearchBy]=Album||$regexp(%album%,'[(){}\[\]^"~*\\]',)||release:%s||Artist||$if(%artist%,$regexp(%artist%,'[(){}\[\]^"~*\\]',),)||%20AND%20artist:%28%s%29
+[Include]=MusicBrainz expanded.inc

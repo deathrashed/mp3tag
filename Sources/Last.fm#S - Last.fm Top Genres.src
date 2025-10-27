@@ -1,0 +1,40 @@
+# Mp3tag Web Source for Last.fm Top Tags
+# Updated October 2025 for Last.fm API v2.0
+# Note: Last.fm API v1.0 is deprecated
+#
+# This version uses the public API v2.0 which may have rate limits
+# For best results, get your own API key from https://www.last.fm/api
+#
+
+[Name]=Last.fm TopTags v2
+[BasedOn]=www.last.fm
+[AlbumUrl]=https://ws.audioscrobbler.com/2.0/?method=artist.gettoptags&artist=%s&api_key=5767c7b3a56fe504b8e54206dda30b31&format=xml
+[WordSeperator]=+
+[SearchBy]=%artist%
+[Encoding]=url-utf-8
+
+[ParserScriptAlbum]=...
+# ###################################################################
+#					A  L  B  U  M
+# ###################################################################
+#debug "on" "debug_lastfm_toptags.html"
+
+findline "<?xml"
+joinuntil "</lfm>"
+
+# Check if we got a valid response
+findinline "<lfm status=\"ok\">"
+
+# Extract first top tag
+outputto "Genre"
+findinline "<name>"
+sayuntil "</name>"
+
+# Optional: uncomment to get multiple genres separated by semicolons
+# outputto "Genre2"
+# findinline "<name>"
+# sayuntil "</name>"
+
+# outputto "Genre3"
+# findinline "<name>"
+# sayuntil "</name>"

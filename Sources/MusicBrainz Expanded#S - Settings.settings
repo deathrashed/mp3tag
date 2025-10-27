@@ -1,0 +1,169 @@
+{
+  "key": "MusicBrainz expanded Settings",
+  "title": "MusicBrainz expanded Settings",
+  "settings": [
+	{
+	  "type": "bool",
+	  "key": "b_Fill_DISCNUMBER",
+	  "title": "Fill DISCNUMBER tag with 1/1 for releases with one media only?",
+	  "description": "Check to enable (DISCNUMBER will always be filled)",
+	  "default": false
+	},
+    {
+	  "type": "heading",
+	  "key": "b_Fill_DISCNUMBER_Heading",
+	  "title": "    -> Default: OFF (for best MB Picard compatibility set to ON)"
+	},
+    {
+	  "type": "separator",
+	  "key": "b_Fill_DISCNUMBER_Separator",
+	  "title": ""
+	},
+    {
+	  "type": "bool",
+	  "key": "b_Show_MB_Media_Tracks_Recording_Metadata",
+	  "title": "Show available metadata for every track recording as own column?",
+      "description": "Check to enable (This includes MB_Media_Tracks_Recording_Title, MB_Media_Tracks_Recording_FirstRelease_Date and MB_Media_Tracks_Recording_Disambiguation)",
+	  "default": false
+	},
+    {
+	  "type": "heading",
+	  "key": "b_Show_MB_Media_Tracks_Recording_Metadata_Heading",
+	  "title": "    -> Default: OFF"
+	},
+    {
+	  "type": "separator",
+	  "key": "b_Show_MB_Media_Tracks_Recording_Metadata_Separator",
+	  "title": ""
+	},
+    {
+	  "type": "bool",
+	  "key": "b_Show_MB_Nonstandard_Tags",
+	  "title": "Show all available non-standard MusicBrainz metadata tags?",
+      "description": "Check to enable (EXPERIMENTAL and SLOW!)",
+	  "default": false
+	},
+    {
+	  "type": "heading",
+	  "key": "b_Show_MB_Nonstandard_Tags_Heading",
+	  "title": "    -> Default: OFF"
+	},
+    {
+	  "type": "separator",
+	  "key": "b_Show_MB_Nonstandard_Tags_Separator",
+	  "title": ""
+	},
+    {
+	  "type": "bool",
+	  "key": "b_Convert_Status_and_PrimaryType",
+	  "title": "Convert ALBUMSTATUS and ALBUMTYPE to lowercase like MB Picard?",
+      "description": "Check to enable (Official -> official / Album -> album or EP -> ep)",
+	  "default": false
+	},
+    {
+	  "type": "heading",
+	  "key": "b_Convert_Status_and_PrimaryType_Heading",
+	  "title": "    -> Default: OFF  (for best MB Picard compatibility set to ON)"
+	},
+    {
+	  "type": "separator",
+	  "key": "b_Convert_Status_and_PrimaryType_Separator",
+	  "title": ""
+	},
+    {
+	  "type": "bool",
+	  "key": "b_Download_CoverAlbumArt",
+	  "title": "Download the album front picture from Cover Art Archive?",
+      "description": "Uncheck to disable (cover image will no longer be downloaded)",
+	  "default": true
+	},
+    {
+	  "type": "heading",
+	  "key": "b_Download_CoverAlbumArt_Heading",
+	  "title": "    -> Default: ON"
+	},
+    {
+	  "type": "separator",
+	  "key": "b_Download_CoverAlbumArt_Separator",
+	  "title": ""
+	},
+    {
+	  "type": "bool",
+	  "key": "b_Download_CoverThumbnail",
+	  "title": "Download small thumbnail album pictures for preview in 'List of search results'?",
+      "description": "Uncheck to disable (thumbnail cover images will no longer be downloaded and no more shown)",
+	  "default": true
+	},
+    {
+	  "type": "heading",
+	  "key": "b_Download_CoverThumbnail_Heading",
+	  "title": "    -> Default: ON"
+	},
+    {
+	  "type": "separator",
+	  "key": "b_Dowload_CoverThumbnail_Separator",
+	  "title": ""
+	}
+  ],
+  "localizations": {
+	"de": [
+      {
+		"key": "b_Fill_DISCNUMBER",
+		"title": "Fülle DISCNUMBER tag mit 1/1 für Releases mit nur einem Medium?",
+		"description": "Häkchen setzen zum Aktivieren (DISCNUMBER wird immer abgefüllt)"
+	  },
+      {
+        "key": "b_Fill_DISCNUMBER_Heading",
+	    "title": "    -> Standard: AUS (Für beste MB Picard Kompatibilität auf EIN setzen)"
+      },
+      {
+		"key": "b_Show_MB_Media_Tracks_Recording_Metadata",
+		"title": "Zeige verfügbare Metadaten für jeden track recording als eigene Spalte?",
+		"description": "Häkchen setzen zum Aktivieren (Das beinhaltet MB_Media_Tracks_Recording_Title, MB_Media_Tracks_Recording_FirstRelease_Date und MB_Media_Tracks_Recording_Disambiguation)"
+	  },
+      {
+        "key": "b_Show_MB_Media_Tracks_Recording_Metadata_Heading",
+	    "title": "    -> Standard: AUS"
+      },
+      {
+		"key": "b_Show_MB_Nonstandard_Tags",
+		"title": "Zeige alle verfügbare nicht Standard MusicBrainz Metadaten Tags",
+		"description": "Häkchen setzen zum Aktivieren (EXPERIMENTELL und LANGSAM!)"
+	  },
+      {
+        "key": "b_Show_MB_Nonstandard_Tags_Heading",
+	    "title": "    -> Standard: AUS"
+      },
+      {
+		"key": "b_Convert_Status_and_PrimaryType",
+		"title": "Konvertiere ALBUMSTATUS und ALBUMTYPE in Kleinbuchstaben wie in MB Picard?",
+		"description": "Häkchen setzen zum Aktivieren (Official -> official / Album -> album oder EP -> ep)"
+	  },
+      {
+	    "key": "b_Convert_Status_and_PrimaryType_Heading",
+	    "title": "    -> Standard: AUS (Für beste MB Picard Kompatibilität auf EIN setzen)"
+	  },
+      {
+		"key": "b_Download_CoverAlbumArt",
+	    "title": "Herunterladen des Album Front-Coverbilds aus dem Cover Art Archive?",
+        "description": "Häkchen löschen zum Deaktivieren (Album-Coverbild wird nicht mehr heruntergeladen)"
+	  },
+      {
+	    "key": "b_Download_CoverAlbumArt_Heading",
+	    "title": "    -> Standard: EIN"
+	  }
+,
+      {
+		"key": "b_Download_CoverThumbnail",
+        "title": "Herunterladen der Album-Vorschaubilder zur Anzeige in 'Ergebnis der Suchanfrage'?",
+        "description": "Häkchen löschen zum Deaktivieren (Vorschaubilder werden nicht mehr heruntergeladen und nicht mehr angezeigt)"
+	  },
+      {
+	    "key": "b_Download_CoverThumbnail_Heading",
+	    "title": "    -> Standard: EIN"
+	  }
+	]
+  }
+}
+
+
