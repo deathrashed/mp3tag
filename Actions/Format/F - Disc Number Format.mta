@@ -1,0 +1,9 @@
+[#0]
+T=5
+F=DISCNUMBER
+1=$num(%discnumber%,2)
+
+[#1]
+T=5
+F=DISCTOTAL
+1=$num(%disctotal%,2)
