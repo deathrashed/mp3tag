@@ -7,3 +7,6 @@ Sources/.DS_Store
 
 # SpecStory session history
 .specstory/
+
+# macOS Icon file in this folder (Icon\r)
+Icon*
