@@ -244,7 +244,7 @@ Enhancing the Format MTA files with proper action codes and advanced formatting.
 
 <tool-use data-tool-type="write" data-tool-name="search_replace">
 
-<details><summary>Tool use: **code_edit** • Edit file: Actions/Format/F - Standard.mta</summary>
+<details><summary>Tool use: **search_replace** • Edit file: Actions/Format/F - Standard.mta</summary>
 
 **Chunk 1**
 Lines added: 11, lines removed: 13
@@ -336,8 +336,8 @@ Lines added: 32, lines removed: 4
 + [#9]
 + T=4
 + F=_TAG
-+ 1=(^|\s|\(|\[|/)&#39;(.{1})
-+ 2=$1&#39;$upper($2)
++ 1=(^|\s|\(|\[|/)'(.{1})
++ 2=$1'$upper($2)
 + 3=0
 + 
 + [#10]
@@ -364,7 +364,7 @@ Lines added: 32, lines removed: 4
 
 <tool-use data-tool-type="write" data-tool-name="search_replace">
 
-<details><summary>Tool use: **code_edit** • Edit file: Actions/Format/F - Fix.mta</summary>
+<details><summary>Tool use: **search_replace** • Edit file: Actions/Format/F - Fix.mta</summary>
 
 **Chunk 1**
 Lines added: 11, lines removed: 13
@@ -467,8 +467,8 @@ Lines added: 49, lines removed: undefined
 + [#12]
 + T=4
 + F=_TAG
-+ 1=(^|\s|\(|\[|/)&#39;(.{1})
-+ 2=$1&#39;$upper($2)
++ 1=(^|\s|\(|\[|/)'(.{1})
++ 2=$1'$upper($2)
 + 3=0
 + 
 + [#13]
@@ -519,7 +519,7 @@ The string to replace was not found in the file.
 
 <tool-use data-tool-type="write" data-tool-name="search_replace">
 
-<details><summary>Tool use: **code_edit** • Edit file: Actions/Format/F - Mixed Case.mta</summary>
+<details><summary>Tool use: **search_replace** • Edit file: Actions/Format/F - Mixed Case.mta</summary>
 
 **Chunk 1**
 Lines added: 37, lines removed: 2
@@ -538,28 +538,28 @@ Lines added: 37, lines removed: 2
   F=_TAG
 - 1=(?&lt;![/\\-:;\\(\\)\\[\\]{}])\\s(a|the|of|for|feat|as|at|an|by|off|on|from|in|to|and|with|or|nor|von|de)(?\u003d\\s)(?!\\s[\\-\\(\\)\\[\\]{}])
 - 2=$lower($0)
-+ 1=(^|\s|\(|\[|/)&#39;(.{1})
-+ 2=$1&#39;$upper($2)
++ 1=(^|\s|\(|\[|/)'(.{1})
++ 2=$1'$upper($2)
 + 3=0
 + 
 + [#2]
 + T=4
 + F=_TAG
-+ 1=(^|\s|&quot;|\\(|\\[|/)O&#39;([^e]{1})
-+ 2=$1O&#39;$upper($2)
++ 1=(^|\s|"|\\(|\\[|/)O'([^e]{1})
++ 2=$1O'$upper($2)
 + 3=0
 + 
 + [#3]
 + T=4
 + F=_TAG
-+ 1=(^|\s|&quot;|\\(|\\[|/)Mc(.{1})
++ 1=(^|\s|"|\\(|\\[|/)Mc(.{1})
 + 2=$1Mc$upper($2)
 + 3=0
 + 
 + [#4]
 + T=4
 + F=_TAG
-+ 1=(^|\s|&quot;|\\(|\\[|/)Mac([bdfgln])
++ 1=(^|\s|"|\\(|\\[|/)Mac([bdfgln])
 + 2=$1Mac$upper($2)
 + 3=0
 + 
@@ -579,7 +579,7 @@ Lines added: 37, lines removed: 2
 
 <tool-use data-tool-type="write" data-tool-name="search_replace">
 
-<details><summary>Tool use: **code_edit** • Edit file: Actions/Format/F - Combo.mta</summary>
+<details><summary>Tool use: **search_replace** • Edit file: Actions/Format/F - Combo.mta</summary>
 
 **Chunk 1**
 Lines added: 1, lines removed: 2
@@ -587,7 +587,7 @@ Lines added: 1, lines removed: 2
 ```diff
 @@ -4,10 +4,9 @@
   1=1
-  2=({[]})-_&quot;,./+&amp;@:;*
+  2=({[]})-_",./+&amp;@:;*
 - 
   
   [#1]
@@ -606,9 +606,9 @@ Lines added: 1, lines removed: 1
 @@ -16,5 +15,5 @@
   T=4
   F=_TAG
-- 1=(^|\\s|\\(|\\[|/)&#39;(.{1})
-+ 1=(^|\s|\(|\[|/)&#39;(.{1})
-  2=$1&#39;$upper($2)
+- 1=(^|\\s|\\(|\\[|/)'(.{1})
++ 1=(^|\s|\(|\[|/)'(.{1})
+  2=$1'$upper($2)
   3=0
 ```
 
@@ -676,21 +676,21 @@ Lines added: 35, lines removed: undefined
 + [#11]
 + T=4
 + F=_TAG
-+ 1=(^|\s|&quot;|\\(|\\[|/)O&#39;([^e]{1})
-+ 2=$1O&#39;$upper($2)
++ 1=(^|\s|"|\\(|\\[|/)O'([^e]{1})
++ 2=$1O'$upper($2)
 + 3=0
 + 
 + [#12]
 + T=4
 + F=_TAG
-+ 1=(^|\s|&quot;|\\(|\\[|/)Mc(.{1})
++ 1=(^|\s|"|\\(|\\[|/)Mc(.{1})
 + 2=$1Mc$upper($2)
 + 3=0
 + 
 + [#13]
 + T=4
 + F=_TAG
-+ 1=(^|\s|&quot;|\\(|\\[|/)Mac([bdfgln])
++ 1=(^|\s|"|\\(|\\[|/)Mac([bdfgln])
 + 2=$1Mac$upper($2)
 + 3=0 
   
@@ -732,7 +732,7 @@ Updating the Case Conversion file:
 
 <tool-use data-tool-type="write" data-tool-name="search_replace">
 
-<details><summary>Tool use: **code_edit** • Edit file: Actions/Format/F - Case Conversion.mta</summary>
+<details><summary>Tool use: **search_replace** • Edit file: Actions/Format/F - Case Conversion.mta</summary>
 
 **Chunk 1**
 Lines added: 44, lines removed: 2
@@ -743,7 +743,7 @@ Lines added: 44, lines removed: 2
   T=1
 + F=_TAG
 + 1=1
-+ 2=({[]})-_&quot;,./+&amp;@:;*
++ 2=({[]})-_",./+&amp;@:;*
 + 
 + [#1]
 + T=4
@@ -755,8 +755,8 @@ Lines added: 44, lines removed: 2
 + [#2]
 + T=4
 + F=_TAG
-+ 1=(^|\s|\(|\[|/)&#39;(.{1})
-+ 2=$1&#39;$upper($2)
++ 1=(^|\s|\(|\[|/)'(.{1})
++ 2=$1'$upper($2)
 + 3=0
 + 
 + [#3]
@@ -771,21 +771,21 @@ Lines added: 44, lines removed: 2
 + [#4]
 + T=4
 + F=_TAG
-+ 1=(^|\s|&quot;|\\(|\\[|/)O&#39;([^e]{1})
-+ 2=$1O&#39;$upper($2)
++ 1=(^|\s|"|\\(|\\[|/)O'([^e]{1})
++ 2=$1O'$upper($2)
 + 3=0
 + 
 + [#5]
 + T=4
 + F=_TAG
-+ 1=(^|\s|&quot;|\\(|\\[|/)Mc(.{1})
++ 1=(^|\s|"|\\(|\\[|/)Mc(.{1})
 + 2=$1Mc$upper($2)
 + 3=0
 + 
 + [#6]
 + T=4
 + F=_TAG
-+ 1=(^|\s|&quot;|\\(|\\[|/)Mac([bdfgln])
++ 1=(^|\s|"|\\(|\\[|/)Mac([bdfgln])
 + 2=$1Mac$upper($2)
 + 3=0
   
@@ -846,7 +846,7 @@ Fixing issues in the Combo - Accents file:
 
 <tool-use data-tool-type="write" data-tool-name="search_replace">
 
-<details><summary>Tool use: **code_edit** • Edit file: Actions/Format/F - Combo - Accents.mta</summary>
+<details><summary>Tool use: **search_replace** • Edit file: Actions/Format/F - Combo - Accents.mta</summary>
 
 **Chunk 1**
 Lines added: 1, lines removed: 1
@@ -868,9 +868,9 @@ Lines added: 3, lines removed: 3
 @@ -365,12 +365,12 @@
   T=4
   F=_TAG
-- 1=(^|\\s|\\(|\\[|/)&#39;(.{1})
-+ 1=(^|\s|\(|\[|/)&#39;(.{1})
-  2=$1&#39;$upper($2)
+- 1=(^|\\s|\\(|\\[|/)'(.{1})
++ 1=(^|\s|\(|\[|/)'(.{1})
+  2=$1'$upper($2)
   3=0
   
   [#53]
@@ -934,21 +934,21 @@ Lines added: 35, lines removed: undefined
 + [#61]
 + T=4
 + F=_TAG
-+ 1=(^|\s|&quot;|\\(|\\[|/)O&#39;([^e]{1})
-+ 2=$1O&#39;$upper($2)
++ 1=(^|\s|"|\\(|\\[|/)O'([^e]{1})
++ 2=$1O'$upper($2)
 + 3=0
 + 
 + [#62]
 + T=4
 + F=_TAG
-+ 1=(^|\s|&quot;|\\(|\\[|/)Mc(.{1})
++ 1=(^|\s|"|\\(|\\[|/)Mc(.{1})
 + 2=$1Mc$upper($2)
 + 3=0
 + 
 + [#63]
 + T=4
 + F=_TAG
-+ 1=(^|\s|&quot;|\\(|\\[|/)Mac([bdfgln])
++ 1=(^|\s|"|\\(|\\[|/)Mac([bdfgln])
 + 2=$1Mac$upper($2)
 + 3=0 
 ```
@@ -971,7 +971,7 @@ Enhancing the Regex files with proper action codes. Checking and updating them:
 
 <tool-use data-tool-type="write" data-tool-name="search_replace">
 
-<details><summary>Tool use: **code_edit** • Edit file: Actions/Regex/R - Trim Extra Space.mta</summary>
+<details><summary>Tool use: **search_replace** • Edit file: Actions/Regex/R - Trim Extra Space.mta</summary>
 
 **Chunk 1**
 Lines added: 3, lines removed: 3
@@ -1011,7 +1011,7 @@ The string to replace was not found in the file.
 
 <tool-use data-tool-type="write" data-tool-name="search_replace">
 
-<details><summary>Tool use: **code_edit** • Edit file: Actions/Regex/R - Add Apostrophes.mta.txt</summary>
+<details><summary>Tool use: **search_replace** • Edit file: Actions/Regex/R - Add Apostrophes.mta.txt</summary>
 
 **Chunk 1**
 Lines added: 1, lines removed: 1
@@ -1020,9 +1020,9 @@ Lines added: 1, lines removed: 1
 @@ -2,5 +2,5 @@
   T=4
   F=_TAG
-- 1=(^|\\s|\\(|\\[|/|\\-|:|;|\\&quot;)(can|don|ain|won|wouldn|haven|didn)t($|\\s|\\)|\\]|/|\\-|:|;|\\&quot;)
-+ 1=(^|\s|\(|\[|/|-|:|;|&quot;)(can|don|ain|won|wouldn|haven|didn)t($|\s|\)|\]|/|-|:|;|&quot;)
-  2=$1$2&#39;t$3
+- 1=(^|\\s|\\(|\\[|/|\\-|:|;|\\")(can|don|ain|won|wouldn|haven|didn)t($|\\s|\\)|\\]|/|\\-|:|;|\\")
++ 1=(^|\s|\(|\[|/|-|:|;|")(can|don|ain|won|wouldn|haven|didn)t($|\s|\)|\]|/|-|:|;|")
+  2=$1$2't$3
   3=0
 ```
 
@@ -1033,30 +1033,30 @@ Lines added: 22, lines removed: 1
 @@ -9,6 +9,27 @@
   T=4
   F=_TAG
-- 1=(^|\\s|\\(|\\[|/|\\-|:|;|\\&quot;)(that|there|let)s($|\\s|\\)|\\]|/|\\-|:|;|\\&quot;)
-+ 1=(^|\s|\(|\[|/|-|:|;|&quot;)(that|there|let)s($|\s|\)|\]|/|-|:|;|&quot;)
-+ 2=$1$2&#39;s$3
+- 1=(^|\\s|\\(|\\[|/|\\-|:|;|\\")(that|there|let)s($|\\s|\\)|\\]|/|\\-|:|;|\\")
++ 1=(^|\s|\(|\[|/|-|:|;|")(that|there|let)s($|\s|\)|\]|/|-|:|;|")
++ 2=$1$2's$3
 + 3=0
 + 
 + [#2]
 + T=4
 + F=_TAG
-+ 1=(^|\s|\(|\[|/|-|:|;|&quot;)(I|you|we|they|he|she|it|who|what|where|when|why|how)&#39;s($|\s|\)|\]|/|-|:|;|&quot;)
-  2=$1$2&#39;s$3
++ 1=(^|\s|\(|\[|/|-|:|;|")(I|you|we|they|he|she|it|who|what|where|when|why|how)'s($|\s|\)|\]|/|-|:|;|")
+  2=$1$2's$3
 + 3=0
 + 
 + [#3]
 + T=4
 + F=_TAG
-+ 1=(^|\s|\(|\[|/|-|:|;|&quot;)(is|was|has|had|would|should|could)&#39;ve($|\s|\)|\]|/|-|:|;|&quot;)
-+ 2=$1$2&#39;ve$3
++ 1=(^|\s|\(|\[|/|-|:|;|")(is|was|has|had|would|should|could)'ve($|\s|\)|\]|/|-|:|;|")
++ 2=$1$2've$3
 + 3=0
 + 
 + [#4]
 + T=4
 + F=_TAG
-+ 1=(^|\s|\(|\[|/|-|:|;|&quot;)(is|was|has|had|would|should|could)n&#39;t($|\s|\)|\]|/|-|:|;|&quot;)
-+ 2=$1$2n&#39;t$3
++ 1=(^|\s|\(|\[|/|-|:|;|")(is|was|has|had|would|should|could)n't($|\s|\)|\]|/|-|:|;|")
++ 2=$1$2n't$3
   3=0
   
 ```
@@ -1105,7 +1105,7 @@ Fixing the files correctly:
 
 <tool-use data-tool-type="write" data-tool-name="search_replace">
 
-<details><summary>Tool use: **code_edit** • Edit file: Actions/Regex/R - Smart Title Case.mta</summary>
+<details><summary>Tool use: **search_replace** • Edit file: Actions/Regex/R - Smart Title Case.mta</summary>
 
 **Chunk 1**
 Lines added: 30, lines removed: 8
@@ -1117,9 +1117,9 @@ Lines added: 30, lines removed: 8
 + T=4
   F=_TAG
 - 1=1
-- 2=({[]})-_&quot;,./+&amp;@:;*
-+ 1=(^|\s|&quot;|\(|\[|/)O&#39;([^e]{1})
-+ 2=$1O&#39;$upper($2)
+- 2=({[]})-_",./+&amp;@:;*
++ 1=(^|\s|"|\(|\[|/)O'([^e]{1})
++ 2=$1O'$upper($2)
 + 3=0
   
   [#1]
@@ -1127,16 +1127,16 @@ Lines added: 30, lines removed: 8
   F=_TAG
 - 1=(?&lt;![/\\-:;\\(\\)\\[\\]{}])\\s(a|the|of|for|as|at|an|by|off|on|from|in|to|and|with|or|nor|von|de)(?\u003d\\s)(?!\\s[\\-\\(\\)\\[\\]{}])
 - 2=$lower($0)
-+ 1=(^|\s|&quot;|\(|\[|/)Mc(.{1})
++ 1=(^|\s|"|\(|\[|/)Mc(.{1})
 + 2=$1Mc$upper($2)
   3=0
   
   [#2]
   T=4
   F=_TAG
-- 1=(^|\\s|\\(|\\[|/)&#39;(.{1})
-- 2=$1&#39;$upper($2)
-+ 1=(^|\s|&quot;|\(|\[|/)Mac([bdfgln])
+- 1=(^|\\s|\\(|\\[|/)'(.{1})
+- 2=$1'$upper($2)
++ 1=(^|\s|"|\(|\[|/)Mac([bdfgln])
 + 2=$1Mac$upper($2)
   3=0
   
@@ -1157,8 +1157,8 @@ Lines added: 30, lines removed: 8
 + [#5]
 + T=4
 + F=_TAG
-+ 1=(^|\s|\(|\[|/)&#39;(.{1})
-+ 2=$1&#39;$upper($2)
++ 1=(^|\s|\(|\[|/)'(.{1})
++ 2=$1'$upper($2)
 + 3=0
 + 
 + [#6]
@@ -1178,7 +1178,7 @@ Lines added: 30, lines removed: 8
 
 <tool-use data-tool-type="write" data-tool-name="search_replace">
 
-<details><summary>Tool use: **code_edit** • Edit file: Actions/Regex/R - English Naming.mta</summary>
+<details><summary>Tool use: **search_replace** • Edit file: Actions/Regex/R - English Naming.mta</summary>
 
 **Chunk 1**
 Lines added: 42, lines removed: 8
@@ -1189,7 +1189,7 @@ Lines added: 42, lines removed: 8
 + T=1
 + F=_TAG
 + 1=1
-+ 2=({[]})-_&quot;,./+&amp;@:;*
++ 2=({[]})-_",./+&amp;@:;*
 + 
 + [#1]
 + T=4
@@ -1201,8 +1201,8 @@ Lines added: 42, lines removed: 8
 + [#2]
 + T=4
 + F=_TAG
-+ 1=(^|\s|\(|\[|/)&#39;(.{1})
-+ 2=$1&#39;$upper($2)
++ 1=(^|\s|\(|\[|/)'(.{1})
++ 2=$1'$upper($2)
 + 3=0
 + 
 + [#3]
@@ -1215,17 +1215,17 @@ Lines added: 42, lines removed: 8
 + [#4]
   T=4
   F=_TAG
-- 1=(^|\\s|&quot;|\\(|\\[|/)O&#39;([^e]{1})
-+ 1=(^|\s|&quot;|\(|\[|/)O&#39;([^e]{1})
-  2=$1O&#39;$upper($2)
+- 1=(^|\\s|"|\\(|\\[|/)O'([^e]{1})
++ 1=(^|\s|"|\(|\[|/)O'([^e]{1})
+  2=$1O'$upper($2)
   3=0
   
 - [#1]
 + [#5]
   T=4
   F=_TAG
-- 1=(^|\\s|&quot;|\\(|\\[|/)Mc(.{1})
-+ 1=(^|\s|&quot;|\(|\[|/)Mc(.{1})
+- 1=(^|\\s|"|\\(|\\[|/)Mc(.{1})
++ 1=(^|\s|"|\(|\[|/)Mc(.{1})
   2=$1Mc$upper($2)
   3=0
   
@@ -1233,8 +1233,8 @@ Lines added: 42, lines removed: 8
 + [#6]
   T=4
   F=_TAG
-- 1=(^|\\s|&quot;|\\(|\\[|/)Mac([bdfgln])
-+ 1=(^|\s|&quot;|\(|\[|/)Mac([bdfgln])
+- 1=(^|\\s|"|\\(|\\[|/)Mac([bdfgln])
++ 1=(^|\s|"|\(|\[|/)Mac([bdfgln])
   2=$1Mac$upper($2)
   3=0
   
@@ -1464,7 +1464,7 @@ Sorry for the confusion. Creating new MTA files with advanced formatting you don
 
 <tool-use data-tool-type="generic" data-tool-name="list_dir">
 <details>
-            <summary>Tool use: **list_directory** • Listed directory undefined • **0** results</summary>
+            <summary>Tool use: **list_dir** • Listed directory undefined • **0** results</summary>
         
 No results found
 </details>
@@ -1503,7 +1503,7 @@ Reverting changes and creating new advanced formatting files you don't have yet:
 ---
 
 <tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
-<details><summary>Tool use: **command** • Run command: cd /Users/rd/.config/tools/mp3tag && git checkout Actions/Format/ Actions/Regex/</summary>
+<details><summary>Tool use: **run_terminal_cmd** • Run command: cd /Users/rd/.config/tools/mp3tag && git checkout Actions/Format/ Actions/Regex/</summary>
 
 ```bash
 cd /Users/rd/.config/tools/mp3tag && git checkout Actions/Format/ Actions/Regex/
@@ -1543,7 +1543,7 @@ Creating new advanced formatting files you don't have yet:
 
 <tool-use data-tool-type="write" data-tool-name="write">
 
-<details><summary>Tool use: **code_edit** • Edit file: Actions/Format/F - Track Number Format.mta</summary>
+<details><summary>Tool use: **write** • Edit file: Actions/Format/F - Track Number Format.mta</summary>
 
 **Chunk 1**
 Lines added: 10, lines removed: 1
@@ -1571,7 +1571,7 @@ Lines added: 10, lines removed: 1
 
 <tool-use data-tool-type="write" data-tool-name="write">
 
-<details><summary>Tool use: **code_edit** • Edit file: Actions/Format/F - Remove Brackets.mta</summary>
+<details><summary>Tool use: **write** • Edit file: Actions/Format/F - Remove Brackets.mta</summary>
 
 **Chunk 1**
 Lines added: 28, lines removed: 1
@@ -1617,7 +1617,7 @@ Lines added: 28, lines removed: 1
 
 <tool-use data-tool-type="write" data-tool-name="write">
 
-<details><summary>Tool use: **code_edit** • Edit file: Actions/Format/F - Feat Standardize.mta</summary>
+<details><summary>Tool use: **write** • Edit file: Actions/Format/F - Feat Standardize.mta</summary>
 
 **Chunk 1**
 Lines added: 21, lines removed: 1
@@ -1656,7 +1656,7 @@ Lines added: 21, lines removed: 1
 
 <tool-use data-tool-type="write" data-tool-name="write">
 
-<details><summary>Tool use: **code_edit** • Edit file: Actions/Format/F - Clean Comments.mta</summary>
+<details><summary>Tool use: **write** • Edit file: Actions/Format/F - Clean Comments.mta</summary>
 
 **Chunk 1**
 Lines added: 28, lines removed: 1
@@ -1702,7 +1702,7 @@ Lines added: 28, lines removed: 1
 
 <tool-use data-tool-type="write" data-tool-name="write">
 
-<details><summary>Tool use: **code_edit** • Edit file: Actions/Format/F - Disc Number Format.mta</summary>
+<details><summary>Tool use: **write** • Edit file: Actions/Format/F - Disc Number Format.mta</summary>
 
 **Chunk 1**
 Lines added: 10, lines removed: 1
@@ -1730,7 +1730,7 @@ Lines added: 10, lines removed: 1
 
 <tool-use data-tool-type="write" data-tool-name="write">
 
-<details><summary>Tool use: **code_edit** • Edit file: Actions/Format/F - BPM Format.mta</summary>
+<details><summary>Tool use: **write** • Edit file: Actions/Format/F - BPM Format.mta</summary>
 
 **Chunk 1**
 Lines added: 12, lines removed: 1
@@ -1760,7 +1760,7 @@ Lines added: 12, lines removed: 1
 
 <tool-use data-tool-type="write" data-tool-name="write">
 
-<details><summary>Tool use: **code_edit** • Edit file: Actions/Format/F - Date Format.mta</summary>
+<details><summary>Tool use: **write** • Edit file: Actions/Format/F - Date Format.mta</summary>
 
 **Chunk 1**
 Lines added: 10, lines removed: 1
@@ -1771,12 +1771,12 @@ Lines added: 10, lines removed: 1
 + [#0]
 + T=5
 + F=DATE
-+ 1=$regexp(%date%,&#39;^.*([12][0-9]{3})(?:-([01]?[0-9]))?(?:-([0-3]?[0-9]))?.*$&#39;,&#39;$1-$if($len($2),$num($2,2),01)-$if($len($3),$num($3,2),01)&#39;)
++ 1=$regexp(%date%,'^.*([12][0-9]{3})(?:-([01]?[0-9]))?(?:-([0-3]?[0-9]))?.*$','$1-$if($len($2),$num($2,2),01)-$if($len($3),$num($3,2),01)')
 + 
 + [#1]
 + T=5
 + F=YEAR
-+ 1=$regexp(%date%,&#39;^.*([12][0-9]{3}).*$&#39;,&#39;$1&#39;)
++ 1=$regexp(%date%,'^.*([12][0-9]{3}).*$','$1')
 + 
 ```
 
@@ -1788,7 +1788,7 @@ Lines added: 10, lines removed: 1
 
 <tool-use data-tool-type="write" data-tool-name="write">
 
-<details><summary>Tool use: **code_edit** • Edit file: Actions/Format/F - Remove Extra Info.mta</summary>
+<details><summary>Tool use: **write** • Edit file: Actions/Format/F - Remove Extra Info.mta</summary>
 
 **Chunk 1**
 Lines added: 28, lines removed: 1
@@ -1834,7 +1834,7 @@ Lines added: 28, lines removed: 1
 
 <tool-use data-tool-type="write" data-tool-name="write">
 
-<details><summary>Tool use: **code_edit** • Edit file: Actions/Format/F - Artist Clean.mta</summary>
+<details><summary>Tool use: **write** • Edit file: Actions/Format/F - Artist Clean.mta</summary>
 
 **Chunk 1**
 Lines added: 42, lines removed: 1
@@ -1894,7 +1894,7 @@ Lines added: 42, lines removed: 1
 
 <tool-use data-tool-type="write" data-tool-name="write">
 
-<details><summary>Tool use: **code_edit** • Edit file: Actions/Format/F - Genre Clean.mta</summary>
+<details><summary>Tool use: **write** • Edit file: Actions/Format/F - Genre Clean.mta</summary>
 
 **Chunk 1**
 Lines added: 37, lines removed: 1
@@ -1949,7 +1949,7 @@ Lines added: 37, lines removed: 1
 
 <tool-use data-tool-type="write" data-tool-name="write">
 
-<details><summary>Tool use: **code_edit** • Edit file: Actions/Format/F - Album Artist from Artist.mta</summary>
+<details><summary>Tool use: **write** • Edit file: Actions/Format/F - Album Artist from Artist.mta</summary>
 
 **Chunk 1**
 Lines added: 26, lines removed: 1
@@ -1960,7 +1960,7 @@ Lines added: 26, lines removed: 1
 + [#0]
 + T=5
 + F=ALBUMARTIST
-+ 1=$regexp(%artist%,&#39;^([^;]+).*$&#39;,&#39;$1&#39;)
++ 1=$regexp(%artist%,'^([^;]+).*$','$1')
 + 
 + [#1]
 + T=2
@@ -1993,7 +1993,7 @@ Lines added: 26, lines removed: 1
 
 <tool-use data-tool-type="write" data-tool-name="write">
 
-<details><summary>Tool use: **code_edit** • Edit file: Actions/Format/F - Title Case Advanced.mta</summary>
+<details><summary>Tool use: **write** • Edit file: Actions/Format/F - Title Case Advanced.mta</summary>
 
 **Chunk 1**
 Lines added: 91, lines removed: 1
@@ -2011,28 +2011,28 @@ Lines added: 91, lines removed: 1
 + [#1]
 + T=4
 + F=_TAG
-+ 1=(^|\s|\(|\[|/)&#39;(.{1})
-+ 2=$1&#39;$upper($2)
++ 1=(^|\s|\(|\[|/)'(.{1})
++ 2=$1'$upper($2)
 + 3=0
 + 
 + [#2]
 + T=4
 + F=_TAG
-+ 1=(^|\s|&quot;|\(|\[|/)O&#39;([^e]{1})
-+ 2=$1O&#39;$upper($2)
++ 1=(^|\s|"|\(|\[|/)O'([^e]{1})
++ 2=$1O'$upper($2)
 + 3=0
 + 
 + [#3]
 + T=4
 + F=_TAG
-+ 1=(^|\s|&quot;|\(|\[|/)Mc(.{1})
++ 1=(^|\s|"|\(|\[|/)Mc(.{1})
 + 2=$1Mc$upper($2)
 + 3=0
 + 
 + [#4]
 + T=4
 + F=_TAG
-+ 1=(^|\s|&quot;|\(|\[|/)Mac([bdfgln])
++ 1=(^|\s|"|\(|\[|/)Mac([bdfgln])
 + 2=$1Mac$upper($2)
 + 3=0
 + 
@@ -2102,7 +2102,7 @@ Lines added: 91, lines removed: 1
 
 <tool-use data-tool-type="write" data-tool-name="write">
 
-<details><summary>Tool use: **code_edit** • Edit file: Actions/Format/F - Remove Duplicates.mta</summary>
+<details><summary>Tool use: **write** • Edit file: Actions/Format/F - Remove Duplicates.mta</summary>
 
 **Chunk 1**
 Lines added: 16, lines removed: 1
@@ -2136,7 +2136,7 @@ Lines added: 16, lines removed: 1
 
 <tool-use data-tool-type="write" data-tool-name="write">
 
-<details><summary>Tool use: **code_edit** • Edit file: Actions/Format/F - URL Clean.mta</summary>
+<details><summary>Tool use: **write** • Edit file: Actions/Format/F - URL Clean.mta</summary>
 
 **Chunk 1**
 Lines added: 28, lines removed: 1
@@ -2182,7 +2182,7 @@ Lines added: 28, lines removed: 1
 
 <tool-use data-tool-type="write" data-tool-name="write">
 
-<details><summary>Tool use: **code_edit** • Edit file: Actions/Format/F - Compilation Tag.mta</summary>
+<details><summary>Tool use: **write** • Edit file: Actions/Format/F - Compilation Tag.mta</summary>
 
 **Chunk 1**
 Lines added: 10, lines removed: 1
@@ -2210,7 +2210,7 @@ Lines added: 10, lines removed: 1
 
 <tool-use data-tool-type="write" data-tool-name="write">
 
-<details><summary>Tool use: **code_edit** • Edit file: Actions/Format/F - Remove Compilation Tag.mta</summary>
+<details><summary>Tool use: **write** • Edit file: Actions/Format/F - Remove Compilation Tag.mta</summary>
 
 **Chunk 1**
 Lines added: 11, lines removed: 1
@@ -2249,7 +2249,7 @@ Creating advanced regex files:
 
 <tool-use data-tool-type="write" data-tool-name="write">
 
-<details><summary>Tool use: **code_edit** • Edit file: Actions/Regex/R - Remove Parentheses.mta</summary>
+<details><summary>Tool use: **write** • Edit file: Actions/Regex/R - Remove Parentheses.mta</summary>
 
 **Chunk 1**
 Lines added: 21, lines removed: 1
@@ -2288,7 +2288,7 @@ Lines added: 21, lines removed: 1
 
 <tool-use data-tool-type="write" data-tool-name="write">
 
-<details><summary>Tool use: **code_edit** • Edit file: Actions/Regex/R - Remove Square Brackets.mta</summary>
+<details><summary>Tool use: **write** • Edit file: Actions/Regex/R - Remove Square Brackets.mta</summary>
 
 **Chunk 1**
 Lines added: 21, lines removed: 1
@@ -2327,7 +2327,7 @@ Lines added: 21, lines removed: 1
 
 <tool-use data-tool-type="write" data-tool-name="write">
 
-<details><summary>Tool use: **code_edit** • Edit file: Actions/Regex/R - Fix Roman Numerals.mta</summary>
+<details><summary>Tool use: **write** • Edit file: Actions/Regex/R - Fix Roman Numerals.mta</summary>
 
 **Chunk 1**
 Lines added: 42, lines removed: 1
@@ -2387,7 +2387,7 @@ Lines added: 42, lines removed: 1
 
 <tool-use data-tool-type="write" data-tool-name="write">
 
-<details><summary>Tool use: **code_edit** • Edit file: Actions/Regex/R - Fix Abbreviations.mta</summary>
+<details><summary>Tool use: **write** • Edit file: Actions/Regex/R - Fix Abbreviations.mta</summary>
 
 **Chunk 1**
 Lines added: 21, lines removed: 1
@@ -2426,7 +2426,7 @@ Lines added: 21, lines removed: 1
 
 <tool-use data-tool-type="write" data-tool-name="write">
 
-<details><summary>Tool use: **code_edit** • Edit file: Actions/Regex/R - Fix Contractions.mta</summary>
+<details><summary>Tool use: **write** • Edit file: Actions/Regex/R - Fix Contractions.mta</summary>
 
 **Chunk 1**
 Lines added: 56, lines removed: 1
@@ -2437,57 +2437,57 @@ Lines added: 56, lines removed: 1
 + [#0]
 + T=4
 + F=_TAG
-+ 1=(^|\s|\(|\[|/|-|:|;|&quot;)(can|don|ain|won|wouldn|haven|didn|isn|aren|wasn|weren|hasn|hadn|doesn|didn|won|wouldn|shouldn|couldn|mustn|shan|mayn)t($|\s|\)|\]|/|-|:|;|&quot;)
-+ 2=$1$2&#39;t$3
++ 1=(^|\s|\(|\[|/|-|:|;|")(can|don|ain|won|wouldn|haven|didn|isn|aren|wasn|weren|hasn|hadn|doesn|didn|won|wouldn|shouldn|couldn|mustn|shan|mayn)t($|\s|\)|\]|/|-|:|;|")
++ 2=$1$2't$3
 + 3=0
 + 
 + [#1]
 + T=4
 + F=_TAG
-+ 1=(^|\s|\(|\[|/|-|:|;|&quot;)(that|there|let|it|he|she|we|they|you|I|who|what|where|when|why|how)&#39;s($|\s|\)|\]|/|-|:|;|&quot;)
-+ 2=$1$2&#39;s$3
++ 1=(^|\s|\(|\[|/|-|:|;|")(that|there|let|it|he|she|we|they|you|I|who|what|where|when|why|how)'s($|\s|\)|\]|/|-|:|;|")
++ 2=$1$2's$3
 + 3=0
 + 
 + [#2]
 + T=4
 + F=_TAG
-+ 1=(^|\s|\(|\[|/|-|:|;|&quot;)(is|was|has|had|would|should|could|must|shall|may)&#39;ve($|\s|\)|\]|/|-|:|;|&quot;)
-+ 2=$1$2&#39;ve$3
++ 1=(^|\s|\(|\[|/|-|:|;|")(is|was|has|had|would|should|could|must|shall|may)'ve($|\s|\)|\]|/|-|:|;|")
++ 2=$1$2've$3
 + 3=0
 + 
 + [#3]
 + T=4
 + F=_TAG
-+ 1=(^|\s|\(|\[|/|-|:|;|&quot;)(is|was|has|had|would|should|could|must|shall|may)n&#39;t($|\s|\)|\]|/|-|:|;|&quot;)
-+ 2=$1$2n&#39;t$3
++ 1=(^|\s|\(|\[|/|-|:|;|")(is|was|has|had|would|should|could|must|shall|may)n't($|\s|\)|\]|/|-|:|;|")
++ 2=$1$2n't$3
 + 3=0
 + 
 + [#4]
 + T=4
 + F=_TAG
-+ 1=(^|\s|\(|\[|/|-|:|;|&quot;)(I|you|we|they|he|she|it|who|what|where|when|why|how)&#39;ll($|\s|\)|\]|/|-|:|;|&quot;)
-+ 2=$1$2&#39;ll$3
++ 1=(^|\s|\(|\[|/|-|:|;|")(I|you|we|they|he|she|it|who|what|where|when|why|how)'ll($|\s|\)|\]|/|-|:|;|")
++ 2=$1$2'll$3
 + 3=0
 + 
 + [#5]
 + T=4
 + F=_TAG
-+ 1=(^|\s|\(|\[|/|-|:|;|&quot;)(I|you|we|they|he|she|it|who|what|where|when|why|how)&#39;re($|\s|\)|\]|/|-|:|;|&quot;)
-+ 2=$1$2&#39;re$3
++ 1=(^|\s|\(|\[|/|-|:|;|")(I|you|we|they|he|she|it|who|what|where|when|why|how)'re($|\s|\)|\]|/|-|:|;|")
++ 2=$1$2're$3
 + 3=0
 + 
 + [#6]
 + T=4
 + F=_TAG
-+ 1=(^|\s|\(|\[|/|-|:|;|&quot;)(I|you|we|they|he|she|it|who|what|where|when|why|how)&#39;d($|\s|\)|\]|/|-|:|;|&quot;)
-+ 2=$1$2&#39;d$3
++ 1=(^|\s|\(|\[|/|-|:|;|")(I|you|we|they|he|she|it|who|what|where|when|why|how)'d($|\s|\)|\]|/|-|:|;|")
++ 2=$1$2'd$3
 + 3=0
 + 
 + [#7]
 + T=4
 + F=_TAG
-+ 1=(^|\s|\(|\[|/|-|:|;|&quot;)(I|you|we|they|he|she|it|who|what|where|when|why|how)&#39;ve($|\s|\)|\]|/|-|:|;|&quot;)
-+ 2=$1$2&#39;ve$3
++ 1=(^|\s|\(|\[|/|-|:|;|")(I|you|we|they|he|she|it|who|what|where|when|why|how)'ve($|\s|\)|\]|/|-|:|;|")
++ 2=$1$2've$3
 + 3=0
 + 
 ```
@@ -2500,7 +2500,7 @@ Lines added: 56, lines removed: 1
 
 <tool-use data-tool-type="write" data-tool-name="write">
 
-<details><summary>Tool use: **code_edit** • Edit file: Actions/Regex/R - Remove Trailing Info.mta</summary>
+<details><summary>Tool use: **write** • Edit file: Actions/Regex/R - Remove Trailing Info.mta</summary>
 
 **Chunk 1**
 Lines added: 35, lines removed: 1
@@ -2553,7 +2553,7 @@ Lines added: 35, lines removed: 1
 
 <tool-use data-tool-type="write" data-tool-name="write">
 
-<details><summary>Tool use: **code_edit** • Edit file: Actions/Regex/R - Fix Common Typos.mta</summary>
+<details><summary>Tool use: **write** • Edit file: Actions/Regex/R - Fix Common Typos.mta</summary>
 
 **Chunk 1**
 Lines added: 48, lines removed: 1
@@ -2619,7 +2619,7 @@ Lines added: 48, lines removed: 1
 
 <tool-use data-tool-type="write" data-tool-name="write">
 
-<details><summary>Tool use: **code_edit** • Edit file: Actions/Regex/R - Normalize Separators.mta</summary>
+<details><summary>Tool use: **write** • Edit file: Actions/Regex/R - Normalize Separators.mta</summary>
 
 **Chunk 1**
 Lines added: 42, lines removed: 1
@@ -2679,7 +2679,7 @@ Lines added: 42, lines removed: 1
 
 <tool-use data-tool-type="write" data-tool-name="write">
 
-<details><summary>Tool use: **code_edit** • Edit file: Actions/Regex/R - Clean Whitespace.mta</summary>
+<details><summary>Tool use: **write** • Edit file: Actions/Regex/R - Clean Whitespace.mta</summary>
 
 **Chunk 1**
 Lines added: 35, lines removed: 1
@@ -2813,7 +2813,7 @@ Adding filters to remove decades, non-genre descriptors, and other invalid tags:
 
 <tool-use data-tool-type="write" data-tool-name="search_replace">
 
-<details><summary>Tool use: **code_edit** • Edit file: /Users/rd/.kenv/scripts/mp3-genres-from-lastfm-top-2.ts</summary>
+<details><summary>Tool use: **search_replace** • Edit file: /Users/rd/.kenv/scripts/mp3-genres-from-lastfm-top-2.ts</summary>
 
 **Chunk 1**
 Lines added: 140, lines removed: 2
@@ -2832,56 +2832,56 @@ Lines added: 140, lines removed: 2
 +     if (decadePattern.test(lower)) {
 +       return false;
 +     }
-+     // Remove decades from combined genres (e.g., &quot;Pop; 80s&quot; → &quot;Pop&quot;)
++     // Remove decades from combined genres (e.g., "Pop; 80s" → "Pop")
 +     // This will be handled in the split/cleanup below
 +     return true;
 +   });
 + 
 +   // Step 4b: Remove non-genre descriptors
 +   const nonGenreDescriptors = new Set([
-+     &quot;female vocalists&quot;,
-+     &quot;male vocalists&quot;,
-+     &quot;female vocalist&quot;,
-+     &quot;male vocalist&quot;,
-+     &quot;vocalists&quot;,
-+     &quot;vocalist&quot;,
-+     &quot;singer-songwriter&quot;, // Keep this as it can be a valid genre, but remove if combined with other things
-+     &quot;singer songwriter&quot;,
-+     &quot;seen live&quot;,
-+     &quot;favorites&quot;,
-+     &quot;favorite&quot;,
-+     &quot;favourites&quot;,
-+     &quot;favourite&quot;,
-+     &quot;my music&quot;,
-+     &quot;under 2000 listeners&quot;,
-+     &quot;under 20000 listeners&quot;,
-+     &quot;under 200000 listeners&quot;,
-+     &quot;all&quot;,
-+     &quot;misc&quot;,
-+     &quot;miscellaneous&quot;,
-+     &quot;other&quot;,
-+     &quot;unknown&quot;,
-+     &quot;unclassifiable&quot;,
-+     &quot;unclassified&quot;,
-+     &quot;no genre&quot;,
-+     &quot;instrumental&quot;, // This is actually a valid genre, but sometimes used as descriptor
-+     &quot;acoustic&quot;, // Valid genre, but sometimes used as descriptor
-+     &quot;live&quot;, // Not a genre
-+     &quot;remix&quot;, // Not a genre
-+     &quot;cover&quot;, // Not a genre
-+     &quot;original&quot;, // Not a genre
-+     &quot;demo&quot;, // Not a genre
-+     &quot;studio&quot;, // Not a genre
-+     &quot;session&quot;, // Not a genre
-+     &quot;explicit&quot;, // Not a genre
-+     &quot;clean&quot;, // Not a genre
-+     &quot;radio edit&quot;, // Not a genre
-+     &quot;radio&quot;, // Not a genre
-+     &quot;single&quot;, // Not a genre
-+     &quot;album&quot;, // Not a genre
-+     &quot;ep&quot;, // Not a genre (though sometimes used as genre)
-+     &quot;lp&quot;, // Not a genre
-+     &quot;compilation&quot;, // This is actually a valid genre tag, but remove if it&#39;s just a descriptor
++     "female vocalists",
++     "male vocalists",
++     "female vocalist",
++     "male vocalist",
++     "vocalists",
++     "vocalist",
++     "singer-songwriter", // Keep this as it can be a valid genre, but remove if combined with other things
++     "singer songwriter",
++     "seen live",
++     "favorites",
++     "favorite",
++     "favourites",
++     "favourite",
++     "my music",
++     "under 2000 listeners",
++     "under 20000 listeners",
++     "under 200000 listeners",
++     "all",
++     "misc",
++     "miscellaneous",
++     "other",
++     "unknown",
++     "unclassifiable",
++     "unclassified",
++     "no genre",
++     "instrumental", // This is actually a valid genre, but sometimes used as descriptor
++     "acoustic", // Valid genre, but sometimes used as descriptor
++     "live", // Not a genre
++     "remix", // Not a genre
++     "cover", // Not a genre
++     "original", // Not a genre
++     "demo", // Not a genre
++     "studio", // Not a genre
++     "session", // Not a genre
++     "explicit", // Not a genre
++     "clean", // Not a genre
++     "radio edit", // Not a genre
++     "radio", // Not a genre
++     "single", // Not a genre
++     "album", // Not a genre
++     "ep", // Not a genre (though sometimes used as genre)
++     "lp", // Not a genre
++     "compilation", // This is actually a valid genre tag, but remove if it's just a descriptor
 +   ]);
 + 
 +   // Step 4c: Clean up genres by removing non-genre descriptors and decades
@@ -2891,20 +2891,20 @@ Lines added: 140, lines removed: 2
 +       
 +       // Remove standalone non-genre descriptors
 +       if (nonGenreDescriptors.has(lower)) {
-+         return &quot;&quot;;
++         return "";
 +       }
 +       
-+       // Remove decades from combined genres (e.g., &quot;Pop; 80s&quot; → &quot;Pop&quot;)
++       // Remove decades from combined genres (e.g., "Pop; 80s" → "Pop")
 +       // Split by common separators and filter out decades
 +       const parts = g.split(/[;|,/]+/).map((p) =&gt; p.trim()).filter(Boolean);
 +       const cleanedParts = parts.filter((part) =&gt; {
 +         const partLower = part.toLowerCase().trim();
-+         // Remove if it&#39;s a decade
++         // Remove if it's a decade
 +         const decadePattern = /^(19|20)?\d0s?$/;
 +         if (decadePattern.test(partLower)) {
 +           return false;
 +         }
-+         // Remove if it&#39;s a non-genre descriptor
++         // Remove if it's a non-genre descriptor
 +         if (nonGenreDescriptors.has(partLower)) {
 +           return false;
 +         }
@@ -2913,35 +2913,35 @@ Lines added: 140, lines removed: 2
 +       
 +       // If we removed everything, return empty
 +       if (cleanedParts.length === 0) {
-+         return &quot;&quot;;
++         return "";
 +       }
 +       
 +       // Rejoin if it was split, otherwise return original
 +       if (parts.length &gt; 1) {
-+         return cleanedParts.join(&quot;; &quot;);
++         return cleanedParts.join("; ");
 +       }
 +       
 +       return g;
 +     })
 +     .filter((g) =&gt; g.length &gt; 0);
 + 
-+   // Step 4d: Handle &quot;Oldies&quot; - remove if combined with decade, otherwise keep
++   // Step 4d: Handle "Oldies" - remove if combined with decade, otherwise keep
 +   const oldiesFixed = cleanedGenres
 +     .map((g) =&gt; {
 +       const lower = g.toLowerCase().trim();
 +       
-+       // If it&#39;s just &quot;Oldies&quot; with a decade, remove the whole thing
-+       // But if it&#39;s &quot;Oldies&quot; alone or with a real genre, keep it
-+       if (lower === &quot;oldies&quot;) {
++       // If it's just "Oldies" with a decade, remove the whole thing
++       // But if it's "Oldies" alone or with a real genre, keep it
++       if (lower === "oldies") {
 +         // Check if there are other genres that would make this valid
-+         // For now, we&#39;ll keep standalone &quot;Oldies&quot; as it can be a genre
++         // For now, we'll keep standalone "Oldies" as it can be a genre
 +         return g;
 +       }
 +       
-+       // Remove &quot;Oldies&quot; from combined genres if it&#39;s paired with a decade
++       // Remove "Oldies" from combined genres if it's paired with a decade
 +       const parts = g.split(/[;|,/]+/).map((p) =&gt; p.trim()).filter(Boolean);
 +       if (parts.length &gt; 1) {
-+         const hasOldies = parts.some((p) =&gt; p.toLowerCase() === &quot;oldies&quot;);
++         const hasOldies = parts.some((p) =&gt; p.toLowerCase() === "oldies");
 +         const hasDecade = parts.some((p) =&gt; {
 +           const pLower = p.toLowerCase().trim();
 +           return /^(19|20)?\d0s?$/.test(pLower);
@@ -2952,9 +2952,9 @@ Lines added: 140, lines removed: 2
 +           return parts
 +             .filter((p) =&gt; {
 +               const pLower = p.toLowerCase().trim();
-+               return pLower !== &quot;oldies&quot; &amp;&amp; !/^(19|20)?\d0s?$/.test(pLower);
++               return pLower !== "oldies" &amp;&amp; !/^(19|20)?\d0s?$/.test(pLower);
 +             })
-+             .join(&quot;; &quot;);
++             .join("; ");
 +         }
 +       }
 +       
@@ -2965,7 +2965,7 @@ Lines added: 140, lines removed: 2
 +   // Step 4e: Normalize Hip Hop variations
 +   const hipHopFixed = oldiesFixed.map((g) =&gt; {
       const lower = g.toLowerCase().trim();
-      // Convert &quot;Hip Hop&quot; to &quot;Hip-Hop&quot;
+      // Convert "Hip Hop" to "Hip-Hop"
 ```
 
 </details>
@@ -2986,7 +2986,7 @@ Adding pop genre normalization and mapping common Last.fm tags to valid genres:
 
 <tool-use data-tool-type="write" data-tool-name="search_replace">
 
-<details><summary>Tool use: **code_edit** • Edit file: /Users/rd/.kenv/scripts/mp3-genres-from-lastfm-top-2.ts</summary>
+<details><summary>Tool use: **search_replace** • Edit file: /Users/rd/.kenv/scripts/mp3-genres-from-lastfm-top-2.ts</summary>
 
 **Chunk 1**
 Lines added: 118, lines removed: undefined
@@ -2999,110 +2999,110 @@ Lines added: 118, lines removed: undefined
 +   // Step 4f: Map common Last.fm tags to proper genres
 +   const genreMappings: Record&lt;string, string&gt; = {
 +     // Pop variations
-+     &quot;pop rock&quot;: &quot;Pop&quot;,
-+     &quot;pop punk&quot;: &quot;Pop Punk&quot;,
-+     &quot;indie pop&quot;: &quot;Indie Pop&quot;,
-+     &quot;synth pop&quot;: &quot;Synth-Pop&quot;,
-+     &quot;synthpop&quot;: &quot;Synth-Pop&quot;,
-+     &quot;dance pop&quot;: &quot;Pop&quot;,
-+     &quot;electro pop&quot;: &quot;Pop&quot;,
-+     &quot;electronic pop&quot;: &quot;Pop&quot;,
++     "pop rock": "Pop",
++     "pop punk": "Pop Punk",
++     "indie pop": "Indie Pop",
++     "synth pop": "Synth-Pop",
++     "synthpop": "Synth-Pop",
++     "dance pop": "Pop",
++     "electro pop": "Pop",
++     "electronic pop": "Pop",
 +     
 +     // Rock variations
-+     &quot;classic rock&quot;: &quot;Classic Rock&quot;,
-+     &quot;hard rock&quot;: &quot;Hard Rock&quot;,
-+     &quot;soft rock&quot;: &quot;Rock&quot;,
-+     &quot;arena rock&quot;: &quot;Rock&quot;,
-+     &quot;album rock&quot;: &quot;Rock&quot;,
-+     &quot;roots rock&quot;: &quot;Roots&quot;,
++     "classic rock": "Classic Rock",
++     "hard rock": "Hard Rock",
++     "soft rock": "Rock",
++     "arena rock": "Rock",
++     "album rock": "Rock",
++     "roots rock": "Roots",
 +     
 +     // Alternative variations
-+     &quot;alt rock&quot;: &quot;Alternative Rock&quot;,
-+     &quot;alternative rock&quot;: &quot;Alternative Rock&quot;,
-+     &quot;alt&quot;: &quot;Alternative&quot;,
++     "alt rock": "Alternative Rock",
++     "alternative rock": "Alternative Rock",
++     "alt": "Alternative",
 +     
 +     // Metal variations
-+     &quot;heavy metal&quot;: &quot;Heavy Metal&quot;,
-+     &quot;black metal&quot;: &quot;Black Metal&quot;,
-+     &quot;death metal&quot;: &quot;Death Metal&quot;,
-+     &quot;thrash metal&quot;: &quot;Thrash Metal&quot;,
-+     &quot;doom metal&quot;: &quot;Doom Metal&quot;,
-+     &quot;power metal&quot;: &quot;Power Metal&quot;,
-+     &quot;progressive metal&quot;: &quot;Progressive Metal&quot;,
-+     &quot;symphonic metal&quot;: &quot;Symphonic Metal&quot;,
-+     &quot;folk metal&quot;: &quot;Folk Metal&quot;,
-+     &quot;gothic metal&quot;: &quot;Gothic Metal&quot;,
-+     &quot;industrial metal&quot;: &quot;Industrial Metal&quot;,
-+     &quot;nu metal&quot;: &quot;Nu Metal&quot;,
-+     &quot;stoner metal&quot;: &quot;Stoner Metal&quot;,
-+     &quot;sludge metal&quot;: &quot;Sludge Metal&quot;,
-+     &quot;speed metal&quot;: &quot;Speed Metal&quot;,
-+     &quot;groove metal&quot;: &quot;Groove Metal&quot;,
++     "heavy metal": "Heavy Metal",
++     "black metal": "Black Metal",
++     "death metal": "Death Metal",
++     "thrash metal": "Thrash Metal",
++     "doom metal": "Doom Metal",
++     "power metal": "Power Metal",
++     "progressive metal": "Progressive Metal",
++     "symphonic metal": "Symphonic Metal",
++     "folk metal": "Folk Metal",
++     "gothic metal": "Gothic Metal",
++     "industrial metal": "Industrial Metal",
++     "nu metal": "Nu Metal",
++     "stoner metal": "Stoner Metal",
++     "sludge metal": "Sludge Metal",
++     "speed metal": "Speed Metal",
++     "groove metal": "Groove Metal",
 +     
 +     // Electronic variations
-+     &quot;electronic&quot;: &quot;Electronic&quot;,
-+     &quot;electronica&quot;: &quot;Electronic&quot;,
-+     &quot;edm&quot;: &quot;Electronic&quot;,
-+     &quot;house music&quot;: &quot;House&quot;,
-+     &quot;techno music&quot;: &quot;Techno&quot;,
-+     &quot;trance music&quot;: &quot;Trance&quot;,
-+     &quot;drum and bass&quot;: &quot;Drum &amp; Bass&quot;,
-+     &quot;drum n bass&quot;: &quot;Drum &amp; Bass&quot;,
-+     &quot;dnb&quot;: &quot;Drum &amp; Bass&quot;,
++     "electronic": "Electronic",
++     "electronica": "Electronic",
++     "edm": "Electronic",
++     "house music": "House",
++     "techno music": "Techno",
++     "trance music": "Trance",
++     "drum and bass": "Drum &amp; Bass",
++     "drum n bass": "Drum &amp; Bass",
++     "dnb": "Drum &amp; Bass",
 +     
 +     // Hip-Hop variations
-+     &quot;hip hop&quot;: &quot;Hip-Hop&quot;,
-+     &quot;hiphop&quot;: &quot;Hip-Hop&quot;,
-+     &quot;rap&quot;: &quot;Rap&quot;,
-+     &quot;trap music&quot;: &quot;Trap&quot;,
-+     &quot;drill music&quot;: &quot;Drill&quot;,
-+     &quot;cloud rap&quot;: &quot;Cloud Rap&quot;,
-+     &quot;horrorcore&quot;: &quot;Horrorcore&quot;,
-+     &quot;australian hip-hop&quot;: &quot;Australian Hip-Hop&quot;,
-+     &quot;australian hip hop&quot;: &quot;Australian Hip-Hop&quot;,
++     "hip hop": "Hip-Hop",
++     "hiphop": "Hip-Hop",
++     "rap": "Rap",
++     "trap music": "Trap",
++     "drill music": "Drill",
++     "cloud rap": "Cloud Rap",
++     "horrorcore": "Horrorcore",
++     "australian hip-hop": "Australian Hip-Hop",
++     "australian hip hop": "Australian Hip-Hop",
 +     
 +     // Punk variations
-+     &quot;punk rock&quot;: &quot;Punk Rock&quot;,
-+     &quot;hardcore punk&quot;: &quot;Hardcore Punk&quot;,
-+     &quot;pop punk&quot;: &quot;Pop Punk&quot;,
-+     &quot;horror punk&quot;: &quot;Horror Punk&quot;,
-+     &quot;punk&quot;: &quot;Punk&quot;,
++     "punk rock": "Punk Rock",
++     "hardcore punk": "Hardcore Punk",
++     "pop punk": "Pop Punk",
++     "horror punk": "Horror Punk",
++     "punk": "Punk",
 +     
 +     // Other common mappings
-+     &quot;r&amp;b&quot;: &quot;R&amp;B&quot;,
-+     &quot;rnb&quot;: &quot;R&amp;B&quot;,
-+     &quot;rhythm and blues&quot;: &quot;R&amp;B&quot;,
-+     &quot;soul music&quot;: &quot;Soul&quot;,
-+     &quot;funk music&quot;: &quot;Funk&quot;,
-+     &quot;jazz music&quot;: &quot;Jazz&quot;,
-+     &quot;blues music&quot;: &quot;Blues&quot;,
-+     &quot;country music&quot;: &quot;Country&quot;,
-+     &quot;folk music&quot;: &quot;Folk&quot;,
-+     &quot;classical music&quot;: &quot;Classical&quot;,
-+     &quot;orchestral&quot;: &quot;Orchestral&quot;,
-+     &quot;soundtrack&quot;: &quot;Soundtrack&quot;,
-+     &quot;film score&quot;: &quot;Soundtrack&quot;,
-+     &quot;ambient music&quot;: &quot;Ambient&quot;,
-+     &quot;dark ambient&quot;: &quot;Dark Ambient&quot;,
-+     &quot;drone music&quot;: &quot;Drone&quot;,
-+     &quot;experimental music&quot;: &quot;Experimental&quot;,
-+     &quot;avant-garde&quot;: &quot;Avantgarde&quot;,
-+     &quot;avant garde&quot;: &quot;Avantgarde&quot;,
-+     &quot;math rock&quot;: &quot;Math Rock&quot;,
-+     &quot;post rock&quot;: &quot;Post-Rock&quot;,
-+     &quot;post-rock&quot;: &quot;Post-Rock&quot;,
-+     &quot;shoegaze&quot;: &quot;Shoegaze&quot;,
-+     &quot;shoegazing&quot;: &quot;Shoegaze&quot;,
-+     &quot;new wave&quot;: &quot;New Wave&quot;,
-+     &quot;newwave&quot;: &quot;New Wave&quot;,
-+     &quot;post punk&quot;: &quot;Post-Punk&quot;,
-+     &quot;post-punk&quot;: &quot;Post-Punk&quot;,
-+     &quot;garage rock&quot;: &quot;Garage Rock&quot;,
-+     &quot;psychedelic rock&quot;: &quot;Psychedelic Rock&quot;,
-+     &quot;psychedelic&quot;: &quot;Psychedelic&quot;,
-+     &quot;grunge&quot;: &quot;Grunge&quot;,
-+     &quot;indie rock&quot;: &quot;Indie Rock&quot;,
-+     &quot;indie&quot;: &quot;Indie Rock&quot;,
++     "r&amp;b": "R&amp;B",
++     "rnb": "R&amp;B",
++     "rhythm and blues": "R&amp;B",
++     "soul music": "Soul",
++     "funk music": "Funk",
++     "jazz music": "Jazz",
++     "blues music": "Blues",
++     "country music": "Country",
++     "folk music": "Folk",
++     "classical music": "Classical",
++     "orchestral": "Orchestral",
++     "soundtrack": "Soundtrack",
++     "film score": "Soundtrack",
++     "ambient music": "Ambient",
++     "dark ambient": "Dark Ambient",
++     "drone music": "Drone",
++     "experimental music": "Experimental",
++     "avant-garde": "Avantgarde",
++     "avant garde": "Avantgarde",
++     "math rock": "Math Rock",
++     "post rock": "Post-Rock",
++     "post-rock": "Post-Rock",
++     "shoegaze": "Shoegaze",
++     "shoegazing": "Shoegaze",
++     "new wave": "New Wave",
++     "newwave": "New Wave",
++     "post punk": "Post-Punk",
++     "post-punk": "Post-Punk",
++     "garage rock": "Garage Rock",
++     "psychedelic rock": "Psychedelic Rock",
++     "psychedelic": "Psychedelic",
++     "grunge": "Grunge",
++     "indie rock": "Indie Rock",
++     "indie": "Indie Rock",
 +   };
 + 
 +   // Apply genre mappings
@@ -3125,7 +3125,7 @@ Lines added: 118, lines removed: undefined
 
 <tool-use data-tool-type="write" data-tool-name="search_replace">
 
-<details><summary>Tool use: **code_edit** • Edit file: /Users/rd/.kenv/scripts/mp3-genres-from-lastfm-top-2.ts</summary>
+<details><summary>Tool use: **search_replace** • Edit file: /Users/rd/.kenv/scripts/mp3-genres-from-lastfm-top-2.ts</summary>
 
 **Chunk 1**
 Lines added: 1, lines removed: 1
@@ -3137,7 +3137,7 @@ Lines added: 1, lines removed: 1
 -   const lowerNormalized = hipHopFixed.map((g) =&gt; g.toLowerCase());
 +   const lowerNormalized = mappedGenres.map((g) =&gt; g.toLowerCase());
   
-    // Track what we&#39;ve processed
+    // Track what we've processed
 ```
 
 </details>
@@ -3148,7 +3148,7 @@ Lines added: 1, lines removed: 1
 
 <tool-use data-tool-type="write" data-tool-name="search_replace">
 
-<details><summary>Tool use: **code_edit** • Edit file: /Users/rd/.kenv/scripts/mp3-genres-from-lastfm-top-2.ts</summary>
+<details><summary>Tool use: **search_replace** • Edit file: /Users/rd/.kenv/scripts/mp3-genres-from-lastfm-top-2.ts</summary>
 
 **Chunk 1**
 Lines added: 2, lines removed: 2
@@ -3175,7 +3175,7 @@ Lines added: 2, lines removed: 2
 
 <tool-use data-tool-type="write" data-tool-name="search_replace">
 
-<details><summary>Tool use: **code_edit** • Edit file: /Users/rd/.kenv/scripts/mp3-genres-from-lastfm-top-2.ts</summary>
+<details><summary>Tool use: **search_replace** • Edit file: /Users/rd/.kenv/scripts/mp3-genres-from-lastfm-top-2.ts</summary>
 
 **Chunk 1**
 Lines added: 29, lines removed: undefined
@@ -3185,10 +3185,10 @@ Lines added: 29, lines removed: undefined
         }
       }
 + 
-+     // Handle &quot;Pop Rock; Pop&quot; → &quot;Pop&quot;
-+     if (currentLower === &quot;pop rock&quot;) {
++     // Handle "Pop Rock; Pop" → "Pop"
++     if (currentLower === "pop rock") {
 +       const hasPop = lowerNormalized.some(
-+         (g, idx) =&gt; idx !== i &amp;&amp; !processed.has(idx) &amp;&amp; g === &quot;pop&quot;
++         (g, idx) =&gt; idx !== i &amp;&amp; !processed.has(idx) &amp;&amp; g === "pop"
 +       );
 +       if (hasPop) {
 +         // Keep Pop, skip Pop Rock
@@ -3197,14 +3197,14 @@ Lines added: 29, lines removed: undefined
 +       }
 +     }
 + 
-+     if (currentLower === &quot;pop&quot;) {
++     if (currentLower === "pop") {
 +       const hasPopRock = lowerNormalized.some(
-+         (g, idx) =&gt; idx !== i &amp;&amp; !processed.has(idx) &amp;&amp; g === &quot;pop rock&quot;
++         (g, idx) =&gt; idx !== i &amp;&amp; !processed.has(idx) &amp;&amp; g === "pop rock"
 +       );
 +       if (hasPopRock) {
 +         // Keep Pop, skip Pop Rock
 +         lowerNormalized.forEach((g, idx) =&gt; {
-+           if (idx !== i &amp;&amp; !processed.has(idx) &amp;&amp; g === &quot;pop rock&quot;) {
++           if (idx !== i &amp;&amp; !processed.has(idx) &amp;&amp; g === "pop rock") {
 +             processed.add(idx);
 +           }
 +         });
@@ -3214,7 +3214,7 @@ Lines added: 29, lines removed: undefined
 +       }
 +     }
   
-      // Handle &quot;Death Metal; Grindcore&quot; → &quot;Deathgrind; Death Metal; Grindcore&quot;
+      // Handle "Death Metal; Grindcore" → "Deathgrind; Death Metal; Grindcore"
 ```
 
 </details>
@@ -3229,14 +3229,14 @@ The model provided an ambiguous search string to replace.
 
 <tool-use data-tool-type="write" data-tool-name="search_replace">
 
-<details><summary>Tool use: **code_edit** • Edit file: /Users/rd/.kenv/scripts/mp3-genres-from-lastfm-top-2.ts</summary>
+<details><summary>Tool use: **search_replace** • Edit file: /Users/rd/.kenv/scripts/mp3-genres-from-lastfm-top-2.ts</summary>
 
 **Chunk 1**
 Lines added: 1, lines removed: 1
 
 ```diff
 @@ -1167,5 +1167,5 @@
-            normalized.push(&quot;Black/Death&quot;);
+            normalized.push("Black/Death");
             normalized.push(current);
 -           normalized.push(hipHopFixed[deathMetalIdx]);
 +           normalized.push(mappedGenres[deathMetalIdx]);
@@ -3288,7 +3288,7 @@ Replacing remaining references:
 
 <tool-use data-tool-type="write" data-tool-name="search_replace">
 
-<details><summary>Tool use: **code_edit** • Edit file: /Users/rd/.kenv/scripts/mp3-genres-from-lastfm-top-2.ts</summary>
+<details><summary>Tool use: **search_replace** • Edit file: /Users/rd/.kenv/scripts/mp3-genres-from-lastfm-top-2.ts</summary>
 
 **Chunk 1**
 Lines added: 1, lines removed: 1
@@ -3296,7 +3296,7 @@ Lines added: 1, lines removed: 1
 ```diff
 @@ -896,5 +896,5 @@
           lowerNormalized.forEach((g, idx) =&gt; {
-            if (idx !== i &amp;&amp; !processed.has(idx) &amp;&amp; g === &quot;grindcore&quot;) {
+            if (idx !== i &amp;&amp; !processed.has(idx) &amp;&amp; g === "grindcore") {
 -             normalized.push(hipHopFixed[idx]);
 +             normalized.push(mappedGenres[idx]);
               processed.add(idx);
@@ -3309,7 +3309,7 @@ Lines added: 1, lines removed: 1
 ```diff
 @@ -916,5 +916,5 @@
           lowerNormalized.forEach((g, idx) =&gt; {
-            if (idx !== i &amp;&amp; !processed.has(idx) &amp;&amp; g === &quot;death metal&quot;) {
+            if (idx !== i &amp;&amp; !processed.has(idx) &amp;&amp; g === "death metal") {
 -             normalized.push(hipHopFixed[idx]);
 +             normalized.push(mappedGenres[idx]);
               processed.add(idx);
@@ -3322,7 +3322,7 @@ Lines added: 1, lines removed: 1
 ```diff
 @@ -944,5 +944,5 @@
           lowerNormalized.forEach((g, idx) =&gt; {
-            if (idx !== i &amp;&amp; !processed.has(idx) &amp;&amp; g === &quot;doom metal&quot;) {
+            if (idx !== i &amp;&amp; !processed.has(idx) &amp;&amp; g === "doom metal") {
 -             normalized.push(hipHopFixed[idx]);
 +             normalized.push(mappedGenres[idx]);
               processed.add(idx);
@@ -3335,7 +3335,7 @@ Lines added: 1, lines removed: 1
 ```diff
 @@ -969,5 +969,5 @@
           lowerNormalized.forEach((g, idx) =&gt; {
-            if (idx !== i &amp;&amp; !processed.has(idx) &amp;&amp; g === &quot;death metal&quot;) {
+            if (idx !== i &amp;&amp; !processed.has(idx) &amp;&amp; g === "death metal") {
 -             normalized.push(hipHopFixed[idx]);
 +             normalized.push(mappedGenres[idx]);
               processed.add(idx);
@@ -3348,7 +3348,7 @@ Lines added: 1, lines removed: 1
 ```diff
 @@ -997,5 +997,5 @@
           lowerNormalized.forEach((g, idx) =&gt; {
-            if (idx !== i &amp;&amp; !processed.has(idx) &amp;&amp; g === &quot;thrash metal&quot;) {
+            if (idx !== i &amp;&amp; !processed.has(idx) &amp;&amp; g === "thrash metal") {
 -             normalized.push(hipHopFixed[idx]);
 +             normalized.push(mappedGenres[idx]);
               processed.add(idx);
@@ -3361,7 +3361,7 @@ Lines added: 1, lines removed: 1
 ```diff
 @@ -1022,5 +1022,5 @@
           lowerNormalized.forEach((g, idx) =&gt; {
-            if (idx !== i &amp;&amp; !processed.has(idx) &amp;&amp; g === &quot;death metal&quot;) {
+            if (idx !== i &amp;&amp; !processed.has(idx) &amp;&amp; g === "death metal") {
 -             normalized.push(hipHopFixed[idx]);
 +             normalized.push(mappedGenres[idx]);
               processed.add(idx);
@@ -3429,7 +3429,7 @@ Removing the duplicate "pop punk" entry:
 
 <tool-use data-tool-type="write" data-tool-name="search_replace">
 
-<details><summary>Tool use: **code_edit** • Edit file: /Users/rd/.kenv/scripts/mp3-genres-from-lastfm-top-2.ts</summary>
+<details><summary>Tool use: **search_replace** • Edit file: /Users/rd/.kenv/scripts/mp3-genres-from-lastfm-top-2.ts</summary>
 
 **Chunk 1**
 Lines added: undefined, lines removed: 1
@@ -3437,10 +3437,10 @@ Lines added: undefined, lines removed: 1
 ```diff
 @@ -662,5 +662,4 @@
       // Pop variations
-      &quot;pop rock&quot;: &quot;Pop&quot;,
--     &quot;pop punk&quot;: &quot;Pop Punk&quot;,
-      &quot;indie pop&quot;: &quot;Indie Pop&quot;,
-      &quot;synth pop&quot;: &quot;Synth-Pop&quot;,
+      "pop rock": "Pop",
+-     "pop punk": "Pop Punk",
+      "indie pop": "Indie Pop",
+      "synth pop": "Synth-Pop",
 ```
 
 </details>
