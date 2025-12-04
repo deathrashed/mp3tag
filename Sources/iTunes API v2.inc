@@ -5,7 +5,7 @@
 [WordSeparator]=+
 [Encoding]=url-utf-8
 [IndexFormat]=%_url%|%_preview%|%_coverurl%|%Title%|%Artist%|%Tracks%|%Kind%|%Explicit%|%Released%|%Genre%|%Copyright%|%Notes%
-[Settings]=&iTunes API#Settings….settings
+[Settings]=&iTunes#Settings….settings
 
 [ParserScriptIndex]=...
 
