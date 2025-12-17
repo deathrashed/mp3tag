@@ -1,0 +1,13 @@
+.DS_Store
+Actions/.DS_Store
+Sources/.DS_Store
+
+# Cursor / indexing metadata
+.cursorindexingignore
+
+# SpecStory session history
+.specstory/
+
+# macOS Icon file in this folder (Icon\r)
+Icon*
+Sources/Mp3tagSettings/data/.DS_Store

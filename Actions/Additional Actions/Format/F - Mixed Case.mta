@@ -1,0 +1,6 @@
+[#1]
+T=4
+F=_TAG
+1=(?<![/\\-:;\\(\\)\\[\\]{}])\\s(a|the|of|for|feat|as|at|an|by|off|on|from|in|to|and|with|or|nor|von|de)(?\u003d\\s)(?!\\s[\\-\\(\\)\\[\\]{}])
+2=$lower($0)
+3=0

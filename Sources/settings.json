@@ -1,0 +1,39 @@
+{
+  "bandcamp" : {
+    "maxCoverQuality" : true
+  },
+  "SettingBeatport" : {
+    "SettingFeaturingString" : "feat.",
+    "SettingGenreRename" : false,
+    "SettingInitialkeyFormat" : "Camelot",
+    "SettingYearFormat" : "YYYY",
+    "SettingTrackTotaltracksAppend" : false
+  },
+  "" : null,
+  "SettingGenius" : {
+    "SetUNSYNCEDLYRICS" : true,
+    "SettingLineEndingCharacter" : "CR (Mac)"
+  },
+  "itunes api" : {
+    "includeTracks" : false,
+    "coverartSize" : "Original quality"
+  },
+  "apple music" : {
+    "listRadioStations" : true,
+    "coverartSize" : "1200 pixels - 90 %",
+    "addSortTitles" : true,
+    "singleGenre" : true,
+    "skipiTunesTags" : true,
+    "delimiter" : ";",
+    "listPlaylists" : true,
+    "listExtraVideos" : true
+  },
+  "SettingSoundcloud" : {
+
+  },
+  "MusicBrainz expanded Settings" : {
+    "b_Convert_Status_and_PrimaryType" : true,
+    "b_Fill_DISCNUMBER" : false,
+    "b_Show_MB_Media_Tracks_Recording_Metadata" : false
+  }
+}
