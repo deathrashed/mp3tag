@@ -35,7 +35,7 @@ F=YEAR
 T=2
 F=GENRE
 1=/
-2=; 
+2=;
 3=0
 
 [#6]
@@ -55,4 +55,18 @@ F=_TAG
 [#8]
 T=8
 F=GENRE
-1=; 
+1=;
+
+[#9]
+T=4
+F=TITLE;ALBUM
+1=\\s*\\((?:Digitally\\s+)?(?:\\d{4}\\s*-\\s*)?Remaster(?:ed)?(?:\\s*\\d{4})?\\)
+2=
+3=0
+
+[#10]
+T=4
+F=TITLE;ALBUM
+1=\\s{2,}
+2=
+3=0
