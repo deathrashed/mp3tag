@@ -1,0 +1,151 @@
+#                                ╭───────────────────────────╮
+#╭───────────────────────────────┤   C O V E R  S O U R C E  ├───────────────────────────────╮
+#│                               ╰───╮   •────   ────•  ╭───╯                               │
+#│        •───────•───────•───────•  │    M P 3 T A G    │  •───────•───────•───────•        │
+#│                                   ╰───────────────────╯                                   │
+#│                                                                                           │
+#│            ██████╗ ██████╗ ██╗   ██╗███████╗██████╗      █████╗ ██████╗ ████████╗         │
+#│           ██╔════╝██╔═══██╗██║   ██║██╔════╝██╔══██╗    ██╔══██╗██╔══██╗╚══██╔══╝         │
+#│           ██║     ██║   ██║██║   ██║█████╗  ██████╔╝    ███████║██████╔╝   ██║            │
+#│           ██║     ██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗    ██╔══██║██╔══██╗   ██║            │
+#│           ╚██████╗╚██████╔╝ ╚████╔╝ ███████╗██║  ██║    ██║  ██║██║  ██║   ██║            │
+#│            ╚═════╝ ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝    ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝            │
+#│                         ██████╗  ██████╗ ██████╗ ██╗   ██╗███████╗                        │
+#│                        ██╔═══██╗██╔═══██╗██╔══██╗██║   ██║╚══███╔╝                        │
+#│                        ██║   ██║██║   ██║██████╔╝██║   ██║  ███╔╝                         │
+#│                        ██║▄▄ ██║██║   ██║██╔══██╗██║   ██║ ███╔╝                          │
+#│                        ╚██████╔╝╚██████╔╝██████╔╝╚██████╔╝███████╗                        │
+#│                         ╚══▀▀═╝  ╚═════╝ ╚═════╝  ╚═════╝ ╚══════╝                        │
+#│                                                                                           │
+#│                            https://github.com/deathrashed/mp3tag                          │
+#│                                                                                           │
+#│                                  Qobuz Cover Art Source                                   │
+#│    •─────────────────────────────────────────────────────────────────────────────────•    │
+#│       Qobuz album and track artwork lookup • JSON parsing • best-match selection          │
+#│                                 ╭────────────────────────╮                                │
+#╰─────────────────────────────────┤ L A S T  U P D A T E D ├────────────────────────────────╯
+#                                  ╰────────────⚡───────────╯
+#                                        July 18, 2026
+
+# Qobuz Tag Source for Cover Art for Mp3tag
+#
+
+# Initial release by GMK.
+
+[Name]=Qobuz Cover Art
+[MinAppVersionWin]=3.22
+[MinAppVersionMac]=1.8.6
+[BasedOn]=qobuz.com
+[IndexUrl]=https://www.qobuz.com/us-en/search/albums/%s
+[AlbumUrl]=https://www.qobuz.com/us-en/album/
+[WordSeparator]=%20
+#[SearchBy]=$if($eql(%albumartist%,'Various Artists'),$regexp(%album%,'\s+\[.+\]$',,1),$regexp(%albumartist%,'\s+\[.+\]$',,1))
+[SearchBy]=%albumartist% %album%
+[Encoding]=url-utf-8
+[IndexFormat]=%type%|%_url%|%_coverurl%|%Album%|%Artist%|%Date%|%Tracks%|%Label%
+[Version]=26.04.08
+
+[ParserScriptIndex]=...
+#•═══════════════════════════════════════════════════════════════════════════════════════════•
+#  INDEX PARSER
+#   - Searches Qobuz for albums matching artist + album query.
+#   - Returns: type, URL, thumbnail, title, artist, date, tracks, label
+#•═══════════════════════════════════════════════════════════════════════════════════════════•
+
+#DebugWriteInput "%userprofile%\Desktop\Logs\MP3Tag-debug_Cover_Art_Qobuz_INDEX_input.log"
+#Debug "on" "%userprofile%\Desktop\Logs\MP3Tag-debug_Cover_Art_Qobuz_INDEX.log"
+
+FindLine "data-live-props-value=\""
+Unspace
+RegExpReplace ".*data-live-props-value=\"(.*)\".*" "\1"
+Replace "&quot;" "\""
+RegExpReplace ".*\"albums\":\"({.*?})\".*" "\[\1\]"
+Replace "{\\\"" "{\""
+Replace "\\\":" "\":"
+Replace ":\\\"" ":\""
+Replace "\\\"," "\","
+Replace ",\\\"" ",\""
+Replace "\\\\\\" ""
+Replace "\\\"}" "\"}"
+RegExpReplace "\"(.*?)\"\:({\"id\"\:\"\1\",)" "\2"
+Replace "{{" "{"
+Replace "}}]" "}]"
+
+
+json "on" "current"
+json_select_array "" -1 ""
+json_foreach ""
+
+    # Type
+    Say "Album|"
+
+    # URL
+    json_select "slug"
+    SayRest
+    Say "/"
+    json_select "id"
+    SayRest
+    Say "|"
+
+    # Thumbnail
+    json_select_object "image"
+    json_select "small"
+    SayRest
+    json_unselect_object
+    Say "|"
+
+    # Album
+    json_select "title"
+    SayRest
+    Say "|"
+
+    # Artist
+    json_select_many "artists" "name" ", "
+    SayRest
+    Say "|"
+
+    # Date
+    json_select "releasedAt"
+    SayDate
+    Say "|"
+
+    # Tracks
+    json_select "tracksCount"
+    SayRest
+    Say "|"
+
+    # Label
+    json_select_object "label"
+    json_select "name"
+    SayRest
+    json_unselect_object
+
+    SayNewLine
+json_foreach_end
+json "off"
+
+
+[ParserScriptAlbum]=...
+#•═══════════════════════════════════════════════════════════════════════════════════════════•
+#  ALBUM PARSER
+#   - Fetches album page and extracts best available cover art URL.
+#•═══════════════════════════════════════════════════════════════════════════════════════════•
+
+#DebugWriteInput "%userprofile%\Desktop\Logs\MP3Tag-debug_Cover_Art_Qobuz_ALBUM_input.log"
+#Debug "on" "%userprofile%\Desktop\Logs\MP3Tag-debug_Cover_Art_Qobuz_ALBUM.log"
+
+FindLine "<script type=\"application/ld+json\">"
+JoinUntil "</script>"
+KillTag "script"
+KillTag "/script"
+Replace "\\/" "/"
+Unspace
+
+json "on" "current"
+
+# Cover Art
+OutputTo "COVERURL"
+json_select_array "image" 3
+SayRest
+
+json "off"

@@ -1,0 +1,8 @@
+# Qobuz Australia Tag Source for MP3Tag
+#
+# Initial release by GMK.
+
+[Name]=Qobuz Australia
+[IndexUrl]=https://www.qobuz.com/au-en/search/albums/%s
+[AlbumUrl]=https://www.qobuz.com/au-en/album/
+[Include]=Qobuz.inc

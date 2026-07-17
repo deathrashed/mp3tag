@@ -214,6 +214,32 @@ if "<div id="
     sayuntil "</div>"
 endif
 
+# Album Lineup -> Composer
+outputto "Composer"
+gotoline 1
+findline "album_members_lineup" 1 1
+if "album_members_lineup"
+    findline "lineupRow" 1 1
+    do
+        findline "<a href=" 1 1
+        regexpreplace "<[^>]+>" ""
+        regexpreplace "^\s+|\s+$" ""
+        sayrest
+        say " - "
+        findline "<td>" 1 1
+        moveline 1 1
+        replace "&nbsp;" " "
+        regexpreplace "<[^>]+>" ""
+        regexpreplace "^\s+|\s+$" ""
+        regexpreplace "\s+" " "
+        sayrest
+        findline "lineupRow" 1 1
+        if "lineupRow"
+            say "; "
+        endif
+    while "lineupRow" 30
+endif
+
 outputto "METAL ARCHIVES ALBUM URL"
 sayoutput "CurrentUrl"
 

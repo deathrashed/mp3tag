@@ -1,0 +1,234 @@
+#                                ╭───────────────────────────╮
+#╭───────────────────────────────┤     W E B  S O U R C E    ├───────────────────────────────╮
+#│                               ╰───╮   •────   ────•  ╭───╯                               │
+#│        •───────•───────•───────•  │    M P 3 T A G    │  •───────•───────•───────•        │
+#│                                   ╰───────────────────╯                                   │
+#│                                                                                           │
+#│                     ██╗      █████╗ ███████╗████████╗███████╗███╗   ███╗                  │
+#│                     ██║     ██╔══██╗██╔════╝╚══██╔══╝██╔════╝████╗ ████║                  │
+#│                     ██║     ███████║███████╗   ██║   █████╗  ██╔████╔██║                  │
+#│                     ██║     ██╔══██║╚════██║   ██║   ██╔══╝  ██║╚██╔╝██║                  │
+#│                     ███████╗██║  ██║███████║   ██║██╗██║     ██║ ╚═╝ ██║                  │
+#│                     ╚══════╝╚═╝  ╚═╝╚══════╝   ╚═╝╚═╝╚═╝     ╚═╝     ╚═╝                  │
+#│                      ██████╗ ███████╗███╗   ██╗██████╗ ███████╗███████╗                   │
+#│                     ██╔════╝ ██╔════╝████╗  ██║██╔══██╗██╔════╝██╔════╝                   │
+#│                     ██║  ███╗█████╗  ██╔██╗ ██║██████╔╝█████╗  ███████╗                   │
+#│                     ██║   ██║██╔══╝  ██║╚██╗██║██╔══██╗██╔══╝  ╚════██║                   │
+#│                     ╚██████╔╝███████╗██║ ╚████║██║  ██║███████╗███████║                   │
+#│                      ╚═════╝ ╚══════╝╚═╝  ╚═══╝╚═╝  ╚═╝╚══════╝╚══════╝                   │
+#│                                                                                           │
+#│                            https://github.com/deathrashed/mp3tag                          │
+#│                                                                                           │
+#│                 Last.fm artist top tags genre retrieval script for Mp3tag                 │
+#│    •─────────────────────────────────────────────────────────────────────────────────•    │
+#│         configurable genre limit • customizable separators • unified configuration        │
+#│                                                                                           │
+#│                                 ╭────────────────────────╮                                │
+#╰─────────────────────────────────┤ L A S T  U P D A T E D ├────────────────────────────────╯
+#                                  ╰────────────⚡───────────╯
+#                                        July 18, 2026
+
+
+# Mp3tag Web Source for Last.fm Top Tag
+# Gets Last.fm artist tags as Genre based on settings
+
+[Name]=Last.fm Genres v2
+[BasedOn]=www.last.fm
+[AlbumUrl]=https://ws.audioscrobbler.com/2.0/?method=artist.gettoptags&artist=%s&api_key=5767c7b3a56fe504b8e54206dda30b31&format=xml
+[WordSeperator]=+
+[SearchBy]=$replace(%artist%,/,'%'252F,&,'%'2526)
+[Encoding]=url-utf-8
+[Settings]=Last.fm#Settings….settings
+
+#•═══════════════════════════════════════════════════════════════════════════════════════════•
+#  ALBUM PARSER
+#   - Queries Last.fm artist.gettoptags API and maps top tags to Genre.
+#   - Returns: Genre (configurable count and separator)
+#•═══════════════════════════════════════════════════════════════════════════════════════════•
+[ParserScriptAlbum]=...
+#debug "on" "debug_lastfm_genres.html"
+
+findline "<?xml"
+joinuntil "</lfm>"
+
+# Check valid Last.fm response
+findinline "<lfm status=\"ok\">"
+
+#•═══════════════════════════════════════════════════════════════════════════════════════════•
+#  SEPARATOR INIT
+#   - Buffers the chosen separator into a temp variable for reuse between genres.
+#•═══════════════════════════════════════════════════════════════════════════════════════════•
+outputto "_TEMP_SEP"
+IfVar "genreSeparator" "; "
+	say "; "
+EndIf
+IfVar "genreSeparator" ", "
+	say ", "
+EndIf
+IfVar "genreSeparator" " / "
+	say " / "
+EndIf
+IfVar "genreSeparator" " \\\\ "
+	say " \\\\ "
+EndIf
+IfVar "genreSeparator" "|"
+	say "|"
+EndIf
+
+#•═══════════════════════════════════════════════════════════════════════════════════════════•
+#  CAPITALIZE GENRES
+#   - Uppercases the first letter of each tag name returned by Last.fm.
+#•═══════════════════════════════════════════════════════════════════════════════════════════•
+replace "<name>a" "<name>A"
+replace "<name>b" "<name>B"
+replace "<name>c" "<name>C"
+replace "<name>d" "<name>D"
+replace "<name>e" "<name>E"
+replace "<name>f" "<name>F"
+replace "<name>g" "<name>G"
+replace "<name>h" "<name>H"
+replace "<name>i" "<name>I"
+replace "<name>j" "<name>J"
+replace "<name>k" "<name>K"
+replace "<name>l" "<name>L"
+replace "<name>m" "<name>M"
+replace "<name>n" "<name>N"
+replace "<name>o" "<name>O"
+replace "<name>p" "<name>P"
+replace "<name>q" "<name>Q"
+replace "<name>r" "<name>R"
+replace "<name>s" "<name>S"
+replace "<name>t" "<name>T"
+replace "<name>u" "<name>U"
+replace "<name>v" "<name>V"
+replace "<name>w" "<name>W"
+replace "<name>x" "<name>X"
+replace "<name>y" "<name>Y"
+replace "<name>z" "<name>Z"
+replace " a" " A"
+replace " b" " B"
+replace " c" " C"
+replace " d" " D"
+replace " e" " E"
+replace " f" " F"
+replace " g" " G"
+replace " h" " H"
+replace " i" " I"
+replace " j" " J"
+replace " k" " K"
+replace " l" " L"
+replace " m" " M"
+replace " n" " N"
+replace " o" " O"
+replace " p" " P"
+replace " q" " Q"
+replace " r" " R"
+replace " s" " S"
+replace " t" " T"
+replace " u" " U"
+replace " v" " V"
+replace " w" " W"
+replace " x" " X"
+replace " y" " Y"
+replace " z" " Z"
+
+#•═══════════════════════════════════════════════════════════════════════════════════════════•
+#  GENRE OUTPUT  (limit 1 – 10, controlled by Settings)
+#•═══════════════════════════════════════════════════════════════════════════════════════════•
+outputto "Genre"
+findinline "<name>"
+sayuntil "</name>"
+
+# Genre 2
+IfVar "genreLimit" "2"
+	findinline "</tag>" 1 1
+	if "<tag"
+		sayoutput "_TEMP_SEP"
+		findinline "<name>"
+		sayuntil "</name>"
+	endif
+EndIf
+
+# Genre 3
+IfVar "genreLimit" "3"
+	findinline "</tag>" 1 1
+	if "<tag"
+		sayoutput "_TEMP_SEP"
+		findinline "<name>"
+		sayuntil "</name>"
+		findinline "</tag>" 1 1
+		if "<tag"
+			sayoutput "_TEMP_SEP"
+			findinline "<name>"
+			sayuntil "</name>"
+		endif
+	endif
+EndIf
+
+# Genre 4
+IfVar "genreLimit" "4"
+	findinline "</tag>" 1 1
+	if "<tag"
+		sayoutput "_TEMP_SEP"
+		findinline "<name>"
+		sayuntil "</name>"
+		findinline "</tag>" 1 1
+		if "<tag"
+			sayoutput "_TEMP_SEP"
+			findinline "<name>"
+			sayuntil "</name>"
+			findinline "</tag>" 1 1
+			if "<tag"
+				sayoutput "_TEMP_SEP"
+				findinline "<name>"
+				sayuntil "</name>"
+			endif
+		endif
+	endif
+EndIf
+
+# Genre 5
+IfVar "genreLimit" "5"
+	findinline "</tag>" 1 1
+	if "<tag"
+		sayoutput "_TEMP_SEP"
+		findinline "<name>"
+		sayuntil "</name>"
+		findinline "</tag>" 1 1
+		if "<tag"
+			sayoutput "_TEMP_SEP"
+			findinline "<name>"
+			sayuntil "</name>"
+			findinline "</tag>" 1 1
+			if "<tag"
+				sayoutput "_TEMP_SEP"
+				findinline "<name>"
+				sayuntil "</name>"
+				findinline "</tag>" 1 1
+				if "<tag"
+					sayoutput "_TEMP_SEP"
+					findinline "<name>"
+					sayuntil "</name>"
+				endif
+			endif
+		endif
+	endif
+EndIf
+
+# Genre 10
+IfVar "genreLimit" "10"
+	do
+		findinline "</tag>" 1 1
+		if "<tag"
+			sayoutput "_TEMP_SEP"
+			findinline "<name>"
+			sayuntil "</name>"
+		endif
+	while "<tag" 8
+EndIf
+
+#•═══════════════════════════════════════════════════════════════════════════════════════════•
+#  CLEANUP
+#   - Clears temp variables to prevent leakage into other tag fields.
+#•═══════════════════════════════════════════════════════════════════════════════════════════•
+set "_TEMP_SEP"

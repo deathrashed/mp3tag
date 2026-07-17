@@ -1,39 +1,65 @@
 {
-  "bandcamp" : {
-    "maxCoverQuality" : true
+  "MusicBrainz expanded Settings" : {
+    "b_Show_MB_Media_Tracks_Recording_Metadata" : false,
+    "b_Fill_DISCNUMBER" : false,
+    "b_Convert_Status_and_PrimaryType" : true,
+    "b_Show_MB_Nonstandard_Tags" : false
   },
   "SettingBeatport" : {
-    "SettingFeaturingString" : "feat.",
     "SettingGenreRename" : false,
     "SettingInitialkeyFormat" : "Camelot",
     "SettingYearFormat" : "YYYY",
+    "SettingFeaturingString" : "feat.",
     "SettingTrackTotaltracksAppend" : false
   },
-  "" : null,
-  "SettingGenius" : {
-    "SetUNSYNCEDLYRICS" : true,
-    "SettingLineEndingCharacter" : "CR (Mac)"
-  },
   "itunes api" : {
-    "includeTracks" : false,
-    "coverartSize" : "Original quality"
+    "includeTracks" : true,
+    "uncensoredTitles" : true,
+    "coverartSize" : "1200 pixels - 90 %"
   },
-  "apple music" : {
-    "listRadioStations" : true,
-    "coverartSize" : "1200 pixels - 90 %",
-    "addSortTitles" : true,
-    "singleGenre" : true,
-    "skipiTunesTags" : true,
-    "delimiter" : ";",
-    "listPlaylists" : true,
-    "listExtraVideos" : true
+  "SettingGenius" : {
+    "SettingLineEndingCharacter" : "CR (Mac)",
+    "SetUNSYNCEDLYRICS" : true
+  },
+  "lastfm" : {
+    "genreLimit" : "1"
+  },
+  "" : null,
+  "metalarchives" : {
+    "writeCommentField" : true
   },
   "SettingSoundcloud" : {
 
   },
-  "MusicBrainz expanded Settings" : {
-    "b_Convert_Status_and_PrimaryType" : true,
-    "b_Fill_DISCNUMBER" : false,
-    "b_Show_MB_Media_Tracks_Recording_Metadata" : false
+  "apple music" : {
+    "skipiTunesTags" : true,
+    "listRadioStations" : true,
+    "singleGenre" : true,
+    "coverartSize" : "1200 pixels - 90 %",
+    "delimiter" : ";",
+    "listExtraVideos" : true,
+    "listPlaylists" : true,
+    "addSortTitles" : true
+  },
+  "qobuz" : {
+
+  },
+  "metallum" : {
+
+  },
+  "bandcamp" : {
+    "maxCoverQuality" : true
+  },
+  "data" : {
+    "coverSize0" : "Very large  (2000x2000px)",
+    "sourceTag" : true,
+    "totalTracks" : false,
+    "coverUrl" : true,
+    "originalCover" : true,
+    "queryThumb" : "Small  (100x100px)"
+  },
+  "metallumgenres" : {
+    "writeCommentField" : false,
+    "genreSeparator" : "; "
   }
 }

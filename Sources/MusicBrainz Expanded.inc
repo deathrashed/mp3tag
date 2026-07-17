@@ -52,7 +52,7 @@
 #[SearchBy]=will be provided by parent *.src file
 [UserAgent]=1
 [Encoding]=url-utf-8
-[Settings]=MusicBrainz expanded#Settings.settings
+[Settings]=MusicBrainz Expanded#Settings….settings
 [MinAppVersionWin]=3.25c
 
 [ParserScriptIndex]=...
