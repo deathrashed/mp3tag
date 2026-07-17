@@ -71,38 +71,37 @@ This repository contains personal configuration, actions, and source scripts for
 
 ```
 .
-├── .icon/                          # Provider icons for documentation
-├── Actions/                        # Mp3tag action groups (.mta files)
+├── Actions/                        # Mp3tag action groups (.mta + .json)
 │   ├── Action Groups.json          # Master importable bundle (all groups)
 │   ├── Main Actions.json           # Flat collection of top-level F - actions
 │   ├── MTA Guide.md                # .mta file-format reference
 │   ├── README.md                   # What each category does + prefix guide
 │   │
 │   ├── Eksternal/                  # Save actions for the Eksternal library
-│   │   ├── README.md               # Per-action description
-│   │   ├── Eksternal.json          # Master JSON for the group
+│   │   ├── README.md               # What each action does
+│   │   ├── Eksternal.json          # Per-category master JSON
 │   │   ├── E - <Genre>.mta         # 6 standard save actions (no disc)
-│   │   ├── Disc Numbers/           # 6 D - <Genre>.mta + JSON
-│   │   ├── Compilation/            # 6 C - <Genre> - Compilation.mta + JSON
-│   │   └── Splits/                 # 6 S - <Genre> - Split.mta + JSON
+│   │   ├── Disc Numbers/           # D - <Genre>.mta + Disc Numbers.json + README
+│   │   ├── Compilation/            # C - <Genre> - Compilation.mta + .json + README
+│   │   └── Splits/                 # S - <Genre> - Split.mta + .json + README
 │   │
 │   ├── Format/                     # Tag-formatting actions
 │   │   ├── README.md
 │   │   ├── Format.json
 │   │   ├── F - <Action>.mta        # 11 curated top-level actions
-│   │   └── Additional Format/      # 25 extended one-off actions
+│   │   └── Additional Format/      # 25 extended one-off actions + .json + README
 │   │
 │   ├── Genre/                      # One-click GENRE tag setters
 │   │   ├── README.md
 │   │   ├── Genre.json
 │   │   ├── G - <Genre>.mta         # 9 top-level genre presets
-│   │   └── Additional Genres/      # 60+ extended genre presets
+│   │   └── Additional Genres/      # 60+ extended genre presets + .json + README
 │   │
 │   └── Regex/                      # Regex-driven text cleanup
 │       ├── README.md
 │       ├── Regex.json
 │       ├── R - <Action>.mta        # 6 top-level regex actions
-│       └── Additional Regex/       # 15 extended regex actions
+│       └── Additional Regex/       # 15 extended regex actions + .json + README
 │
 ├── Sources/                        # Web sources and supporting files
 │   ├── *.src                       # Standalone tag / cover sources
@@ -111,12 +110,16 @@ This repository contains personal configuration, actions, and source scripts for
 │   ├── Mp3tagSettings/             # Export templates, actions, mp3tag.cfg
 │   └── settings.json               # Runtime settings store (auto-generated)
 │
-├── configure                       # Top-level bash wrapper — run `./configure` for the interactive wizard
+├── Assets/                         # Images, icons, and archives for docs
+│   ├── Icon/                       # Repository branding and folder icons
+│   └── Archive/                    # Legacy README and zipped backups
+│
 ├── Scripts/                        # One-off setup / maintenance scripts
 │   ├── README.md
-│   ├── layouts.py                   # Folder-structure presets (standard, chronological, alphabetical, flat)
-│   └── retarget-paths.py            # Bulk-rewrite personal mount paths and folder layout
+│   ├── layouts.py                  # Folder-structure presets (standard, chronological, alphabetical, flat)
+│   └── retarget-paths.py           # Bulk-rewrite personal mount paths and folder layout
 │
+├── configure                       # Top-level bash wrapper — run `./configure` for the interactive wizard
 └── README.md
 ```
 
@@ -124,11 +127,11 @@ This repository contains personal configuration, actions, and source scripts for
 
 | Folder | What it is |
 | --- | --- |
-| `Actions/` (top) | Master `Action Groups.json` (the file Mp3tag imports), a flat `Main Actions.json` for the most-used `F -` actions, and the `MTA Guide.md` format reference. Each subfolder is a category with its own `README.md`, master `<Category>.json`, and per-action `.mta` scripts. |
-| `Actions/Eksternal/` | Save actions for the Eksternal library at `/Volumes/Eksternal/Audio/`. Hard-codes the maintainer's mount, so retarget before use (see [Scripts](#scripts)). Includes top-level `E -` actions plus `Disc Numbers/`, `Compilation/`, and `Splits/` sub-folders. |
-| `Actions/Format/` | Tag-formatting actions — clean up, normalize, and reorganize tag values. Tag-only, no file paths. Includes an `Additional Format/` sub-folder of one-off actions (BPM, Date, Track, Disc, Compilation tag, Genre cleanup, Title Case Advanced, etc.). |
-| `Actions/Genre/` | One-click `GENRE` tag setters for the library's genre vocabulary. Includes an `Additional Genres/` sub-folder of 60+ extended presets (Alternative, Doom, Grindcore, Hardcore Punk, Industrial, Nu Metal, Progressive, etc.). |
-| `Actions/Regex/` | Regex-driven text normalization actions — replace, regexp, and case-conversion steps that fix common tagging issues across `_TAG` / `_ALL` or specific fields. Includes an `Additional Regex/` sub-folder of 15 extended actions (Clean Whitespace, Fix Common Typos, Fix Contractions, Remove Trailing Info, etc.). |
+| `Actions/` (top) | Master `Action Groups.json` (the file Mp3tag imports), a flat `Main Actions.json` for the most-used `F -` actions, and the `MTA Guide.md` format reference. Each subfolder is a category with its own `README.md` (explaining every action), master `<Category>.json`, and per-action `.mta` scripts. |
+| `Actions/Eksternal/` | Save actions for the Eksternal library at `/Volumes/Eksternal/Audio/`. Hard-codes the maintainer's mount, so retarget before use (see [Scripts](#scripts)). Includes top-level `E -` actions plus `Disc Numbers/`, `Compilation/`, and `Splits/` sub-folders — each with its own `README.md`. |
+| `Actions/Format/` | Tag-formatting actions — clean up, normalize, and reorganize tag values. Tag-only, no file paths. Includes an `Additional Format/` sub-folder with its own `README.md` (BPM, Date, Track, Disc, Compilation tag, Genre cleanup, Title Case Advanced, etc.). |
+| `Actions/Genre/` | One-click `GENRE` tag setters for the library's genre vocabulary. Includes an `Additional Genres/` sub-folder with its own `README.md` covering 60+ extended presets (Alternative, Doom, Grindcore, Hardcore Punk, Industrial, Nu Metal, Progressive, etc.). |
+| `Actions/Regex/` | Regex-driven text normalization actions — replace, regexp, and case-conversion steps that fix common tagging issues. Includes an `Additional Regex/` sub-folder with its own `README.md` (Clean Whitespace, Fix Common Typos, Fix Contractions, Remove Trailing Info, etc.). |
 
 ---
 
@@ -153,21 +156,35 @@ For more information, visit the [official Mp3tag website](https://www.mp3tag.de/
 
 1. **Download**: Get the latest version from the [official website](https://www.mp3tag.de/en/download.html)
 2. **Install**: Follow the installation instructions for macOS
-3. **Configure**: Point Mp3tag to use this repository's actions and sources
-Symlink (or copy) this repository into your Mp3tag application support directory:
+3. **Configure**: Point Mp3tag to use this repository's actions and sources.
+Run the interactive wizard from the repo root to set your own mount path and file-naming layout:
 
 ```bash
-# macOS — Mp3tag reads from this path
-git clone https://github.com/deathrashed/mp3tag.git \
-  ~/Library/Containers/app.mp3tag.Mp3tag/Data/Library/Application\ Support/Mp3tag
+./configure
 ```
 
-Or symlink the `Sources/` folder only:
+This walks you through saving the bundled actions to your own library layout, and gives you the choice of several folder structures (standard, chronological, alphabetical, flat). See [Quick start: `./configure`](#quick-start-configure) for details.
+
+**Copy** the `Sources/` and `Actions/` folders into your Mp3tag application support directory. Symlinks (e.g. `ln -s`) do not work reliably — macOS sandbox restrictions and Mp3tag's file-access model both require the files to be on disk inside the app's data directory.
+
+Mp3tag's data directory depends on where you installed it from:
+
+| Install source | Data directory |
+|---|---|
+| **Website** ([mp3tag.de](https://www.mp3tag.de/en/download.html)) | `~/Library/Application Support/Mp3tag/` |
+| **App Store** | `~/Library/Containers/app.mp3tag.Mp3tag/Data/Library/Application Support/Mp3tag/` |
 
 ```bash
-ln -s ~/mp3tag \
-  ~/Library/Containers/app.mp3tag.Mp3tag/Data/Library/Application\ Support/Mp3tag/Sources
+# Pick the right DATA_DIR for your install (see table above).
+DATA_DIR=~/Library/Application\ Support/Mp3tag
+
+# Copy the folder (run from this repo root).
+cp -R Sources "$DATA_DIR"
+cp -R Actions "$DATA_DIR"
+cp configure "$DATA_DIR"
 ```
+
+After copying, restart Mp3tag. The sources and actions appear in the **Tag Sources** and **Actions** menus automatically.
 ### Basic Usage
 
 1. **Load Files**:
@@ -440,18 +457,17 @@ Fetches lyrics from [genius.com](https://genius.com) and writes them to the `UNS
 ## <img src="https://raw.githubusercontent.com/deathrashed/gupload/main/Uploads/Images/mp3tag-1-white.png" height="20" valign="middle" /> Cover Art Sources
 
 <details>
-<summary><img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/applemusic.svg" height="20" valign="middle" /> <strong>iTunes Cover Art</strong></summary>
+<summary><strong>Show cover art sources…</strong></summary>
+
+### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/applemusic.svg" height="20" valign="middle" /> iTunes Cover Art
 
 **File:** `&Art#&iTunes.src` → `iTunes Artwork.inc`
 
 Searches Apple Music for cover art. Always retrieves the original uncompressed source image at maximum available resolution. No settings required — hardcoded to highest quality.
 
-</details>
-
 ---
 
-<details>
-<summary><img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/deezer.svg" height="20" valign="middle" /> <strong>Deezer Cover Art</strong></summary>
+### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/deezer.svg" height="20" valign="middle" /> Deezer Cover Art
 
 **File:** `&Art#&Deezer.src`
 
@@ -459,12 +475,9 @@ Searches Deezer for album artwork. Returns up to 1200×1200 px JPEG. Parses Deez
 
 **Search by:** Artist + Album
 
-</details>
-
 ---
 
-<details>
-<summary><img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/qobuz.svg" height="20" valign="middle" /> <strong>Qobuz Cover Art</strong></summary>
+### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/qobuz.svg" height="20" valign="middle" /> Qobuz Cover Art
 
 **File:** `&Art#&Qobuz.src` → `Qobuz.inc`
 
@@ -472,12 +485,9 @@ Searches Qobuz for album artwork and extracts the best available image URL from 
 
 **Search by:** AlbumArtist + Album
 
-</details>
-
 ---
 
-<details>
-<summary><img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/soundcloud.svg" height="20" valign="middle" /> <strong>Soundcloud Cover Art</strong></summary>
+### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/soundcloud.svg" height="20" valign="middle" /> Soundcloud Cover Art
 
 **File:** `&Art#&Soundcloud.src` → `Soundcloud Artwork.inc`
 
@@ -487,7 +497,9 @@ Fetches SoundCloud track or artist artwork by artist name and title, or by direc
 
 ## Actions
 
-This repo ships a curated set of action groups under `Actions/`, plus a single bundled import file `Actions/Action Groups.json`. They are organised by the first letter of the group name, which doubles as the keyboard accelerator shown in Mp3tag's **Actions** menu:
+This repo ships a curated set of action groups under `Actions/`. Each category is a subfolder with a `README.md` explaining every action, a `<Category>.json` file containing the group definition, and per-action `<Prefix> - <Name>.mta` scripts. The master importable bundle `Actions/Action Groups.json` combines all groups in a single file that Mp3tag can import directly.
+
+Actions are organised by the first letter of the group name, which doubles as the keyboard accelerator shown in Mp3tag's **Actions** menu:
 
 | Prefix | Category | Purpose |
 |---|---|---|
