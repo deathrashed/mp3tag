@@ -1,0 +1,304 @@
+# Mp3tag Web Source for Metal Archives band genres.
+# Uses Metal Archives directly; no local server required.
+
+[Name]=Metallum Genres
+[BasedOn]=www.metal-archives.com
+[IndexUrl]=https://www.metal-archives.com/search/ajax-band-search/?field=name&query=%s
+[AlbumUrl]=
+[WordSeperator]=+
+[IndexFormat]=%_url%|%Artist%|%Genre%|%Metal Archives Country%
+[SearchBy]=%artist%
+[Encoding]=utf-8
+[Settings]=Metallum Genres#Settings.settings
+
+[ParserScriptIndex]=...
+findline "<a href=\\\""
+do
+    # Band URL
+    findinline "<a href=\\\""
+    sayuntil "\\\""
+    say "|"
+
+    # Artist
+    findinline "\\\">"
+    sayuntil "<"
+    say "|"
+
+    # Genre
+    moveline 1
+    replace "\"" ""
+    replace "," ""
+    IfVar "keepEraDescriptions" "false"
+        regexpreplace "\s*\([^)]*\)" ""
+    EndIf
+    replace "Progressive Death/Thrash Metal" "Progressive Death/Thrash; Progressive Metal; Death Metal; Thrash Metal"
+    replace "Blackened Death/Thrash Metal" "Blackened Death/Thrash; Black Metal; Death Metal; Thrash Metal"
+    replace "Death/Thrash Metal" "Death/Thrash; Death Metal; Thrash Metal"
+    replace "Thrash/Death Metal" "Thrash/Death; Thrash Metal; Death Metal"
+    replace "Black/Death Metal" "Black/Death; Black Metal; Death Metal"
+    replace "Death/Black Metal" "Death/Black; Death Metal; Black Metal"
+    replace "Black/Thrash Metal" "Black/Thrash; Black Metal; Thrash Metal"
+    replace "Thrash/Black Metal" "Thrash/Black; Thrash Metal; Black Metal"
+    replace "Death/Doom Metal" "Death/Doom; Death Metal; Doom Metal"
+    replace "Doom/Death Metal" "Doom/Death; Doom Metal; Death Metal"
+    replace "Death/Grind Metal" "Deathgrind; Death Metal; Grindcore"
+    replace "Death/Grind" "Deathgrind; Death Metal; Grindcore"
+    replace "Grind/Death Metal" "Deathgrind; Grindcore; Death Metal"
+    replace "Grind/Death" "Deathgrind; Grindcore; Death Metal"
+    replace "Death Metal/Grindcore" "Deathgrind; Death Metal; Grindcore"
+    replace "Grindcore/Death Metal" "Deathgrind; Grindcore; Death Metal"
+    replace "Death/Hardcore" "Deathcore; Death Metal; Hardcore"
+    replace "Black/Grind" "Blackgrind; Black Metal; Grindcore"
+    replace "Heavy/Power Metal" "Heavy Metal; Power Metal"
+    replace "Power/Heavy Metal" "Power Metal; Heavy Metal"
+    replace "Heavy/Thrash Metal" "Heavy Metal; Thrash Metal"
+    replace "Thrash/Heavy Metal" "Thrash Metal; Heavy Metal"
+    replace "Speed/Thrash Metal" "Speed Metal; Thrash Metal"
+    replace "Thrash/Speed Metal" "Thrash Metal; Speed Metal"
+    replace "Raw Black Metal" "Black Metal"
+    replace "Epic Doom Metal" "Doom Metal"
+    replace "Avant-Garde" "Avantgarde"
+    replace "/" "; "
+    IfVar "deduplicateGenres" "true"
+        regexpreplace "(?i)\b([^;]+);\s*\1\b" "$1"
+        regexpreplace "(?i)\b([^;]+);\s*([^;]+(;\s*[^;]+)*);\s*\1\b" "$1; $2"
+        regexpreplace "(?i)\b([^;]+);\s*\1\b" "$1"
+        regexpreplace "(?i)\b([^;]+);\s*([^;]+(;\s*[^;]+)*);\s*\1\b" "$1; $2"
+        regexpreplace "^\s*;\s*|\s*;\s*$" ""
+        regexpreplace "\s*;\s*" "; "
+    EndIf
+    IfVar "genreSeparator" "/"
+        replace "; " "/"
+    EndIf
+    IfVar "genreSeparator" " / "
+        replace "; " " / "
+    EndIf
+    IfVar "genreSeparator" ", "
+        replace "; " ", "
+    EndIf
+    IfVar "genreSeparator" "\\"
+        replace "; " "\\"
+    EndIf
+    sayrest
+    say "|"
+
+    # Country
+    moveline 1
+    replace "\"" ""
+    replace "," ""
+    sayrest
+    saynewline
+
+    findline "<a href=\\\"" 1 1
+    unspace
+while "\"<a href" 500
+
+[ParserScriptAlbum]=...
+findline "id=\"band_stats\""
+
+outputto "Artist"
+gotoline 1
+findline "<h1 class=\"band_name\">"
+regexpreplace "<[^>]+>" ""
+sayrest
+
+outputto "Genre"
+findline "<dt>Genre:</dt>"
+moveline 1 1
+regexpreplace "<[^>]+>" ""
+IfVar "keepEraDescriptions" "false"
+    regexpreplace "\s*\([^)]*\)" ""
+EndIf
+replace "Progressive Death/Thrash Metal" "Progressive Death/Thrash; Progressive Metal; Death Metal; Thrash Metal"
+replace "Blackened Death/Thrash Metal" "Blackened Death/Thrash; Black Metal; Death Metal; Thrash Metal"
+replace "Death/Thrash Metal" "Death/Thrash; Death Metal; Thrash Metal"
+replace "Thrash/Death Metal" "Thrash/Death; Thrash Metal; Death Metal"
+replace "Black/Death Metal" "Black/Death; Black Metal; Death Metal"
+replace "Death/Black Metal" "Death/Black; Death Metal; Black Metal"
+replace "Black/Thrash Metal" "Black/Thrash; Black Metal; Thrash Metal"
+replace "Thrash/Black Metal" "Thrash/Black; Thrash Metal; Black Metal"
+replace "Death/Doom Metal" "Death/Doom; Death Metal; Doom Metal"
+replace "Doom/Death Metal" "Doom/Death; Doom Metal; Death Metal"
+replace "Death/Grind Metal" "Deathgrind; Death Metal; Grindcore"
+replace "Death/Grind" "Deathgrind; Death Metal; Grindcore"
+replace "Grind/Death Metal" "Deathgrind; Grindcore; Death Metal"
+replace "Grind/Death" "Deathgrind; Grindcore; Death Metal"
+replace "Death Metal/Grindcore" "Deathgrind; Death Metal; Grindcore"
+replace "Grindcore/Death Metal" "Deathgrind; Grindcore; Death Metal"
+replace "Death/Hardcore" "Deathcore; Death Metal; Hardcore"
+replace "Black/Grind" "Blackgrind; Black Metal; Grindcore"
+replace "Heavy/Power Metal" "Heavy Metal; Power Metal"
+replace "Power/Heavy Metal" "Power Metal; Heavy Metal"
+replace "Heavy/Thrash Metal" "Heavy Metal; Thrash Metal"
+replace "Thrash/Heavy Metal" "Thrash Metal; Heavy Metal"
+replace "Speed/Thrash Metal" "Speed Metal; Thrash Metal"
+replace "Thrash/Speed Metal" "Thrash Metal; Speed Metal"
+replace "Raw Black Metal" "Black Metal"
+replace "Epic Doom Metal" "Doom Metal"
+replace "Avant-Garde" "Avantgarde"
+replace "/" "; "
+regexpreplace "\s*;\s*" "; "
+IfVar "deduplicateGenres" "true"
+    regexpreplace "(?i)\b([^;]+);\s*\1\b" "$1"
+    regexpreplace "(?i)\b([^;]+);\s*([^;]+(;\s*[^;]+)*);\s*\1\b" "$1; $2"
+    regexpreplace "(?i)\b([^;]+);\s*\1\b" "$1"
+    regexpreplace "(?i)\b([^;]+);\s*([^;]+(;\s*[^;]+)*);\s*\1\b" "$1; $2"
+    regexpreplace "^\s*;\s*|\s*;\s*$" ""
+    regexpreplace "\s*;\s*" "; "
+EndIf
+IfVar "genreSeparator" "/"
+    replace "; " "/"
+EndIf
+IfVar "genreSeparator" " / "
+    replace "; " " / "
+EndIf
+IfVar "genreSeparator" ", "
+    replace "; " ", "
+EndIf
+IfVar "genreSeparator" "\\"
+    replace "; " "\\"
+EndIf
+sayrest
+
+# Current lineup -> Composer
+outputto "Composer"
+gotoline 1
+findline "id=\"band_tab_members_current\"" 1 1
+if "id=\"band_tab_members_current\""
+    findline "class=\"lineupRow\"" 1 1
+    do
+        findline "class=\"bold\"" 1 1
+        regexpreplace "<[^>]+>" ""
+        regexpreplace "\s+" " "
+        sayrest
+        say " - "
+        findline "<td>" 1 1
+        moveline 1 1
+        replace "&nbsp;" " "
+        regexpreplace "<[^>]+>" ""
+        regexpreplace "\s+" " "
+        sayrest
+        findline "class=\"lineupRow\"" 1 1
+        if "class=\"lineupRow\""
+            say "; "
+        endif
+    while "class=\"lineupRow\"" 20
+endif
+
+IfVar "writeDedicatedTags" "true"
+    # Country
+    outputto "Metal Archives Country"
+    gotoline 1
+    findline "<dt>Country of origin:</dt>" 1
+    if "<dt>Country of origin:</dt>"
+        moveline 1 1
+        regexpreplace "<[^>]+>" ""
+        sayrest
+    endif
+
+    # Location
+    outputto "Metal Archives Location"
+    gotoline 1
+    findline "<dt>Location:</dt>" 1
+    if "<dt>Location:</dt>"
+        moveline 1 1
+        regexpreplace "<[^>]+>" ""
+        sayrest
+    endif
+
+    # Status
+    outputto "Metal Archives Status"
+    gotoline 1
+    findline "<dt>Status:</dt>" 1
+    if "<dt>Status:</dt>"
+        moveline 1 1
+        regexpreplace "<[^>]+>" ""
+        sayrest
+    endif
+
+    # Formed in
+    outputto "Metal Archives Formed"
+    gotoline 1
+    findline "<dt>Formed in:</dt>" 1
+    if "<dt>Formed in:</dt>"
+        moveline 1 1
+        regexpreplace "<[^>]+>" ""
+        sayrest
+    endif
+
+    # Themes
+    outputto "Metal Archives Themes"
+    gotoline 1
+    findline "<dt>Themes:</dt>" 1
+    if "<dt>Themes:</dt>"
+        moveline 1 1
+        regexpreplace "<[^>]+>" ""
+        sayrest
+    endif
+
+    # Band URL
+    outputto "METAL ARCHIVES BAND URL"
+    sayoutput "CurrentUrl"
+EndIf
+
+IfVar "writeCommentField" "true"
+    outputto "Comment"
+    gotoline 1
+    findline "<dt>Country of origin:</dt>" 1
+    if "<dt>Country of origin:</dt>"
+        moveline 1 1
+        regexpreplace "<[^>]+>" ""
+        say "Country: "
+        sayrest
+        saynewline
+    endif
+
+    findline "<dt>Location:</dt>" 1
+    if "<dt>Location:</dt>"
+        moveline 1 1
+        regexpreplace "<[^>]+>" ""
+        say "Location: "
+        sayrest
+        saynewline
+    endif
+
+    findline "<dt>Status:</dt>" 1
+    if "<dt>Status:</dt>"
+        moveline 1 1
+        regexpreplace "<[^>]+>" ""
+        say "Status: "
+        sayrest
+        saynewline
+    endif
+
+    findline "<dt>Formed in:</dt>" 1
+    if "<dt>Formed in:</dt>"
+        moveline 1 1
+        regexpreplace "<[^>]+>" ""
+        say "Formed in: "
+        sayrest
+        saynewline
+    endif
+
+    findline "<dt>Themes:</dt>" 1
+    if "<dt>Themes:</dt>"
+        moveline 1 1
+        regexpreplace "<[^>]+>" ""
+        say "Themes: "
+        sayrest
+        saynewline
+    endif
+
+    say "Metal Archives Band URL: "
+    sayoutput "CurrentUrl"
+EndIf
+
+# Publisher (always write, standard tag)
+outputto "Publisher"
+gotoline 1
+findline "<dt>Current label:</dt>" 1
+if "<dt>Current label:</dt>"
+    moveline 1 1
+    regexpreplace "<[^>]+>" ""
+    sayrest
+endif

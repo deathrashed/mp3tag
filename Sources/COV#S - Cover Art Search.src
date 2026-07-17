@@ -1,0 +1,32 @@
+# COV (Cover Art Viewer) Web Source for Mp3tag
+# This source shows available cover art from COV but cannot download them interactively
+# For actual downloading, use the covit-preset system from terminal
+
+[Name]=COV Cover Art Search
+[BasedOn]=https://covers.musichoarders.xyz/
+[IndexUrl]=https://covers.musichoarders.xyz/search?artist=%artist%&album=%album%
+[AlbumUrl]=https://covers.musichoarders.xyz/
+[SearchBy]=Search for||%artist% %album%||%s
+[WordSeparator]=+
+[Encoding]=url-utf-8
+[IndexFormat]=%_url%|%_coverurl%|%Title%|%Artist%|%Source%|%Resolution%
+[MinAppVersionMac]=1.8.4
+[MinAppVersionWin]=3.22
+
+[ParserScriptIndex]=...
+# This is a placeholder - COV requires JavaScript and interactive selection
+# Web sources cannot handle the interactive nature of COV
+# Use covit-preset or covf from terminal instead
+
+# The following is just to show that this source exists but won't work
+# COV requires browser interaction which web sources cannot provide
+
+[ParserScriptAlbum]=...
+# No album parsing - COV is interactive
+
+# NOTE: This web source is non-functional because:
+# 1. COV requires JavaScript and user interaction
+# 2. Mp3tag web sources are for automated parsing only
+# 3. Use the terminal commands instead:
+#    - covf /path/to/folder (saves cover.jpg and embeds)
+#    - covit-preset quick /path/to/file (opens browser for selection)
