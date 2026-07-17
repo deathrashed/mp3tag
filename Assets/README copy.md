@@ -73,8 +73,7 @@ This repository contains personal configuration, actions, and source scripts for
 
 ---
 
-<details>
-<summary><strong>Repository Structure</strong> — click to expand the full directory tree</summary>
+## Repository Structure
 
 ```
 .
@@ -129,8 +128,6 @@ This repository contains personal configuration, actions, and source scripts for
 ├── configure                       # Top-level bash wrapper — run `./configure` for the interactive wizard
 └── README.md
 ```
-
-</details>
 
 ### Actions folder at a glance
 
@@ -228,9 +225,6 @@ After copying, restart Mp3tag. The sources and actions appear in the **Tag Sourc
 
 ## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> How to Edit Tags in Mp3tag
 
-<details>
-<summary><strong>Show beginner guide…</strong></summary>
-
 ### Manual Tag Editing
 
 1. **Select Files**: Click on files in the file list (use `Cmd+Click` for multiple files)
@@ -266,16 +260,12 @@ Actions can:
 2. Select an action group
 3. Select files and run the action
 
-</details>
-
 ---
 
 ## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Tag Sources
 
 <details>
-<summary><strong>Show tag sources…</strong></summary>
-
-### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/applemusic.svg" height="20" valign="middle" /> iTunes+
+<summary><img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/applemusic.svg" height="20" valign="middle" /> <strong>iTunes+</strong></summary>
 
 **Files:** `iTunes+#S - iTunes+.src` · `iTunes+#Settings….settings` · `iTunes API v2.inc` · `iTunes Artwork.inc`
 
@@ -291,13 +281,12 @@ Searches the Apple Music / iTunes Store catalog via the iTunes Search API. Retur
 
 **Search by:** Artist + Album (or fallback to folder names)
 
----
+</details>
 
 ---
 
----
-
-### <img src="https://raw.githubusercontent.com/deathrashed/gupload/main/Uploads/Images/metallum-white.svg" height="20" valign="middle" /> Metal Archives — Tag Sources
+<details>
+<summary><img src="https://raw.githubusercontent.com/deathrashed/gupload/main/Uploads/Images/metallum-white.svg" height="20" valign="middle" /> <strong>Metal Archives — Tag Sources</strong></summary>
 
 **Files:** `Me&tal Archives#S - Search by Band.src` · `Me&tal Archives#S - Search by Band + Album.src` · `Me&tal Archives#S - Search by Album.src`
 
@@ -311,13 +300,12 @@ Three search modes for fetching complete release metadata from [metal-archives.c
 
 Returns: Title, Artist, Album, Year, Genre, Country, Label, Catalog Number, and track listing.
 
----
+</details>
 
 ---
 
----
-
-### <img src="https://raw.githubusercontent.com/deathrashed/gupload/main/Uploads/Images/metallum-icon-white-ring.png" height="20" valign="middle" /> Metallum Genres
+<details>
+<summary><img src="https://raw.githubusercontent.com/deathrashed/gupload/main/Uploads/Images/metallum-icon-white-ring.png" height="20" valign="middle" /> <strong>Metallum Genres</strong></summary>
 
 **Files:** `Metallum Genres#S - Metallum Genres.src` · `Metallum Genres#Settings….settings`
 
@@ -338,13 +326,12 @@ Standalone genre-only source querying Metal Archives directly. Designed to run a
 replace "Original Text" "Replacement Text"
 ```
 
----
+</details>
 
 ---
 
----
-
-### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/lastfm.svg" height="20" valign="middle" /> Last.fm Genres
+<details>
+<summary><img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/lastfm.svg" height="20" valign="middle" /> <strong>Last.fm Genres</strong></summary>
 
 **Files:** `Last.fm#S - Last.fm Genres.src` · `Last.fm#Settings….settings`
 
@@ -359,13 +346,12 @@ Fetches an artist's top tags from the Last.fm API and writes them as genre tags.
 
 > Uses the Last.fm `artist.gettoptags` endpoint with a public embedded API key.
 
----
+</details>
 
 ---
 
----
-
-### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/musicbrainz.svg" height="20" valign="middle" /> MusicBrainz Expanded
+<details>
+<summary><img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/musicbrainz.svg" height="20" valign="middle" /> <strong>MusicBrainz Expanded</strong></summary>
 
 **Files:** `MusicBrainz Expanded.inc` + 7 `.src` entry points · `MusicBrainz Expanded#Settings….settings`
 
@@ -392,13 +378,12 @@ Returns: Artist, AlbumArtist, Album, Year, Genre, Label, Country, Media type, Ca
 | Convert status and primary type | `true` | Normalise release type/status strings |
 | Show MB nonstandard tags | `false` | Include `MUSICBRAINZ_*` ID fields |
 
----
+</details>
 
 ---
 
----
-
-### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/bandcamp.svg" height="20" valign="middle" /> Bandcamp
+<details>
+<summary><img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/bandcamp.svg" height="20" valign="middle" /> <strong>Bandcamp</strong></summary>
 
 **Files:** `Bandcamp#S - Bandcamp by &Album.src` · `Bandcamp#S - Bandcamp by &All.src` · `Bandcamp#S - Bandcamp by &Track.src` · `Bandcamp#S - Bandcamp by &URL.src` · `Bandcamp#ParserScriptAlbum.inc` · `Bandcamp#Settings….settings`
 
@@ -413,13 +398,12 @@ Fetches metadata directly from Bandcamp release pages.
 
 Returns: Title, Artist, AlbumArtist, Album, Year, Genre, Label, Track number, and cover art.
 
----
+</details>
 
 ---
 
----
-
-### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/qobuz.svg" height="20" valign="middle" /> Qobuz
+<details>
+<summary><img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/qobuz.svg" height="20" valign="middle" /> <strong>Qobuz</strong></summary>
 
 **Files:** `Qobuz.inc` · `&Qobuz#S - Qobuz AU.src` · `&Qobuz#S - Qobuz US.src` · `&Qobuz#Settings….settings`
 
@@ -427,13 +411,12 @@ Full metadata source for Qobuz with regional entry points (AU and US) sharing a 
 
 Returns: Title, Artist, AlbumArtist, Album, Year, Genre, Label, Track number, Disc number, Composer, Lyricist, Credits, Publisher, ISRC, and high-resolution cover art.
 
----
+</details>
 
 ---
 
----
-
-### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/deezer.svg" height="20" valign="middle" /> Deezer
+<details>
+<summary><img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/deezer.svg" height="20" valign="middle" /> <strong>Deezer</strong></summary>
 
 **Files:** `Deezer#S - Deezer by Album.src` · `Deezer#S - Deezer by Title.src`
 
@@ -444,13 +427,12 @@ Returns: Title, Artist, AlbumArtist, Album, Year, Genre, Label, Track number, Di
 
 Returns: Title, Artist, AlbumArtist, Album, Year, Genre, Track number, and cover art.
 
----
+</details>
 
 ---
 
----
-
-### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/soundcloud.svg" height="20" valign="middle" /> Soundcloud
+<details>
+<summary><img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/soundcloud.svg" height="20" valign="middle" /> <strong>Soundcloud</strong></summary>
 
 **Files:** `Soundcloud.inc` · `Soundcloud#S - Soundcloud Search.src` · `Soundcloud Artwork.inc` · `Soundcloud#Settings….settings`
 
@@ -458,13 +440,12 @@ Searches SoundCloud for tracks and retrieves metadata.
 
 Returns: Title, Artist, Year, Genre, Description, and cover art.
 
----
+</details>
 
 ---
 
----
-
-### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/genius.svg" height="20" valign="middle" /> Genius Lyrics
+<details>
+<summary><img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/genius.svg" height="20" valign="middle" /> <strong>Genius Lyrics</strong></summary>
 
 **Files:** `Genius#Lyrics.inc` · `Genius#S - Genius Lyrics.src` · `Genius#Settings….settings`
 
@@ -534,8 +515,7 @@ Actions are organised by the first letter of the group name, which doubles as th
 | `D` | **Disc Numbers** | Filename templates that include a `Disc N/` subfolder |
 | `E` | **Eksternal** | Maintainer's personal export templates (no `Disc/` subfolder) |
 
-<details>
-<summary><strong>Show bundled actions…</strong> (26 actions across 5 groups)</summary>
+The bundled action groups in this repo:
 
 | Action | Purpose |
 |---|---|
@@ -578,8 +558,6 @@ Actions are organised by the first letter of the group name, which doubles as th
 | `E - Miscellaneous` | Catch-all (flat, no `Disc/`) |
 | `E - Punk & Hardcore` | Punk & Hardcore exports (flat, no `Disc/`) |
 | `E - Rock & Grunge` | Rock & Grunge exports (flat, no `Disc/`) |
-
-</details>
 
 Apply actions via **Actions → Actions…** (`⌥6`). For the technical reference on `.mta` syntax and `T=` action types, see [Creating and Editing Actions](#creating-and-editing-actions-mta-files).
 
@@ -808,9 +786,6 @@ Repeat for any other `.mta` file you want to change. When you're done, edit (or 
 
 ## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Settings System
 
-<details>
-<summary><strong>Show settings reference…</strong></summary>
-
 All sources use Mp3tag's native `.settings` JSON panel system. Settings files follow the naming convention:
 
 ```
@@ -819,14 +794,9 @@ SourceName#Settings….settings
 
 The `….` (ellipsis `U+2026`) distinguishes settings files from other `.settings` files. Settings are loaded automatically when you open a source's settings dialog and stored persistently in `settings.json`.
 
-</details>
-
 ---
 
 ## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> File Naming Conventions
-
-<details>
-<summary><strong>Show naming conventions…</strong></summary>
 
 | Convention | Meaning |
 |---|---|
@@ -836,14 +806,9 @@ The `….` (ellipsis `U+2026`) distinguishes settings files from other `.setting
 | `.inc` | Shared include file — not standalone, included by `.src` files |
 | `.src` | Standalone source file |
 
-</details>
-
 ---
 
 ## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Creating and Editing Actions (.mta Files)
-
-<details>
-<summary><strong>Show action creation guide…</strong></summary>
 
 Actions are stored as `.mta` files in the `Actions/` directory. Each file contains one or more action definitions in a numbered INI-like format:
 
@@ -892,14 +857,9 @@ F=_ALL
 
 For detailed action type documentation, see `Actions/MTA Guide.md` in this repository.
 
-</details>
-
 ---
 
 ## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Creating Web Sources (.src Files)
-
-<details>
-<summary><strong>Show web source creation guide…</strong></summary>
 
 Source files use an INI-like format:
 
@@ -944,14 +904,9 @@ Source files use an INI-like format:
 
 For full documentation, see the [Mp3tag Tag Sources documentation](https://docs.mp3tag.de/tag-sources/).
 
-</details>
-
 ---
 
 ## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Scripting in Mp3tag
-
-<details>
-<summary><strong>Show scripting reference…</strong></summary>
 
 Mp3tag supports scripting functions in format strings, actions, and filters.
 
@@ -986,8 +941,6 @@ F=TITLE
 ```
 
 See the full [Mp3tag Scripting Documentation](https://docs.mp3tag.de/scripting/functions/).
-
-</details>
 
 ---
 
