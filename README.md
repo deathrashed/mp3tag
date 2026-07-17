@@ -1,5 +1,6 @@
 <div align="center">
-<img src="https://raw.githubusercontent.com/deathrashed/gupload/main/Uploads/Images/mp3tag-ring.png" width="450" alt="Mp3tag" />
+<img src="Assets/Icon/mp3tag-ring-2.png" width="400" alt="Mp3tag" />
+
 
 
 # deathrashed / mp3tag
@@ -8,8 +9,13 @@
 
 Modular tag sources for streaming services, music databases, cover art, lyrics, and genres — each with a configurable settings panel and consistent comment style.
 
-[![macOS](https://img.shields.io/badge/macOS-000000?logo=apple&logoColor=white)](https://www.mp3tag.de/en/mac.html)
-[![Mp3tag](https://img.shields.io/badge/Mp3tag-v3.28%2B-blue)](https://www.mp3tag.de/en/)
+[![MP3TAG](https://img.shields.io/badge/Mp3tag%20—%20v3.28%2B-1e1e1e?style=for-the-badge&logo=applemusic&logoColor=white)](https://www.mp3tag.de/en/)
+[![PLATFORM](https://img.shields.io/badge/macOS-1e1e1e?style=for-the-badge&logo=apple&logoColor=white)](https://www.apple.com/macos/)
+[![CONFIGURE](https://img.shields.io/badge/interactive%20wizard-1e1e1e?style=for-the-badge&logo=gnubash&logoColor=white)](./configure)
+
+[![SOURCES](https://img.shields.io/badge/tag%20sources%20—%2028+-1e1e1e?style=for-the-badge&logo=audiomack&logoColor=white)](./Sources)
+[![ACTIONS](https://img.shields.io/badge/action%20groups%20—%2012+-1e1e1e?style=for-the-badge&logo=audiomack&logoColor=white)](./Actions)
+[![GENRES](https://img.shields.io/badge/genre%20presets%20—%2070%2B-1e1e1e?style=for-the-badge&logo=audiomack&logoColor=white)](./Actions/Genre)
 
 </div>
 
@@ -135,7 +141,7 @@ This repository contains personal configuration, actions, and source scripts for
 
 ---
 
-## <img src="https://raw.githubusercontent.com/deathrashed/gupload/main/Uploads/Images/mp3tag-1-white.png" height="20" valign="middle" /> What is Mp3tag?
+## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> What is Mp3tag?
 
 Mp3tag is a metadata editor for audio files that allows you to:
 
@@ -150,7 +156,7 @@ For more information, visit the [official Mp3tag website](https://www.mp3tag.de/
 
 ---
 
-## <img src="https://raw.githubusercontent.com/deathrashed/gupload/main/Uploads/Images/mp3tag-1-white.png" height="20" valign="middle" /> Getting Started
+## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Getting Started
 
 ### Installation
 
@@ -217,7 +223,7 @@ After copying, restart Mp3tag. The sources and actions appear in the **Tag Sourc
 
 ---
 
-## <img src="https://raw.githubusercontent.com/deathrashed/gupload/main/Uploads/Images/mp3tag-1-white.png" height="20" valign="middle" /> How to Edit Tags in Mp3tag
+## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> How to Edit Tags in Mp3tag
 
 ### Manual Tag Editing
 
@@ -256,7 +262,7 @@ Actions can:
 
 ---
 
-## <img src="https://raw.githubusercontent.com/deathrashed/gupload/main/Uploads/Images/mp3tag-1-white.png" height="20" valign="middle" /> Tag Sources
+## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Tag Sources
 
 <details>
 <summary><img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/applemusic.svg" height="20" valign="middle" /> <strong>iTunes+</strong></summary>
@@ -454,7 +460,7 @@ Fetches lyrics from [genius.com](https://genius.com) and writes them to the `UNS
 
 </details>
 
-## <img src="https://raw.githubusercontent.com/deathrashed/gupload/main/Uploads/Images/mp3tag-1-white.png" height="20" valign="middle" /> Cover Art Sources
+## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Cover Art Sources
 
 <details>
 <summary><strong>Show cover art sources…</strong></summary>
@@ -495,7 +501,7 @@ Fetches SoundCloud track or artist artwork by artist name and title, or by direc
 
 </details>
 
-## Actions
+## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Actions
 
 This repo ships a curated set of action groups under `Actions/`. Each category is a subfolder with a `README.md` explaining every action, a `<Category>.json` file containing the group definition, and per-action `<Prefix> - <Name>.mta` scripts. The master importable bundle `Actions/Action Groups.json` combines all groups in a single file that Mp3tag can import directly.
 
@@ -641,7 +647,7 @@ For a one-shot bulk rewrite that handles every `.mta` and JSON file in one pass,
 
 ---
 
-## <img src="https://raw.githubusercontent.com/deathrashed/gupload/main/Uploads/Images/mp3tag-1-white.png" height="20" valign="middle" /> Scripts
+## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Scripts
 
 One-off setup and maintenance scripts that ship with the repo. None of them are required for day-to-day Mp3tag use — they exist to make retargeting, syncing, and other bulk edits easier.
 
@@ -778,7 +784,7 @@ Repeat for any other `.mta` file you want to change. When you're done, edit (or 
 
 ---
 
-## <img src="https://raw.githubusercontent.com/deathrashed/gupload/main/Uploads/Images/mp3tag-1-white.png" height="20" valign="middle" /> Settings System
+## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Settings System
 
 All sources use Mp3tag's native `.settings` JSON panel system. Settings files follow the naming convention:
 
@@ -790,7 +796,7 @@ The `….` (ellipsis `U+2026`) distinguishes settings files from other `.setting
 
 ---
 
-## <img src="https://raw.githubusercontent.com/deathrashed/gupload/main/Uploads/Images/mp3tag-1-white.png" height="20" valign="middle" /> File Naming Conventions
+## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> File Naming Conventions
 
 | Convention | Meaning |
 |---|---|
@@ -802,7 +808,7 @@ The `….` (ellipsis `U+2026`) distinguishes settings files from other `.setting
 
 ---
 
-## <img src="https://raw.githubusercontent.com/deathrashed/gupload/main/Uploads/Images/mp3tag-1-white.png" height="20" valign="middle" /> Creating and Editing Actions (.mta Files)
+## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Creating and Editing Actions (.mta Files)
 
 Actions are stored as `.mta` files in the `Actions/` directory. Each file contains one or more action definitions in a numbered INI-like format:
 
@@ -853,7 +859,7 @@ For detailed action type documentation, see `Actions/MTA Guide.md` in this repos
 
 ---
 
-## <img src="https://raw.githubusercontent.com/deathrashed/gupload/main/Uploads/Images/mp3tag-1-white.png" height="20" valign="middle" /> Creating Web Sources (.src Files)
+## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Creating Web Sources (.src Files)
 
 Source files use an INI-like format:
 
@@ -900,7 +906,7 @@ For full documentation, see the [Mp3tag Tag Sources documentation](https://docs.
 
 ---
 
-## <img src="https://raw.githubusercontent.com/deathrashed/gupload/main/Uploads/Images/mp3tag-1-white.png" height="20" valign="middle" /> Scripting in Mp3tag
+## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Scripting in Mp3tag
 
 Mp3tag supports scripting functions in format strings, actions, and filters.
 
@@ -938,7 +944,7 @@ See the full [Mp3tag Scripting Documentation](https://docs.mp3tag.de/scripting/f
 
 ---
 
-## <img src="https://raw.githubusercontent.com/deathrashed/gupload/main/Uploads/Images/mp3tag-1-white.png" height="20" valign="middle" /> Additional Resources
+## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Additional Resources
 
 - **[Mp3tag Official Website](https://www.mp3tag.de/en/)**: Download and general information
 - **[Mp3tag Documentation](https://docs.mp3tag.de/)**: Comprehensive user guide
