@@ -27,42 +27,11 @@ Modular tag sources for streaming services, music databases, cover art, lyrics, 
 - [Repository Structure](#repository-structure)
 - [What is Mp3tag?](#what-is-mp3tag)
 - [Getting Started](#getting-started)
-- [Tag Sources](#tag-sources)
-  - [iTunes+](#-itunes)
-  - [Metal Archives](#-metal-archives--tag-sources)
-  - [Metallum Genres](#-metallum-genres)
-  - [Last.fm Genres](#-lastfm-genres)
-  - [MusicBrainz Expanded](#-musicbrainz-expanded)
-  - [Bandcamp](#-bandcamp)
-  - [Qobuz](#-qobuz)
-  - [Deezer](#-deezer)
-  - [Soundcloud](#-soundcloud)
-  - [Genius Lyrics](#-genius-lyrics)
-- [Cover Art Sources](#cover-art-sources)
-  - [iTunes Cover Art](#-itunes-cover-art)
-  - [Deezer Cover Art](#-deezer-cover-art-1)
-  - [Qobuz Cover Art](#-qobuz-cover-art-1)
-  - [Soundcloud Cover Art](#-soundcloud-cover-art-1)
-  - [COV — Cover Art Search](#cov--cover-art-search)
-- [Actions](#actions)
-  - [Why the `S - ` / `F - ` / `D - ` prefixes?](#why-the-s-----f-----d---prefixes)
-  - [Importing the bundled action groups](#importing-the-bundled-action-groups)
-  - [Disc Number actions](#disc-number-actions-d---)
-  - [External (Export) actions](#external-export-actions-e---)
-  - [Adapting the export templates](#adapting-the-export-templates)
-- [Scripts](#scripts)
-  - [Quick start: `./configure`](#quick-start-configure)
-  - [Interactive wizard](#interactive-wizard)
-  - [Layout presets](#layout-presets)
-  - [Non-interactive use](#non-interactive-use-scripting--ci)
-  - [After running](#after-running)
-  - [Editing `.mta` files manually](#editing-mta-files-manually)
-- [Settings System](#settings-system)
-- [File Naming Conventions](#file-naming-conventions)
-- [Creating and Editing Actions](#creating-and-editing-actions-mta-files)
-- [Creating Web Sources](#creating-web-sources-src-files)
-- [Scripting in Mp3tag](#scripting-in-mp3tag)
-- [Git Workflow](#git-workflow)
+- [SOURCES](#sources)
+- [ACTIONS](#actions)
+- [SCRIPTS](#scripts)
+- [SETTINGS](#settings)
+- [GUIDES](#guides)
 - [Additional Resources](#additional-resources)
 
 ---
@@ -143,7 +112,6 @@ This repository contains personal configuration, actions, and source scripts for
 | `Actions/Regex/` | Regex-driven text normalization actions — replace, regexp, and case-conversion steps that fix common tagging issues. Includes an `Additional Regex/` sub-folder with its own `README.md` (Clean Whitespace, Fix Common Typos, Fix Contractions, Remove Trailing Info, etc.). |
 
 ---
-
 ## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> What is Mp3tag?
 
 Mp3tag is a metadata editor for audio files that allows you to:
@@ -158,7 +126,6 @@ Mp3tag is a metadata editor for audio files that allows you to:
 For more information, visit the [official Mp3tag website](https://www.mp3tag.de/en/) and [documentation](https://docs.mp3tag.de/).
 
 ---
-
 ## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Getting Started
 
 ### Installation
@@ -223,55 +190,8 @@ After copying, restart Mp3tag. The sources and actions appear in the **Tag Sourc
    - Go to `Convert > Tag - Filename` (or press `Alt+Cmd+1`)
    - Enter a format string, e.g., `%artist% - %title%`
    - Preview and apply the changes
-
----
-
 <details>
-<summary><strong> <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> How to Edit Tags in Mp3tag</strong></summary>
-
-
-### Manual Tag Editing
-
-1. **Select Files**: Click on files in the file list (use `Cmd+Click` for multiple files)
-2. **Edit Fields**: Click on any field in the Tag Panel and type your changes
-3. **Batch Edit**: Select multiple files to apply the same tag value to all
-4. **Save**: Press `Cmd+S` or click the save icon
-
-### Using Actions for Automated Editing
-
-Actions allow you to automate repetitive tag editing tasks:
-
-1. **Access Actions**: Go to `Actions > Actions...` (or press `Alt+6`)
-2. **Select Action Group**: Choose from your custom action groups
-3. **Apply**: Select files and run the action
-
-Actions can:
-- Format text (case conversion, date formats)
-- Replace text or use regex patterns
-- Clean and normalize tag values
-- Remove duplicates or unwanted fields
-- Merge or split fields
-### Basic Usage
-
-1. **Load Files**: `File > Add directory…` (`Cmd+D`) or drag and drop files into Mp3tag
-2. **Edit Tags**: Select files and modify fields in the Tag Panel on the left
-3. **Save Changes**: `Cmd+S` or click the save icon
-4. **Import Tags**: `Tag Sources` menu → choose a source → search and apply
-5. **Rename Files**: `Convert > Tag - Filename` (`Alt+Cmd+1`) with a format string like `%artist% - %title%`
-
-### Using Actions
-
-1. Open `Actions > Actions…` (`Alt+6`)
-2. Select an action group
-3. Select files and run the action
-
-</details>
-
----
-
-<details>
-<summary><strong> <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> SOURCES</strong></summary>
-
+<summary><strong><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> SOURCES</strong></summary>
 
 ### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/applemusic.svg" height="20" valign="middle" /> iTunes+
 
@@ -439,8 +359,6 @@ Fetches lyrics from [genius.com](https://genius.com) and writes them to the `UNS
 | Line ending character | `CR (Mac)` | Line ending format for lyrics |
 | Write UNSYNCEDLYRICS | `true` | Write to standard UNSYNCEDLYRICS field |
 
-</details>
-
 <details>
 <summary><strong> <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> COVER ART</strong></summary>
 
@@ -480,8 +398,13 @@ Searches Qobuz for album artwork and extracts the best available image URL from 
 Fetches SoundCloud track or artist artwork by artist name and title, or by direct URL.
 
 </details>
+
+</details>
+
+---
 <details>
-<summary><strong> <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> ACTIONS</strong></summary>
+<summary><strong><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> ACTIONS</strong></summary>
+
 This repo ships a curated set of action groups under `Actions/`. Each category is a subfolder with a `README.md` explaining every action, a `<Category>.json` file containing the group definition, and per-action `<Prefix> - <Name>.mta` scripts. The master importable bundle `Actions/Action Groups.json` combines all groups in a single file that Mp3tag can import directly.
 
 Actions are organised by the first letter of the group name, which doubles as the keyboard accelerator shown in Mp3tag's **Actions** menu:
@@ -494,7 +417,6 @@ Actions are organised by the first letter of the group name, which doubles as th
 | `D` | **Disc Numbers** | Filename templates that include a `Disc N/` subfolder |
 | `E` | **Eksternal** | Maintainer's personal export templates (no `Disc/` subfolder) |
 
-<details>
 <summary><strong>Show bundled actions…</strong> (26 actions across 5 groups)</summary>
 
 | Action | Purpose |
@@ -537,9 +459,8 @@ Actions are organised by the first letter of the group name, which doubles as th
 | `E - Metal` | Metal exports (flat, no `Disc/`) |
 | `E - Miscellaneous` | Catch-all (flat, no `Disc/`) |
 | `E - Punk & Hardcore` | Punk & Hardcore exports (flat, no `Disc/`) |
-| `E - Rock & Grunge` | Rock & Grunge exports (flat, no `Disc/`) |
-|</details>||
-|</details>||
+
+</details>
 
 Apply actions via **Actions → Actions…** (`⌥6`). For the technical reference on `.mta` syntax and `T=` action types, see [Creating and Editing Actions](#creating-and-editing-actions-mta-files).
 
@@ -628,6 +549,9 @@ This rewrites the path in every `.mta` file and in `Action Groups.json` in one p
 For a one-shot bulk rewrite that handles every `.mta` and JSON file in one pass, see the [`./configure` script](#quick-start-configure) below.
 
 ---
+
+<details>
+<summary><strong><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> SCRIPTS</strong></summary>
 
 ## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Scripts
 
@@ -765,6 +689,11 @@ For example, to make the `E - Hip-Hop.mta` action save to `<mount>/Hip-Hop/By Ye
 Repeat for any other `.mta` file you want to change. When you're done, edit (or create) a matching entry in the relevant JSON file so the master `Action Groups.json` import bundle stays in sync. The JSON `format` value is the same string, but with `/` escaped as `\/`.
 
 ---
+</details>
+
+---
+<details>
+<summary><strong><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> SETTINGS</strong></summary>
 
 <details>
 <summary><strong> <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Settings System</strong></summary>
@@ -776,11 +705,10 @@ All sources use Mp3tag's native `.settings` JSON panel system. Settings files fo
 SourceName#Settings….settings
 ```
 
-The `….` (ellipsis `U+2026`) distinguishes settings files from other `.settings` files. Settings are loaded automatically when you open a source's settings dialog and stored persistently in `settings.json`.
+ The `….` (ellipsis `U+2026`) distinguishes settings files from other `.settings` files. Settings are loaded automatically when you open a source's settings dialog and stored persistently in `settings.json`.
 
 </details>
 
----
 
 <details>
 <summary><strong> <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> File Naming Conventions</strong></summary>
@@ -796,7 +724,53 @@ The `….` (ellipsis `U+2026`) distinguishes settings files from other `.setting
 
 </details>
 
+</details>
+
 ---
+<details>
+<summary><strong><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> GUIDES</strong></summary>
+
+<details>
+<summary><strong> <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> How to Edit Tags in Mp3tag</strong></summary>
+
+
+### Manual Tag Editing
+
+1. **Select Files**: Click on files in the file list (use `Cmd+Click` for multiple files)
+2. **Edit Fields**: Click on any field in the Tag Panel and type your changes
+3. **Batch Edit**: Select multiple files to apply the same tag value to all
+4. **Save**: Press `Cmd+S` or click the save icon
+
+### Using Actions for Automated Editing
+
+Actions allow you to automate repetitive tag editing tasks:
+
+1. **Access Actions**: Go to `Actions > Actions...` (or press `Alt+6`)
+2. **Select Action Group**: Choose from your custom action groups
+3. **Apply**: Select files and run the action
+
+Actions can:
+- Format text (case conversion, date formats)
+- Replace text or use regex patterns
+- Clean and normalize tag values
+- Remove duplicates or unwanted fields
+- Merge or split fields
+### Basic Usage
+
+1. **Load Files**: `File > Add directory…` (`Cmd+D`) or drag and drop files into Mp3tag
+2. **Edit Tags**: Select files and modify fields in the Tag Panel on the left
+3. **Save Changes**: `Cmd+S` or click the save icon
+4. **Import Tags**: `Tag Sources` menu → choose a source → search and apply
+5. **Rename Files**: `Convert > Tag - Filename` (`Alt+Cmd+1`) with a format string like `%artist% - %title%`
+
+### Using Actions
+
+1. Open `Actions > Actions…` (`Alt+6`)
+2. Select an action group
+3. Select files and run the action
+
+</details>
+
 
 <details>
 <summary><strong> <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Creating and Editing Actions (.mta Files)</strong></summary>
@@ -851,7 +825,6 @@ For detailed action type documentation, see `Actions/MTA Guide.md` in this repos
 
 </details>
 
----
 
 <details>
 <summary><strong> <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Creating Web Sources (.src Files)</strong></summary>
@@ -902,7 +875,6 @@ For full documentation, see the [Mp3tag Tag Sources documentation](https://docs.
 
 </details>
 
----
 
 <details>
 <summary><strong> <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Scripting in Mp3tag</strong></summary>
@@ -944,8 +916,9 @@ See the full [Mp3tag Scripting Documentation](https://docs.mp3tag.de/scripting/f
 
 </details>
 
----
+</details>
 
+---
 ## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Additional Resources
 
 - **[Mp3tag Official Website](https://www.mp3tag.de/en/)**: Download and general information
