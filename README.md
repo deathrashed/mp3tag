@@ -15,6 +15,8 @@ Modular tag sources for streaming services, music databases, cover art, lyrics, 
 [![ACTIONS](https://img.shields.io/badge/action%20groups%20—%2012%2B-1e1e1e?style=for-the-badge&logo=audiomack&logoColor=white)](./Actions)
 [![GENRES](https://img.shields.io/badge/genre%20presets%20—%2070%2B-1e1e1e?style=for-the-badge&logo=audiomack&logoColor=white)](./Actions/Genre)
 
+**Web Sources** · **Action Groups** · **Genre Presets** · **Cover Art** · **Interactive Configure** · **macOS Support**
+
 </div>
 
 ---
@@ -74,6 +76,8 @@ Then restart Mp3tag. Sources appear under **Tag Sources**, actions under **Actio
 
 See [Getting Started](#getting-started) for detailed installation instructions.
 
+**[&uarr; Back to Contents](#contents)**
+
 ---
 
 ## Repository Statistics
@@ -91,6 +95,8 @@ See [Getting Started](#getting-started) for detailed installation instructions.
 | Configuration Scripts | 2 |
 | Interactive Wrappers | 1 |
 
+**[&uarr; Back to Contents](#contents)**
+
 ---
 
 ## Overview
@@ -105,8 +111,10 @@ This repository contains personal configuration, tag sources, actions, and scrip
 - **70+ genre presets** — one-click `GENRE` tag setters covering metal sub-genres, hip-hop, punk, electronic, and more
 - **Interactive configure wizard** — retarget paths, pick folder layouts, and generate importable JSON bundles
 
+### Repository Structure
+
 <details>
-<summary><strong>Repository Structure</strong> — click to expand</summary>
+<summary><strong>Show full directory tree…</strong></summary>
 
 ```
 .
@@ -131,8 +139,6 @@ This repository contains personal configuration, tag sources, actions, and scrip
 ```
 
 </details>
-
-### Actions folder at a glance
 
 | Folder | What it is |
 |---|---|
@@ -160,40 +166,40 @@ For more information, visit the [official Mp3tag website](https://www.mp3tag.de/
 
 ### Getting Started
 
-#### Installation
+**Installation**
 
 1. **Download** the latest version from the [official website](https://www.mp3tag.de/en/download.html)
 2. **Install** following the macOS instructions
 3. **Configure** the bundled actions for your library:
 
-```bash
-./configure
-```
+   ```bash
+   ./configure
+   ```
 
-This walks you through setting your mount path, file-naming layout, and output mode. See [Quick Start: `./configure`](#quick-start-configure) for details.
+   This walks you through setting your mount path, file-naming layout, and output mode. See [Quick Start: `./configure`](#quick-start-configure) for details.
 
 4. **Copy** the `Sources/` and `Actions/` folders into Mp3tag's data directory:
 
-| Install source | Data directory |
-|---|---|
-| **Website** ([mp3tag.de](https://www.mp3tag.de/en/download.html)) | `~/Library/Application Support/Mp3tag/` |
-| **App Store** | `~/Library/Containers/app.mp3tag.Mp3tag/Data/Library/Application Support/Mp3tag/` |
+   | Install source | Data directory |
+   |---|---|
+   | **Website** ([mp3tag.de](https://www.mp3tag.de/en/download.html)) | `~/Library/Application Support/Mp3tag/` |
+   | **App Store** | `~/Library/Containers/app.mp3tag.Mp3tag/Data/Library/Application Support/Mp3tag/` |
 
-```bash
-# Pick the right DATA_DIR (see table above).
-DATA_DIR=~/Library/Application\ Support/Mp3tag
+   ```bash
+   # Pick the right DATA_DIR (see table above).
+   DATA_DIR=~/Library/Application\ Support/Mp3tag
 
-cp -R Sources "$DATA_DIR"
-cp -R Actions "$DATA_DIR"
-cp configure "$DATA_DIR"
-```
+   cp -R Sources "$DATA_DIR"
+   cp -R Actions "$DATA_DIR"
+   cp configure "$DATA_DIR"
+   ```
 
 5. **Restart** Mp3tag. Sources and actions appear in their respective menus automatically.
 
 > [!CAUTION]
 > Symlinks do not work. Both the macOS sandbox and Mp3tag's file-access model require files to be copied into the app's data directory.
 
-#### Basic Usage
+**Basic usage**
 
 1. **Load files** — `File > Add directory…` (`Cmd+D`) or drag and drop into Mp3tag
 2. **Edit tags** — Select files, modify fields in the Tag Panel, changes apply immediately
@@ -207,12 +213,12 @@ cp configure "$DATA_DIR"
 
 <details>
 <summary>
-<strong><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> SOURCES</strong>
+<a id="sources"></a><strong><a href="#sources"><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /></a> SOURCES</strong>
 </summary>
 
-## Individual Tag Sources
+### Individual Tag Sources
 
-### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/applemusic.svg" height="20" valign="middle" /> iTunes+
+#### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/applemusic.svg" height="20" valign="middle" /> iTunes+
 
 **Files:** `iTunes+#S - iTunes+.src` · `iTunes+#Settings….settings` · `iTunes API v2.inc` · `iTunes Artwork.inc`
 
@@ -230,7 +236,7 @@ Searches the Apple Music / iTunes Store catalog via the iTunes Search API. Retur
 
 ---
 
-### <img src="https://raw.githubusercontent.com/deathrashed/gupload/main/Uploads/Images/metallum-white.svg" height="20" valign="middle" /> Metal Archives — Tag Sources
+#### <img src="https://raw.githubusercontent.com/deathrashed/gupload/main/Uploads/Images/metallum-white.svg" height="20" valign="middle" /> Metal Archives — Tag Sources
 
 **Files:** `Me&tal Archives#S - Search by Band.src` · `Me&tal Archives#S - Search by Band + Album.src` · `Me&tal Archives#S - Search by Album.src`
 
@@ -246,7 +252,7 @@ Returns: Title, Artist, Album, Year, Genre, Country, Label, Catalog Number, and 
 
 ---
 
-### <img src="https://raw.githubusercontent.com/deathrashed/gupload/main/Uploads/Images/metallum-icon-white-ring.png" height="20" valign="middle" /> Metallum Genres
+#### <img src="https://raw.githubusercontent.com/deathrashed/gupload/main/Uploads/Images/metallum-icon-white-ring.png" height="20" valign="middle" /> Metallum Genres
 
 **Files:** `Metallum Genres#S - Metallum Genres.src` · `Metallum Genres#Settings….settings`
 
@@ -270,7 +276,7 @@ Standalone genre-only source querying Metal Archives directly. Includes a suite 
 
 ---
 
-### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/lastfm.svg" height="20" valign="middle" /> Last.fm Genres
+#### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/lastfm.svg" height="20" valign="middle" /> Last.fm Genres
 
 **Files:** `Last.fm#S - Last.fm Genres.src` · `Last.fm#Settings….settings`
 
@@ -287,7 +293,7 @@ Fetches an artist's top tags from the Last.fm API and writes them as genre tags.
 
 ---
 
-### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/musicbrainz.svg" height="20" valign="middle" /> MusicBrainz Expanded
+#### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/musicbrainz.svg" height="20" valign="middle" /> MusicBrainz Expanded
 
 **Files:** `MusicBrainz Expanded.inc` + 7 `.src` entry points · `MusicBrainz Expanded#Settings….settings`
 
@@ -316,7 +322,7 @@ Returns: Artist, AlbumArtist, Album, Year, Genre, Label, Country, Media type, Ca
 
 ---
 
-### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/bandcamp.svg" height="20" valign="middle" /> Bandcamp
+#### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/bandcamp.svg" height="20" valign="middle" /> Bandcamp
 
 **Files:** `Bandcamp#S - Bandcamp by &Album.src` · `Bandcamp#S - Bandcamp by &All.src` · `Bandcamp#S - Bandcamp by &Track.src` · `Bandcamp#S - Bandcamp by &URL.src` · `Bandcamp#ParserScriptAlbum.inc` · `Bandcamp#Settings….settings`
 
@@ -333,7 +339,7 @@ Returns: Title, Artist, AlbumArtist, Album, Year, Genre, Label, Track number, an
 
 ---
 
-### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/qobuz.svg" height="20" valign="middle" /> Qobuz
+#### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/qobuz.svg" height="20" valign="middle" /> Qobuz
 
 **Files:** `Qobuz.inc` · `&Qobuz#S - Qobuz AU.src` · `&Qobuz#S - Qobuz US.src` · `&Qobuz#Settings….settings`
 
@@ -343,7 +349,7 @@ Returns: Title, Artist, AlbumArtist, Album, Year, Genre, Label, Track number, Di
 
 ---
 
-### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/deezer.svg" height="20" valign="middle" /> Deezer
+#### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/deezer.svg" height="20" valign="middle" /> Deezer
 
 **Files:** `Deezer#S - Deezer by Album.src` · `Deezer#S - Deezer by Title.src`
 
@@ -356,7 +362,7 @@ Returns: Title, Artist, AlbumArtist, Album, Year, Genre, Track number, and cover
 
 ---
 
-### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/soundcloud.svg" height="20" valign="middle" /> Soundcloud
+#### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/soundcloud.svg" height="20" valign="middle" /> Soundcloud
 
 **Files:** `Soundcloud.inc` · `Soundcloud#S - Soundcloud Search.src` · `Soundcloud Artwork.inc` · `Soundcloud#Settings….settings`
 
@@ -366,7 +372,7 @@ Returns: Title, Artist, Year, Genre, Description, and cover art.
 
 ---
 
-### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/genius.svg" height="20" valign="middle" /> Genius Lyrics
+#### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/genius.svg" height="20" valign="middle" /> Genius Lyrics
 
 **Files:** `Genius#Lyrics.inc` · `Genius#S - Genius Lyrics.src` · `Genius#Settings….settings`
 
@@ -381,7 +387,7 @@ Fetches lyrics from [genius.com](https://genius.com) and writes them to the `UNS
 
 ---
 
-### Source Comparison
+#### Source Comparison
 
 | Source | Metadata | Artwork | Genres | Lyrics |
 |---|---|---|---|---|
@@ -398,10 +404,10 @@ Fetches lyrics from [genius.com](https://genius.com) and writes them to the `UNS
 
 <details>
 <summary>
-<strong><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Cover Art Sources</strong>
+<a id="cover-art-sources"></a><strong><a href="#cover-art-sources"><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /></a> Cover Art Sources</strong>
 </summary>
 
-### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/applemusic.svg" height="20" valign="middle" /> iTunes Cover Art
+#### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/applemusic.svg" height="20" valign="middle" /> iTunes Cover Art
 
 **File:** `&Art#&iTunes.src` → `iTunes Artwork.inc`
 
@@ -409,7 +415,7 @@ Searches Apple Music for cover art. Always retrieves the original uncompressed s
 
 ---
 
-### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/deezer.svg" height="20" valign="middle" /> Deezer Cover Art
+#### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/deezer.svg" height="20" valign="middle" /> Deezer Cover Art
 
 **File:** `&Art#&Deezer.src`
 
@@ -419,7 +425,7 @@ Searches Deezer for album artwork. Returns up to 1200×1200 px JPEG. Parses Deez
 
 ---
 
-### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/qobuz.svg" height="20" valign="middle" /> Qobuz Cover Art
+#### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/qobuz.svg" height="20" valign="middle" /> Qobuz Cover Art
 
 **File:** `&Art#&Qobuz.src` → `Qobuz.inc`
 
@@ -429,7 +435,7 @@ Searches Qobuz for album artwork and extracts the best available image URL from 
 
 ---
 
-### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/soundcloud.svg" height="20" valign="middle" /> Soundcloud Cover Art
+#### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/soundcloud.svg" height="20" valign="middle" /> Soundcloud Cover Art
 
 **File:** `&Art#&Soundcloud.src` → `Soundcloud Artwork.inc`
 
@@ -445,7 +451,7 @@ Fetches SoundCloud track or artist artwork by artist name and title, or by direc
 
 <details>
 <summary>
-<strong><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> ACTIONS</strong>
+<a id="actions"></a><strong><a href="#actions"><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /></a> ACTIONS</strong>
 </summary>
 
 Each category is a subfolder under `Actions/` with a `README.md` explaining every action, a `<Category>.json` file, and per-action `<Prefix> - <Name>.mta` scripts. The master importable bundle `Actions/Action Groups.json` combines all groups in a single file.
@@ -462,12 +468,12 @@ Actions are organised by the first letter of the group name, which doubles as th
 
 ### Prefix Guide
 
-When you assign a custom macOS keyboard shortcut via **System Settings → Keyboard → Keyboard Shortcuts → App Shortcuts**, the shortcut is matched to a menu item by its **exact** title — the first character is what macOS uses as the trigger key. If six action groups all start with the same word (e.g. "Save Album"), they collide.
+When you assign a custom macOS keyboard shortcut via **System Settings → Keyboard → Keyboard Shortcuts → App Shortcuts**, the shortcut is matched to a menu item by its **exact** title — the first character is what macOS uses as the trigger key. If several action groups start with the same word (e.g. "Save Album"), they collide.
 
 The single-letter prefix (`S - Search`, `F - Fix`, `D - Disc Number`, `E - Export`, etc.) gives every action group a **unique first letter**, so you can assign a clean, distinct macOS shortcut to each one without collisions.
 
 <details>
-<summary><strong>Show bundled actions…</strong> (38 actions across 5 groups)</summary>
+<summary><a id="bundled-actions"></a><strong>Show bundled actions…</strong> (38 actions across 5 groups)</summary>
 
 | Action | Purpose |
 |---|---|
@@ -558,7 +564,7 @@ Open each `.mta` file and edit the `1=...` line under `F=_FILENAME`. The format 
 
 <details>
 <summary>
-<strong><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> SCRIPTS</strong>
+<a id="scripts"></a><strong><a href="#scripts"><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /></a> SCRIPTS</strong>
 </summary>
 
 One-off setup and maintenance scripts that ship with the repo. None are required for day-to-day Mp3tag use — they exist to make retargeting, syncing, and other bulk edits easier.
@@ -658,11 +664,11 @@ When you're done, update the matching entry in the relevant JSON file so the mas
 
 <details>
 <summary>
-<strong><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> SETTINGS</strong>
+<a id="settings"></a><strong><a href="#settings"><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /></a> SETTINGS</strong>
 </summary>
 
 <details>
-<summary><strong><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Settings System</strong></summary>
+<summary><a id="settings-system"></a><strong><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Settings System</strong></summary>
 
 All sources use Mp3tag's native `.settings` JSON panel system. Settings files follow the naming convention:
 
@@ -675,7 +681,7 @@ The `….` (ellipsis `U+2026`) distinguishes settings files from other `.setting
 </details>
 
 <details>
-<summary><strong><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> File Naming Conventions</strong></summary>
+<summary><a id="file-naming-conventions"></a><strong><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> File Naming Conventions</strong></summary>
 
 | Convention | Meaning |
 |---|---|
@@ -688,7 +694,7 @@ The `….` (ellipsis `U+2026`) distinguishes settings files from other `.setting
 </details>
 
 <details>
-<summary><strong><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Creating & Editing Actions</strong></summary>
+<summary><a id="creating--editing-actions"></a><strong><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Creating & Editing Actions</strong></summary>
 
 Actions are stored as `.mta` files in the `Actions/` directory. Each file contains one or more action definitions in a numbered INI-like format:
 
@@ -701,7 +707,7 @@ F=_ALL
 3=0
 ```
 
-#### Action Types
+**Action types**
 
 | Type | Description | Example Use |
 |---|---|---|
@@ -717,23 +723,12 @@ F=_ALL
 | `T=11` | Export Cover to File | Save cover art to file |
 | `T=13` | Remove Duplicate Fields | Remove duplicate entries |
 
-#### Common Parameters
+**Common parameters**
 
 - **`F`**: Field name (e.g. `TITLE`, `ARTIST`, `ALBUM`, `_ALL`)
 - **`1`**: Input string, format pattern, or search string
 - **`2`**: Replacement string or format string
 - **`3`**: Additional parameter (varies by action type)
-
-#### Example
-
-```ini
-[#0]
-T=1
-F=_ALL
-1=Feat
-2=feat
-3=0
-```
 
 For detailed documentation, see `Actions/MTA Guide.md` in this repository.
 
@@ -747,11 +742,11 @@ For detailed documentation, see `Actions/MTA Guide.md` in this repository.
 
 <details>
 <summary>
-<strong><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> GUIDES</strong>
+<a id="guides"></a><strong><a href="#guides"><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /></a> GUIDES</strong>
 </summary>
 
 <details>
-<summary><strong><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Creating Web Sources</strong></summary>
+<summary><a id="creating-web-sources"></a><strong><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Creating Web Sources</strong></summary>
 
 Source files use an INI-like format:
 
@@ -772,7 +767,7 @@ Source files use an INI-like format:
 # Album parser goes here
 ```
 
-#### Key Parameters
+**Key parameters**
 
 | Parameter | Description |
 |---|---|
@@ -785,7 +780,7 @@ Source files use an INI-like format:
 | `[ParserScriptIndex]` | Script to parse search results |
 | `[ParserScriptAlbum]` | Script to parse album details |
 
-#### Common Parser Commands
+**Common parser commands**
 
 - `FindLine "text"` — Find a line containing text
 - `RegexpReplace "pattern" "replacement"` — Replace using regex
@@ -799,11 +794,11 @@ For full documentation, see the [Mp3tag Tag Sources documentation](https://docs.
 </details>
 
 <details>
-<summary><strong><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Mp3tag Scripting</strong></summary>
+<summary><a id="mp3tag-scripting"></a><strong><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Mp3tag Scripting</strong></summary>
 
 Mp3tag supports scripting functions in format strings, actions, and filters.
 
-#### Common Functions
+**Common functions**
 
 | Function | Description |
 |---|---|
@@ -817,7 +812,7 @@ Mp3tag supports scripting functions in format strings, actions, and filters.
 | `$num(number,length)` | Format number with zero-padding |
 | `$if2(a,b)` | Return `a` if not empty, else `b` |
 
-#### Examples
+**Examples**
 
 ```
 $caps(%title%)
@@ -846,15 +841,15 @@ For the full reference, see the [Mp3tag Scripting Documentation](https://docs.mp
 
 ## FAQ
 
-### Why don't symlinks work?
+**Why don't symlinks work?**
 
 Both the macOS sandbox (used by the App Store version of Mp3tag) and the website version's file-access model reject symlinks to files outside the data directory. Always use `cp -R` to copy files into Mp3tag's application support folder.
 
-### Why are there letter prefixes on the actions?
+**Why are there letter prefixes on the actions?**
 
 The single-letter prefix (`F -`, `G -`, `R -`, etc.) gives every action group a unique first character. This lets you assign clean macOS keyboard shortcuts via **System Settings → Keyboard → Keyboard Shortcuts → App Shortcuts** without collisions, since the shortcut matches the exact menu-item title. The letter also doubles as Mp3tag's menu accelerator key.
 
-### How do I change the export paths?
+**How do I change the export paths?**
 
 Run the `./configure` wizard from the repo root:
 
@@ -864,7 +859,7 @@ Run the `./configure` wizard from the repo root:
 
 See [Quick Start: `./configure`](#quick-start-configure) for the full list of options (dry-run, output modes, layout presets, JSON-only).
 
-### How do I update the repo?
+**How do I update the repo?**
 
 ```bash
 git pull origin main
@@ -872,7 +867,7 @@ git pull origin main
 
 If you've made local changes (e.g. after running `./configure` with the in-place mode), re-run `./configure` after pulling to preserve your modifications. Or use `--out` to write a separate copy and diff before merging.
 
-### Can I use this on Windows or Linux?
+**Can I use this on Windows or Linux?**
 
 The tag sources and action files are platform-agnostic — they work wherever Mp3tag runs. The `./configure` wizard requires Python 3 and a POSIX shell. On Windows, use Git Bash, WSL, or run the Python script directly:
 
@@ -881,6 +876,8 @@ python3 Scripts/retarget-paths.py
 ```
 
 The macOS-specific installation paths (`~/Library/Application Support/Mp3tag/`) will differ on other platforms — consult the [Mp3tag documentation](https://docs.mp3tag.de/) for the correct data directory.
+
+**[&uarr; Back to Contents](#contents)**
 
 ---
 
