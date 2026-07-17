@@ -730,6 +730,8 @@ SourceName#Settings….settings
 <details>
 <summary><strong><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> GUIDES</strong></summary>
 
+---
+
 <details>
 <summary><strong> <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> How to Edit Tags in Mp3tag</strong></summary>
 

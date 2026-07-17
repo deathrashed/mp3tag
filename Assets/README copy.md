@@ -23,47 +23,49 @@ Modular tag sources for streaming services, music databases, cover art, lyrics, 
 
 ## Contents
 
-- [Overview](#overview)
-- [Repository Structure](#repository-structure)
-- [What is Mp3tag?](#what-is-mp3tag)
-- [Getting Started](#getting-started)
-- [Tag Sources](#tag-sources)
-  - [iTunes+](#-itunes)
-  - [Metal Archives](#-metal-archives--tag-sources)
-  - [Metallum Genres](#-metallum-genres)
-  - [Last.fm Genres](#-lastfm-genres)
-  - [MusicBrainz Expanded](#-musicbrainz-expanded)
-  - [Bandcamp](#-bandcamp)
-  - [Qobuz](#-qobuz)
-  - [Deezer](#-deezer)
-  - [Soundcloud](#-soundcloud)
-  - [Genius Lyrics](#-genius-lyrics)
-- [Cover Art Sources](#cover-art-sources)
-  - [iTunes Cover Art](#-itunes-cover-art)
-  - [Deezer Cover Art](#-deezer-cover-art-1)
-  - [Qobuz Cover Art](#-qobuz-cover-art-1)
-  - [Soundcloud Cover Art](#-soundcloud-cover-art-1)
-  - [COV — Cover Art Search](#cov--cover-art-search)
-- [Actions](#actions)
+- [𝗢𝗩𝗘𝗥𝗩𝗜𝗘𝗪](#overview)
+
+  - [Repository Structure](#repository-structure)
+
+  - [What is Mp3tag?](#what-is-mp3tag)
+
+  - [Getting Started](#getting-started)
+
+- [𝗦𝗢𝗨𝗥𝗖𝗘𝗦](#sources)
+  
+  - [iTunes+](#-itunes), [Metal Archives](#-metal-archives--tag-sources), [Metallum Genres](#-metallum-genres), [Last.fm Genres](#-lastfm-genres), [MusicBrainz Expanded](#-musicbrainz-expanded), [Bandcamp](#-bandcamp), [Qobuz](#-qobuz), [Deezer](#-deezer), [Soundcloud](#-soundcloud), [Genius Lyrics](#-genius-lyrics)
+  - [Cover Art](#cover-art-sources) - [iTunes](#-itunes-cover-art), [Deezer](#-deezer-cover-art-1), [Qobuz](#-qobuz-cover-art-1), [Soundcloud](#-soundcloud-cover-art-1)
+  
+- [𝗔𝗖𝗧𝗜𝗢𝗡𝗦](#actions)
+  
   - [Why the `S - ` / `F - ` / `D - ` prefixes?](#why-the-s-----f-----d---prefixes)
   - [Importing the bundled action groups](#importing-the-bundled-action-groups)
   - [Disc Number actions](#disc-number-actions-d---)
   - [External (Export) actions](#external-export-actions-e---)
   - [Adapting the export templates](#adapting-the-export-templates)
-- [Scripts](#scripts)
+  
+- [𝗦𝗖𝗥𝗜𝗣𝗧𝗦](#scripts)
+  
   - [Quick start: `./configure`](#quick-start-configure)
   - [Interactive wizard](#interactive-wizard)
   - [Layout presets](#layout-presets)
   - [Non-interactive use](#non-interactive-use-scripting--ci)
   - [After running](#after-running)
   - [Editing `.mta` files manually](#editing-mta-files-manually)
-- [Settings System](#settings-system)
-- [File Naming Conventions](#file-naming-conventions)
-- [Creating and Editing Actions](#creating-and-editing-actions-mta-files)
-- [Creating Web Sources](#creating-web-sources-src-files)
-- [Scripting in Mp3tag](#scripting-in-mp3tag)
-- [Git Workflow](#git-workflow)
-- [Additional Resources](#additional-resources)
+  
+- [𝗦𝗘𝗧𝗧𝗜𝗡𝗚𝗦](#settings-system)
+
+  - [File Naming Conventions](#file-naming-conventions)
+
+  - [Creating and Editing Actions](#creating-and-editing-actions-mta-files)
+
+- [𝗚𝗨𝗜𝗗𝗘𝗦](#GUIDES)
+
+  - [Creating Web Sources](#creating-web-sources-src-files)
+
+  - [Scripting in Mp3tag](#scripting-in-mp3tag)
+
+- [𝗥𝗘𝗦𝗢𝗨𝗥𝗖𝗘𝗦](#additional-resources)
 
 ---
 
