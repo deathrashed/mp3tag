@@ -539,6 +539,7 @@ Actions are organised by the first letter of the group name, which doubles as th
 | `E - Punk & Hardcore` | Punk & Hardcore exports (flat, no `Disc/`) |
 | `E - Rock & Grunge` | Rock & Grunge exports (flat, no `Disc/`) |
 |</details>||
+|</details>||
 
 Apply actions via **Actions → Actions…** (`⌥6`). For the technical reference on `.mta` syntax and `T=` action types, see [Creating and Editing Actions](#creating-and-editing-actions-mta-files).
 
@@ -625,8 +626,6 @@ This rewrites the path in every `.mta` file and in `Action Groups.json` in one p
 **Tip:** If you imported the action groups via the JSON bundle (see [Importing the bundled action groups](#importing-the-bundled-action-groups)), duplicate an action first via **Actions → Actions… → right-click → Duplicate**, edit the copy, and leave the original alone. This keeps the upstream file untouched and makes future `git pull` updates conflict-free.
 
 For a one-shot bulk rewrite that handles every `.mta` and JSON file in one pass, see the [`./configure` script](#quick-start-configure) below.
-
-
 
 ---
 
