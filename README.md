@@ -226,10 +226,8 @@ After copying, restart Mp3tag. The sources and actions appear in the **Tag Sourc
 
 ---
 
-## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> How to Edit Tags in Mp3tag
-
 <details>
-<summary><strong>Show beginner guide…</strong></summary>
+<summary><strong>## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> How to Edit Tags in Mp3tag</strong></summary>
 
 ### Manual Tag Editing
 
@@ -270,10 +268,8 @@ Actions can:
 
 ---
 
-## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Tag Sources
-
 <details>
-<summary><strong>Show tag sources…</strong></summary>
+<summary><strong>## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Tag Sources</strong></summary>
 
 ### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/applemusic.svg" height="20" valign="middle" /> iTunes+
 
@@ -479,10 +475,8 @@ Fetches lyrics from [genius.com](https://genius.com) and writes them to the `UNS
 
 </details>
 
-## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Cover Art Sources
-
 <details>
-<summary><strong>Show cover art sources…</strong></summary>
+<summary><strong>## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Cover Art Sources</strong></summary>
 
 ### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/applemusic.svg" height="20" valign="middle" /> iTunes Cover Art
 
@@ -806,10 +800,8 @@ Repeat for any other `.mta` file you want to change. When you're done, edit (or 
 
 ---
 
-## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Settings System
-
 <details>
-<summary><strong>Show settings reference…</strong></summary>
+<summary><strong>## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Settings System</strong></summary>
 
 All sources use Mp3tag's native `.settings` JSON panel system. Settings files follow the naming convention:
 
@@ -823,10 +815,8 @@ The `….` (ellipsis `U+2026`) distinguishes settings files from other `.setting
 
 ---
 
-## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> File Naming Conventions
-
 <details>
-<summary><strong>Show naming conventions…</strong></summary>
+<summary><strong>## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> File Naming Conventions</strong></summary>
 
 | Convention | Meaning |
 |---|---|
@@ -840,10 +830,8 @@ The `….` (ellipsis `U+2026`) distinguishes settings files from other `.setting
 
 ---
 
-## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Creating and Editing Actions (.mta Files)
-
 <details>
-<summary><strong>Show action creation guide…</strong></summary>
+<summary><strong>## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Creating and Editing Actions (.mta Files)</strong></summary>
 
 Actions are stored as `.mta` files in the `Actions/` directory. Each file contains one or more action definitions in a numbered INI-like format:
 
@@ -896,10 +884,8 @@ For detailed action type documentation, see `Actions/MTA Guide.md` in this repos
 
 ---
 
-## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Creating Web Sources (.src Files)
-
 <details>
-<summary><strong>Show web source creation guide…</strong></summary>
+<summary><strong>## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Creating Web Sources (.src Files)</strong></summary>
 
 Source files use an INI-like format:
 
@@ -948,10 +934,8 @@ For full documentation, see the [Mp3tag Tag Sources documentation](https://docs.
 
 ---
 
-## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Scripting in Mp3tag
-
 <details>
-<summary><strong>Show scripting reference…</strong></summary>
+<summary><strong>## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Scripting in Mp3tag</strong></summary>
 
 Mp3tag supports scripting functions in format strings, actions, and filters.
 
