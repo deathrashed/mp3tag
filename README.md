@@ -23,77 +23,36 @@ Modular tag sources for streaming services, music databases, cover art, lyrics, 
 
 ## Contents
 
-- [Quick Start](#quick-start)
-- [Repository Statistics](#repository-statistics)
 - [Overview](#overview)
-  - [Repository Structure](#repository-structure)
-  - [What is Mp3tag?](#what-is-mp3tag)
-  - [Getting Started](#getting-started)
 - [SOURCES](#sources)
-  - [Individual Tag Sources](#individual-tag-sources)
-  - [Cover Art Sources](#cover-art-sources)
 - [ACTIONS](#actions)
-  - [Prefix Guide](#prefix-guide)
-  - [Bundled Actions](#bundled-actions)
-  - [Importing Actions](#importing-actions)
-  - [Export Actions](#export-actions)
-  - [Adapting Templates](#adapting-templates)
 - [SCRIPTS](#scripts)
-  - [Quick Start: `./configure`](#quick-start-configure)
-  - [Interactive Wizard](#interactive-wizard)
-  - [Layout Presets](#layout-presets)
-  - [CLI Usage](#cli-usage)
-  - [After Running](#after-running)
-  - [Manual Editing](#manual-editing)
 - [SETTINGS](#settings)
-  - [Settings System](#settings-system)
-  - [File Naming Conventions](#file-naming-conventions)
-  - [Creating & Editing Actions](#creating--editing-actions)
 - [GUIDES](#guides)
-  - [Creating Web Sources](#creating-web-sources)
-  - [Mp3tag Scripting](#mp3tag-scripting)
 - [FAQ](#faq)
-- [Additional Resources](#additional-resources)
-- [License](#license)
 
 ---
 
 ## Quick Start
 
-```bash
-# 1. Configure the bundled actions for your library.
-./configure
+1. **Copy the folders into place.** Copy this repo's `Sources/` and `Actions/` folders into Mp3tag's data directory (see the table in [Getting Started](#getting-started) for the exact path), **or** let Mp3tag show you exactly where:
 
-# 2. Copy to Mp3tag's data directory.
-cp -R Sources ~/Library/Application\ Support/Mp3tag/
-cp -R Actions ~/Library/Application\ Support/Mp3tag/
+   - **Actions** — In Mp3tag, open **Actions → Actions…** (`⌥6`) to open the *Action Groups* window. Click the **+** icon at the bottom-left of the sidebar to open its context menu, choose **Import…**, then select `Actions/Action Groups.json` from this repo (individual `.mta` files can be imported the same way).
+   - **Sources** — Open the **Tag Sources** menu (the toolbar icon or right-click in the tag panel) and click **Open Tag Sources Folder** at the very bottom of the list. This reveals the exact folder Mp3tag reads sources from — copy everything from this repo's `Sources/` folder into it.
+
+2. **Restart Mp3tag.** Sources appear under **Tag Sources**, actions under **Actions** (`⌥6`).
+
+Prefer the terminal? Same result, no clicking required:
+
+```bash
+DATA_DIR=~/Library/Application\ Support/Mp3tag
+
+cp -R Sources "$DATA_DIR"
+cp -R Actions "$DATA_DIR"
 ```
 
-Then restart Mp3tag. Sources appear under **Tag Sources**, actions under **Actions** (`⌥6`).
-
 > [!NOTE]
-> **Copy, do not symlink.** Both the macOS sandbox (App Store version) and Mp3tag's file-access model reject symlinks. Use `cp -R` instead.
-
-See [Getting Started](#getting-started) for detailed installation instructions.
-
-**[&uarr; Back to Contents](#contents)**
-
----
-
-## Repository Statistics
-
-| Component | Count |
-|---|---:|
-| Tag Sources | 9 |
-| Cover Art Sources | 4 |
-| Shared Include Files | 8 |
-| Action Groups | 12 |
-| Action Scripts (`.mta`) | 151 |
-| Genre Presets | 70+ |
-| Formatting Actions | 36 |
-| Regex Actions | 21 |
-| Configuration Scripts | 2 |
-| Interactive Wrappers | 1 |
+> **Copy, do not symlink.** Both the macOS sandbox (App Store version) and Mp3tag's file-access model reject symlinks. Use `cp -R` or the app's own **Import…** dialog instead.
 
 **[&uarr; Back to Contents](#contents)**
 
@@ -193,6 +152,8 @@ For more information, visit the [official Mp3tag website](https://www.mp3tag.de/
    cp -R Actions "$DATA_DIR"
    cp configure "$DATA_DIR"
    ```
+
+   Not sure which directory Mp3tag is actually using? Open the **Tag Sources** menu in the app and click **Open Tag Sources Folder** at the bottom — that's the live folder to copy `Sources/` into. The **Actions** window (`⌥6`) → **+** → **Import…** works the same way for `Actions/Action Groups.json` without needing to know the path at all.
 
 5. **Restart** Mp3tag. Sources and actions appear in their respective menus automatically.
 
@@ -511,14 +472,14 @@ The single-letter prefix (`S - Search`, `F - Fix`, `D - Disc Number`, `E - Expor
 
 All actions are pre-bundled into [`Actions/Action Groups.json`](Actions/Action%20Groups.json) — a single file you can import into Mp3tag in one go.
 
-1. **Actions → Actions…** (`⌥6`) to open the Actions window
-2. Right-click the action group list → **Import…** (or use **File → Import Action Groups**)
-3. Select `Actions/Action Groups.json` from this repo
+1. **Actions → Actions…** (`⌥6`) to open the Action Groups window
+2. Click the **+** icon at the bottom-left of the sidebar to open its context menu
+3. Choose **Import…** and select `Actions/Action Groups.json` from this repo (individual `.mta` files can be imported the same way)
 
 All groups appear in the sidebar. The `.mta` files remain useful as readable, diff-friendly source — the JSON file is the importable bundle.
 
 > [!TIP]
-> To export your own customised groups back to JSON (e.g. before committing your fork), right-click the group list and choose **Export…**.
+> To export your own customised groups back to JSON (e.g. before committing your fork), open the same **+** menu and choose **Export…**.
 
 ### Export Actions
 
@@ -552,7 +513,7 @@ find . -type f \( -name "*.mta" -o -name "Action Groups.json" \) -print0 | \
 Open each `.mta` file and edit the `1=...` line under `F=_FILENAME`. The format string is standard [Mp3tag scripting](https://docs.mp3tag.de/scripting/functions/).
 
 > [!TIP]
-> If you imported via the JSON bundle, duplicate an action first (**Actions → Actions… → right-click → Duplicate**), edit the copy, and leave the original untouched. This keeps the upstream file clean for future `git pull` updates.
+> If you imported via the JSON bundle, duplicate an action first (**Actions → Actions… → select an action → Duplicate**), edit the copy, and leave the original untouched. This keeps the upstream file clean for future `git pull` updates.
 
 **[&uarr; Back to Contents](#contents)**
 
@@ -642,7 +603,7 @@ For structures not covered by the presets (classical composer, DJ/BPM-key, forma
 
 - **In-place**: re-import `Actions/Action Groups.json` into Mp3tag. Commit the rewritten files if you forked the repo.
 - **`--out DIR`**: import `<DIR>/Actions/Action Groups.json` into Mp3tag.
-- **`--stdout`**: paste into **Actions → File → Import Action Groups…** or `> "Action Groups.retargeted.json"` and import the file.
+- **`--stdout`**: paste into the **+** → **Import…** dialog in the Action Groups window, or `> "Action Groups.retargeted.json"` and import the file.
 
 ### Manual Editing
 
@@ -841,7 +802,10 @@ Reference material for extending the repo — building new tag sources from scra
 
 ---
 
-## FAQ
+<details>
+<summary>
+<a id="faq"></a><strong><a href="#faq"><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /></a>&nbsp;FAQ</strong>
+</summary>
 
 **Why don't symlinks work?**
 
@@ -880,6 +844,8 @@ python3 Scripts/retarget-paths.py
 The macOS-specific installation paths (`~/Library/Application Support/Mp3tag/`) will differ on other platforms — consult the [Mp3tag documentation](https://docs.mp3tag.de/) for the correct data directory.
 
 **[&uarr; Back to Contents](#contents)**
+
+</details>
 
 ---
 
