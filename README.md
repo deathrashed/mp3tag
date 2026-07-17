@@ -227,7 +227,8 @@ After copying, restart Mp3tag. The sources and actions appear in the **Tag Sourc
 ---
 
 <details>
-<summary><strong>## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> How to Edit Tags in Mp3tag</strong></summary>
+<summary><strong> <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> How to Edit Tags in Mp3tag</strong></summary>
+
 
 ### Manual Tag Editing
 
@@ -269,7 +270,8 @@ Actions can:
 ---
 
 <details>
-<summary><strong>## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Tag Sources</strong></summary>
+<summary><strong> <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> SOURCES</strong></summary>
+
 
 ### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/applemusic.svg" height="20" valign="middle" /> iTunes+
 
@@ -289,10 +291,6 @@ Searches the Apple Music / iTunes Store catalog via the iTunes Search API. Retur
 
 ---
 
----
-
----
-
 ### <img src="https://raw.githubusercontent.com/deathrashed/gupload/main/Uploads/Images/metallum-white.svg" height="20" valign="middle" /> Metal Archives — Tag Sources
 
 **Files:** `Me&tal Archives#S - Search by Band.src` · `Me&tal Archives#S - Search by Band + Album.src` · `Me&tal Archives#S - Search by Album.src`
@@ -306,10 +304,6 @@ Three search modes for fetching complete release metadata from [metal-archives.c
 | Search by Album | `%album%` | When artist is ambiguous |
 
 Returns: Title, Artist, Album, Year, Genre, Country, Label, Catalog Number, and track listing.
-
----
-
----
 
 ---
 
@@ -336,10 +330,6 @@ replace "Original Text" "Replacement Text"
 
 ---
 
----
-
----
-
 ### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/lastfm.svg" height="20" valign="middle" /> Last.fm Genres
 
 **Files:** `Last.fm#S - Last.fm Genres.src` · `Last.fm#Settings….settings`
@@ -354,10 +344,6 @@ Fetches an artist's top tags from the Last.fm API and writes them as genre tags.
 | Genre separator | `; ` | Delimiter between multiple genres |
 
 > Uses the Last.fm `artist.gettoptags` endpoint with a public embedded API key.
-
----
-
----
 
 ---
 
@@ -390,10 +376,6 @@ Returns: Artist, AlbumArtist, Album, Year, Genre, Label, Country, Media type, Ca
 
 ---
 
----
-
----
-
 ### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/bandcamp.svg" height="20" valign="middle" /> Bandcamp
 
 **Files:** `Bandcamp#S - Bandcamp by &Album.src` · `Bandcamp#S - Bandcamp by &All.src` · `Bandcamp#S - Bandcamp by &Track.src` · `Bandcamp#S - Bandcamp by &URL.src` · `Bandcamp#ParserScriptAlbum.inc` · `Bandcamp#Settings….settings`
@@ -411,10 +393,6 @@ Returns: Title, Artist, AlbumArtist, Album, Year, Genre, Label, Track number, an
 
 ---
 
----
-
----
-
 ### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/qobuz.svg" height="20" valign="middle" /> Qobuz
 
 **Files:** `Qobuz.inc` · `&Qobuz#S - Qobuz AU.src` · `&Qobuz#S - Qobuz US.src` · `&Qobuz#Settings….settings`
@@ -422,10 +400,6 @@ Returns: Title, Artist, AlbumArtist, Album, Year, Genre, Label, Track number, an
 Full metadata source for Qobuz with regional entry points (AU and US) sharing a common parser.
 
 Returns: Title, Artist, AlbumArtist, Album, Year, Genre, Label, Track number, Disc number, Composer, Lyricist, Credits, Publisher, ISRC, and high-resolution cover art.
-
----
-
----
 
 ---
 
@@ -442,10 +416,6 @@ Returns: Title, Artist, AlbumArtist, Album, Year, Genre, Track number, and cover
 
 ---
 
----
-
----
-
 ### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/soundcloud.svg" height="20" valign="middle" /> Soundcloud
 
 **Files:** `Soundcloud.inc` · `Soundcloud#S - Soundcloud Search.src` · `Soundcloud Artwork.inc` · `Soundcloud#Settings….settings`
@@ -453,10 +423,6 @@ Returns: Title, Artist, AlbumArtist, Album, Year, Genre, Track number, and cover
 Searches SoundCloud for tracks and retrieves metadata.
 
 Returns: Title, Artist, Year, Genre, Description, and cover art.
-
----
-
----
 
 ---
 
@@ -476,7 +442,8 @@ Fetches lyrics from [genius.com](https://genius.com) and writes them to the `UNS
 </details>
 
 <details>
-<summary><strong>## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Cover Art Sources</strong></summary>
+<summary><strong> <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> COVER ART</strong></summary>
+
 
 ### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/applemusic.svg" height="20" valign="middle" /> iTunes Cover Art
 
@@ -513,9 +480,8 @@ Searches Qobuz for album artwork and extracts the best available image URL from 
 Fetches SoundCloud track or artist artwork by artist name and title, or by direct URL.
 
 </details>
-
-## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Actions
-
+<details>
+<summary><strong> <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> ACTIONS</strong></summary>
 This repo ships a curated set of action groups under `Actions/`. Each category is a subfolder with a `README.md` explaining every action, a `<Category>.json` file containing the group definition, and per-action `<Prefix> - <Name>.mta` scripts. The master importable bundle `Actions/Action Groups.json` combines all groups in a single file that Mp3tag can import directly.
 
 Actions are organised by the first letter of the group name, which doubles as the keyboard accelerator shown in Mp3tag's **Actions** menu:
@@ -572,7 +538,7 @@ Actions are organised by the first letter of the group name, which doubles as th
 | `E - Miscellaneous` | Catch-all (flat, no `Disc/`) |
 | `E - Punk & Hardcore` | Punk & Hardcore exports (flat, no `Disc/`) |
 | `E - Rock & Grunge` | Rock & Grunge exports (flat, no `Disc/`) |
-
+</details>
 </details>
 
 Apply actions via **Actions → Actions…** (`⌥6`). For the technical reference on `.mta` syntax and `T=` action types, see [Creating and Editing Actions](#creating-and-editing-actions-mta-files).
@@ -801,7 +767,8 @@ Repeat for any other `.mta` file you want to change. When you're done, edit (or 
 ---
 
 <details>
-<summary><strong>## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Settings System</strong></summary>
+<summary><strong> <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Settings System</strong></summary>
+
 
 All sources use Mp3tag's native `.settings` JSON panel system. Settings files follow the naming convention:
 
@@ -816,7 +783,8 @@ The `….` (ellipsis `U+2026`) distinguishes settings files from other `.setting
 ---
 
 <details>
-<summary><strong>## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> File Naming Conventions</strong></summary>
+<summary><strong> <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> File Naming Conventions</strong></summary>
+
 
 | Convention | Meaning |
 |---|---|
@@ -831,7 +799,8 @@ The `….` (ellipsis `U+2026`) distinguishes settings files from other `.setting
 ---
 
 <details>
-<summary><strong>## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Creating and Editing Actions (.mta Files)</strong></summary>
+<summary><strong> <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Creating and Editing Actions (.mta Files)</strong></summary>
+
 
 Actions are stored as `.mta` files in the `Actions/` directory. Each file contains one or more action definitions in a numbered INI-like format:
 
@@ -885,7 +854,8 @@ For detailed action type documentation, see `Actions/MTA Guide.md` in this repos
 ---
 
 <details>
-<summary><strong>## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Creating Web Sources (.src Files)</strong></summary>
+<summary><strong> <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Creating Web Sources (.src Files)</strong></summary>
+
 
 Source files use an INI-like format:
 
@@ -935,7 +905,8 @@ For full documentation, see the [Mp3tag Tag Sources documentation](https://docs.
 ---
 
 <details>
-<summary><strong>## <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Scripting in Mp3tag</strong></summary>
+<summary><strong> <img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /> Scripting in Mp3tag</strong></summary>
+
 
 Mp3tag supports scripting functions in format strings, actions, and filters.
 
