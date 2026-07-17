@@ -1,0 +1,2184 @@
+[
+  {
+    "actions": [],
+    "children": [
+      {
+        "actions": [
+          {
+            "field": "_ALL",
+            "isCaseSensitive": false,
+            "regexp": "%20",
+            "replacement": " ",
+            "type": "regexp",
+            "userDescription": "Applies a regex cleanup to _ALL."
+          },
+          {
+            "field": "_ALL",
+            "isCaseSensitive": false,
+            "regexp": "_",
+            "replacement": " ",
+            "type": "regexp",
+            "userDescription": "Applies a regex cleanup to _ALL."
+          },
+          {
+            "field": "_ALL",
+            "isCaseSensitive": false,
+            "regexp": "Dj",
+            "replacement": "DJ",
+            "type": "regexp",
+            "userDescription": "Applies a regex cleanup to _ALL."
+          },
+          {
+            "field": "_ALL",
+            "isCaseSensitive": false,
+            "regexp": "Feat",
+            "replacement": "feat",
+            "type": "regexp",
+            "userDescription": "Applies a regex cleanup to _ALL."
+          },
+          {
+            "field": "_ALL",
+            "isCaseSensitive": false,
+            "regexp": "Mc",
+            "replacement": "MC",
+            "type": "regexp",
+            "userDescription": "Applies a regex cleanup to _ALL."
+          },
+          {
+            "field": "_ALL",
+            "isCaseSensitive": false,
+            "regexp": "Vs",
+            "replacement": "vs",
+            "type": "regexp",
+            "userDescription": "Applies a regex cleanup to _ALL."
+          },
+          {
+            "field": "_ALL",
+            "isCaseSensitive": false,
+            "regexp": "\\",
+            "replacement": "; ",
+            "type": "regexp",
+            "userDescription": "Applies a regex cleanup to _ALL."
+          },
+          {
+            "field": "_ALL",
+            "isCaseSensitive": true,
+            "regexp": "Of",
+            "replacement": "of",
+            "type": "regexp",
+            "userDescription": "Applies a regex cleanup to _ALL."
+          },
+          {
+            "field": "YEAR",
+            "format": "$regexp(%year%,'^.*([12][0-9]{3}).*$','$1')",
+            "type": "format",
+            "userDescription": "Extracts the four-digit year from YEAR or DATE-style values."
+          },
+          {
+            "field": "GENRE",
+            "separator": "; ",
+            "type": "mergeDupes",
+            "userDescription": "Merges duplicate values in GENRE."
+          },
+          {
+            "caseConversionType": 1,
+            "field": "GENRE",
+            "type": "caseconv",
+            "userDescription": "Applies case conversion to GENRE."
+          },
+          {
+            "caseConversionType": 1,
+            "field": "_TAG",
+            "type": "caseconv",
+            "userDescription": "Applies case conversion to _TAG."
+          }
+        ],
+        "children": [],
+        "identifier": "9C81495C-33DF-4182-8B1A-FC87CDD2AB79",
+        "title": "F - Fix",
+        "type": 1,
+        "userDescription": "Runs the lighter fix pipeline for common cleanup issues like punctuation, year cleanup, genre deduping, and case normalization."
+      },
+      {
+        "actions": [
+          {
+            "field": "_TAG",
+            "isCaseSensitive": false,
+            "regexp": "(?<![/\\-:;\\(\\)\\[\\]{}])\\s(a|the|of|for|feat|as|at|an|by|off|on|from|in|to|and|with|or|nor|von|de)(?=\\s)(?!\\s[\\-\\(\\)\\[\\]{}])",
+            "replacement": "$lower($0)",
+            "type": "regexp",
+            "userDescription": "Applies a regex cleanup to _TAG."
+          }
+        ],
+        "children": [],
+        "identifier": "6AA23C8B-EF14-45A9-9B1A-2E153F3107EB",
+        "title": "F - Mixed Case",
+        "type": 1,
+        "userDescription": "Applies mixed-case conversion to selected tags."
+      },
+      {
+        "actions": [
+          {
+            "field": "_ALL",
+            "isCaseSensitive": false,
+            "regexp": "%20",
+            "replacement": " ",
+            "type": "regexp",
+            "userDescription": "Applies a regex cleanup to _ALL."
+          },
+          {
+            "field": "_ALL",
+            "isCaseSensitive": false,
+            "regexp": "_",
+            "replacement": " ",
+            "type": "regexp",
+            "userDescription": "Applies a regex cleanup to _ALL."
+          },
+          {
+            "field": "_ALL",
+            "isCaseSensitive": false,
+            "regexp": "Dj",
+            "replacement": "DJ",
+            "type": "regexp",
+            "userDescription": "Applies a regex cleanup to _ALL."
+          },
+          {
+            "field": "_ALL",
+            "isCaseSensitive": false,
+            "regexp": "Feat",
+            "replacement": "feat",
+            "type": "regexp",
+            "userDescription": "Applies a regex cleanup to _ALL."
+          },
+          {
+            "field": "_ALL",
+            "isCaseSensitive": false,
+            "regexp": "Mc",
+            "replacement": "MC",
+            "type": "regexp",
+            "userDescription": "Applies a regex cleanup to _ALL."
+          },
+          {
+            "field": "_ALL",
+            "isCaseSensitive": false,
+            "regexp": "Vs",
+            "replacement": "vs",
+            "type": "regexp",
+            "userDescription": "Applies a regex cleanup to _ALL."
+          },
+          {
+            "field": "_ALL",
+            "isCaseSensitive": false,
+            "regexp": "\\",
+            "replacement": "; ",
+            "type": "regexp",
+            "userDescription": "Applies a regex cleanup to _ALL."
+          },
+          {
+            "field": "_ALL",
+            "isCaseSensitive": true,
+            "regexp": "Of",
+            "replacement": "of",
+            "type": "regexp",
+            "userDescription": "Applies a regex cleanup to _ALL."
+          }
+        ],
+        "children": [],
+        "identifier": "0D7E0CD8-CDFF-43C4-8B11-8DB54A90AF3F",
+        "title": "F - Standard",
+        "type": 1,
+        "userDescription": "Applies the base text cleanup rules used before more opinionated formatting passes."
+      },
+      {
+        "actions": [
+          {
+            "caseConversionType": 1,
+            "field": "_ALL",
+            "type": "caseconv",
+            "userDescription": "Applies case conversion to _ALL."
+          }
+        ],
+        "children": [],
+        "identifier": "176A0B3F-2277-479F-9D56-1FC73097EBE0",
+        "title": "F - Case Conversion",
+        "type": 1,
+        "userDescription": "Applies case conversion to selected tags."
+      },
+      {
+        "actions": [
+          {
+            "field": "TITLE",
+            "isCaseSensitive": false,
+            "regexp": "\\([^)]*Remaster[^)]*\\)",
+            "replacement": "",
+            "type": "regexp",
+            "userDescription": "Applies a regex cleanup to TITLE."
+          },
+          {
+            "field": "TITLE",
+            "isCaseSensitive": false,
+            "regexp": "\\s{2,}",
+            "replacement": "",
+            "type": "regexp",
+            "userDescription": "Applies a regex cleanup to TITLE."
+          },
+          {
+            "field": "ALBUM",
+            "isCaseSensitive": false,
+            "regexp": "\\([^)]*Remaster[^)]*\\)",
+            "replacement": "",
+            "type": "regexp",
+            "userDescription": "Applies a regex cleanup to ALBUM."
+          },
+          {
+            "field": "ALBUM",
+            "isCaseSensitive": false,
+            "regexp": "\\s{2,}",
+            "replacement": "",
+            "type": "regexp",
+            "userDescription": "Applies a regex cleanup to ALBUM."
+          },
+          {
+            "field": "_TAG",
+            "isCaseSensitive": false,
+            "regexp": "(\\s+$|^\\s+)",
+            "replacement": "",
+            "type": "regexp",
+            "userDescription": "Removes leading and trailing whitespace from tag fields."
+          },
+          {
+            "field": "_TAG",
+            "isCaseSensitive": false,
+            "regexp": "\\s+",
+            "replacement": " ",
+            "type": "regexp",
+            "userDescription": "Collapses repeated whitespace inside tag fields to a single space."
+          }
+        ],
+        "children": [],
+        "identifier": "DA8DB820-74C9-4B47-9031-F8225FB5A9ED",
+        "title": "F - Strip Remaster",
+        "type": 1,
+        "userDescription": "Removes remaster/version clutter from TITLE and ALBUM, then tidies whitespace."
+      },
+      {
+        "actions": [
+          {
+            "field": "GENRE",
+            "format": "%style%",
+            "type": "format",
+            "userDescription": "Sets GENRE using a formatting expression."
+          },
+          {
+            "caseConversionType": 1,
+            "field": "GENRE",
+            "type": "caseconv",
+            "userDescription": "Applies case conversion to GENRE."
+          }
+        ],
+        "children": [],
+        "identifier": "D01B6D64-2187-40AC-BD6F-E17C44ACDBA3",
+        "title": "F - Style to Genre",
+        "type": 1,
+        "userDescription": "Copies STYLE into GENRE and normalizes the genre field casing."
+      },
+      {
+        "actions": [
+          {
+            "field": "ALBUMARTIST",
+            "format": "%ARTIST%",
+            "type": "format",
+            "userDescription": "Copies or derives the album artist value used by save-path actions."
+          }
+        ],
+        "children": [],
+        "identifier": "EA1DDFBD-C12E-480C-8545-0BAA4358D72A",
+        "title": "F - Artist to Album Artist",
+        "type": 1,
+        "userDescription": "Copies ARTIST into ALBUMARTIST for save actions that rely on album artist paths."
+      },
+      {
+        "actions": [
+          {
+            "coverType": 3,
+            "field": "cover.jpg",
+            "isRemoveCovers": false,
+            "type": "importcover",
+            "userDescription": "Imports or replaces embedded cover artwork for the selected files."
+          }
+        ],
+        "children": [],
+        "identifier": "FE911127-6A53-417F-B879-FF2A3FC3C408",
+        "title": "F - Save Cover Art",
+        "type": 1,
+        "userDescription": "Exports the embedded front cover to the album folder."
+      },
+      {
+        "actions": [
+          {
+            "field": "",
+            "isRemoveCovers": true,
+            "type": "removeFields",
+            "userDescription": "Removes the  field from the selected files."
+          }
+        ],
+        "children": [],
+        "identifier": "5DCDA5BE-4979-4A5F-A8DB-F4C053EE42C1",
+        "title": "F - Remove Cover Art",
+        "type": 1,
+        "userDescription": "Removes embedded cover artwork from the selected files."
+      },
+      {
+        "actions": [
+          {
+            "field": "TITLE",
+            "format": "$if($strstr(%artist%,;),%title% (feat. $trim($regexp(%artist%,'^[^;]+;(.*)$',$1))),%title%)",
+            "type": "format",
+            "userDescription": "Cleans or reformats TITLE."
+          },
+          {
+            "field": "ARTIST",
+            "format": "$regexp(%artist%,'^([^;]+).*','$1')",
+            "type": "format",
+            "userDescription": "Cleans or reformats ARTIST."
+          }
+        ],
+        "children": [],
+        "identifier": "721966B4-BF37-49BC-A188-D44E3E5AEE03",
+        "title": "F - Artist to Title (Old)",
+        "type": 1,
+        "userDescription": "Moves semicolon-separated guest artists from ARTIST into TITLE as a feat. credit."
+      },
+      {
+        "actions": [],
+        "children": [
+          {
+            "actions": [
+              {
+                "field": "WWW",
+                "format": "$regexp(%comment%,'^Visit\\s+(https://[^/]+).*$','$1')/album/$regexp($regexp($replace($lower(%album%),' ','-'),'[^a-z0-9-]',),'-+','-')",
+                "type": "format",
+                "userDescription": ""
+              }
+            ],
+            "children": [],
+            "identifier": "F1076199-6AB6-4042-B0FF-D54972E128F3",
+            "title": "Bandcamp Album URL",
+            "type": 1,
+            "userDescription": "Transform \"visit [...]bandcamp.com\" into album URL using Regex. Currently set to WWW field."
+          },
+          {
+            "actions": [
+              {
+                "field": "WWW TRACK",
+                "format": "$regexp(%comment%,'^Visit\\s+(https://[^/]+).*$','$1')/track/$regexp($regexp($replace($lower(%title%),' ','-'),'[^a-z0-9-]',),'-+','-')",
+                "type": "format",
+                "userDescription": ""
+              }
+            ],
+            "children": [],
+            "identifier": "C7A76C6A-677B-4483-B2E3-49A30DF2CDB0",
+            "title": "Bandcamp Track URL",
+            "type": 1,
+            "userDescription": "Transform \"visit [...]bandcamp.com\" into album URL using Regex. Currently set to WWW field."
+          }
+        ],
+        "identifier": "DCFBDE0A-454E-4A65-BD41-346FA0961F33",
+        "title": "Misc",
+        "type": 0,
+        "userDescription": ""
+      },
+      {
+        "actions": [],
+        "children": [
+          {
+            "actions": [
+              {
+                "caseConversionType": 1,
+                "field": "_TAG",
+                "type": "caseconv",
+                "userDescription": "Applies case conversion to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "(?<![/\\-:;\\(\\)\\[\\]{}])\\s(a|the|of|for|as|at|an|by|off|on|from|in|to|and|with|or|nor|von|de)(?=\\s)(?!\\s[\\-\\(\\)\\[\\]{}])",
+                "replacement": "$lower($0)",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "(^|\\s|\\(|\\[|/)'(.{1})",
+                "replacement": "$1'$upper($2)",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_ALL",
+                "isCaseSensitive": false,
+                "regexp": "Feat",
+                "replacement": "feat",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _ALL."
+              },
+              {
+                "field": "YEAR",
+                "format": "$regexp(%year%,'^.*([12][0-9]{3}).*$','$1')",
+                "type": "format",
+                "userDescription": "Extracts the four-digit year from YEAR or DATE-style values."
+              },
+              {
+                "field": "GENRE",
+                "isCaseSensitive": false,
+                "isMatchWord": false,
+                "original": "/",
+                "replace": "; ",
+                "type": "replace",
+                "userDescription": "Replaces '/' with '; ' in GENRE."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "isMatchWord": false,
+                "original": "Iii",
+                "replace": "III",
+                "type": "replace",
+                "userDescription": "Replaces 'Iii' with 'III' in _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "isMatchWord": false,
+                "original": "Ii",
+                "replace": "II",
+                "type": "replace",
+                "userDescription": "Replaces 'Ii' with 'II' in _TAG."
+              },
+              {
+                "field": "GENRE",
+                "separator": "; ",
+                "type": "mergeDupes",
+                "userDescription": "Merges duplicate values in GENRE."
+              }
+            ],
+            "children": [],
+            "identifier": "2F8845B5-B4DA-4C46-BEB7-843827F8C1F4",
+            "title": "F - Combo",
+            "type": 1,
+            "userDescription": "Runs the standard cleanup combo: case normalization, spacing cleanup, year cleanup, replacements, and genre deduping."
+          },
+          {
+            "actions": [
+              {
+                "field": "_ALL",
+                "isCaseSensitive": false,
+                "regexp": "%20",
+                "replacement": " ",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _ALL."
+              },
+              {
+                "field": "_ALL",
+                "isCaseSensitive": false,
+                "regexp": "_",
+                "replacement": " ",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _ALL."
+              },
+              {
+                "field": "_ALL",
+                "isCaseSensitive": false,
+                "regexp": "Dj",
+                "replacement": "DJ",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _ALL."
+              },
+              {
+                "field": "_ALL",
+                "isCaseSensitive": false,
+                "regexp": "Feat",
+                "replacement": "feat",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _ALL."
+              },
+              {
+                "field": "_ALL",
+                "isCaseSensitive": false,
+                "regexp": "Mc",
+                "replacement": "MC",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _ALL."
+              },
+              {
+                "field": "_ALL",
+                "isCaseSensitive": false,
+                "regexp": "Vs",
+                "replacement": "vs",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _ALL."
+              },
+              {
+                "field": "_ALL",
+                "isCaseSensitive": false,
+                "regexp": "\\",
+                "replacement": "; ",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _ALL."
+              },
+              {
+                "field": "_ALL",
+                "isCaseSensitive": true,
+                "regexp": "Of",
+                "replacement": "of",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _ALL."
+              },
+              {
+                "field": "YEAR",
+                "format": "$regexp(%year%,'^.*([12][0-9]{3}).*$','$1')",
+                "type": "format",
+                "userDescription": "Extracts the four-digit year from YEAR or DATE-style values."
+              },
+              {
+                "field": "GENRE",
+                "separator": "; ",
+                "type": "mergeDupes",
+                "userDescription": "Merges duplicate values in GENRE."
+              },
+              {
+                "caseConversionType": 1,
+                "field": "GENRE",
+                "type": "caseconv",
+                "userDescription": "Applies case conversion to GENRE."
+              },
+              {
+                "caseConversionType": 1,
+                "field": "_TAG",
+                "type": "caseconv",
+                "userDescription": "Applies case conversion to _TAG."
+              },
+              {
+                "field": "ARTIST",
+                "format": "$if($strstr(%artist%,'featuring'),$regexp(%artist%,'^\\\\s*(.+?)\\\\s+featuring.*$','$1'),$if($strstr(%artist%,'feat.'),$regexp(%artist%,'^\\\\s*(.+?)\\\\s*feat\\\\..*$','$1'),$if($strstr(%artist%,'ft.'),$regexp(%artist%,'^\\\\s*(.+?)\\\\s*ft\\\\..*$','$1'),%artist%))))",
+                "type": "format",
+                "userDescription": "Remove featuring and additional artists, keep only primary artist"
+              },
+              {
+                "field": "TITLE",
+                "format": "$if($strstr(%artist%,'featuring'),%title% (feat. $trim($regexp(%artist%,'^\\\\s*(.+?)\\\\s+featuring\\\\s+(.+?)(?:\\\\s*[\\\\)\\\\]]|$)','$2'))),$if($strstr(%artist%,'feat.'),%title% (feat. $trim($regexp(%artist%,'^\\\\s*(.+?)\\\\s*feat\\\\.\\\\s+(.+?)(?:\\\\s*[\\\\)\\\\]]|$)','$2'))),$if($strstr(%artist%,'ft.'),%title% (feat. $trim($regexp(%artist%,'^\\\\s*(.+?)\\\\s*ft\\\\.\\\\s+(.+?)(?:\\\\s*[\\\\)\\\\]]|$)','$2'))),%title%))))",
+                "type": "format",
+                "userDescription": "Add featuring artist to TITLE if found in ARTIST field (handles multiple semicolon artists, feat., ft., featuring)"
+              },
+              {
+                "field": "ARTIST",
+                "format": "$trim(%artist%)",
+                "type": "format",
+                "userDescription": "Trim whitespace from ARTIST field"
+              },
+              {
+                "field": "ALBUMARTIST",
+                "format": "%ARTIST%",
+                "type": "format",
+                "userDescription": "Copies or derives the album artist value used by save-path actions."
+              }
+            ],
+            "children": [],
+            "identifier": "ECDB0C51-3943-4FE7-A2B3-0E3BBB370134",
+            "title": "F - Fix + Feat",
+            "type": 1,
+            "userDescription": "Runs the lighter fix cleanup, then moves featured-artist credits into TITLE and refreshes ALBUMARTIST."
+          },
+          {
+            "actions": [
+              {
+                "caseConversionType": 1,
+                "field": "_TAG",
+                "type": "caseconv",
+                "userDescription": "Applies case conversion to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "(?<![/\\-:;\\(\\)\\[\\]{}])\\s(a|the|of|for|as|at|an|by|off|on|from|in|to|and|with|or|nor|von|de)(?=\\s)(?!\\s[\\-\\(\\)\\[\\]{}])",
+                "replacement": "$lower($0)",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "(^|\\s|\\(|\\[|/)'(.{1})",
+                "replacement": "$1'$upper($2)",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_ALL",
+                "isCaseSensitive": false,
+                "regexp": "Feat",
+                "replacement": "feat",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _ALL."
+              },
+              {
+                "field": "YEAR",
+                "format": "$regexp(%year%,'^.*([12][0-9]{3}).*$','$1')",
+                "type": "format",
+                "userDescription": "Extracts the four-digit year from YEAR or DATE-style values."
+              },
+              {
+                "field": "GENRE",
+                "isCaseSensitive": false,
+                "isMatchWord": false,
+                "original": "/",
+                "replace": "; ",
+                "type": "replace",
+                "userDescription": "Replaces '/' with '; ' in GENRE."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "isMatchWord": false,
+                "original": "Iii",
+                "replace": "III",
+                "type": "replace",
+                "userDescription": "Replaces 'Iii' with 'III' in _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "isMatchWord": false,
+                "original": "Ii",
+                "replace": "II",
+                "type": "replace",
+                "userDescription": "Replaces 'Ii' with 'II' in _TAG."
+              },
+              {
+                "field": "GENRE",
+                "separator": "; ",
+                "type": "mergeDupes",
+                "userDescription": "Merges duplicate values in GENRE."
+              },
+              {
+                "field": "ARTIST",
+                "format": "$if($strstr(%artist%,'featuring'),$regexp(%artist%,'^\\\\s*(.+?)\\\\s+featuring.*$','$1'),$if($strstr(%artist%,'feat.'),$regexp(%artist%,'^\\\\s*(.+?)\\\\s*feat\\\\..*$','$1'),$if($strstr(%artist%,'ft.'),$regexp(%artist%,'^\\\\s*(.+?)\\\\s*ft\\\\..*$','$1'),%artist%))))",
+                "type": "format",
+                "userDescription": "Remove featuring and additional artists, keep only primary artist"
+              },
+              {
+                "field": "TITLE",
+                "format": "$if($strstr(%artist%,'featuring'),%title% (feat. $trim($regexp(%artist%,'^\\\\s*(.+?)\\\\s+featuring\\\\s+(.+?)(?:\\\\s*[\\\\)\\\\]]|$)','$2'))),$if($strstr(%artist%,'feat.'),%title% (feat. $trim($regexp(%artist%,'^\\\\s*(.+?)\\\\s*feat\\\\.\\\\s+(.+?)(?:\\\\s*[\\\\)\\\\]]|$)','$2'))),$if($strstr(%artist%,'ft.'),%title% (feat. $trim($regexp(%artist%,'^\\\\s*(.+?)\\\\s*ft\\\\.\\\\s+(.+?)(?:\\\\s*[\\\\)\\\\]]|$)','$2'))),%title%))))",
+                "type": "format",
+                "userDescription": "Add featuring artist to TITLE if found in ARTIST field (handles multiple semicolon artists, feat., ft., featuring)"
+              },
+              {
+                "field": "ARTIST",
+                "format": "$trim(%artist%)",
+                "type": "format",
+                "userDescription": "Trim whitespace from ARTIST field"
+              },
+              {
+                "field": "ALBUMARTIST",
+                "format": "%ARTIST%",
+                "type": "format",
+                "userDescription": "Copies or derives the album artist value used by save-path actions."
+              }
+            ],
+            "children": [],
+            "identifier": "59184209-3E12-4084-B5A6-E5B1A4A1DD70",
+            "title": "F - Combo + Feat",
+            "type": 1,
+            "userDescription": "Runs the standard combo cleanup, then moves featured-artist credits into TITLE and refreshes ALBUMARTIST."
+          },
+          {
+            "actions": [
+              {
+                "caseConversionType": 1,
+                "field": "_TAG",
+                "type": "caseconv",
+                "userDescription": "Applies case conversion to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[àáâãäåāăąǻȁȃȧḁạảấầẩẫậắằẳẵặ]",
+                "replacement": "a",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ÀÁÂÃÄÅĀĂĄǺȀȂȦḀẠẢẤẦẨẪẬẮẰẲẴẶ]",
+                "replacement": "A",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ḃƀƃɓ]",
+                "replacement": "b",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ḂƁḄḆ]",
+                "replacement": "B",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[çćĉċčƈȼḉ]",
+                "replacement": "c",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ÇĆĈĊČƇȻḈ]",
+                "replacement": "C",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ďḋḑḓḍđð]",
+                "replacement": "d",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ĎḊḐḒḌĐÐ]",
+                "replacement": "D",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[èéêëēĕėęěȅȇẹẻẽếềểễệ]",
+                "replacement": "e",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ÈÉÊËĒĔĖĘĚȄȆẸẺẼẾỀỂỄỆ]",
+                "replacement": "E",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ƒḟ]",
+                "replacement": "f",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ḞƑ]",
+                "replacement": "F",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ĝğġģǥɠḡ]",
+                "replacement": "g",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ĜĞĠĢǤƓḠ]",
+                "replacement": "G",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ĥħḣḥḧḩḫẖ]",
+                "replacement": "h",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ĤĦḢḤḦḨḪẖ]",
+                "replacement": "H",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ìíîïĩīĭįıǐȉȋịỉȈȊ]",
+                "replacement": "i",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ÌÍÎÏĨĪĬĮİǏȈȊỊỈ]",
+                "replacement": "I",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ĵǰȷɉ]",
+                "replacement": "j",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ĴɈ]",
+                "replacement": "J",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ķḱḳḵƙⱪǩ]",
+                "replacement": "k",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ĶḰḲḴƘⱩǨ]",
+                "replacement": "K",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ĺļľŀłḷḹḽḻ]",
+                "replacement": "l",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ĹĻĽĿŁḶḸḼḺ]",
+                "replacement": "L",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ḿṁṃɱ]",
+                "replacement": "m",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ḾṀṂⱮ]",
+                "replacement": "M",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ñńņňŉŋǹṅṇṉṋ]",
+                "replacement": "n",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ÑŃŅŇŊǸṄṆṈṊ]",
+                "replacement": "N",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[òóôõöøōŏőǫǭǿȍȏȫȭȯȱṍṏṑṓọỏốồổỗộớờởỡợ]",
+                "replacement": "o",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ÒÓÔÕÖØŌŎŐǪǬǾȌȎȪȬȮȰṌṎṐṒỌỎỐỒỔỖỘỚỜỞỠỢ]",
+                "replacement": "O",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ṕṗƥ]",
+                "replacement": "p",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ṔṖƤ]",
+                "replacement": "P",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ɋʠ]",
+                "replacement": "q",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[Ɋ]",
+                "replacement": "Q",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ŕŗřṙṛṝȑȓɍɽɾʀ]",
+                "replacement": "r",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ŔŖŘṘṚṜṞȐȒɌ]",
+                "replacement": "R",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[śŝşšṡṣṥṧṩ]",
+                "replacement": "s",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ŚŜŞŠṠṢṤṦṨ]",
+                "replacement": "S",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ţťŧṫṭṯṱẗ]",
+                "replacement": "t",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ŢŤŦṪṬṮṰ]",
+                "replacement": "T",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ùúûüũūŭůűųȕȗṳṵṷṹṻụủứừửữự]",
+                "replacement": "u",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ÙÚÛÜŨŪŬŮŰŲȔȖṲṴṶṸṺỤỦỨỪỬỮỰ]",
+                "replacement": "U",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ṽṿʋ]",
+                "replacement": "v",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ṼṾƲ]",
+                "replacement": "V",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ẁẃẅŵẇẉẘ]",
+                "replacement": "w",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ẀẂẄŴẆẈ]",
+                "replacement": "W",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ẋẍȥẑẓẕʐʑƶ]",
+                "replacement": "z",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ẊẌŹŻŽẒẔƵȤ]",
+                "replacement": "Z",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ýÿŷȳẏỳỵỷỹ]",
+                "replacement": "y",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ÝŸŶȲẎỲỴỶỸ]",
+                "replacement": "Y",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "(?<![/\\-:;\\(\\)\\[\\]{}])\\s(a|the|of|for|as|at|an|by|off|on|from|in|to|and|with|or|nor|von|de)(?=\\s)(?!\\s[\\-\\(\\)\\[\\]{}])",
+                "replacement": "$lower($0)",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "(^|\\s|\\(|\\[|/)'(.{1})",
+                "replacement": "$1'$upper($2)",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_ALL",
+                "isCaseSensitive": false,
+                "regexp": "Feat",
+                "replacement": "feat",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _ALL."
+              },
+              {
+                "field": "YEAR",
+                "format": "$regexp(%year%,'^.*([12][0-9]{3}).*$','$1')",
+                "type": "format",
+                "userDescription": "Extracts the four-digit year from YEAR or DATE-style values."
+              },
+              {
+                "field": "GENRE",
+                "isCaseSensitive": false,
+                "isMatchWord": false,
+                "original": "/",
+                "replace": "; ",
+                "type": "replace",
+                "userDescription": "Replaces '/' with '; ' in GENRE."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "isMatchWord": false,
+                "original": "Iii",
+                "replace": "III",
+                "type": "replace",
+                "userDescription": "Replaces 'Iii' with 'III' in _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "isMatchWord": false,
+                "original": "Ii",
+                "replace": "II",
+                "type": "replace",
+                "userDescription": "Replaces 'Ii' with 'II' in _TAG."
+              },
+              {
+                "field": "GENRE",
+                "separator": "; ",
+                "type": "mergeDupes",
+                "userDescription": "Merges duplicate values in GENRE."
+              }
+            ],
+            "children": [],
+            "identifier": "4F879B32-76C6-4D0B-AB09-831D1A52D35D",
+            "title": "F - Combo & Remove Accents",
+            "type": 1,
+            "userDescription": "Runs the broad cleanup pipeline, including case normalization, text cleanup, accent stripping, year cleanup, and genre deduping."
+          }
+        ],
+        "identifier": "653F42CB-1B46-47A2-B799-4253874C3E2F",
+        "title": "Combo",
+        "type": 0,
+        "userDescription": ""
+      },
+      {
+        "actions": [],
+        "children": [
+          {
+            "actions": [
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[àáâãäåāăąǻȁȃȧḁạảấầẩẫậắằẳẵặ]",
+                "replacement": "a",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ÀÁÂÃÄÅĀĂĄǺȀȂȦḀẠẢẤẦẨẪẬẮẰẲẴẶ]",
+                "replacement": "A",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ḃƀƃɓ]",
+                "replacement": "b",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ḂƁḄḆ]",
+                "replacement": "B",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[çćĉċčƈȼḉ]",
+                "replacement": "c",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ÇĆĈĊČƇȻḈ]",
+                "replacement": "C",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ďḋḑḓḍđð]",
+                "replacement": "d",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ĎḊḐḒḌĐÐ]",
+                "replacement": "D",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[èéêëēĕėęěȅȇẹẻẽếềểễệ]",
+                "replacement": "e",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ÈÉÊËĒĔĖĘĚȄȆẸẺẼẾỀỂỄỆ]",
+                "replacement": "E",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ƒḟ]",
+                "replacement": "f",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ḞƑ]",
+                "replacement": "F",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ĝğġģǥɠḡ]",
+                "replacement": "g",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ĜĞĠĢǤƓḠ]",
+                "replacement": "G",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ĥħḣḥḧḩḫẖ]",
+                "replacement": "h",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ĤĦḢḤḦḨḪẖ]",
+                "replacement": "H",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ìíîïĩīĭįıǐȉȋịỉȈȊ]",
+                "replacement": "i",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ÌÍÎÏĨĪĬĮİǏȈȊỊỈ]",
+                "replacement": "I",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ĵǰȷɉ]",
+                "replacement": "j",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ĴɈ]",
+                "replacement": "J",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ķḱḳḵƙⱪǩ]",
+                "replacement": "k",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ĶḰḲḴƘⱩǨ]",
+                "replacement": "K",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ĺļľŀłḷḹḽḻ]",
+                "replacement": "l",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ĹĻĽĿŁḶḸḼḺ]",
+                "replacement": "L",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ḿṁṃɱ]",
+                "replacement": "m",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ḾṀṂⱮ]",
+                "replacement": "M",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ñńņňŉŋǹṅṇṉṋ]",
+                "replacement": "n",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ÑŃŅŇŊǸṄṆṈṊ]",
+                "replacement": "N",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[òóôõöøōŏőǫǭǿȍȏȫȭȯȱṍṏṑṓọỏốồổỗộớờởỡợ]",
+                "replacement": "o",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ÒÓÔÕÖØŌŎŐǪǬǾȌȎȪȬȮȰṌṎṐṒỌỎỐỒỔỖỘỚỜỞỠỢ]",
+                "replacement": "O",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ṕṗƥ]",
+                "replacement": "p",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ṔṖƤ]",
+                "replacement": "P",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ɋʠ]",
+                "replacement": "q",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[Ɋ]",
+                "replacement": "Q",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ŕŗřṙṛṝȑȓɍɽɾʀ]",
+                "replacement": "r",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ŔŖŘṘṚṜṞȐȒɌ]",
+                "replacement": "R",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[śŝşšṡṣṥṧṩ]",
+                "replacement": "s",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ŚŜŞŠṠṢṤṦṨ]",
+                "replacement": "S",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ţťŧṫṭṯṱẗ]",
+                "replacement": "t",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ŢŤŦṪṬṮṰ]",
+                "replacement": "T",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ùúûüũūŭůűųȕȗṳṵṷṹṻụủứừửữự]",
+                "replacement": "u",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ÙÚÛÜŨŪŬŮŰŲȔȖṲṴṶṸṺỤỦỨỪỬỮỰ]",
+                "replacement": "U",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ṽṿʋ]",
+                "replacement": "v",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ṼṾƲ]",
+                "replacement": "V",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ẁẃẅŵẇẉẘ]",
+                "replacement": "w",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ẀẂẄŴẆẈ]",
+                "replacement": "W",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ẋẍȥẑẓẕʐʑƶ]",
+                "replacement": "z",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ẊẌŹŻŽẒẔƵȤ]",
+                "replacement": "Z",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ýÿŷȳẏỳỵỷỹ]",
+                "replacement": "y",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ÝŸŶȲẎỲỴỶỸ]",
+                "replacement": "Y",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              }
+            ],
+            "children": [],
+            "identifier": "F6E52CC3-4C94-4219-8548-CCDC1C254579",
+            "title": "R - Spacing Proper",
+            "type": 1,
+            "userDescription": "Runs the Spacing Proper text-normalization rules on the selected tags."
+          },
+          {
+            "actions": [
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "(^|\\s|\"|\\(|\\[|/)O'([^e]{1})",
+                "replacement": "$1O'$upper($2)",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "(^|\\s|\"|\\(|\\[|/)Mc(.{1})",
+                "replacement": "$1Mc$upper($2)",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "(^|\\s|\"|\\(|\\[|/)Mac([bdfgln])",
+                "replacement": "$1Mac$upper($2)",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "De(Marco|Syl)",
+                "replacement": "De$caps3($1)",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              }
+            ],
+            "children": [],
+            "identifier": "B4448918-11DC-4F61-BC5B-115D99320BC5",
+            "title": "R - English Naming",
+            "type": 1,
+            "userDescription": "Runs the English Naming text-normalization rules on the selected tags."
+          },
+          {
+            "actions": [
+              {
+                "caseConversionType": 1,
+                "field": "_TAG",
+                "type": "caseconv",
+                "userDescription": "Applies case conversion to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "(?<![/\\-:;\\(\\)\\[\\]{}])\\s(a|the|of|for|as|at|an|by|off|on|from|in|to|and|with|or|nor|von|de)(?=\\s)(?!\\s[\\-\\(\\)\\[\\]{}])",
+                "replacement": "$lower($0)",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "(^|\\s|\\(|\\[|/)'(.{1})",
+                "replacement": "$1'$upper($2)",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_ALL",
+                "isCaseSensitive": false,
+                "regexp": "Feat",
+                "replacement": "feat",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _ALL."
+              }
+            ],
+            "children": [],
+            "identifier": "894334D1-69BA-4D47-A588-E13F7249C07C",
+            "title": "R - Smart Title Case",
+            "type": 1,
+            "userDescription": "Runs the Smart Title Case text-normalization rules on the selected tags."
+          },
+          {
+            "actions": [
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[àáâãäåāăąǻȁȃȧḁạảấầẩẫậắằẳẵặ]",
+                "replacement": "a",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ÀÁÂÃÄÅĀĂĄǺȀȂȦḀẠẢẤẦẨẪẬẮẰẲẴẶ]",
+                "replacement": "A",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ḃƀƃɓ]",
+                "replacement": "b",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ḂƁḄḆ]",
+                "replacement": "B",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[çćĉċčƈȼḉ]",
+                "replacement": "c",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ÇĆĈĊČƇȻḈ]",
+                "replacement": "C",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ďḋḑḓḍđð]",
+                "replacement": "d",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ĎḊḐḒḌĐÐ]",
+                "replacement": "D",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[èéêëēĕėęěȅȇẹẻẽếềểễệ]",
+                "replacement": "e",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ÈÉÊËĒĔĖĘĚȄȆẸẺẼẾỀỂỄỆ]",
+                "replacement": "E",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ƒḟ]",
+                "replacement": "f",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ḞƑ]",
+                "replacement": "F",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ĝğġģǥɠḡ]",
+                "replacement": "g",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ĜĞĠĢǤƓḠ]",
+                "replacement": "G",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ĥħḣḥḧḩḫẖ]",
+                "replacement": "h",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ĤĦḢḤḦḨḪẖ]",
+                "replacement": "H",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ìíîïĩīĭįıǐȉȋịỉȈȊ]",
+                "replacement": "i",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ÌÍÎÏĨĪĬĮİǏȈȊỊỈ]",
+                "replacement": "I",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ĵǰȷɉ]",
+                "replacement": "j",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ĴɈ]",
+                "replacement": "J",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ķḱḳḵƙⱪǩ]",
+                "replacement": "k",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ĶḰḲḴƘⱩǨ]",
+                "replacement": "K",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ĺļľŀłḷḹḽḻ]",
+                "replacement": "l",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ĹĻĽĿŁḶḸḼḺ]",
+                "replacement": "L",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ḿṁṃɱ]",
+                "replacement": "m",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ḾṀṂⱮ]",
+                "replacement": "M",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ñńņňŉŋǹṅṇṉṋ]",
+                "replacement": "n",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ÑŃŅŇŊǸṄṆṈṊ]",
+                "replacement": "N",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[òóôõöøōŏőǫǭǿȍȏȫȭȯȱṍṏṑṓọỏốồổỗộớờởỡợ]",
+                "replacement": "o",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ÒÓÔÕÖØŌŎŐǪǬǾȌȎȪȬȮȰṌṎṐṒỌỎỐỒỔỖỘỚỜỞỠỢ]",
+                "replacement": "O",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ṕṗƥ]",
+                "replacement": "p",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ṔṖƤ]",
+                "replacement": "P",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ɋʠ]",
+                "replacement": "q",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[Ɋ]",
+                "replacement": "Q",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ŕŗřṙṛṝȑȓɍɽɾʀ]",
+                "replacement": "r",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ŔŖŘṘṚṜṞȐȒɌ]",
+                "replacement": "R",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[śŝşšṡṣṥṧṩ]",
+                "replacement": "s",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ŚŜŞŠṠṢṤṦṨ]",
+                "replacement": "S",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ţťŧṫṭṯṱẗ]",
+                "replacement": "t",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ŢŤŦṪṬṮṰ]",
+                "replacement": "T",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ùúûüũūŭůűųȕȗṳṵṷṹṻụủứừửữự]",
+                "replacement": "u",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ÙÚÛÜŨŪŬŮŰŲȔȖṲṴṶṸṺỤỦỨỪỬỮỰ]",
+                "replacement": "U",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ṽṿʋ]",
+                "replacement": "v",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ṼṾƲ]",
+                "replacement": "V",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ẁẃẅŵẇẉẘ]",
+                "replacement": "w",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ẀẂẄŴẆẈ]",
+                "replacement": "W",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ẋẍȥẑẓẕʐʑƶ]",
+                "replacement": "z",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ẊẌŹŻŽẒẔƵȤ]",
+                "replacement": "Z",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ýÿŷȳẏỳỵỷỹ]",
+                "replacement": "y",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "[ÝŸŶȲẎỲỴỶỸ]",
+                "replacement": "Y",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              }
+            ],
+            "children": [],
+            "identifier": "8D9BE99F-E4CD-4EF3-A2C2-5B9692AE1559",
+            "title": "R - Strip Accents",
+            "type": 1,
+            "userDescription": "Runs the Strip Accents text-normalization rules on the selected tags."
+          },
+          {
+            "actions": [
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "(\\s+$|^\\s+)",
+                "replacement": "",
+                "type": "regexp",
+                "userDescription": "Removes leading and trailing whitespace from tag fields."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "\\s+",
+                "replacement": " ",
+                "type": "regexp",
+                "userDescription": "Collapses repeated whitespace inside tag fields to a single space."
+              }
+            ],
+            "children": [],
+            "identifier": "632592E0-2A0D-40F5-AF79-5CBC16BD2F31",
+            "title": "R - Trim Extra Space",
+            "type": 1,
+            "userDescription": "Runs the Trim Extra Space text-normalization rules on the selected tags."
+          },
+          {
+            "actions": [
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "isMatchWord": false,
+                "original": "Mc ",
+                "replace": "MC ",
+                "type": "replace",
+                "userDescription": "Replaces 'Mc ' with 'MC ' in _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "isMatchWord": false,
+                "original": "[us",
+                "replace": "[US",
+                "type": "replace",
+                "userDescription": "Replaces '[us' with '[US' in _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "dj($|\\s)",
+                "replacement": " DJ$1",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "(^|\\s|\"|\\(|\\[|/)Vs",
+                "replacement": "$1vs",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "(^|\\s|\"|\\(|\\[|/|\\-)(tv|oc|ep|cd|lp|uk|az|ca|dc|ac|pj|nyc|fm|kkk|ok|aka)(\\)|:|;|\\-|\\]|,|'|\\s|$)",
+                "replacement": "$1$upper($2)$3",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "(^|\\s|\"|\\(|\\[|/)ufo(\\)|:|;|\\-|\\]|,|'|s|\\s|$)",
+                "replacement": "$1UFO$2",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              },
+              {
+                "field": "_TAG",
+                "isCaseSensitive": false,
+                "regexp": "(?:^|\\s|\\[|/)(?:C{0,3}|C)(?:X{0,3}|X[C])(?:V?I{0,3}|I[VX])(?:\\.|\\s|\\)|$|:)",
+                "replacement": "$upper($0)",
+                "type": "regexp",
+                "userDescription": "Applies a regex cleanup to _TAG."
+              }
+            ],
+            "children": [],
+            "identifier": "477CAD27-AE90-46B9-AC63-45627197A2ED",
+            "title": "R - Upper Case Feats",
+            "type": 1,
+            "userDescription": "Runs the Upper Case Feats text-normalization rules on the selected tags."
+          }
+        ],
+        "identifier": "47178B78-D756-4558-AD33-99E3F3DBEF07",
+        "title": "Regex",
+        "type": 0,
+        "userDescription": "Regex-driven text normalization and cleanup actions."
+      }
+    ],
+    "identifier": "879B8E8B-1D53-470F-9E22-F91E017AEA55",
+    "title": "Format",
+    "type": 0,
+    "userDescription": "Formatting and cleanup actions for common tag normalization workflows."
+  }
+]

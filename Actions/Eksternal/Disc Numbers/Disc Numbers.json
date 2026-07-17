@@ -1,0 +1,296 @@
+[
+  {
+    "actions": [],
+    "children": [
+      {
+        "actions": [
+          {
+            "field": "_FILENAME",
+            "format": "/Volumes/Eksternal/Audio/Electronic/$if($eql($left(%albumartist%,4),The ),$left($right(%albumartist%,$sub($len(%albumartist%),4)),1),$left(%albumartist%,1))/%albumartist%/$if(%year%,$left(%year%,4) - ,)%album%/$if(%discnumber%,Disc $num(%discnumber%,1)/,)/$num(%track%,2). %title%",
+            "type": "format",
+            "userDescription": "Builds the destination path with optional Disc N subfolders before saving."
+          },
+          {
+            "coverType": 3,
+            "field": "cover",
+            "isDuplicates": true,
+            "isOnlyType": true,
+            "type": "exportcover",
+            "userDescription": "Exports the embedded front cover and keeps only the front-cover type when available."
+          }
+        ],
+        "children": [],
+        "identifier": "B1EBF5A2-B660-4DC9-AEAF-88AC2AAD01DF",
+        "title": "D - Electronic",
+        "type": 1,
+        "userDescription": "Saves the selected album into the Electronic Eksternal collection path with Disc N subfolders and exports the front cover."
+      },
+      {
+        "actions": [
+          {
+            "field": "_FILENAME",
+            "format": "/Volumes/Eksternal/Audio/Hip-Hop/$if($eql($left(%albumartist%,4),The ),$left($right(%albumartist%,$sub($len(%albumartist%),4)),1),$left(%albumartist%,1))/%albumartist%/$if(%year%,$left(%year%,4) - ,)%album%/$if(%discnumber%,Disc $num(%discnumber%,1)/,)/$num(%track%,2). %title%",
+            "type": "format",
+            "userDescription": "Builds the destination path with optional Disc N subfolders before saving."
+          },
+          {
+            "coverType": 3,
+            "field": "cover",
+            "isDuplicates": true,
+            "isOnlyType": true,
+            "type": "exportcover",
+            "userDescription": "Exports the embedded front cover and keeps only the front-cover type when available."
+          }
+        ],
+        "children": [],
+        "identifier": "294F7671-2D72-47E6-8773-D6333F4E4D68",
+        "title": "D - Hip-Hop",
+        "type": 1,
+        "userDescription": "Saves the selected album into the Hip-Hop Eksternal collection path with Disc N subfolders and exports the front cover."
+      },
+      {
+        "actions": [
+          {
+            "field": "_FILENAME",
+            "format": "/Volumes/Eksternal/Audio/Metal/$if($eql($left(%albumartist%,4),The ),$left($right(%albumartist%,$sub($len(%albumartist%),4)),1),$left(%albumartist%,1))/%albumartist%/$if(%year%,$left(%year%,4) - ,)%album%/$if(%discnumber%,Disc $num(%discnumber%,1)/,)/$num(%track%,2). %title%",
+            "type": "format",
+            "userDescription": "Builds the destination path with optional Disc N subfolders before saving."
+          },
+          {
+            "coverType": 3,
+            "field": "cover",
+            "isDuplicates": true,
+            "isOnlyType": true,
+            "type": "exportcover",
+            "userDescription": "Exports the embedded front cover and keeps only the front-cover type when available."
+          }
+        ],
+        "children": [],
+        "identifier": "5FEE866A-9083-4A32-89D9-17C5E0714ED6",
+        "title": "D - Metal",
+        "type": 1,
+        "userDescription": "Saves the selected album into the Metal Eksternal collection path with Disc N subfolders and exports the front cover."
+      },
+      {
+        "actions": [
+          {
+            "field": "_FILENAME",
+            "format": "/Volumes/Eksternal/Audio/Miscellaneous/$if($eql($left(%albumartist%,4),The ),$left($right(%albumartist%,$sub($len(%albumartist%),4)),1),$left(%albumartist%,1))/%albumartist%/$if(%year%,$left(%year%,4) - ,)%album%/$if(%discnumber%,Disc $num(%discnumber%,1)/,)/$num(%track%,2). %title%",
+            "type": "format",
+            "userDescription": "Builds the destination path with optional Disc N subfolders before saving."
+          },
+          {
+            "coverType": 3,
+            "field": "cover",
+            "isDuplicates": true,
+            "isOnlyType": true,
+            "type": "exportcover",
+            "userDescription": "Exports the embedded front cover and keeps only the front-cover type when available."
+          }
+        ],
+        "children": [],
+        "identifier": "0894B578-AA36-4115-A5B3-FE5D31B7DD66",
+        "title": "D - Miscellaneous",
+        "type": 1,
+        "userDescription": "Saves the selected album into the Miscellaneous Eksternal collection path with Disc N subfolders and exports the front cover."
+      },
+      {
+        "actions": [
+          {
+            "field": "_FILENAME",
+            "format": "/Volumes/Eksternal/Audio/Punk & Hardcore/$if($eql($left(%albumartist%,4),The ),$left($right(%albumartist%,$sub($len(%albumartist%),4)),1),$left(%albumartist%,1))/%albumartist%/$if(%year%,$left(%year%,4) - ,)%album%/$if(%discnumber%,Disc $num(%discnumber%,1)/,)/$num(%track%,2). %title%",
+            "type": "format",
+            "userDescription": "Builds the destination path with optional Disc N subfolders before saving."
+          },
+          {
+            "coverType": 3,
+            "field": "cover",
+            "isDuplicates": true,
+            "isOnlyType": true,
+            "type": "exportcover",
+            "userDescription": "Exports the embedded front cover and keeps only the front-cover type when available."
+          }
+        ],
+        "children": [],
+        "identifier": "55FBF255-4B72-400D-9C3B-FE5B5487C81C",
+        "title": "D - Punk & Hardcore",
+        "type": 1,
+        "userDescription": "Saves the selected album into the Punk & Hardcore Eksternal collection path with Disc N subfolders and exports the front cover."
+      },
+      {
+        "actions": [
+          {
+            "field": "_FILENAME",
+            "format": "/Volumes/Eksternal/Audio/Rock & Grunge/$if($eql($left(%albumartist%,4),The ),$left($right(%albumartist%,$sub($len(%albumartist%),4)),1),$left(%albumartist%,1))/%albumartist%/$if(%year%,$left(%year%,4) - ,)%album%/$if(%discnumber%,Disc $num(%discnumber%,1)/,)/$num(%track%,2). %title%",
+            "type": "format",
+            "userDescription": "Builds the destination path with optional Disc N subfolders before saving."
+          },
+          {
+            "coverType": 3,
+            "field": "cover",
+            "isDuplicates": true,
+            "isOnlyType": true,
+            "type": "exportcover",
+            "userDescription": "Exports the embedded front cover and keeps only the front-cover type when available."
+          }
+        ],
+        "children": [],
+        "identifier": "8CA26F32-6702-4C80-ADF9-AC23579837EB",
+        "title": "D - Rock & Grunge",
+        "type": 1,
+        "userDescription": "Saves the selected album into the Rock & Grunge Eksternal collection path with Disc N subfolders and exports the front cover."
+      },
+      {
+        "actions": [],
+        "children": [
+          {
+            "actions": [
+              {
+                "field": "_FILENAME",
+                "format": "/Volumes/Eksternal/Audio/Hip-Hop/-Compilations-/$if(%year%,$left(%year%,4) - ,)%album%/$if(%discnumber%,Disc $num(%discnumber%,1)/,)$num(%track%,2). %artist% - %title%",
+                "type": "format",
+                "userDescription": "Builds the destination path for compilations under the -Compilations- root."
+              },
+              {
+                "coverType": 3,
+                "field": "cover",
+                "isDuplicates": true,
+                "isOnlyType": true,
+                "type": "exportcover",
+                "userDescription": "Exports the embedded front cover and keeps only the front-cover type when available."
+              }
+            ],
+            "children": [],
+            "identifier": "013A19FA-4D63-42A1-865E-F8DF1708C079",
+            "title": "DC - Hip-Hop Compilation",
+            "type": 1,
+            "userDescription": "Saves the selected compilation into the Hip-Hop Eksternal collection under -Compilations- with Disc N subfolders and exports the front cover."
+          },
+          {
+            "actions": [
+              {
+                "field": "_FILENAME",
+                "format": "/Volumes/Eksternal/Audio/Metal/-Compilations-/$if(%year%,$left(%year%,4) - ,)%album%/$if(%discnumber%,Disc $num(%discnumber%,1)/,)$num(%track%,2). %artist% - %title%",
+                "type": "format",
+                "userDescription": "Builds the destination path for compilations under the -Compilations- root."
+              },
+              {
+                "coverType": 3,
+                "field": "cover",
+                "isDuplicates": true,
+                "isOnlyType": true,
+                "type": "exportcover",
+                "userDescription": "Exports the embedded front cover and keeps only the front-cover type when available."
+              }
+            ],
+            "children": [],
+            "identifier": "E98D8ECF-BB65-4E23-B4DE-7DD2177B7D7E",
+            "title": "DC - Metal Compilation",
+            "type": 1,
+            "userDescription": "Saves the selected compilation into the Metal Eksternal collection under -Compilations- with Disc N subfolders and exports the front cover."
+          },
+          {
+            "actions": [
+              {
+                "field": "_FILENAME",
+                "format": "/Volumes/Eksternal/Audio/Electronic/-Compilations-/$if(%year%,$left(%year%,4) - ,)%album%/$if(%discnumber%,Disc $num(%discnumber%,1)/,)$num(%track%,2). %artist% - %title%",
+                "type": "format",
+                "userDescription": "Builds the destination path for compilations under the -Compilations- root."
+              },
+              {
+                "coverType": 3,
+                "field": "cover",
+                "isDuplicates": true,
+                "isOnlyType": true,
+                "type": "exportcover",
+                "userDescription": "Exports the embedded front cover and keeps only the front-cover type when available."
+              }
+            ],
+            "children": [],
+            "identifier": "AD81B199-2211-4281-BA9A-793A31064387",
+            "title": "DC - Electronic Compilation",
+            "type": 1,
+            "userDescription": "Saves the selected compilation into the Electronic Eksternal collection under -Compilations- with Disc N subfolders and exports the front cover."
+          },
+          {
+            "actions": [
+              {
+                "field": "_FILENAME",
+                "format": "/Volumes/Eksternal/Audio/Miscellaneous/-Compilations-/$if(%year%,$left(%year%,4) - ,)%album%/$if(%discnumber%,Disc $num(%discnumber%,1)/,)$num(%track%,2). %artist% - %title%",
+                "type": "format",
+                "userDescription": "Builds the destination path for compilations under the -Compilations- root."
+              },
+              {
+                "coverType": 3,
+                "field": "cover",
+                "isDuplicates": true,
+                "isOnlyType": true,
+                "type": "exportcover",
+                "userDescription": "Exports the embedded front cover and keeps only the front-cover type when available."
+              }
+            ],
+            "children": [],
+            "identifier": "D12AD4A1-13F9-49F1-981A-D22234F70ED7",
+            "title": "DC - Miscellaneous Compilation",
+            "type": 1,
+            "userDescription": "Saves the selected compilation into the Miscellaneous Eksternal collection under -Compilations- with Disc N subfolders and exports the front cover."
+          },
+          {
+            "actions": [
+              {
+                "field": "_FILENAME",
+                "format": "/Volumes/Eksternal/Audio/Punk & Hardcore/-Compilations-/$if(%year%,$left(%year%,4) - ,)%album%/$if(%discnumber%,Disc $num(%discnumber%,1)/,)$num(%track%,2). %artist% - %title%",
+                "type": "format",
+                "userDescription": "Builds the destination path for compilations under the -Compilations- root."
+              },
+              {
+                "coverType": 3,
+                "field": "cover",
+                "isDuplicates": true,
+                "isOnlyType": true,
+                "type": "exportcover",
+                "userDescription": "Exports the embedded front cover and keeps only the front-cover type when available."
+              }
+            ],
+            "children": [],
+            "identifier": "2A1CA9D4-C104-4A77-8025-D22D554B18B4",
+            "title": "DC - Punk & Hardcore Compilation",
+            "type": 1,
+            "userDescription": "Saves the selected compilation into the Punk & Hardcore Eksternal collection under -Compilations- with Disc N subfolders and exports the front cover."
+          },
+          {
+            "actions": [
+              {
+                "field": "_FILENAME",
+                "format": "/Volumes/Eksternal/Audio/Rock & Grunge/-Compilations-/$if(%year%,$left(%year%,4) - ,)%album%/$if(%discnumber%,Disc $num(%discnumber%,1)/,)$num(%track%,2). %artist% - %title%",
+                "type": "format",
+                "userDescription": "Builds the destination path for compilations under the -Compilations- root."
+              },
+              {
+                "coverType": 3,
+                "field": "cover",
+                "isDuplicates": true,
+                "isOnlyType": true,
+                "type": "exportcover",
+                "userDescription": "Exports the embedded front cover and keeps only the front-cover type when available."
+              }
+            ],
+            "children": [],
+            "identifier": "E947B53A-50DF-4944-AB8A-4AB13E63C30C",
+            "title": "DC - Rock & Grunge Compilation",
+            "type": 1,
+            "userDescription": "Saves the selected compilation into the Rock & Grunge Eksternal collection under -Compilations- with Disc N subfolders and exports the front cover."
+          }
+        ],
+        "identifier": "EB43DD0D-8B7C-44C2-8024-9503FADAE57C",
+        "title": "Compilation",
+        "type": 0,
+        "userDescription": ""
+      }
+    ],
+    "identifier": "6515EE7C-2F5D-4F62-971F-F9646F3BD3AC",
+    "title": "Disc Numbers",
+    "type": 0,
+    "userDescription": "Save actions for the Eksternal library layout with optional Disc N subfolders."
+  }
+]

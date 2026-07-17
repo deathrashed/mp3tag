@@ -1,0 +1,149 @@
+[
+  {
+    "actions": [],
+    "children": [
+      {
+        "actions": [
+          {
+            "field": "_FILENAME",
+            "format": "/Volumes/Eksternal/Audio/Metal/-Splits-/%albumartist%/$if(%year%,$left(%year%,4) - ,)%album%/$num(%track%,2). %artist% - %title%",
+            "type": "format",
+            "userDescription": ""
+          },
+          {
+            "coverType": 3,
+            "field": "cover",
+            "isDuplicates": true,
+            "isOnlyType": true,
+            "type": "exportcover",
+            "userDescription": ""
+          }
+        ],
+        "children": [],
+        "identifier": "36650316-3496-420F-9F3D-3A141FC75E70",
+        "title": "S - Metal - Split",
+        "type": 1,
+        "userDescription": "Saves the selected split into the Metal Eksternal collection under -Splits- and exports the front cover."
+      },
+      {
+        "actions": [
+          {
+            "field": "_FILENAME",
+            "format": "/Volumes/Eksternal/Audio/Rock & Grunge/-Splits-/%albumartist%/$if(%year%,$left(%year%,4) - ,)%album%/$num(%track%,2). %artist% - %title%",
+            "type": "format",
+            "userDescription": ""
+          },
+          {
+            "coverType": 3,
+            "field": "cover",
+            "isDuplicates": true,
+            "isOnlyType": true,
+            "type": "exportcover",
+            "userDescription": ""
+          }
+        ],
+        "children": [],
+        "identifier": "4A47929E-860E-4BA1-9971-02F05240830A",
+        "title": "S - Rock & Grunge - Split",
+        "type": 1,
+        "userDescription": "Saves the selected split into the Rock & Grunge Eksternal collection under -Splits- and exports the front cover."
+      },
+      {
+        "actions": [
+          {
+            "field": "_FILENAME",
+            "format": "/Volumes/Eksternal/Audio/Punk & Hardcore/-Splits-/%albumartist%/$if(%year%,$left(%year%,4) - ,)%album%/$num(%track%,2). %artist% - %title%",
+            "type": "format",
+            "userDescription": ""
+          },
+          {
+            "coverType": 3,
+            "field": "cover",
+            "isDuplicates": true,
+            "isOnlyType": true,
+            "type": "exportcover",
+            "userDescription": ""
+          }
+        ],
+        "children": [],
+        "identifier": "28EAACAB-E674-43D4-8EFD-C514DD6B4466",
+        "title": "S - Punk & Hardcore - Split",
+        "type": 1,
+        "userDescription": "Saves the selected split into the Punk & Hardcore Eksternal collection under -Splits- and exports the front cover."
+      },
+      {
+        "actions": [
+          {
+            "field": "_FILENAME",
+            "format": "/Volumes/Eksternal/Audio/Hip-Hop/-Splits-/%albumartist%/$if(%year%,$left(%year%,4) - ,)%album%/$num(%track%,2). %artist% - %title%",
+            "type": "format",
+            "userDescription": ""
+          },
+          {
+            "coverType": 3,
+            "field": "cover",
+            "isDuplicates": true,
+            "isOnlyType": true,
+            "type": "exportcover",
+            "userDescription": ""
+          }
+        ],
+        "children": [],
+        "identifier": "DA4F76BE-88CB-4CA3-B410-D1F9090A3125",
+        "title": "S - Hip-Hop - Split",
+        "type": 1,
+        "userDescription": "Saves the selected split into the Hip-Hop Eksternal collection under -Splits- and exports the front cover."
+      },
+      {
+        "actions": [
+          {
+            "field": "_FILENAME",
+            "format": "/Volumes/Eksternal/Audio/Electronic/-Splits-/%albumartist%/$if(%year%,$left(%year%,4) - ,)%album%/$num(%track%,2). %artist% - %title%",
+            "type": "format",
+            "userDescription": ""
+          },
+          {
+            "coverType": 3,
+            "field": "cover",
+            "isDuplicates": true,
+            "isOnlyType": true,
+            "type": "exportcover",
+            "userDescription": ""
+          }
+        ],
+        "children": [],
+        "identifier": "18585759-9133-401A-9916-944B8630B6F9",
+        "title": "S - Electronic - Split",
+        "type": 1,
+        "userDescription": "Saves the selected split into the Electronic Eksternal collection under -Splits- and exports the front cover."
+      },
+      {
+        "actions": [
+          {
+            "field": "_FILENAME",
+            "format": "/Volumes/Eksternal/Audio/Miscellaneous/-Splits-/%albumartist%/$if(%year%,$left(%year%,4) - ,)%album%/$num(%track%,2). %artist% - %title%",
+            "type": "format",
+            "userDescription": ""
+          },
+          {
+            "coverType": 3,
+            "field": "cover",
+            "isDuplicates": true,
+            "isOnlyType": true,
+            "type": "exportcover",
+            "userDescription": ""
+          }
+        ],
+        "children": [],
+        "identifier": "8E1E90FB-9907-4BCF-B492-5793D0328129",
+        "title": "S - Miscellaneous - Split",
+        "type": 1,
+        "userDescription": "Saves the selected split into the Misc Eksternal collection under -Splits- and exports the front cover."
+      }
+    ],
+    "identifier": "92E81B65-0B35-4E3D-AFF4-B6298596A215",
+    "title": "Splits",
+    "type": 0,
+    "userDescription": ""
+  }
+]

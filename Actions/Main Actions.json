@@ -1,0 +1,200 @@
+[
+  {
+    "actions": [
+      {
+        "field": "YEAR",
+        "format": "$regexp(%year%,'^.*([12][0-9]{3}).*$','$1')",
+        "type": "format",
+        "userDescription": "Extracts the four-digit year from YEAR or DATE-style values."
+      }
+    ],
+    "children": [],
+    "identifier": "B8364618-EA21-401A-B742-7C5CD323B167",
+    "title": "F - Year",
+    "type": 1,
+    "userDescription": "Reduces YEAR or DATE values down to a clean four-digit year."
+  },
+  {
+    "actions": [
+      {
+        "field": "ALBUMARTIST",
+        "format": "%ARTIST%",
+        "type": "format",
+        "userDescription": "Copies or derives the album artist value used by save-path actions."
+      }
+    ],
+    "children": [],
+    "identifier": "F39D2133-05E8-40C0-AFD2-C290696A04AC",
+    "title": "F - Artist to Album Artist",
+    "type": 1,
+    "userDescription": "Copies ARTIST into ALBUMARTIST for save actions that rely on album artist paths."
+  },
+  {
+    "actions": [
+      {
+        "field": "ARTIST",
+        "isCaseSensitive": false,
+        "regexp": "\\s*[\\(\\[]?\\s*(?:featuring|feat|ft)\\.?\\s+",
+        "replacement": "; ",
+        "type": "regexp",
+        "userDescription": "Converts feat-style guest markers in ARTIST into a semicolon separator."
+      },
+      {
+        "field": "ARTIST",
+        "isCaseSensitive": false,
+        "regexp": "[\\)\\]]",
+        "replacement": "",
+        "type": "regexp",
+        "userDescription": "Removes stray closing brackets from ARTIST after guest-marker normalization."
+      },
+      {
+        "field": "ARTIST",
+        "isCaseSensitive": false,
+        "regexp": ";\\s*",
+        "replacement": "; ",
+        "type": "regexp",
+        "userDescription": "Normalizes semicolon spacing in ARTIST before splitting."
+      },
+      {
+        "field": "ARTIST",
+        "isCaseSensitive": false,
+        "regexp": "\\s+",
+        "replacement": " ",
+        "type": "regexp",
+        "userDescription": "Collapses repeated whitespace inside ARTIST to a single space."
+      },
+      {
+        "field": "TITLE",
+        "format": "$if($strstr(%artist%,;),%title% (feat. $trim($regexp(%artist%,'^[^;]+;(.*)$',$1))),%title%)",
+        "type": "format",
+        "userDescription": "Builds or normalizes a feat. credit in TITLE."
+      },
+      {
+        "field": "ARTIST",
+        "format": "$regexp(%artist%,'^([^;]+).*','$1')",
+        "type": "format",
+        "userDescription": "Cleans ARTIST back to the primary credited artist."
+      },
+      {
+        "field": "ARTIST",
+        "format": "$trim(%artist%)",
+        "type": "format",
+        "userDescription": "Trims whitespace from ARTIST."
+      },
+      {
+        "field": "TITLE",
+        "format": "$trim(%title%)",
+        "type": "format",
+        "userDescription": "Trims whitespace from TITLE."
+      }
+    ],
+    "children": [],
+    "identifier": "5614EE61-4F53-437D-8302-D523852EE23F",
+    "title": "F - Fix Feat",
+    "type": 1,
+    "userDescription": "Moves featured-artist credits into TITLE using the same proven actions as your current feat tools, with a name that matches the fix-feat workflow."
+  },
+  {
+    "actions": [
+      {
+        "field": "TITLE",
+        "isCaseSensitive": false,
+        "regexp": "\\([^)]*Remaster[^)]*\\)",
+        "replacement": "",
+        "type": "regexp",
+        "userDescription": "Applies a regex cleanup to TITLE."
+      },
+      {
+        "field": "TITLE",
+        "isCaseSensitive": false,
+        "regexp": "\\s{2,}",
+        "replacement": "",
+        "type": "regexp",
+        "userDescription": "Applies a regex cleanup to TITLE."
+      },
+      {
+        "field": "ALBUM",
+        "isCaseSensitive": false,
+        "regexp": "\\([^)]*Remaster[^)]*\\)",
+        "replacement": "",
+        "type": "regexp",
+        "userDescription": "Applies a regex cleanup to ALBUM."
+      },
+      {
+        "field": "ALBUM",
+        "isCaseSensitive": false,
+        "regexp": "\\s{2,}",
+        "replacement": "",
+        "type": "regexp",
+        "userDescription": "Applies a regex cleanup to ALBUM."
+      },
+      {
+        "field": "_TAG",
+        "isCaseSensitive": false,
+        "regexp": "(\\s+$|^\\s+)",
+        "replacement": "",
+        "type": "regexp",
+        "userDescription": "Removes leading and trailing whitespace from tag fields."
+      },
+      {
+        "field": "_TAG",
+        "isCaseSensitive": false,
+        "regexp": "\\s+",
+        "replacement": " ",
+        "type": "regexp",
+        "userDescription": "Collapses repeated whitespace inside tag fields to a single space."
+      }
+    ],
+    "children": [],
+    "identifier": "E1BF0C67-B0A1-40A8-B605-4A023ADE05D3",
+    "title": "F - Strip Remaster",
+    "type": 1,
+    "userDescription": "Removes remaster/version clutter from TITLE and ALBUM, then tidies whitespace."
+  },
+  {
+    "actions": [
+      {
+        "field": "GENRE",
+        "format": "%style%",
+        "type": "format",
+        "userDescription": "Sets GENRE using a formatting expression."
+      },
+      {
+        "caseConversionType": 1,
+        "field": "GENRE",
+        "type": "caseconv",
+        "userDescription": "Applies case conversion to GENRE."
+      }
+    ],
+    "children": [],
+    "identifier": "C1A2E4D6-961D-4C06-B801-D9D35B7A12C1",
+    "title": "F - Style to Genre",
+    "type": 1,
+    "userDescription": "Copies STYLE into GENRE and normalizes the genre field casing."
+  },
+  {
+    "actions": [
+      {
+        "field": "_TAG",
+        "isCaseSensitive": false,
+        "regexp": "(\\s+$|^\\s+)",
+        "replacement": "",
+        "type": "regexp",
+        "userDescription": "Removes leading and trailing whitespace from tag fields."
+      },
+      {
+        "field": "_TAG",
+        "isCaseSensitive": false,
+        "regexp": "\\s+",
+        "replacement": " ",
+        "type": "regexp",
+        "userDescription": "Collapses repeated whitespace inside tag fields to a single space."
+      }
+    ],
+    "children": [],
+    "identifier": "DB94A817-B7DF-48E9-91AD-E564E2AB4DF9",
+    "title": "F - Trim Whitespace",
+    "type": 1,
+    "userDescription": "Trims leading, trailing, and repeated internal whitespace in tag values."
+  }
+]

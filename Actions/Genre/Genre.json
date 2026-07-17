@@ -1,0 +1,1070 @@
+[
+  {
+    "actions": [],
+    "children": [
+      {
+        "actions": [
+          {
+            "field": "GENRE",
+            "format": "Thrash Metal",
+            "type": "format",
+            "userDescription": "Sets GENRE using a formatting expression."
+          }
+        ],
+        "children": [],
+        "identifier": "36997F09-DFA7-45F0-B635-50345993B832",
+        "title": "G - Thrash Metal",
+        "type": 1,
+        "userDescription": "Sets GENRE to 'Thrash Metal' for the selected files."
+      },
+      {
+        "actions": [
+          {
+            "field": "GENRE",
+            "format": "Death Metal",
+            "type": "format",
+            "userDescription": "Sets GENRE using a formatting expression."
+          }
+        ],
+        "children": [],
+        "identifier": "F1B58E23-576C-4D04-9236-DE8BBB487ECB",
+        "title": "G - Death Metal",
+        "type": 1,
+        "userDescription": "Sets GENRE to 'Death Metal' for the selected files."
+      },
+      {
+        "actions": [
+          {
+            "field": "GENRE",
+            "format": "Hip-Hop",
+            "type": "format",
+            "userDescription": "Sets GENRE using a formatting expression."
+          }
+        ],
+        "children": [],
+        "identifier": "FDC0DC40-3180-4D6E-ADDE-E0BF23EC8B7C",
+        "title": "G - Hip-Hop",
+        "type": 1,
+        "userDescription": "Sets GENRE to 'Hip-Hop' for the selected files."
+      },
+      {
+        "actions": [
+          {
+            "field": "GENRE",
+            "format": "Death/Thrash; Death Metal; Thrash Metal",
+            "type": "format",
+            "userDescription": "Sets GENRE using a formatting expression."
+          }
+        ],
+        "children": [],
+        "identifier": "8A94A540-F423-4839-9C1E-405CA63D2C27",
+        "title": "G - Death Thrash",
+        "type": 1,
+        "userDescription": "Sets GENRE to 'Death Thrash' for the selected files."
+      },
+      {
+        "actions": [
+          {
+            "field": "GENRE",
+            "format": "Crossover; Thrash Metal",
+            "type": "format",
+            "userDescription": "Sets GENRE using a formatting expression."
+          }
+        ],
+        "children": [],
+        "identifier": "84F68A5E-8F87-4557-B457-937B7D40F410",
+        "title": "G - Crossover Thrash",
+        "type": 1,
+        "userDescription": "Sets GENRE to 'Crossover Thrash' for the selected files."
+      },
+      {
+        "actions": [
+          {
+            "field": "GENRE",
+            "format": "Blackened Death Metal",
+            "type": "format",
+            "userDescription": "Sets GENRE using a formatting expression."
+          }
+        ],
+        "children": [],
+        "identifier": "F24D38DA-86A5-4CBC-9DF3-04E3A831B942",
+        "title": "G - Blackened Death Metal",
+        "type": 1,
+        "userDescription": "Sets GENRE to 'Blackened Death Metal' for the selected files."
+      },
+      {
+        "actions": [
+          {
+            "field": "GENRE",
+            "format": "Black Metal",
+            "type": "format",
+            "userDescription": "Sets GENRE using a formatting expression."
+          }
+        ],
+        "children": [],
+        "identifier": "DB709959-A4F8-458B-8F70-26CAEE15DADE",
+        "title": "G - Black Metal",
+        "type": 1,
+        "userDescription": "Sets GENRE to 'Black Metal' for the selected files."
+      },
+      {
+        "actions": [
+          {
+            "field": "GENRE",
+            "format": "Hardcore",
+            "type": "format",
+            "userDescription": "Sets GENRE using a formatting expression."
+          }
+        ],
+        "children": [],
+        "identifier": "BE051E46-259B-4C95-9B89-B92C54C201BB",
+        "title": "G - Hardcore",
+        "type": 1,
+        "userDescription": "Sets GENRE to 'Hardcore' for the selected files."
+      },
+      {
+        "actions": [
+          {
+            "field": "GENRE",
+            "format": "Heavy Metal",
+            "type": "format",
+            "userDescription": "Sets GENRE using a formatting expression."
+          }
+        ],
+        "children": [],
+        "identifier": "FD962F87-640D-4F07-943C-A468EB2F253B",
+        "title": "G - Heavy Metal",
+        "type": 1,
+        "userDescription": "Sets GENRE to 'Heavy Metal' for the selected files."
+      },
+      {
+        "actions": [],
+        "children": [
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Thrash Metal",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "27773EB1-D68C-44F0-BBCC-42F68806B959",
+            "title": "G - Thrash Metal",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Thrash Metal' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Alternative Metal",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "E82E2BBB-FEA6-4F1C-B7B7-D3DE8500D42E",
+            "title": "G - Alternative Metal",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Alternative Metal' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Alternative Rock",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "61B8E7C3-5F0B-4D39-8D08-0245D7BEE8E5",
+            "title": "G - Alternative Rock",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Alternative Rock' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Alternative",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "C2F06E3E-1C7C-4997-9EB2-A2C2DC562483",
+            "title": "G - Alternative",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Alternative' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Atmospheric Black Metal",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "578FE0A2-16E1-4AE2-909D-8B33CD4213C2",
+            "title": "G - Atmospheric Black Metal",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Atmospheric Black Metal' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Atmospheric",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "10654FE5-D462-4218-92F4-75AC0FA9F859",
+            "title": "G - Atmospheric",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Atmospheric' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Hip-Hop; Australian Hip-Hop",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "2C35509E-D03A-4B04-8D51-F5A3B7767206",
+            "title": "G - Hip-Hop; Australian Hip-Hop",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Hip-Hop; Australian Hip-Hop' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Avantgarde",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "A6F59590-4A9C-4AC1-88E0-D46CD9B7FE02",
+            "title": "G - Avantgarde",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Avantgarde' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Beatdown; Hardcore",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "BC419178-F68D-43A8-A419-6CBBD2B84ED6",
+            "title": "G - Beatdown; Hardcore",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Beatdown; Hardcore' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Black Metal",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "5B873BE7-219A-4678-AC1C-1B86828EE353",
+            "title": "G - Black Metal",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Black Metal' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Blackened Death Metal",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "3A442687-A63F-477F-AFA4-4809D1355DC0",
+            "title": "G - Blackened Death Metal",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Blackened Death Metal' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Blackened Punk",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "43F10771-BD5C-4865-B9EF-7F56987EBBB7",
+            "title": "G - Blackened Punk",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Blackened Punk' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Blackened Speed Metal",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "008376F1-FCDF-4345-94C6-03BCE5CBC49A",
+            "title": "G - Blackened Speed Metal",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Blackened Speed Metal' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Blackened Thrash Metal",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "57475BEC-3512-4BC9-A4B5-71C69319A6DE",
+            "title": "G - Blackened Thrash Metal",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Blackened Thrash Metal' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Brutal Death Metal",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "4B097A80-FEEA-41B4-83B7-6445E27FEEB3",
+            "title": "G - Brutal Death Metal",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Brutal Death Metal' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Crossover; Thrash Metal",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "2218C3D7-1F04-43CC-B5F0-BF64CDF652D6",
+            "title": "G - Crossover; Thrash",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Crossover; Thrash' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Crossover",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "C19C13FE-A8C1-48A5-9BED-2BEB71184548",
+            "title": "G - Crossover",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Crossover' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Death Metal; Hardcore",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "B26E6F78-0F66-4053-8B7E-2ECB08AE8F8C",
+            "title": "G - Death Metal; Hardcore",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Death Metal; Hardcore' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Death Metal",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "2E09153B-C4D8-4822-AF86-13C1011A66AE",
+            "title": "G - Death Metal",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Death Metal' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Death/Thrash; Death Metal; Thrash Metal",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "D1D312A6-4ADA-463D-BFB7-83AE09E0C1D8",
+            "title": "G - Death/Thrash; Death Metal; Thrash Metal",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Death/Thrash; Death Metal; Thrash Metal' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Death",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "7FAE8310-5134-4806-8674-3B6F6CFC047A",
+            "title": "G - Death",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Death' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Deathgrind; Death Metal; Grindcore",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "FC2E7E8A-0832-41C9-9461-577DD3CAE807",
+            "title": "G - Deathgrind; Death Metal; Grindcore",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Deathgrind; Death Metal; Grindcore' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Djent",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "35371D19-377F-4395-9B2A-BD255C65F99F",
+            "title": "G - Djent",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Djent' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Doom Metal",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "E01278BE-638E-4B41-9DCA-3DE6BAC21EA0",
+            "title": "G - Doom Metal",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Doom Metal' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Experimental",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "5843EF45-EF01-48B5-B513-4E8539AD5063",
+            "title": "G - Experimental",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Experimental' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Folk",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "751571CE-71AC-4599-806A-117EC41C091A",
+            "title": "G - Folk",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Folk' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Funeral Doom",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "D89972B6-142F-4FA6-8382-FEF39170AEC8",
+            "title": "G - Funeral Doom",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Funeral Doom' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Grindcore",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "C3416178-8607-4A04-801F-0F72B2527F9E",
+            "title": "G - Grindcore",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Grindcore' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Groove Metal",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "A55361A9-4EBD-48D3-8232-A22D498758F0",
+            "title": "G - Groove Metal",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Groove Metal' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Grunge",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "FAFC2269-1CDC-477D-A372-BF6A68C95E91",
+            "title": "G - Grunge",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Grunge' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Hard Rock",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "F5F9C5E7-879D-4713-8ABB-14A057352AE8",
+            "title": "G - Hard Rock",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Hard Rock' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Hardcore Punk",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "74BFA733-D631-4FA5-87A4-8D4ECC1DF31A",
+            "title": "G - Hardcore Punk",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Hardcore Punk' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Hardcore",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "3FF156EB-B5F9-4B3D-8749-093E9A36CD84",
+            "title": "G - Hardcore",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Hardcore' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Heavy Metal",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "086BCA51-75D6-4D75-8710-C48355AFCEC4",
+            "title": "G - Heavy Metal",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Heavy Metal' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Hip-Hop; Trap",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "4E566E25-013F-4823-9C50-6AD67A05809A",
+            "title": "G - Hip-Hop; Trap",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Hip-Hop; Trap' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Hip-Hop",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "B1F18A6D-9B41-41BA-823D-DD76FF6EB8A5",
+            "title": "G - Hip-Hop",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Hip-Hop' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Horrorcore",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "C0DDBF7A-3545-4909-8D66-6C6482B11ADA",
+            "title": "G - Horrorcore",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Horrorcore' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Indie Rock",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "0ABB3520-7BD6-40DA-A9D3-2D823F53F83E",
+            "title": "G - Indie Rock",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Indie Rock' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Industrial",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "4DEB28F4-B8D3-407B-AE14-DE297210C439",
+            "title": "G - Industrial",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Industrial' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Melodic Death Metal",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "B4AAEFA4-5777-4AC6-B43C-B39385B84B7A",
+            "title": "G - Melodic Death Metal",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Melodic Death Metal' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Melodic",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "7AD9EC7B-4F3B-4D31-8CF5-307493AEB6E8",
+            "title": "G - Melodic",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Melodic' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Metal",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "8479F691-769C-4A3B-87B6-4CF5033E4E68",
+            "title": "G - Metal",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Metal' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Metallic Hardcore",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "A4EF24E8-5F58-4272-9B77-8694708331C3",
+            "title": "G - Metallic Hardcore",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Metallic Hardcore' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "New Wave",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "82C86A38-3066-486F-8C42-0F0F8B8E09BE",
+            "title": "G - New Wave",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'New Wave' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Nu Metal",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "D98A599F-7487-4D6D-8F51-A666A50C63D1",
+            "title": "G - Nu Metal",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Nu Metal' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Power Metal",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "10441E6B-4ECE-415D-81EF-5C0FE8EE4A4A",
+            "title": "G - Power Metal",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Power Metal' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Progressive Death Metal",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "1F79C34F-15D3-49B9-91E4-3F67954E2CCF",
+            "title": "G - Progressive Death Metal",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Progressive Death Metal' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Progressive Metal",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "6DFE948B-F916-4C12-ADA9-727E697453A5",
+            "title": "G - Progressive Metal",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Progressive Metal' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Progressive Thrash Metal",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "765FCCB6-0858-4B3F-92C5-4149E686B1D3",
+            "title": "G - Progressive Thrash Metal",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Progressive Thrash Metal' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Progressive Trance",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "B37D5FF5-964A-4668-828B-5B7BA0313A3E",
+            "title": "G - Progressive Trance",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Progressive Trance' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Progressive",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "3E8B592E-F1A1-4848-B900-F42809C76BA7",
+            "title": "G - Progressive",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Progressive' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Psytance",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "D7329600-796C-4AD5-8033-950E10F25B08",
+            "title": "G - Psytance",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Psytance' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Punk",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "15EDFDAB-C41C-461A-9500-6D48C64DE69F",
+            "title": "G - Punk",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Punk' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Slamming Brutal Death Metal",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "42952ADB-8321-45CB-9B61-A626926792D3",
+            "title": "G - Slamming Brutal Death Metal",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Slamming Brutal Death Metal' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Sludge Metal",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "5A630554-3F14-4548-9535-3995B9505C89",
+            "title": "G - Sludge Metal",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Sludge Metal' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Speed Metal",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "03621350-F241-4498-8792-13F01AE09662",
+            "title": "G - Speed Metal",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Speed Metal' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Stoner Metal",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "9E125CA0-8C47-4417-B52F-36868543608A",
+            "title": "G - Stoner Metal",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Stoner Metal' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Symphonic Metal",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "A4061AE5-1BD5-4969-868E-A1CF8B405716",
+            "title": "G - Symphonic Metal",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Symphonic Metal' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Technical Death Metal",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "FCB6E213-E2E3-4078-92F4-BB69E5E65BD3",
+            "title": "G - Technical Death Metal",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Technical Death Metal' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Technical Thrash Metal",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "F26B5A6D-4DFC-442F-B21A-36FDF066889F",
+            "title": "G - Technical Thrash Metal",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Technical Thrash Metal' for the selected files."
+          },
+          {
+            "actions": [
+              {
+                "field": "GENRE",
+                "format": "Technical",
+                "type": "format",
+                "userDescription": "Sets GENRE using a formatting expression."
+              }
+            ],
+            "children": [],
+            "identifier": "70AD648E-2172-42FD-AF2F-71C164942842",
+            "title": "G - Technical",
+            "type": 1,
+            "userDescription": "Sets GENRE to 'Technical' for the selected files."
+          }
+        ],
+        "identifier": "7D9601BB-0E4F-4535-AD7B-E806CC43CF93",
+        "title": "Additional",
+        "type": 0,
+        "userDescription": "Additional genre preset actions grouped separately from the main presets."
+      }
+    ],
+    "identifier": "95689302-5CB6-4D2C-850B-DC15B6C077C6",
+    "title": "Genre",
+    "type": 0,
+    "userDescription": "Genre preset actions for quickly setting common genre values."
+  }
+]

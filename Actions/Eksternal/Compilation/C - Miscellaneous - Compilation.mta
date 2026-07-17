@@ -1,0 +1,10 @@
+[#0]
+T=5
+F=_FILENAME
+1=/Volumes/Eksternal/Audio/Miscellaneous/-Compilations-/$if(%year%,$left(%year%,4) - ,)%album%/$num(%track%,2). %artist% - %title%
+
+[#1]
+T=13
+1=cover
+2=1
+3=3

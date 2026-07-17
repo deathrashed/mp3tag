@@ -1,0 +1,149 @@
+[
+  {
+    "actions": [],
+    "children": [
+      {
+        "actions": [
+          {
+            "field": "_FILENAME",
+            "format": "/Volumes/Eksternal/Audio/Metal/-Compilations-/$if(%year%,$left(%year%,4) - ,)%album%/$num(%track%,2). %artist% - %title%",
+            "type": "format",
+            "userDescription": "Builds the destination path for compilations under the -Compilations- root."
+          },
+          {
+            "coverType": 3,
+            "field": "cover",
+            "isDuplicates": true,
+            "isOnlyType": true,
+            "type": "exportcover",
+            "userDescription": "Exports the embedded front cover and keeps only the front-cover type when available."
+          }
+        ],
+        "children": [],
+        "identifier": "1D2A7377-FBD9-4874-A8FA-560E069236B4",
+        "title": "C - Metal - Compilation",
+        "type": 1,
+        "userDescription": "Saves the selected compilation into the Metal Eksternal collection under -Compilations- and exports the front cover."
+      },
+      {
+        "actions": [
+          {
+            "field": "_FILENAME",
+            "format": "/Volumes/Eksternal/Audio/Electronic/-Compilations-/$if(%year%,$left(%year%,4) - ,)%album%/$num(%track%,2). %artist% - %title%",
+            "type": "format",
+            "userDescription": "Builds the destination path for compilations under the -Compilations- root."
+          },
+          {
+            "coverType": 3,
+            "field": "cover",
+            "isDuplicates": true,
+            "isOnlyType": true,
+            "type": "exportcover",
+            "userDescription": "Exports the embedded front cover and keeps only the front-cover type when available."
+          }
+        ],
+        "children": [],
+        "identifier": "5C99E46A-5BF7-452D-8FF4-D628C564CD7B",
+        "title": "C - Electronic - Compilation",
+        "type": 1,
+        "userDescription": "Saves the selected compilation into the Electronic Eksternal collection under -Compilations- and exports the front cover."
+      },
+      {
+        "actions": [
+          {
+            "field": "_FILENAME",
+            "format": "/Volumes/Eksternal/Audio/Miscellaneous/-Compilations-/$if(%year%,$left(%year%,4) - ,)%album%/$num(%track%,2). %artist% - %title%",
+            "type": "format",
+            "userDescription": "Builds the destination path for compilations under the -Compilations- root."
+          },
+          {
+            "coverType": 3,
+            "field": "cover",
+            "isDuplicates": true,
+            "isOnlyType": true,
+            "type": "exportcover",
+            "userDescription": "Exports the embedded front cover and keeps only the front-cover type when available."
+          }
+        ],
+        "children": [],
+        "identifier": "1A24FBD3-2C92-4357-AAEF-FEDE114E4A7A",
+        "title": "C - Miscellaneous - Compilation",
+        "type": 1,
+        "userDescription": "Saves the selected compilation into the Miscellaneous Eksternal collection under -Compilations- and exports the front cover."
+      },
+      {
+        "actions": [
+          {
+            "field": "_FILENAME",
+            "format": "/Volumes/Eksternal/Audio/Punk & Hardcore/-Compilations-/$if(%year%,$left(%year%,4) - ,)%album%/$num(%track%,2). %artist% - %title%",
+            "type": "format",
+            "userDescription": "Builds the destination path for compilations under the -Compilations- root."
+          },
+          {
+            "coverType": 3,
+            "field": "cover",
+            "isDuplicates": true,
+            "isOnlyType": true,
+            "type": "exportcover",
+            "userDescription": "Exports the embedded front cover and keeps only the front-cover type when available."
+          }
+        ],
+        "children": [],
+        "identifier": "6710D506-4217-45DC-8C76-759EC7D249D5",
+        "title": "C - Punk & Hardcore - Compilation",
+        "type": 1,
+        "userDescription": "Saves the selected compilation into the Punk & Hardcore Eksternal collection under -Compilations- and exports the front cover."
+      },
+      {
+        "actions": [
+          {
+            "field": "_FILENAME",
+            "format": "/Volumes/Eksternal/Audio/Rock & Grunge/-Compilations-/$if(%year%,$left(%year%,4) - ,)%album%/$num(%track%,2). %artist% -  %title%",
+            "type": "format",
+            "userDescription": "Builds the destination path for compilations under the -Compilations- root."
+          },
+          {
+            "coverType": 3,
+            "field": "cover",
+            "isDuplicates": true,
+            "isOnlyType": true,
+            "type": "exportcover",
+            "userDescription": "Exports the embedded front cover and keeps only the front-cover type when available."
+          }
+        ],
+        "children": [],
+        "identifier": "1D9C5034-91E7-4BE4-A938-0395E8590C5F",
+        "title": "C - Rock & Grunge - Compilation",
+        "type": 1,
+        "userDescription": "Saves the selected compilation into the Rock & Grunge Eksternal collection under -Compilations- and exports the front cover."
+      },
+      {
+        "actions": [
+          {
+            "field": "_FILENAME",
+            "format": "/Volumes/Eksternal/Audio/Hip-Hop/-Compilations-/$if(%year%,$left(%year%,4) - ,)%album%/$num(%track%,2). %artist% - %title%",
+            "type": "format",
+            "userDescription": "Builds the destination path for compilations under the -Compilations- root."
+          },
+          {
+            "coverType": 3,
+            "field": "cover",
+            "isDuplicates": true,
+            "isOnlyType": true,
+            "type": "exportcover",
+            "userDescription": "Exports the embedded front cover and keeps only the front-cover type when available."
+          }
+        ],
+        "children": [],
+        "identifier": "2E5C8105-1322-4424-B6B3-A653F40A6DF3",
+        "title": "C - Hip-Hop - Compilation",
+        "type": 1,
+        "userDescription": "Saves the selected compilation into the Hip-Hop Eksternal collection under -Compilations- and exports the front cover."
+      }
+    ],
+    "identifier": "0329A9B7-61D4-44C4-9EDC-762C410A3649",
+    "title": "Compilations",
+    "type": 0,
+    "userDescription": ""
+  }
+]

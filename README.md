@@ -1,5 +1,6 @@
 <div align="center">
-<img src="https://mp3tag.app/assets/images/mp3tag-logo.png" width="450" alt="Mp3tag" />
+<img src="https://raw.githubusercontent.com/deathrashed/gupload/main/Uploads/Images/mp3tag-ring.png" width="450" alt="Mp3tag" />
+
 
 # deathrashed / mp3tag
 
@@ -43,6 +44,13 @@ Modular tag sources for streaming services, music databases, cover art, lyrics, 
   - [Disc Number actions](#disc-number-actions-d---)
   - [External (Export) actions](#external-export-actions-e---)
   - [Adapting the export templates](#adapting-the-export-templates)
+- [Scripts](#scripts)
+  - [Quick start: `./configure`](#quick-start-configure)
+  - [Interactive wizard](#interactive-wizard)
+  - [Layout presets](#layout-presets)
+  - [Non-interactive use](#non-interactive-use-scripting--ci)
+  - [After running](#after-running)
+  - [Editing `.mta` files manually](#editing-mta-files-manually)
 - [Settings System](#settings-system)
 - [File Naming Conventions](#file-naming-conventions)
 - [Creating and Editing Actions](#creating-and-editing-actions-mta-files)
@@ -65,23 +73,66 @@ This repository contains personal configuration, actions, and source scripts for
 .
 ├── .icon/                          # Provider icons for documentation
 ├── Actions/                        # Mp3tag action groups (.mta files)
-│   ├── Format/                     # Case conversion, date formats, etc.
-│   ├── Genre/                      # Genre-specific actions and mappings
-│   ├── Regex/                      # Regex-based text cleaning
-│   ├── Disc Numbers/               # Disc number formatting
-│   └── Eksternal/                  # External / export-related actions
+│   ├── Action Groups.json          # Master importable bundle (all groups)
+│   ├── Main Actions.json           # Flat collection of top-level F - actions
+│   ├── MTA Guide.md                # .mta file-format reference
+│   ├── README.md                   # What each category does + prefix guide
+│   │
+│   ├── Eksternal/                  # Save actions for the Eksternal library
+│   │   ├── README.md               # Per-action description
+│   │   ├── Eksternal.json          # Master JSON for the group
+│   │   ├── E - <Genre>.mta         # 6 standard save actions (no disc)
+│   │   ├── Disc Numbers/           # 6 D - <Genre>.mta + JSON
+│   │   ├── Compilation/            # 6 C - <Genre> - Compilation.mta + JSON
+│   │   └── Splits/                 # 6 S - <Genre> - Split.mta + JSON
+│   │
+│   ├── Format/                     # Tag-formatting actions
+│   │   ├── README.md
+│   │   ├── Format.json
+│   │   ├── F - <Action>.mta        # 11 curated top-level actions
+│   │   └── Additional Format/      # 25 extended one-off actions
+│   │
+│   ├── Genre/                      # One-click GENRE tag setters
+│   │   ├── README.md
+│   │   ├── Genre.json
+│   │   ├── G - <Genre>.mta         # 9 top-level genre presets
+│   │   └── Additional Genres/      # 60+ extended genre presets
+│   │
+│   └── Regex/                      # Regex-driven text cleanup
+│       ├── README.md
+│       ├── Regex.json
+│       ├── R - <Action>.mta        # 6 top-level regex actions
+│       └── Additional Regex/       # 15 extended regex actions
+│
 ├── Sources/                        # Web sources and supporting files
 │   ├── *.src                       # Standalone tag / cover sources
 │   ├── *.inc                       # Shared parser include files
 │   ├── *#Settings….settings        # Settings panel definitions (JSON)
 │   ├── Mp3tagSettings/             # Export templates, actions, mp3tag.cfg
 │   └── settings.json               # Runtime settings store (auto-generated)
+│
+├── configure                       # Top-level bash wrapper — run `./configure` for the interactive wizard
+├── Scripts/                        # One-off setup / maintenance scripts
+│   ├── README.md
+│   ├── layouts.py                   # Folder-structure presets (standard, chronological, alphabetical, flat)
+│   └── retarget-paths.py            # Bulk-rewrite personal mount paths and folder layout
+│
 └── README.md
 ```
 
+### Actions folder at a glance
+
+| Folder | What it is |
+| --- | --- |
+| `Actions/` (top) | Master `Action Groups.json` (the file Mp3tag imports), a flat `Main Actions.json` for the most-used `F -` actions, and the `MTA Guide.md` format reference. Each subfolder is a category with its own `README.md`, master `<Category>.json`, and per-action `.mta` scripts. |
+| `Actions/Eksternal/` | Save actions for the Eksternal library at `/Volumes/Eksternal/Audio/`. Hard-codes the maintainer's mount, so retarget before use (see [Scripts](#scripts)). Includes top-level `E -` actions plus `Disc Numbers/`, `Compilation/`, and `Splits/` sub-folders. |
+| `Actions/Format/` | Tag-formatting actions — clean up, normalize, and reorganize tag values. Tag-only, no file paths. Includes an `Additional Format/` sub-folder of one-off actions (BPM, Date, Track, Disc, Compilation tag, Genre cleanup, Title Case Advanced, etc.). |
+| `Actions/Genre/` | One-click `GENRE` tag setters for the library's genre vocabulary. Includes an `Additional Genres/` sub-folder of 60+ extended presets (Alternative, Doom, Grindcore, Hardcore Punk, Industrial, Nu Metal, Progressive, etc.). |
+| `Actions/Regex/` | Regex-driven text normalization actions — replace, regexp, and case-conversion steps that fix common tagging issues across `_TAG` / `_ALL` or specific fields. Includes an `Additional Regex/` sub-folder of 15 extended actions (Clean Whitespace, Fix Common Typos, Fix Contractions, Remove Trailing Info, etc.). |
+
 ---
 
-## What is Mp3tag?
+## <img src="https://raw.githubusercontent.com/deathrashed/gupload/main/Uploads/Images/mp3tag-1-white.png" height="20" valign="middle" /> What is Mp3tag?
 
 Mp3tag is a metadata editor for audio files that allows you to:
 
@@ -96,14 +147,7 @@ For more information, visit the [official Mp3tag website](https://www.mp3tag.de/
 
 ---
 
-## Getting Started
-
-### Installation
-
-
-
-Then restart Mp3tag — sources appear automatically under **Tag Sources** in the toolbar.
-## Getting Started with Mp3tag
+## <img src="https://raw.githubusercontent.com/deathrashed/gupload/main/Uploads/Images/mp3tag-1-white.png" height="20" valign="middle" /> Getting Started
 
 ### Installation
 
@@ -156,7 +200,7 @@ ln -s ~/mp3tag \
 
 ---
 
-## How to Edit Tags in Mp3tag
+## <img src="https://raw.githubusercontent.com/deathrashed/gupload/main/Uploads/Images/mp3tag-1-white.png" height="20" valign="middle" /> How to Edit Tags in Mp3tag
 
 ### Manual Tag Editing
 
@@ -195,9 +239,10 @@ Actions can:
 
 ---
 
-## Tag Sources
+## <img src="https://raw.githubusercontent.com/deathrashed/gupload/main/Uploads/Images/mp3tag-1-white.png" height="20" valign="middle" /> Tag Sources
 
-### <img src=".icon/itunes.png" height="20" valign="middle" /> iTunes+
+<details>
+<summary><img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/applemusic.svg" height="20" valign="middle" /> <strong>iTunes+</strong></summary>
 
 **Files:** `iTunes+#S - iTunes+.src` · `iTunes+#Settings….settings` · `iTunes API v2.inc` · `iTunes Artwork.inc`
 
@@ -213,9 +258,12 @@ Searches the Apple Music / iTunes Store catalog via the iTunes Search API. Retur
 
 **Search by:** Artist + Album (or fallback to folder names)
 
+</details>
+
 ---
 
-### <img src=".icon/metallum.png" height="20" valign="middle" /> Metal Archives — Tag Sources
+<details>
+<summary><img src="https://raw.githubusercontent.com/deathrashed/gupload/main/Uploads/Images/metallum-white.svg" height="20" valign="middle" /> <strong>Metal Archives — Tag Sources</strong></summary>
 
 **Files:** `Me&tal Archives#S - Search by Band.src` · `Me&tal Archives#S - Search by Band + Album.src` · `Me&tal Archives#S - Search by Album.src`
 
@@ -229,9 +277,12 @@ Three search modes for fetching complete release metadata from [metal-archives.c
 
 Returns: Title, Artist, Album, Year, Genre, Country, Label, Catalog Number, and track listing.
 
+</details>
+
 ---
 
-### <img src=".icon/metallum-genres.png" height="20" valign="middle" /> Metallum Genres
+<details>
+<summary><img src="https://raw.githubusercontent.com/deathrashed/gupload/main/Uploads/Images/metallum-icon-white-ring.png" height="20" valign="middle" /> <strong>Metallum Genres</strong></summary>
 
 **Files:** `Metallum Genres#S - Metallum Genres.src` · `Metallum Genres#Settings….settings`
 
@@ -252,9 +303,12 @@ Standalone genre-only source querying Metal Archives directly. Designed to run a
 replace "Original Text" "Replacement Text"
 ```
 
+</details>
+
 ---
 
-### <img src=".icon/lastfm.png" height="20" valign="middle" /> Last.fm Genres
+<details>
+<summary><img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/lastfm.svg" height="20" valign="middle" /> <strong>Last.fm Genres</strong></summary>
 
 **Files:** `Last.fm#S - Last.fm Genres.src` · `Last.fm#Settings….settings`
 
@@ -269,9 +323,12 @@ Fetches an artist's top tags from the Last.fm API and writes them as genre tags.
 
 > Uses the Last.fm `artist.gettoptags` endpoint with a public embedded API key.
 
+</details>
+
 ---
 
-### <img src=".icon/musicbrainz.png" height="20" valign="middle" /> MusicBrainz Expanded
+<details>
+<summary><img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/musicbrainz.svg" height="20" valign="middle" /> <strong>MusicBrainz Expanded</strong></summary>
 
 **Files:** `MusicBrainz Expanded.inc` + 7 `.src` entry points · `MusicBrainz Expanded#Settings….settings`
 
@@ -298,9 +355,12 @@ Returns: Artist, AlbumArtist, Album, Year, Genre, Label, Country, Media type, Ca
 | Convert status and primary type | `true` | Normalise release type/status strings |
 | Show MB nonstandard tags | `false` | Include `MUSICBRAINZ_*` ID fields |
 
+</details>
+
 ---
 
-### <img src=".icon/bandcamp.png" height="20" valign="middle" /> Bandcamp
+<details>
+<summary><img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/bandcamp.svg" height="20" valign="middle" /> <strong>Bandcamp</strong></summary>
 
 **Files:** `Bandcamp#S - Bandcamp by &Album.src` · `Bandcamp#S - Bandcamp by &All.src` · `Bandcamp#S - Bandcamp by &Track.src` · `Bandcamp#S - Bandcamp by &URL.src` · `Bandcamp#ParserScriptAlbum.inc` · `Bandcamp#Settings….settings`
 
@@ -315,9 +375,12 @@ Fetches metadata directly from Bandcamp release pages.
 
 Returns: Title, Artist, AlbumArtist, Album, Year, Genre, Label, Track number, and cover art.
 
+</details>
+
 ---
 
-### <img src=".icon/qobuz.png" height="20" valign="middle" /> Qobuz
+<details>
+<summary><img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/qobuz.svg" height="20" valign="middle" /> <strong>Qobuz</strong></summary>
 
 **Files:** `Qobuz.inc` · `&Qobuz#S - Qobuz AU.src` · `&Qobuz#S - Qobuz US.src` · `&Qobuz#Settings….settings`
 
@@ -325,9 +388,12 @@ Full metadata source for Qobuz with regional entry points (AU and US) sharing a 
 
 Returns: Title, Artist, AlbumArtist, Album, Year, Genre, Label, Track number, Disc number, Composer, Lyricist, Credits, Publisher, ISRC, and high-resolution cover art.
 
+</details>
+
 ---
 
-### <img src=".icon/deezer-icon.png" height="20" valign="middle" /> Deezer
+<details>
+<summary><img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/deezer.svg" height="20" valign="middle" /> <strong>Deezer</strong></summary>
 
 **Files:** `Deezer#S - Deezer by Album.src` · `Deezer#S - Deezer by Title.src`
 
@@ -338,9 +404,12 @@ Returns: Title, Artist, AlbumArtist, Album, Year, Genre, Label, Track number, Di
 
 Returns: Title, Artist, AlbumArtist, Album, Year, Genre, Track number, and cover art.
 
+</details>
+
 ---
 
-### <img src=".icon/soundcloud.png" height="20" valign="middle" /> Soundcloud
+<details>
+<summary><img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/soundcloud.svg" height="20" valign="middle" /> <strong>Soundcloud</strong></summary>
 
 **Files:** `Soundcloud.inc` · `Soundcloud#S - Soundcloud Search.src` · `Soundcloud Artwork.inc` · `Soundcloud#Settings….settings`
 
@@ -348,9 +417,12 @@ Searches SoundCloud for tracks and retrieves metadata.
 
 Returns: Title, Artist, Year, Genre, Description, and cover art.
 
+</details>
+
 ---
 
-### <img src=".icon/genius.png" height="20" valign="middle" /> Genius Lyrics
+<details>
+<summary><img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/genius.svg" height="20" valign="middle" /> <strong>Genius Lyrics</strong></summary>
 
 **Files:** `Genius#Lyrics.inc` · `Genius#S - Genius Lyrics.src` · `Genius#Settings….settings`
 
@@ -363,19 +435,23 @@ Fetches lyrics from [genius.com](https://genius.com) and writes them to the `UNS
 | Line ending character | `CR (Mac)` | Line ending format for lyrics |
 | Write UNSYNCEDLYRICS | `true` | Write to standard UNSYNCEDLYRICS field |
 
----
+</details>
 
-## Cover Art Sources
+## <img src="https://raw.githubusercontent.com/deathrashed/gupload/main/Uploads/Images/mp3tag-1-white.png" height="20" valign="middle" /> Cover Art Sources
 
-### <img src=".icon/itunes.png" height="20" valign="middle" /> iTunes Cover Art
+<details>
+<summary><img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/applemusic.svg" height="20" valign="middle" /> <strong>iTunes Cover Art</strong></summary>
 
 **File:** `&Art#&iTunes.src` → `iTunes Artwork.inc`
 
 Searches Apple Music for cover art. Always retrieves the original uncompressed source image at maximum available resolution. No settings required — hardcoded to highest quality.
 
+</details>
+
 ---
 
-### <img src=".icon/deezer-icon.png" height="20" valign="middle" /> Deezer Cover Art
+<details>
+<summary><img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/deezer.svg" height="20" valign="middle" /> <strong>Deezer Cover Art</strong></summary>
 
 **File:** `&Art#&Deezer.src`
 
@@ -383,9 +459,12 @@ Searches Deezer for album artwork. Returns up to 1200×1200 px JPEG. Parses Deez
 
 **Search by:** Artist + Album
 
+</details>
+
 ---
 
-### <img src=".icon/qobuz.png" height="20" valign="middle" /> Qobuz Cover Art
+<details>
+<summary><img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/qobuz.svg" height="20" valign="middle" /> <strong>Qobuz Cover Art</strong></summary>
 
 **File:** `&Art#&Qobuz.src` → `Qobuz.inc`
 
@@ -393,25 +472,18 @@ Searches Qobuz for album artwork and extracts the best available image URL from 
 
 **Search by:** AlbumArtist + Album
 
+</details>
+
 ---
 
-### <img src=".icon/soundcloud.png" height="20" valign="middle" /> Soundcloud Cover Art
+<details>
+<summary><img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/soundcloud.svg" height="20" valign="middle" /> <strong>Soundcloud Cover Art</strong></summary>
 
 **File:** `&Art#&Soundcloud.src` → `Soundcloud Artwork.inc`
 
 Fetches SoundCloud track or artist artwork by artist name and title, or by direct URL.
 
----
-
-### COV — Cover Art Search
-
-**File:** `COV#S - Cover Art Search.src`
-
-Opens [covers.musichoarders.xyz](https://covers.musichoarders.xyz/) in your default web browser, pre-filled with the track's artist and album. Aggregates cover art from Apple Music, Spotify, Tidal, Deezer, Amazon, and Discogs.
-
-> Opens your browser for manual interaction, in accordance with the site's [integration guidelines](https://covers.musichoarders.xyz/).
-
----
+</details>
 
 ## Actions
 
@@ -508,9 +580,28 @@ Like the Disc Number actions, but **without** a `Disc N/` subfolder. Shipped for
 
 ### Adapting the export templates
 
-The `D - …` and `E - …` actions are shipped with the maintainer's personal library layout hard-coded into the format string. Before running them, you need to swap `/Volumes/Eksternal/Audio/<Genre>/` for your own export root.
+> **Heads up:** only the `D - …`, `E - …`, `C - …`, and `S - …` action groups hard-code the maintainer's personal mount. The `F - …`, `G - …`, and `R - …` actions are tag-only and don't have this issue.
 
-**Quick `sed` one-liner.** Run this from the repo root, replacing the two paths with your own:
+The `D - …`, `E - …`, `C - …`, and `S - …` actions are shipped with the maintainer's personal library layout hard-coded into the format string. Before running them, you need to swap `/Volumes/Eksternal/Audio/<Genre>/` for your own export root.
+
+**Bulk rewrite script (recommended).** Run from the repo root:
+
+```bash
+# Dry run — show what would change, write nothing.
+./configure --new /Volumes/MyExternal/Music/ --dry-run
+
+# Apply for real.
+./configure --new /Volumes/MyExternal/Music/ --yes
+
+# Tilde expansion is supported.
+./configure --new '~/Music/Audio/' --yes
+```
+
+The script handles every `*.mta` file under `Actions/Eksternal/` plus all the JSON action groups in `Actions/`, `Actions/Action Groups.json`, and any matching files in `Sources/`. It prompts before writing (unless `--yes` is passed) and supports custom `--old` and optional `/Audio/<Genre>/ → /Music/<Genre>/` rewrites — see `./configure --help` for the full flag list.
+
+After the script runs, re-import `Actions/Action Groups.json` into Mp3tag (or refresh the already-imported groups) so the new paths take effect.
+
+**Quick `sed` one-liner.** If you don't want to use the helper script, this does the same thing from the repo root:
 
 ```bash
 # Example: point the templates at /Volumes/MyExternal/Music/Metal/...
@@ -534,9 +625,148 @@ This rewrites the path in every `.mta` file and in `Action Groups.json` in one p
 
 **Tip:** If you imported the action groups via the JSON bundle (see [Importing the bundled action groups](#importing-the-bundled-action-groups)), duplicate an action first via **Actions → Actions… → right-click → Duplicate**, edit the copy, and leave the original alone. This keeps the upstream file untouched and makes future `git pull` updates conflict-free.
 
+For a one-shot bulk rewrite that handles every `.mta` and JSON file in one pass, see the [`./configure` script](#quick-start-configure) below.
+
 ---
 
-## Settings System
+## <img src="https://raw.githubusercontent.com/deathrashed/gupload/main/Uploads/Images/mp3tag-1-white.png" height="20" valign="middle" /> Scripts
+
+One-off setup and maintenance scripts that ship with the repo. None of them are required for day-to-day Mp3tag use — they exist to make retargeting, syncing, and other bulk edits easier.
+
+### `retarget-paths.py` and `layouts.py`
+
+**Paths:** `Scripts/retarget-paths.py`, `Scripts/layouts.py` (and the top-level wrapper `./configure`)
+
+Bulk-rewrites the personal library mount paths **and** the folder structure in the `Eksternal` action groups. The script handles two independent operations:
+
+1. **Mount retargeting** — swap the bundled `/Volumes/Eksternal/Audio/` (or any custom mount) for your own save destination.
+2. **Layout application** — pick a folder-structure preset (`standard`, `chronological`, `alphabetical`, `flat`) and rewrite the post-genre portion of every format string in one pass.
+
+The same path string lives in three places — the individual `*.mta` import scripts in `Actions/Eksternal/...`, the per-category JSON action groups, and the master importable bundle `Actions/Action Groups.json` — and the script rewrites all of them, in both unescaped and JSON-escaped (`\/`) forms.
+
+#### Quick start: `./configure`
+
+The fastest way to get going. Run from the repo root with no arguments and the interactive wizard walks you through 4 steps:
+
+```bash
+./configure
+```
+
+You can also pass all four options on the command line if you know what you want:
+
+```bash
+./configure --new /Volumes/MyExternal/Music/ --layout standard --json-only --out /tmp/retargeted/ --yes
+```
+
+If you prefer, you can still call `python3 Scripts/retarget-paths.py` directly; both forms are equivalent.
+
+#### Interactive wizard
+
+The recommended way to use the script. Just run `./configure` (or `python3 Scripts/retarget-paths.py`) with no arguments and answer the prompts — each step has a sensible default so you can press <kbd>Enter</kbd> to accept.
+
+The wizard walks through **4 steps** in a logical top-down flow:
+
+1. **Save Location** — the foundation: which mount path to replace, and where Mp3tag should save files. Old defaults to the bundled `/Volumes/Eksternal/Audio/` (auto-detected if you've already retargeted once); new accepts any absolute path (e.g. `/Volumes/MyExternal/Music/`, `~/Music/`, `/Volumes/Backup/Audio/`). Tilde is expanded; the script warns if the directory doesn't exist.
+2. **Filename Structure** — builds on the save location: pick a layout preset and optionally rename the genre subfolders from `/Audio/<Genre>/` to `/Music/<Genre>/`.
+3. **File Scope** — which files should be rewritten: both the per-action `.mta` files and the JSON action groups (default), or just the JSONs (with `--json-only`).
+4. **Output Mode** — where the rewritten files go: in-place / `--out DIR` / `--stdout`.
+
+After step 4 the script shows a **Review** panel summarising every change, then asks for a final confirmation. The actual file modifications only happen after you say yes.
+
+The wizard uses ANSI colour and box-drawing characters to make the steps easy to follow (paths in yellow, prompts in green, errors in red). Pass `--no-color` to disable, or set `NO_COLOR=1` in the environment. The wizard auto-skips if stdin/stdout aren't a TTY — in that case use the CLI flags below.
+
+#### Layout presets
+
+The four bundled presets cover the most common library structures:
+
+| Preset | Structure (per genre) | Best for |
+| --- | --- | --- |
+| `standard`      | `Artist / Album / TrackNo - Title`            | General-purpose libraries. |
+| `chronological` | `Artist / Year - Album / TrackNo - Title`     | Browsing an artist's discography chronologically. |
+| `alphabetical`  | `FirstLetter / Artist / Album / TrackNo - Title` | Very large libraries where you want to limit direct subfolders (`A-E`, `F-J`, …). |
+| `flat`          | `TrackNo - Artist - Year - Album - Title` (one folder) | Metadata-driven libraries. |
+
+Other structures from the music-library literature (genre-rooted, classical composer, DJ-BPM/Key, format-separation, archival-by-acquisition-date) don't fit the bundled genre-split action model out of the box. For those, either add a custom entry to `Scripts/layouts.py` or edit the `.mta` files directly — see [Editing `.mta` files manually](#editing-mta-files-manually) below.
+
+The action types are:
+
+| Type | File pattern | Folder marker | Track filename |
+| --- | --- | --- | --- |
+| `E`  | `E - <Genre>.mta`               | —                                | `Track# - Title` |
+| `D`  | `D - <Genre>.mta`               | — (adds `Disc N/`)                | `Track# - Title` |
+| `C`  | `C - <Genre> - Compilation.mta` | `-Compilations-`                  | `Track# - Artist - Title` |
+| `DC` | `DC - <Genre> Compilation.mta`  | `-Compilations-` (+ `Disc N/`)    | `Track# - Artist - Title` |
+| `S`  | `S - <Genre> - Split.mta`       | `-Splits-`                        | `Track# - Artist - Title` |
+
+#### Non-interactive use (scripting / CI)
+
+```bash
+# Mount retarget only (in-place).
+./configure --new /Volumes/MyExternal/Music/ --yes
+
+# Apply a layout only (keep current mount).
+./configure --layout standard --yes
+
+# Mount retarget + layout.
+./configure \
+    --new /Volumes/MyExternal/Music/ \
+    --layout chronological --yes
+
+# Write a retargeted copy to a directory.
+./configure \
+    --new /Volumes/MyExternal/Music/ \
+    --layout alphabetical \
+    --out /tmp/retargeted/ --yes
+
+# Print the retargeted master JSON to stdout.
+./configure \
+    --new /Volumes/MyExternal/Music/ \
+    --layout flat \
+    --stdout --yes > "Action Groups.retargeted.json"
+
+# JSON-only — skip the per-action .mta scripts; rewrite only the JSONs.
+# Useful for bulk retargeting when the .mta files would be regenerated
+# from the JSON anyway.
+./configure \
+    --new /Volumes/MyExternal/Music/ \
+    --layout standard \
+    --json-only --yes
+
+# JSON-only + --out: clean "ready to import" bundle of just the JSONs.
+./configure \
+    --new /Volumes/MyExternal/Music/ \
+    --layout alphabetical \
+    --out /tmp/retargeted/ \
+    --json-only --yes
+
+# List or inspect layouts without running.
+./configure --list-layouts
+./configure --show-layout standard
+```
+
+#### After running
+
+- **In-place**: re-import `Actions/Action Groups.json` into Mp3tag so the new paths take effect. Commit the rewritten files if you forked the repo.
+- **`--out DIR`**: import `<DIR>/Actions/Action Groups.json` into Mp3tag.
+- **`--stdout`**: paste into Mp3tag via **Actions → File → Import Action Groups…** or pipe to a file with `> "Action Groups.retargeted.json"`.
+
+See `Scripts/README.md` for the full reference, or `./configure --help` for the full flag list.
+
+#### Editing `.mta` files manually
+
+The bundled `.mta` files are plain text. The path string lives on the `1=...` line under `F=_FILENAME`. Open the file in any text editor and change that one line; the format string is standard [Mp3tag scripting](https://docs.mp3tag.de/scripting/functions/).
+
+For example, to make the `E - Hip-Hop.mta` action save to `<mount>/Hip-Hop/By Year/<Year> - <Album>/<Track#>. <Title>`:
+
+```
+1=/Volumes/MyExternal/Music/Hip-Hop/By Year/$if(%year%,$left(%year%,4) - ,)%album%/$num(%track%,2). %title%
+```
+
+Repeat for any other `.mta` file you want to change. When you're done, edit (or create) a matching entry in the relevant JSON file so the master `Action Groups.json` import bundle stays in sync. The JSON `format` value is the same string, but with `/` escaped as `\/`.
+
+---
+
+## <img src="https://raw.githubusercontent.com/deathrashed/gupload/main/Uploads/Images/mp3tag-1-white.png" height="20" valign="middle" /> Settings System
 
 All sources use Mp3tag's native `.settings` JSON panel system. Settings files follow the naming convention:
 
@@ -548,7 +778,7 @@ The `….` (ellipsis `U+2026`) distinguishes settings files from other `.setting
 
 ---
 
-## File Naming Conventions
+## <img src="https://raw.githubusercontent.com/deathrashed/gupload/main/Uploads/Images/mp3tag-1-white.png" height="20" valign="middle" /> File Naming Conventions
 
 | Convention | Meaning |
 |---|---|
@@ -560,7 +790,7 @@ The `….` (ellipsis `U+2026`) distinguishes settings files from other `.setting
 
 ---
 
-## Creating and Editing Actions (.mta Files)
+## <img src="https://raw.githubusercontent.com/deathrashed/gupload/main/Uploads/Images/mp3tag-1-white.png" height="20" valign="middle" /> Creating and Editing Actions (.mta Files)
 
 Actions are stored as `.mta` files in the `Actions/` directory. Each file contains one or more action definitions in a numbered INI-like format:
 
@@ -611,7 +841,7 @@ For detailed action type documentation, see `Actions/MTA Guide.md` in this repos
 
 ---
 
-## Creating Web Sources (.src Files)
+## <img src="https://raw.githubusercontent.com/deathrashed/gupload/main/Uploads/Images/mp3tag-1-white.png" height="20" valign="middle" /> Creating Web Sources (.src Files)
 
 Source files use an INI-like format:
 
@@ -658,7 +888,7 @@ For full documentation, see the [Mp3tag Tag Sources documentation](https://docs.
 
 ---
 
-## Scripting in Mp3tag
+## <img src="https://raw.githubusercontent.com/deathrashed/gupload/main/Uploads/Images/mp3tag-1-white.png" height="20" valign="middle" /> Scripting in Mp3tag
 
 Mp3tag supports scripting functions in format strings, actions, and filters.
 
@@ -696,7 +926,7 @@ See the full [Mp3tag Scripting Documentation](https://docs.mp3tag.de/scripting/f
 
 ---
 
-## Additional Resources
+## <img src="https://raw.githubusercontent.com/deathrashed/gupload/main/Uploads/Images/mp3tag-1-white.png" height="20" valign="middle" /> Additional Resources
 
 - **[Mp3tag Official Website](https://www.mp3tag.de/en/)**: Download and general information
 - **[Mp3tag Documentation](https://docs.mp3tag.de/)**: Comprehensive user guide

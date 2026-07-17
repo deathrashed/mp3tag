@@ -1,0 +1,1496 @@
+[
+  {
+    "actions": [],
+    "children": [
+      {
+        "actions": [
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "_TAG",
+            "original": "\\t",
+            "replace": "",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          },
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "_TAG",
+            "original": "\\r",
+            "replace": "",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          },
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "_TAG",
+            "original": "\\n",
+            "replace": "",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          },
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "_TAG",
+            "original": "\\s+",
+            "replace": "",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "(\\s+$|^\\s+)",
+            "replacement": "",
+            "isCaseSensitive": false
+          }
+        ],
+        "children": [],
+        "identifier": "69614961-FE46-4E0A-BCEF-4CF555405CC4",
+        "title": "R - Clean Whitespace",
+        "type": 1,
+        "userDescription": ""
+      },
+      {
+        "actions": [
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "(^|\\\\s|\"|\\\\(|\\\\[|/)O'([^e]{1})",
+            "replacement": "$1O'$upper($2)",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "(^|\\\\s|\"|\\\\(|\\\\[|/)Mc(.{1})",
+            "replacement": "$1Mc$upper($2)",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "(^|\\\\s|\"|\\\\(|\\\\[|/)Mac([bdfgln])",
+            "replacement": "$1Mac$upper($2)",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "De(Marco|Syl)",
+            "replacement": "De$caps3($1)",
+            "isCaseSensitive": false
+          }
+        ],
+        "children": [],
+        "identifier": "C9CE6C58-1709-45F6-B3ED-BA37702DF71E",
+        "title": "R - English Naming",
+        "type": 1,
+        "userDescription": ""
+      },
+      {
+        "actions": [
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "_TAG",
+            "original": "\\b(tv|oc|ep|cd|lp|uk|us|az|ca|dc|ac|pj|nyc|fm|ok|aka|id|ie|eg|etc|vs|aka)\\b",
+            "replace": "$upper($0)",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          },
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "_TAG",
+            "original": "\\b(ufo|cia|fbi|nsa|nasa|usa|uk|eu|un|who|wto|nato)\\b",
+            "replace": "$upper($0)",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          },
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "_TAG",
+            "original": "\\b(dj|mc)\\b",
+            "replace": "$upper($0)",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          }
+        ],
+        "children": [],
+        "identifier": "CE65395A-CBD2-4F28-8261-8454DBEB3B2F",
+        "title": "R - Fix Abbreviations",
+        "type": 1,
+        "userDescription": ""
+      },
+      {
+        "actions": [
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "_ALL",
+            "original": "teh",
+            "replace": "the",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          },
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "_ALL",
+            "original": "adn",
+            "replace": "and",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          },
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "_ALL",
+            "original": "taht",
+            "replace": "that",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          },
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "_ALL",
+            "original": "recieve",
+            "replace": "receive",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          },
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "_ALL",
+            "original": "seperate",
+            "replace": "separate",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          },
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "_ALL",
+            "original": "occured",
+            "replace": "occurred",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          },
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "_ALL",
+            "original": "begining",
+            "replace": "beginning",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          },
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "_ALL",
+            "original": "definately",
+            "replace": "definitely",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          }
+        ],
+        "children": [],
+        "identifier": "E5092665-A266-4D70-9731-90F3759073A9",
+        "title": "R - Fix Common Typos",
+        "type": 1,
+        "userDescription": ""
+      },
+      {
+        "actions": [
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "(^|\\s|\\(|\\[|/|-|:|;|\")(can|don|ain|won|wouldn|haven|didn|isn|aren|wasn|weren|hasn|hadn|doesn|didn|won|wouldn|shouldn|couldn|mustn|shan|mayn)t($|\\s|\\)|\\]|/|-|:|;|\")",
+            "replacement": "$1$2't$3",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "(^|\\s|\\(|\\[|/|-|:|;|\")(that|there|let|it|he|she|we|they|you|I|who|what|where|when|why|how)'s($|\\s|\\)|\\]|/|-|:|;|\")",
+            "replacement": "$1$2's$3",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "(^|\\s|\\(|\\[|/|-|:|;|\")(is|was|has|had|would|should|could|must|shall|may)'ve($|\\s|\\)|\\]|/|-|:|;|\")",
+            "replacement": "$1$2've$3",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "(^|\\s|\\(|\\[|/|-|:|;|\")(is|was|has|had|would|should|could|must|shall|may)n't($|\\s|\\)|\\]|/|-|:|;|\")",
+            "replacement": "$1$2n't$3",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "(^|\\s|\\(|\\[|/|-|:|;|\")(I|you|we|they|he|she|it|who|what|where|when|why|how)'ll($|\\s|\\)|\\]|/|-|:|;|\")",
+            "replacement": "$1$2'll$3",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "(^|\\s|\\(|\\[|/|-|:|;|\")(I|you|we|they|he|she|it|who|what|where|when|why|how)'re($|\\s|\\)|\\]|/|-|:|;|\")",
+            "replacement": "$1$2're$3",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "(^|\\s|\\(|\\[|/|-|:|;|\")(I|you|we|they|he|she|it|who|what|where|when|why|how)'d($|\\s|\\)|\\]|/|-|:|;|\")",
+            "replacement": "$1$2'd$3",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "(^|\\s|\\(|\\[|/|-|:|;|\")(I|you|we|they|he|she|it|who|what|where|when|why|how)'ve($|\\s|\\)|\\]|/|-|:|;|\")",
+            "replacement": "$1$2've$3",
+            "isCaseSensitive": false
+          }
+        ],
+        "children": [],
+        "identifier": "07B0DEFF-AAEC-43FA-A706-D68C0966C4A0",
+        "title": "R - Fix Contractions",
+        "type": 1,
+        "userDescription": ""
+      },
+      {
+        "actions": [
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "_TAG",
+            "original": "\\bI{1,3}\\b",
+            "replace": "$upper($0)",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          },
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "_TAG",
+            "original": "\\bIV\\b",
+            "replace": "IV",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          },
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "_TAG",
+            "original": "\\bV\\b",
+            "replace": "V",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          },
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "_TAG",
+            "original": "\\bVI{0,3}\\b",
+            "replace": "$upper($0)",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          },
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "_TAG",
+            "original": "\\bIX\\b",
+            "replace": "IX",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          },
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "_TAG",
+            "original": "\\bX{1,3}\\b",
+            "replace": "$upper($0)",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          }
+        ],
+        "children": [],
+        "identifier": "472A1180-1EF0-4A83-B5EB-8928FE2E0548",
+        "title": "R - Fix Roman Numerals",
+        "type": 1,
+        "userDescription": ""
+      },
+      {
+        "actions": [
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "ARTIST",
+            "original": "\\s*&\\s*",
+            "replace": ";",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          },
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "ARTIST",
+            "original": "\\s*,\\s*",
+            "replace": ";",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          },
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "GENRE",
+            "original": "\\s*/\\s*",
+            "replace": ";",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          },
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "GENRE",
+            "original": "\\s*&\\s*",
+            "replace": ";",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          },
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "GENRE",
+            "original": "\\s*,\\s*",
+            "replace": ";",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          },
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "GENRE",
+            "original": "\\s*-\\s*",
+            "replace": ";",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          }
+        ],
+        "children": [],
+        "identifier": "DAC7892F-6FDC-4496-8583-FC4B5384C2DB",
+        "title": "R - Normalize Separators",
+        "type": 1,
+        "userDescription": ""
+      },
+      {
+        "actions": [
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "TITLE",
+            "original": "\\s*\\([^)]*\\)\\s*",
+            "replace": "",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          },
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "ARTIST",
+            "original": "\\s*\\([^)]*\\)\\s*",
+            "replace": "",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          },
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "ALBUM",
+            "original": "\\s*\\([^)]*\\)\\s*",
+            "replace": "",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          }
+        ],
+        "children": [],
+        "identifier": "655B1047-83FB-495A-8BB1-01D1781D9EB6",
+        "title": "R - Remove Parentheses",
+        "type": 1,
+        "userDescription": ""
+      },
+      {
+        "actions": [
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "TITLE",
+            "original": "\\s*\\[[^\\]]*\\]\\s*",
+            "replace": "",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          },
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "ARTIST",
+            "original": "\\s*\\[[^\\]]*\\]\\s*",
+            "replace": "",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          },
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "ALBUM",
+            "original": "\\s*\\[[^\\]]*\\]\\s*",
+            "replace": "",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          }
+        ],
+        "children": [],
+        "identifier": "4F6FA6FB-4833-41CD-B9DC-5665BC85568D",
+        "title": "R - Remove Square Brackets",
+        "type": 1,
+        "userDescription": ""
+      },
+      {
+        "actions": [
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "TITLE",
+            "original": "\\s*-\\s*(Live|Remix|Version|Edit|Extended|Radio|Single|Album|Original|Demo|Acoustic|Instrumental|Explicit|Clean|Unplugged|Studio|Session)\\s*$",
+            "replace": "",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          },
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "TITLE",
+            "original": "\\s*\\(Live\\)\\s*$",
+            "replace": "",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          },
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "TITLE",
+            "original": "\\s*\\(Remix\\)\\s*$",
+            "replace": "",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          },
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "TITLE",
+            "original": "\\s*\\(feat\\.\\s*.*?\\)\\s*$",
+            "replace": "",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          },
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "TITLE",
+            "original": "\\s*\\[.*?\\]\\s*$",
+            "replace": "",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          }
+        ],
+        "children": [],
+        "identifier": "957AC7A7-2799-461E-A01B-1E6B0B6BB084",
+        "title": "R - Remove Trailing Info",
+        "type": 1,
+        "userDescription": ""
+      },
+      {
+        "actions": [
+          {
+            "userDescription": "",
+            "type": "caseconv",
+            "field": "_TAG",
+            "caseConversionType": 1
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "(?<![/\\\\-:;\\\\(\\\\)\\\\[\\\\]{}])\\\\s(a|the|of|for|as|at|an|by|off|on|from|in|to|and|with|or|nor|von|de)(?\\u003d\\\\s)(?!\\\\s[\\\\-\\\\(\\\\)\\\\[\\\\]{}])",
+            "replacement": "$lower($0)",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "(^|\\\\s|\\\\(|\\\\[|/)'(.{1})",
+            "replacement": "$1'$upper($2)",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_ALL",
+            "regexp": "Feat",
+            "replacement": "feat",
+            "isCaseSensitive": false
+          }
+        ],
+        "children": [],
+        "identifier": "22D55972-9F9F-45CC-85B8-9D3C6142067D",
+        "title": "R - Smart Title Case",
+        "type": 1,
+        "userDescription": ""
+      },
+      {
+        "actions": [
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[àáâãäåāăąǻȁȃȧḁạảấầẩẫậắằẳẵặ]",
+            "replacement": "a",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ÀÁÂÃÄÅĀĂĄǺȀȂȦḀẠẢẤẦẨẪẬẮẰẲẴẶ]",
+            "replacement": "A",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ḃƀƃɓ]",
+            "replacement": "b",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ḂƁḄḆ]",
+            "replacement": "B",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[çćĉċčƈȼḉ]",
+            "replacement": "c",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ÇĆĈĊČƇȻḈ]",
+            "replacement": "C",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ďḋḑḓḍđð]",
+            "replacement": "d",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ĎḊḐḒḌĐÐ]",
+            "replacement": "D",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[èéêëēĕėęěȅȇẹẻẽếềểễệ]",
+            "replacement": "e",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ÈÉÊËĒĔĖĘĚȄȆẸẺẼẾỀỂỄỆ]",
+            "replacement": "E",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ƒḟ]",
+            "replacement": "f",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ḞƑ]",
+            "replacement": "F",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ĝğġģǥɠḡ]",
+            "replacement": "g",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ĜĞĠĢǤƓḠ]",
+            "replacement": "G",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ĥħḣḥḧḩḫẖ]",
+            "replacement": "h",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ĤĦḢḤḦḨḪẖ]",
+            "replacement": "H",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ìíîïĩīĭįıǐȉȋịỉȈȊ]",
+            "replacement": "i",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ÌÍÎÏĨĪĬĮİǏȈȊỊỈ]",
+            "replacement": "I",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ĵǰȷɉ]",
+            "replacement": "j",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ĴɈ]",
+            "replacement": "J",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ķḱḳḵƙⱪǩ]",
+            "replacement": "k",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ĶḰḲḴƘⱩǨ]",
+            "replacement": "K",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ĺļľŀłḷḹḽḻ]",
+            "replacement": "l",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ĹĻĽĿŁḶḸḼḺ]",
+            "replacement": "L",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ḿṁṃɱ]",
+            "replacement": "m",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ḾṀṂⱮ]",
+            "replacement": "M",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ñńņňŉŋǹṅṇṉṋ]",
+            "replacement": "n",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ÑŃŅŇŊǸṄṆṈṊ]",
+            "replacement": "N",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[òóôõöøōŏőǫǭǿȍȏȫȭȯȱṍṏṑṓọỏốồổỗộớờởỡợ]",
+            "replacement": "o",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ÒÓÔÕÖØŌŎŐǪǬǾȌȎȪȬȮȰṌṎṐṒỌỎỐỒỔỖỘỚỜỞỠỢ]",
+            "replacement": "O",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ṕṗƥ]",
+            "replacement": "p",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ṔṖƤ]",
+            "replacement": "P",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ɋʠ]",
+            "replacement": "q",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[Ɋ]",
+            "replacement": "Q",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ŕŗřṙṛṝȑȓɍɽɾʀ]",
+            "replacement": "r",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ŔŖŘṘṚṜṞȐȒɌ]",
+            "replacement": "R",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[śŝşšṡṣṥṧṩ]",
+            "replacement": "s",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ŚŜŞŠṠṢṤṦṨ]",
+            "replacement": "S",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ţťŧṫṭṯṱẗ]",
+            "replacement": "t",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ŢŤŦṪṬṮṰ]",
+            "replacement": "T",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ùúûüũūŭůűųȕȗṳṵṷṹṻụủứừửữự]",
+            "replacement": "u",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ÙÚÛÜŨŪŬŮŰŲȔȖṲṴṶṸṺỤỦỨỪỬỮỰ]",
+            "replacement": "U",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ṽṿʋ]",
+            "replacement": "v",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ṼṾƲ]",
+            "replacement": "V",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ẁẃẅŵẇẉẘ]",
+            "replacement": "w",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ẀẂẄŴẆẈ]",
+            "replacement": "W",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ẋẍȥẑẓẕʐʑƶ]",
+            "replacement": "z",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ẊẌŹŻŽẒẔƵȤ]",
+            "replacement": "Z",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ýÿŷȳẏỳỵỷỹ]",
+            "replacement": "y",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ÝŸŶȲẎỲỴỶỸ]",
+            "replacement": "Y",
+            "isCaseSensitive": false
+          }
+        ],
+        "children": [],
+        "identifier": "CC311392-AB79-4B49-82E8-046EDA5F4093",
+        "title": "R - Spacing Proper",
+        "type": 1,
+        "userDescription": ""
+      },
+      {
+        "actions": [
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[àáâãäåāăąǻȁȃȧḁạảấầẩẫậắằẳẵặ]",
+            "replacement": "a",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ÀÁÂÃÄÅĀĂĄǺȀȂȦḀẠẢẤẦẨẪẬẮẰẲẴẶ]",
+            "replacement": "A",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ḃƀƃɓ]",
+            "replacement": "b",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ḂƁḄḆ]",
+            "replacement": "B",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[çćĉċčƈȼḉ]",
+            "replacement": "c",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ÇĆĈĊČƇȻḈ]",
+            "replacement": "C",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ďḋḑḓḍđð]",
+            "replacement": "d",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ĎḊḐḒḌĐÐ]",
+            "replacement": "D",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[èéêëēĕėęěȅȇẹẻẽếềểễệ]",
+            "replacement": "e",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ÈÉÊËĒĔĖĘĚȄȆẸẺẼẾỀỂỄỆ]",
+            "replacement": "E",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ƒḟ]",
+            "replacement": "f",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ḞƑ]",
+            "replacement": "F",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ĝğġģǥɠḡ]",
+            "replacement": "g",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ĜĞĠĢǤƓḠ]",
+            "replacement": "G",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ĥħḣḥḧḩḫẖ]",
+            "replacement": "h",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ĤĦḢḤḦḨḪẖ]",
+            "replacement": "H",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ìíîïĩīĭįıǐȉȋịỉȈȊ]",
+            "replacement": "i",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ÌÍÎÏĨĪĬĮİǏȈȊỊỈ]",
+            "replacement": "I",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ĵǰȷɉ]",
+            "replacement": "j",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ĴɈ]",
+            "replacement": "J",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ķḱḳḵƙⱪǩ]",
+            "replacement": "k",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ĶḰḲḴƘⱩǨ]",
+            "replacement": "K",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ĺļľŀłḷḹḽḻ]",
+            "replacement": "l",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ĹĻĽĿŁḶḸḼḺ]",
+            "replacement": "L",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ḿṁṃɱ]",
+            "replacement": "m",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ḾṀṂⱮ]",
+            "replacement": "M",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ñńņňŉŋǹṅṇṉṋ]",
+            "replacement": "n",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ÑŃŅŇŊǸṄṆṈṊ]",
+            "replacement": "N",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[òóôõöøōŏőǫǭǿȍȏȫȭȯȱṍṏṑṓọỏốồổỗộớờởỡợ]",
+            "replacement": "o",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ÒÓÔÕÖØŌŎŐǪǬǾȌȎȪȬȮȰṌṎṐṒỌỎỐỒỔỖỘỚỜỞỠỢ]",
+            "replacement": "O",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ṕṗƥ]",
+            "replacement": "p",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ṔṖƤ]",
+            "replacement": "P",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ɋʠ]",
+            "replacement": "q",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[Ɋ]",
+            "replacement": "Q",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ŕŗřṙṛṝȑȓɍɽɾʀ]",
+            "replacement": "r",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ŔŖŘṘṚṜṞȐȒɌ]",
+            "replacement": "R",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[śŝşšṡṣṥṧṩ]",
+            "replacement": "s",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ŚŜŞŠṠṢṤṦṨ]",
+            "replacement": "S",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ţťŧṫṭṯṱẗ]",
+            "replacement": "t",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ŢŤŦṪṬṮṰ]",
+            "replacement": "T",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ùúûüũūŭůűųȕȗṳṵṷṹṻụủứừửữự]",
+            "replacement": "u",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ÙÚÛÜŨŪŬŮŰŲȔȖṲṴṶṸṺỤỦỨỪỬỮỰ]",
+            "replacement": "U",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ṽṿʋ]",
+            "replacement": "v",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ṼṾƲ]",
+            "replacement": "V",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ẁẃẅŵẇẉẘ]",
+            "replacement": "w",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ẀẂẄŴẆẈ]",
+            "replacement": "W",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ẋẍȥẑẓẕʐʑƶ]",
+            "replacement": "z",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ẊẌŹŻŽẒẔƵȤ]",
+            "replacement": "Z",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ýÿŷȳẏỳỵỷỹ]",
+            "replacement": "y",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "[ÝŸŶȲẎỲỴỶỸ]",
+            "replacement": "Y",
+            "isCaseSensitive": false
+          }
+        ],
+        "children": [],
+        "identifier": "290A222E-7F0E-48EB-9661-C514AC1490EB",
+        "title": "R - Strip Accents",
+        "type": 1,
+        "userDescription": ""
+      },
+      {
+        "actions": [
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "(\\\\s+$|^\\\\s+)",
+            "replacement": "",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "\\\\s+",
+            "replacement": " ",
+            "isCaseSensitive": false
+          }
+        ],
+        "children": [],
+        "identifier": "CE3CEEEC-B5E4-47B9-9D1B-494FFB67EBAA",
+        "title": "R - Trim Extra Space",
+        "type": 1,
+        "userDescription": ""
+      },
+      {
+        "actions": [
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "_TAG",
+            "original": "Mc ",
+            "replace": "MC ",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          },
+          {
+            "userDescription": "",
+            "type": "replace",
+            "field": "_TAG",
+            "original": "[us",
+            "replace": "[US",
+            "isCaseSensitive": false,
+            "isMatchWord": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "dj($|\\\\s)",
+            "replacement": " DJ$1",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "(^|\\\\s|\"|\\\\(|\\\\[|/)Vs",
+            "replacement": "$1vs",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "(^|\\\\s|\"|\\\\(|\\\\[|/|\\\\-)(tv|oc|ep|cd|lp|uk|az|ca|dc|ac|pj|nyc|fm|kkk|ok|aka)(\\\\)|:|;|\\\\-|\\\\]|,|'|\\\\s|$)",
+            "replacement": "$1$upper($2)$3",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "(^|\\\\s|\"|\\\\(|\\\\[|/)ufo(\\\\)|:|;|\\\\-|\\\\]|,|'|s|\\\\s|$)",
+            "replacement": "$1UFO$2",
+            "isCaseSensitive": false
+          },
+          {
+            "userDescription": "",
+            "type": "regexp",
+            "field": "_TAG",
+            "regexp": "(?:^|\\\\s|\\\\[|/)(?:C{0,3}|C)(?:X{0,3}|X[C])(?:V?I{0,3}|I[VX])(?:\\\\.|\\\\s|\\\\)|$|:)",
+            "replacement": "$upper($0)",
+            "isCaseSensitive": false
+          }
+        ],
+        "children": [],
+        "identifier": "F30DFACF-3B08-438B-A7B2-0F371DAC2FA6",
+        "title": "R - Upper Case Feats",
+        "type": 1,
+        "userDescription": ""
+      }
+    ],
+    "identifier": "C993C9BB-E1D9-4A6C-BAEE-3A7E986EF47A",
+    "title": "Regex",
+    "type": 0,
+    "userDescription": ""
+  }
+]

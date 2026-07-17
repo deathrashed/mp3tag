@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# configure — top-level wrapper for the bundled-action configuration wizard.
+#
+# This is a thin convenience wrapper around Scripts/retarget-paths.py that
+# lets you invoke the script from the repo root without typing the full
+# path. It forwards all arguments unchanged.
+#
+# Run with no arguments for an interactive wizard, or pass --new /
+# --layout for non-interactive use. Run with --help for the full flag
+# list.
+
+set -e
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+exec python3 "${SCRIPT_DIR}/Scripts/retarget-paths.py" "$@"
