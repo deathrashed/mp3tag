@@ -626,7 +626,7 @@ This rewrites the path in every `.mta` file and in `Action Groups.json` in one p
 
 For a one-shot bulk rewrite that handles every `.mta` and JSON file in one pass, see the [`./configure` script](#quick-start-configure) below.
 
-</details>
+
 
 ---
 
