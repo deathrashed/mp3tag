@@ -17,19 +17,12 @@ Modular tag sources for streaming services, music databases, cover art, lyrics, 
 
 **Web Sources** · **Action Groups** · **Genre Presets** · **Cover Art** · **Interactive Configure** · **macOS Support**
 
-</div>
-
 ---
 
-## Contents
 
-- [Overview](#overview)
-- [SOURCES](#sources)
-- [ACTIONS](#actions)
-- [SCRIPTS](#scripts)
-- [SETTINGS](#settings)
-- [GUIDES](#guides)
-- [FAQ](#faq)
+[OVERVIEW](#overview) · [SOURCES](#sources) · [ACTIONS](./Actions/README.md) · [SCRIPTS](./Scripts/README.md) · [SETTINGS](#settings) · [GUIDES](#guides) · [FAQ](#faq)
+
+</div>
 
 ---
 
@@ -58,7 +51,11 @@ cp -R Actions "$DATA_DIR"
 
 ---
 
-## Overview
+<details>
+<summary>
+<a id="overview"></a><strong><a href="#overview"><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /></a>&nbsp;OVERVIEW</strong>
+</summary>
+
 
 This repository contains personal configuration, tag sources, actions, and scripts for [Mp3tag](https://www.mp3tag.de/en/) on macOS. It is designed to be cloned directly into the Mp3tag application support directory so that sources and actions are available out of the box.
 
@@ -170,12 +167,15 @@ For more information, visit the [official Mp3tag website](https://www.mp3tag.de/
 
 **[&uarr; Back to Contents](#contents)**
 
+</details>
+
 ---
 
 <details>
 <summary>
 <a id="sources"></a><strong><a href="#sources"><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /></a>&nbsp;SOURCES</strong>
 </summary>
+
 
 ### Individual Tag Sources
 
@@ -346,22 +346,7 @@ Fetches lyrics from [genius.com](https://genius.com) and writes them to the `UNS
 | Line ending character | `CR (Mac)` | Line ending format for lyrics |
 | Write UNSYNCEDLYRICS | `true` | Write to standard UNSYNCEDLYRICS field |
 
----
-
-#### Source Comparison
-
-| Source | Metadata | Artwork | Genres | Lyrics |
-|---|---|---|---|---|
-| iTunes+ | &#x2713; | &#x2713; | &#x2713; | |
-| Metal Archives | &#x2713; | | &#x2713; | |
-| Metallum Genres | | | &#x2713; | |
-| Last.fm | | | &#x2713; | |
-| MusicBrainz | &#x2713; | | &#x2713; | |
-| Bandcamp | &#x2713; | &#x2713; | &#x2713; | |
-| Qobuz | &#x2713; | &#x2713; | &#x2713; | |
-| Deezer | &#x2713; | &#x2713; | &#x2713; | |
-| SoundCloud | &#x2713; | &#x2713; | &#x2713; | |
-| Genius | | | | &#x2713; |
+#### 
 
 > <details>
 > <summary><a id="cover-art-sources"></a><strong>Cover Art Sources</strong></summary>
@@ -412,6 +397,7 @@ Fetches lyrics from [genius.com](https://genius.com) and writes them to the `UNS
 <summary>
 <a id="actions"></a><strong><a href="#actions"><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /></a>&nbsp;ACTIONS</strong>
 </summary>
+
 
 Each category is a subfolder under `Actions/` with a `README.md` explaining every action, a `<Category>.json` file, and per-action `<Prefix> - <Name>.mta` scripts. The master importable bundle `Actions/Action Groups.json` combines all groups in a single file.
 
@@ -526,6 +512,7 @@ Open each `.mta` file and edit the `1=...` line under `F=_FILENAME`. The format 
 <a id="scripts"></a><strong><a href="#scripts"><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /></a>&nbsp;SCRIPTS</strong>
 </summary>
 
+
 One-off setup and maintenance scripts that ship with the repo. None are required for day-to-day Mp3tag use — they exist to make retargeting, syncing, and other bulk edits easier.
 
 **Files:** `Scripts/retarget-paths.py`, `Scripts/layouts.py` (and the top-level wrapper `./configure`)
@@ -626,6 +613,7 @@ When you're done, update the matching entry in the relevant JSON file so the mas
 <a id="settings"></a><strong><a href="#settings"><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /></a>&nbsp;SETTINGS</strong>
 </summary>
 
+
 Configuration formats used across sources and actions — how settings panels are wired up, the file-naming conventions that tie everything together, and how the `.mta` action format works under the hood.
 
 > <details>
@@ -705,6 +693,7 @@ Configuration formats used across sources and actions — how settings panels ar
 <summary>
 <a id="guides"></a><strong><a href="#guides"><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /></a>&nbsp;GUIDES</strong>
 </summary>
+
 
 Reference material for extending the repo — building new tag sources from scratch and writing Mp3tag format strings.
 
@@ -806,6 +795,7 @@ Reference material for extending the repo — building new tag sources from scra
 <summary>
 <a id="faq"></a><strong><a href="#faq"><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /></a>&nbsp;FAQ</strong>
 </summary>
+
 
 **Why don't symlinks work?**
 
