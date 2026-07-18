@@ -40,7 +40,7 @@ cp -R Actions "$DATA_DIR"
 > [!NOTE]
 > **Copy, do not symlink.** Both the macOS sandbox (App Store version) and Mp3tag's file-access model reject symlinks. Use `cp -R` or the app's own **Import…** dialog instead.
 
-**[&uarr; Back to Contents](#contents)**
+**[&uarr;](#contents)**
 
 ---
 
@@ -159,7 +159,7 @@ For more information, visit the [official Mp3tag website](https://www.mp3tag.de/
 4. **Import tags** — `Tag Sources` menu → choose a source → search and apply
 5. **Rename files** — `Convert > Tag - Filename` (`Alt+Cmd+1`) with a format string like `%artist% - %title%`
 
-**[&uarr; Back to Contents](#contents)**
+**[&uarr;](#contents)**
 
 </details>
 
@@ -168,6 +168,17 @@ For more information, visit the [official Mp3tag website](https://www.mp3tag.de/
 <a id="sources"></a><strong><a href="#sources"><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /></a>&nbsp;SOURCES</strong>
 </summary>
 ────────
+
+<p align="center">
+<a href="https://performance-partners.apple.com/search-api"><strong>iTUNES</strong></a> •
+<a href="https://www.metal-archives.com/users/dethrashed"><strong>METALLUM</strong></a> •
+<a href="https://musicbrainz.org/user/deathrashed"><strong>MUSICBRAINZ</strong></a> •
+<a href="https://www.last.fm/user/deathrashed"><strong>LAST.FM</strong></a> •
+<a href="https://bandcamp.com/deathrashed"><strong>BANDCAMP</strong></a> •
+<a href="https://www.deezer.com/us/profile/6670925423"><strong>DEEZER</strong></a> •
+<a href="https://soundcloud.com/deathrashed"><strong>SOUNDCLOUD</strong></a> •
+<a href="https://genius.com/deathrashed"><strong>GENIUS</strong></a>
+</p>
 
 ### Individual Tag Sources
 
@@ -391,13 +402,14 @@ Fetches lyrics from [genius.com](https://genius.com) and writes them to the `UNS
 ────────
 
 <p align="center">
-
-[FORMAT](./Actions/Format/README.md) · [GENRE](./Actions/Genre/README.md)  · [REGEX](./Actions/Regex/README.md) · [MAIN](./Actions/README.md)
-
----
-
-[FILE SAVING](./Actions/Eksternal/README.md) · [DISC NUMBERS](./Actions/Eksternal/Disc%20Numbers/README.md) · [COMPILATIONS](./Actions/Eksternal/Compilation/README.md) · [SPLITS](./Actions/Eksternal/Splits/README.md)
-
+<a href="./Actions/Format/README.md"><strong>FORMAT</strong></a> •
+<a href="./Actions/Genre/README.md"><strong>GENRE</strong></a> •
+<a href="./Actions/Regex/README.md"><strong>REGEX</strong></a> •
+<a href="./Actions/README.md"><strong>MAIN</strong></a> •
+<a href="./Actions/Eksternal/README.md"><strong>FILE SAVING</strong></a> •
+<a href="./Actions/Eksternal/Disc%20Numbers/README.md"><strong>DISC NUMBERS</strong></a> •
+<a href="./Actions/Eksternal/Compilation/README.md"><strong>COMPILATIONS</strong></a> •
+<a href="./Actions/Eksternal/Splits/README.md"><strong>SPLITS</strong></a>
 </p>
 
 Each category is a subfolder under `Actions/` with a `README.md` explaining every action, a `<Category>.json` file, and per-action `<Prefix> - <Name>.mta` scripts. The master importable bundle `Actions/Action Groups.json` combines all groups in a single file.
@@ -691,9 +703,13 @@ Configuration formats used across sources and actions — how settings panels ar
 <a id="guides"></a><strong><a href="#guides"><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /></a>&nbsp;GUIDES</strong>
 </summary>
 ────────
-
-
-[MTA GUIDE](./Actions/MTA%20Guide.md) · [HOWTO](https://community.mp3tag.de/c/howto/) · [TAG SOURCES](https://docs.mp3tag.de/tag-sources/development/) · [ACTIONS](https://docs.mp3tag.de/actions/) · [DOCS](https://docs.mp3tag.de/)
+<p align="center">
+<a href="./Actions/MTA%20Guide.md"><strong>MTA GUIDE</strong></a> •
+<a href="https://community.mp3tag.de/c/howto/"><strong>HOWTO</strong></a> •
+<a href="https://docs.mp3tag.de/tag-sources/development/"><strong>TAG SOURCES</strong></a> •
+<a href="https://docs.mp3tag.de/actions/"><strong>ACTIONS</strong></a> •
+<a href="https://docs.mp3tag.de/"><strong>DOCS</strong></a>
+</p>
 
 Reference material for extending the repo — building new tag sources from scratch and writing Mp3tag format strings.
 
@@ -795,9 +811,13 @@ Reference material for extending the repo — building new tag sources from scra
 </summary>
 ────────
 
-
-[COMMUNITY](https://community.mp3tag.de/categories)
-
+<p align="center">
+<a href="https://community.mp3tag.de/categories"><strong>COMMUNITY</strong></a> •
+<a href="https://docs.mp3tag.de/"><strong>DOCS</strong></a> •
+<a href="https://www.mp3tag.de/en/index.html"><strong>OFFICIAL</strong></a> •
+<a href="https://github.com/deathrashed/mp3tag/issues/new"><strong>ISSUES</strong></a> •
+<a href="https://github.com/deathrashed/mp3tag/issues/new"><strong>REQUESTS</strong></a> 
+</p>
 **Why don't symlinks work?**
 
 Both the macOS sandbox (used by the App Store version of Mp3tag) and the website version's file-access model reject symlinks to files outside the data directory. Always use `cp -R` to copy files into Mp3tag's application support folder.
