@@ -15,15 +15,9 @@ Modular tag sources for streaming services, music databases, cover art, lyrics, 
 [![ACTIONS](https://img.shields.io/badge/action%20groups%20—%2012%2B-1e1e1e?style=for-the-badge&logo=audiomack&logoColor=white)](./Actions)
 [![GENRES](https://img.shields.io/badge/genre%20presets%20—%2070%2B-1e1e1e?style=for-the-badge&logo=audiomack&logoColor=white)](./Actions/Genre)
 
-**Web Sources** · **Action Groups** · **Genre Presets** · **Cover Art** · **Interactive Configure** · **macOS Support**
-
----
-
 [OVERVIEW](./Assets/DOCS.md) · [SOURCES](#sources) · [ACTIONS](./Actions/README.md) · [SCRIPTS](./Scripts/README.md) · [SETTINGS](#settings) · [GUIDES](#guides) · [FAQ](#faq)
 
 </div>
-
----
 
 ## Quick Start
 
@@ -55,7 +49,7 @@ cp -R Actions "$DATA_DIR"
 <a id="overview"></a><strong><a href="#overview"><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /></a>&nbsp;OVERVIEW</strong>
 </summary>
 
-──────────
+────────
 
 This repository contains personal configuration, tag sources, actions, and scripts for [Mp3tag](https://www.mp3tag.de/en/) on macOS. It is designed to be cloned directly into the Mp3tag application support directory so that sources and actions are available out of the box.
 
@@ -169,13 +163,11 @@ For more information, visit the [official Mp3tag website](https://www.mp3tag.de/
 
 </details>
 
----
-
 <details>
 <summary>
 <a id="sources"></a><strong><a href="#sources"><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /></a>&nbsp;SOURCES</strong>
 </summary>
-
+────────
 
 ### Individual Tag Sources
 
@@ -391,14 +383,12 @@ Fetches lyrics from [genius.com](https://genius.com) and writes them to the `UNS
 
 </details>
 
----
-
 <details>
 <summary>
 <a id="actions"></a><strong><a href="#actions"><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /></a>&nbsp;ACTIONS</strong>
 </summary>
 
-──────────
+────────
 
 [FORMAT](./Actions/Format/README.md) · [GENRE](./Actions/Genre/README.md)  · [REGEX](./Actions/Regex/README.md) · [MAIN](./Actions/README.md) 
 
@@ -512,13 +502,12 @@ Open each `.mta` file and edit the `1=...` line under `F=_FILENAME`. The format 
 
 </details>
 
----
-
 <details>
 <summary>
 <a id="scripts"></a><strong><a href="#scripts"><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /></a>&nbsp;SCRIPTS</strong>
 </summary>
-──────────
+────────
+
 
 One-off setup and maintenance scripts that ship with the repo. None are required for day-to-day Mp3tag use — they exist to make retargeting, syncing, and other bulk edits easier.
 
@@ -613,13 +602,12 @@ When you're done, update the matching entry in the relevant JSON file so the mas
 
 </details>
 
----
-
 <details>
 <summary>
 <a id="settings"></a><strong><a href="#settings"><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /></a>&nbsp;SETTINGS</strong>
 </summary>
-──────────
+────────
+
 
 Configuration formats used across sources and actions — how settings panels are wired up, the file-naming conventions that tie everything together, and how the `.mta` action format works under the hood.
 
@@ -694,13 +682,12 @@ Configuration formats used across sources and actions — how settings panels ar
 
 </details>
 
----
-
 <details>
 <summary>
 <a id="guides"></a><strong><a href="#guides"><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /></a>&nbsp;GUIDES</strong>
 </summary>
-──────────
+────────
+
 
 [MTA GUIDE](./Actions/MTA%20Guide.md) · [HOWTO](https://community.mp3tag.de/c/howto/) · [TAG SOURCES](https://docs.mp3tag.de/tag-sources/development/) · [ACTIONS](https://docs.mp3tag.de/actions/) · [DOCS](https://docs.mp3tag.de/)
 
@@ -798,13 +785,12 @@ Reference material for extending the repo — building new tag sources from scra
 
 </details>
 
----
-
 <details>
 <summary>
 <a id="faq"></a><strong><a href="#faq"><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /></a>&nbsp;FAQ</strong>
 </summary>
-──────────
+────────
+
 
 [COMMUNITY](https://community.mp3tag.de/categories)
 
