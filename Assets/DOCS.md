@@ -547,33 +547,30 @@ The wrapper forwards all arguments to `Scripts/retarget-paths.py`. Both forms ar
 
 Run with no arguments and the wizard walks through **4 steps**:
 
-1. **Save Location** — which mount path to replace and your new save destination
-2. **Filename Structure** — pick a layout preset + optional `/Audio/` → `/Music/` rename
-3. **File Scope** — `.mta` + JSON both, or JSON only with `--json-only`
-4. **Output Mode** — in-place / `--out DIR` / `--stdout`
+1. **Where should Mp3tag save your files?** — Which mount path to replace, and your new save destination. Auto-detects mounted volumes on macOS.
+2. **How should your files be organised?** — A **card-based layout browser** shows every preset as a scannable card with name, folder structure, description, and an ASCII folder-tree preview. Type the card number, the preset id (e.g. `standard`), `0` to build a custom layout, or `–` to skip.
+3. **Which files should be updated?** — Both `.mta` scripts and JSON action groups (recommended), or JSON only.
+4. **Where should the updated files be written?** — In-place, to a separate output folder, or to stdout.
 
-After step 4 the script shows a **Review** panel, then asks for confirmation. The wizard uses ANSI colour and box-drawing characters in a TTY. Pass `--no-color` to disable.
+Before confirmation the wizard **pre-scans the repository** and shows file counts, JSON bundle counts, and the total number of replacements so you know exactly what will happen.
+
+Type `?` at any prompt for inline help, `b` to go back, or `q` to quit. Pass `--no-color` to disable ANSI output.
 
 ### Layout Presets
 
-| Preset | Structure (per genre) | Best for |
+**Common presets**
+
+| Preset id | Structure | Best for |
 |---|---|---|
-| `standard` | `Artist / Album / TrackNo - Title` | General-purpose libraries |
-| `chronological` | `Artist / Year - Album / TrackNo - Title` | Discography-order browsing |
-| `alphabetical` | `FirstLetter / Artist / Album / TrackNo - Title` | Very large libraries |
+| `standard` | `Artist / Album / TrackNo. Title` | General-purpose libraries |
+| `artist_year_album` | `Artist / Year – Album / TrackNo. Title` | Discography-order browsing |
+| `alphabetical` | `FirstLetter / Artist / Album / TrackNo. Title` | Very large libraries |
 | `flat` | `TrackNo - Artist - Year - Album - Title` (single folder) | Metadata-driven libraries |
 
-**Action types:**
+Run `./configure --list-layouts` to see all 15 presets across three categories (Common / Time & Genre / Special Purpose), or `./configure --show-layout <id>` for the format-string templates for any preset.
 
-| Type | File pattern | Folder marker | Track filename |
-|---|---|---|---|
-| `E` | `E - <Genre>.mta` | — | `Track# - Title` |
-| `D` | `D - <Genre>.mta` | (adds `Disc N/`) | `Track# - Title` |
-| `C` | `C - <Genre> - Compilation.mta` | `-Compilations-` | `Track# - Artist - Title` |
-| `DC` | `DC - <Genre> Compilation.mta` | `-Compilations-` (+ `Disc N/`) | `Track# - Artist - Title` |
-| `S` | `S - <Genre> - Split.mta` | `-Splits-` | `Track# - Artist - Title` |
+Choose `0` at the layout browser to enter the **custom layout builder** — a guided sub-wizard (steps A–F) that builds a folder hierarchy and filename format from scratch with a live preview after each choice.
 
-For structures not covered by the presets (classical composer, DJ/BPM-key, format-separation, archival-by-date), add a custom entry to `Scripts/layouts.py` or edit `.mta` files directly.
 
 ### CLI Usage
 
@@ -585,7 +582,7 @@ For structures not covered by the presets (classical composer, DJ/BPM-key, forma
 ./configure --layout standard --yes
 
 # Mount retarget + layout.
-./configure --new /Volumes/MyExternal/Music/ --layout chronological --yes
+./configure --new /Volumes/MyExternal/Music/ --layout artist_year_album --yes
 
 # Write retargeted copy to a directory.
 ./configure --new /Volumes/MyExternal/Music/ --layout alphabetical --out /tmp/retargeted/ --yes
@@ -599,6 +596,9 @@ For structures not covered by the presets (classical composer, DJ/BPM-key, forma
 # List / inspect layouts.
 ./configure --list-layouts
 ./configure --show-layout standard
+
+# Forget saved configuration.
+./configure --reset
 ```
 
 ### After Running
