@@ -1,31 +1,58 @@
-<div align="center">
-<img src="Assets/Icon/mp3tag-ring-2.png" width="400" alt="Mp3tag" />
+## Contents
 
-# 𝗠𝗣𝟯𝗧𝗔𝗚
-
-**A curated collection of web sources, tag sources, and configuration for [Mp3tag](https://www.mp3tag.de/en/) on macOS.**
-
-Modular tag sources for streaming services, music databases, cover art, lyrics, and genres — each with a configurable settings panel and consistent comment style.
-
-[![MP3TAG](https://img.shields.io/badge/Mp3tag%20—%20v3.28%2B-1e1e1e?style=for-the-badge&logo=applemusic&logoColor=white)](https://www.mp3tag.de/en/)
-[![PLATFORM](https://img.shields.io/badge/macOS-1e1e1e?style=for-the-badge&logo=apple&logoColor=white)](https://www.apple.com/macos/)
-[![CONFIGURE](https://img.shields.io/badge/interactive%20wizard-1e1e1e?style=for-the-badge&logo=gnubash&logoColor=white)](./configure)
-
-[![SOURCES](https://img.shields.io/badge/tag%20sources%20—%2028%2B-1e1e1e?style=for-the-badge&logo=audiomack&logoColor=white)](./Sources)
-[![ACTIONS](https://img.shields.io/badge/action%20groups%20—%2012%2B-1e1e1e?style=for-the-badge&logo=audiomack&logoColor=white)](./Actions)
-[![GENRES](https://img.shields.io/badge/genre%20presets%20—%2070%2B-1e1e1e?style=for-the-badge&logo=audiomack&logoColor=white)](./Actions/Genre)
-
-**Web Sources** · **Action Groups** · **Genre Presets** · **Cover Art** · **Interactive Configure** · **macOS Support**
-
----
-
-[OVERVIEW](#overview) · [SOURCES](#sources) · [ACTIONS](./Actions/README.md) · [SCRIPTS](./Scripts/README.md) · [SETTINGS](#settings) · [GUIDES](#guides) · [FAQ](#faq)
+- [Quick Start](#quick-start)
+- [Overview](#overview)
+  - [Repository Structure](#repository-structure)
+  - [What is Mp3tag?](#what-is-mp3tag)
+  - [Getting Started](#getting-started)
+- [Sources](#sources)
+  - [Individual Tag Sources](#individual-tag-sources)
+    - [iTunes+](#itunes)
+    - [Metal Archives — Tag Sources](#metal-archives--tag-sources)
+    - [Metallum Genres](#metallum-genres)
+    - [Last.fm Genres](#lastfm-genres)
+    - [MusicBrainz Expanded](#musicbrainz-expanded)
+    - [Bandcamp](#bandcamp)
+    - [Qobuz](#qobuz)
+    - [Deezer](#deezer)
+    - [Soundcloud](#soundcloud)
+    - [Genius Lyrics](#genius-lyrics)
+  - [Cover Art Sources](#cover-art-sources)
+    - [iTunes Cover Art](#itunes-cover-art)
+    - [Deezer Cover Art](#deezer-cover-art)
+    - [Qobuz Cover Art](#qobuz-cover-art)
+    - [Soundcloud Cover Art](#soundcloud-cover-art)
+- [Actions](#actions)
+  - [Prefix Guide](#prefix-guide)
+  - [Bundled Actions](#bundled-actions)
+  - [Importing Actions](#importing-actions)
+  - [Export Actions](#export-actions)
+  - [Adapting Templates](#adapting-templates)
+- [Scripts](#scripts)
+  - [Quick Start: `./configure`](#quick-start-configure)
+  - [Interactive Wizard](#interactive-wizard)
+  - [Layout Presets](#layout-presets)
+  - [CLI Usage](#cli-usage)
+  - [After Running](#after-running)
+  - [Manual Editing](#manual-editing)
+- [Settings](#settings)
+  - [Settings System](#settings-system)
+  - [File Naming Conventions](#file-naming-conventions)
+  - [Creating & Editing Actions](#creating--editing-actions)
+- [Guides](#guides)
+  - [Creating Web Sources](#creating-web-sources)
+  - [Mp3tag Scripting](#mp3tag-scripting)
+- [FAQ](#faq)
+- [Additional Resources](#additional-resources)
+- [License](#license)
 
 </div>
 
 ---
 
 ## Quick Start
+
+Getting started with this repository involves two simple steps: copying the files into place and restarting Mp3tag. Here's the fastest way to get everything working:
 
 1. **Copy the folders into place.** Copy this repo's `Sources/` and `Actions/` folders into Mp3tag's data directory (see the table in [Getting Started](#getting-started) for the exact path), **or** let Mp3tag show you exactly where:
 
@@ -50,11 +77,9 @@ cp -R Actions "$DATA_DIR"
 
 ---
 
-<details>
-<summary>
-<a id="overview"></a><strong><a href="#overview"><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /></a>&nbsp;OVERVIEW</strong>
-</summary>
+## Overview
 
+This section provides context about the repository, explains what Mp3tag is, and walks through the initial setup process. Understanding these fundamentals will help you make the most of the tag sources and actions provided here.
 
 This repository contains personal configuration, tag sources, actions, and scripts for [Mp3tag](https://www.mp3tag.de/en/) on macOS. It is designed to be cloned directly into the Mp3tag application support directory so that sources and actions are available out of the box.
 
@@ -68,8 +93,7 @@ This repository contains personal configuration, tag sources, actions, and scrip
 
 ### Repository Structure
 
-<details>
-<summary><strong>Show full directory tree…</strong></summary>
+The repository is organized into logical folders that separate concerns: sources, actions, scripts, and assets. Here's the complete directory tree:
 
 ```
 .
@@ -93,7 +117,7 @@ This repository contains personal configuration, tag sources, actions, and scrip
 └── README.md
 ```
 
-</details>
+Each subfolder under `Actions/` serves a specific purpose:
 
 | Folder | What it is |
 |---|---|
@@ -106,7 +130,7 @@ This repository contains personal configuration, tag sources, actions, and scrip
 
 ### What is Mp3tag?
 
-Mp3tag is a metadata editor for audio files that allows you to:
+Mp3tag is a powerful and extensible metadata editor for audio files. It's available on Windows, macOS, and has limited functionality on Linux. This repository focuses on the macOS version. Mp3tag allows you to:
 
 - **Batch edit tags** for multiple files simultaneously
 - **Rename files** based on tag information or vice versa
@@ -120,6 +144,8 @@ For more information, visit the [official Mp3tag website](https://www.mp3tag.de/
 ---
 
 ### Getting Started
+
+This section walks you through the complete installation process, from downloading Mp3tag to configuring the bundled actions for your own library. Follow these steps in order for the smoothest experience.
 
 **Installation**
 
@@ -158,6 +184,8 @@ For more information, visit the [official Mp3tag website](https://www.mp3tag.de/
 
 **Basic usage**
 
+Once everything is installed, here's how to use Mp3tag for common tasks:
+
 1. **Load files** — `File > Add directory…` (`Cmd+D`) or drag and drop into Mp3tag
 2. **Edit tags** — Select files, modify fields in the Tag Panel, changes apply immediately
 3. **Save** — `Cmd+S` or click the save icon
@@ -166,17 +194,15 @@ For more information, visit the [official Mp3tag website](https://www.mp3tag.de/
 
 **[&uarr; Back to Contents](#contents)**
 
-</details>
-
 ---
 
-<details>
-<summary>
-<a id="sources"></a><strong><a href="#sources"><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /></a>&nbsp;SOURCES</strong>
-</summary>
+## Sources
 
+This section documents all the tag sources and cover art sources included in the repository. Tag sources fetch metadata from online databases and write it to your audio files, while cover art sources specifically retrieve album artwork. Each source is implemented as a `.src` file that Mp3tag can execute, often accompanied by `.inc` include files for shared parsing logic and `.settings` files for configuration options.
 
 ### Individual Tag Sources
+
+These sources retrieve comprehensive metadata from various music databases and streaming services. They're designed to work together — you might use iTunes+ for mainstream releases, Metal Archives for metal-specific data, and MusicBrainz for the most complete information.
 
 #### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/applemusic.svg" height="18" valign="middle" /> iTunes+
 
@@ -345,64 +371,53 @@ Fetches lyrics from [genius.com](https://genius.com) and writes them to the `UNS
 | Line ending character | `CR (Mac)` | Line ending format for lyrics |
 | Write UNSYNCEDLYRICS | `true` | Write to standard UNSYNCEDLYRICS field |
 
-#### 
+---
 
-> <details>
-> <summary><a id="cover-art-sources"></a><strong>Cover Art Sources</strong></summary>
->
-> #### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/applemusic.svg" height="18" valign="middle" /> iTunes Cover Art
->
-> **File:** `&Art#&iTunes.src` → `iTunes Artwork.inc`
->
-> Searches Apple Music for cover art. Always retrieves the original uncompressed source image at maximum available resolution. No settings required — hardcoded to highest quality.
->
-> ---
->
-> #### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/deezer.svg" height="18" valign="middle" /> Deezer Cover Art
->
-> **File:** `&Art#&Deezer.src`
->
-> Searches Deezer for album artwork. Returns up to 1200×1200 px JPEG. Parses Deezer's embedded JSON state object.
->
-> **Search by:** Artist + Album
->
-> ---
->
-> #### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/qobuz.svg" height="18" valign="middle" /> Qobuz Cover Art
->
-> **File:** `&Art#&Qobuz.src` → `Qobuz.inc`
->
-> Searches Qobuz for album artwork and extracts the best available image URL from the structured JSON response.
->
-> **Search by:** AlbumArtist + Album
->
-> ---
->
-> #### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/soundcloud.svg" height="18" valign="middle" /> Soundcloud Cover Art
->
-> **File:** `&Art#&Soundcloud.src` → `Soundcloud Artwork.inc`
->
-> Fetches SoundCloud track or artist artwork by artist name and title, or by direct URL.
->
-> </details>
+### Cover Art Sources
+
+These sources specifically retrieve album artwork from various services. They're separate from the tag sources because cover art often requires different parsing logic and may come from different endpoints. Use these when you want to fetch artwork without importing other metadata.
+
+#### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/applemusic.svg" height="18" valign="middle" /> iTunes Cover Art
+
+**File:** `&Art#&iTunes.src` → `iTunes Artwork.inc`
+
+Searches Apple Music for cover art. Always retrieves the original uncompressed source image at maximum available resolution. No settings required — hardcoded to highest quality.
+
+---
+
+#### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/deezer.svg" height="18" valign="middle" /> Deezer Cover Art
+
+**File:** `&Art#&Deezer.src`
+
+Searches Deezer for album artwork. Returns up to 1200×1200 px JPEG. Parses Deezer's embedded JSON state object.
+
+**Search by:** Artist + Album
+
+---
+
+#### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/qobuz.svg" height="18" valign="middle" /> Qobuz Cover Art
+
+**File:** `&Art#&Qobuz.src` → `Qobuz.inc`
+
+Searches Qobuz for album artwork and extracts the best available image URL from the structured JSON response.
+
+**Search by:** AlbumArtist + Album
+
+---
+
+#### <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/386408031661cef2ac6e33ab97f57060a952be6f/icons/white/soundcloud.svg" height="18" valign="middle" /> Soundcloud Cover Art
+
+**File:** `&Art#&Soundcloud.src` → `Soundcloud Artwork.inc`
+
+Fetches SoundCloud track or artist artwork by artist name and title, or by direct URL.
 
 **[&uarr; Back to Contents](#contents)**
 
-</details>
-
 ---
 
-<details>
-<summary>
-<a id="actions"></a><strong><a href="#actions"><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /></a>&nbsp;ACTIONS</strong>
-</summary>
+## Actions
 
-
-[FORMAT](./Actions/Format/README.md) · [GENRE](./Actions/Genre/README.md)  · [REGEX](./Actions/Regex/README.md) · [MAIN](./Actions/README.md) 
-
----
-
-[FILE SAVING](./Actions/Eksternal/README.md) · [DISC NUMBERS](./Actions/Eksternal/Disc Numbers/README.md) · [COMPILATIONS](./Actions/Eksternal/Compilation/README.md) · [SPLITS](./Actions/Eksternal/Splits/README.md)
+This section documents all the action groups included in the repository. Actions are automated scripts that perform batch operations on your audio files — everything from formatting tag values to exporting files to specific folder structures. Each action is stored as a `.mta` file (Mp3tag Action format) and can be imported individually or as part of the bundled `Action Groups.json` file.
 
 Each category is a subfolder under `Actions/` with a `README.md` explaining every action, a `<Category>.json` file, and per-action `<Prefix> - <Name>.mta` scripts. The master importable bundle `Actions/Action Groups.json` combines all groups in a single file.
 
@@ -422,42 +437,41 @@ When you assign a custom macOS keyboard shortcut via **System Settings → Keybo
 
 The single-letter prefix (`S - Search`, `F - Fix`, `D - Disc Number`, `E - Export`, etc.) gives every action group a **unique first letter**, so you can assign a clean, distinct macOS shortcut to each one without collisions.
 
-> <details>
-> <summary><a id="bundled-actions"></a><strong>Bundled Actions</strong> — 38 actions across 5 groups</summary>
->
-> | Action | Purpose |
-> |---|---|
-> | `F - Artist to Album Artist` | Copy `ARTIST` → `ALBUMARTIST` |
-> | `F - Case Conversion` | Convert to UPPER / lower / Title Case |
-> | `F - Combo` | Combined formatting pass for tags |
-> | `F - Combo - Accents` | Combo plus accent stripping |
-> | `F - Fix` | General tag fixes (whitespace, separators) |
-> | `F - Mixed Case` | Force Mixed Case for standard fields |
-> | `F - Move Feat to Title` | Move `feat.` artists from `ARTIST` into `TITLE` |
-> | `F - Standard` | Standard formatting pass over common fields |
-> | `F - Strip Remaster` | Remove remaster info from `TITLE`/`ALBUM` |
-> | `F - Style to Genre` | Promote `STYLE` into `GENRE` |
-> | `F - Year` | Normalise `YEAR` formatting |
-> | `G - Black Metal` | `Black Metal` |
-> | `G - Blackened Death Metal` | `Blackened Death Metal` |
-> | `G - Crossover Thrash` | `Crossover Thrash` |
-> | `G - Death Metal` | `Death Metal` |
-> | `G - Death Thrash` | `Death/Thrash Metal` |
-> | `G - Hardcore` | `Hardcore` |
-> | `G - Heavy Metal` | `Heavy Metal` |
-> | `G - Hip-Hop` | `Hip-Hop` |
-> | `G - Thrash Metal` | `Thrash Metal` |
-> | `R - Add Apostrophes` | Insert apostrophes in common contractions |
-> | `R - English Naming` | Standardise English-language naming conventions |
-> | `R - Smart Title Case` | Apply smarter Title Case to `TITLE`/`ALBUM` |
-> | `R - Spacing Proper` | Fix spacing around punctuation |
-> | `R - Strip Accents` | Strip diacritics from tag values |
-> | `R - Trim Extra Space` | Remove leading/trailing/duplicate whitespace |
-> | `R - Upper Case Feats` | Uppercase `FEAT.`, `PROD.`, `WITH` in titles |
-> | `D - <Genre>` | Genre exports (with `Disc N/` subfolder) |
-> | `E - <Genre>` | Genre exports (flat, no `Disc/`) |
->
-> </details>
+### Bundled Actions
+
+Here's the complete list of all 38 actions across the 5 groups, with their purposes explained:
+
+| Action | Purpose |
+|---|---|
+| `F - Artist to Album Artist` | Copy `ARTIST` → `ALBUMARTIST` |
+| `F - Case Conversion` | Convert to UPPER / lower / Title Case |
+| `F - Combo` | Combined formatting pass for tags |
+| `F - Combo - Accents` | Combo plus accent stripping |
+| `F - Fix` | General tag fixes (whitespace, separators) |
+| `F - Mixed Case` | Force Mixed Case for standard fields |
+| `F - Move Feat to Title` | Move `feat.` artists from `ARTIST` into `TITLE` |
+| `F - Standard` | Standard formatting pass over common fields |
+| `F - Strip Remaster` | Remove remaster info from `TITLE`/`ALBUM` |
+| `F - Style to Genre` | Promote `STYLE` into `GENRE` |
+| `F - Year` | Normalise `YEAR` formatting |
+| `G - Black Metal` | `Black Metal` |
+| `G - Blackened Death Metal` | `Blackened Death Metal` |
+| `G - Crossover Thrash` | `Crossover Thrash` |
+| `G - Death Metal` | `Death Metal` |
+| `G - Death Thrash` | `Death/Thrash Metal` |
+| `G - Hardcore` | `Hardcore` |
+| `G - Heavy Metal` | `Heavy Metal` |
+| `G - Hip-Hop` | `Hip-Hop` |
+| `G - Thrash Metal` | `Thrash Metal` |
+| `R - Add Apostrophes` | Insert apostrophes in common contractions |
+| `R - English Naming` | Standardise English-language naming conventions |
+| `R - Smart Title Case` | Apply smarter Title Case to `TITLE`/`ALBUM` |
+| `R - Spacing Proper` | Fix spacing around punctuation |
+| `R - Strip Accents` | Strip diacritics from tag values |
+| `R - Trim Extra Space` | Remove leading/trailing/duplicate whitespace |
+| `R - Upper Case Feats` | Uppercase `FEAT.`, `PROD.`, `WITH` in titles |
+| `D - <Genre>` | Genre exports (with `Disc N/` subfolder) |
+| `E - <Genre>` | Genre exports (flat, no `Disc/`) |
 
 ### Importing Actions
 
@@ -508,15 +522,11 @@ Open each `.mta` file and edit the `1=...` line under `F=_FILENAME`. The format 
 
 **[&uarr; Back to Contents](#contents)**
 
-</details>
-
 ---
 
-<details>
-<summary>
-<a id="scripts"></a><strong><a href="#scripts"><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /></a>&nbsp;SCRIPTS</strong>
-</summary>
+## Scripts
 
+This section documents the Python scripts and bash wrappers included in the repository. These scripts automate common tasks like retargeting export paths, applying folder structure presets, and generating importable JSON bundles. They're designed to make bulk operations easier and more consistent across your library.
 
 One-off setup and maintenance scripts that ship with the repo. None are required for day-to-day Mp3tag use — they exist to make retargeting, syncing, and other bulk edits easier.
 
@@ -609,202 +619,171 @@ When you're done, update the matching entry in the relevant JSON file so the mas
 
 **[&uarr; Back to Contents](#contents)**
 
-</details>
-
 ---
 
-<details>
-<summary>
-<a id="settings"></a><strong><a href="#settings"><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /></a>&nbsp;SETTINGS</strong>
-</summary>
+## Settings
 
+This section documents the configuration formats and file naming conventions used throughout the repository. Understanding these conventions will help you create your own sources and actions that integrate seamlessly with the existing infrastructure.
 
 Configuration formats used across sources and actions — how settings panels are wired up, the file-naming conventions that tie everything together, and how the `.mta` action format works under the hood.
 
-> <details>
-> <summary><a id="settings-system"></a><strong>Settings System</strong></summary>
->
-> All sources use Mp3tag's native `.settings` JSON panel system. Settings files follow the naming convention:
->
-> ```
-> SourceName#Settings….settings
-> ```
->
-> The `….` (ellipsis `U+2026`) distinguishes settings files from other `.settings` files. Settings are loaded automatically when you open a source's settings dialog and stored persistently in `settings.json`.
->
-> </details>
+### Settings System
 
-> <details>
-> <summary><a id="file-naming-conventions"></a><strong>File Naming Conventions</strong></summary>
->
-> | Convention | Meaning |
-> |---|---|
-> | `&` prefix on a letter | Keyboard shortcut accelerator |
-> | `#S` | Tag source entry point (appears in the Tag Sources menu) |
-> | `#Settings….` | Settings panel file for a source |
-> | `.inc` | Shared include file — not standalone, included by `.src` files |
-> | `.src` | Standalone source file |
->
-> </details>
+All sources use Mp3tag's native `.settings` JSON panel system. Settings files follow the naming convention:
 
-> <details>
-> <summary><a id="creating--editing-actions"></a><strong>Creating & Editing Actions</strong></summary>
->
-> Actions are stored as `.mta` files in the `Actions/` directory. Each file contains one or more action definitions in a numbered INI-like format:
->
-> ```ini
-> [#0]
-> T=1
-> F=_ALL
-> 1=Feat
-> 2=feat
-> 3=0
-> ```
->
-> **Action types**
->
-> | Type | Description | Example Use |
-> |---|---|---|
-> | `T=1` | Replace | Replace `"feat."` with `"ft."` |
-> | `T=2` | Replace with Regex | Remove trailing parentheses |
-> | `T=3` | Format Value | Set field using placeholders |
-> | `T=4` | Guess Values | Parse filename into tags |
-> | `T=6` | Remove Fields | Delete specific fields |
-> | `T=7` | Remove Fields Except | Keep only specified fields |
-> | `T=8` | Merge Duplicate Fields | Combine multiple values |
-> | `T=9` | Split Field by Separator | Split field into multiple values |
-> | `T=10` | Import Cover from File | Add cover art from file |
-> | `T=11` | Export Cover to File | Save cover art to file |
-> | `T=13` | Remove Duplicate Fields | Remove duplicate entries |
->
-> **Common parameters**
->
-> - **`F`**: Field name (e.g. `TITLE`, `ARTIST`, `ALBUM`, `_ALL`)
-> - **`1`**: Input string, format pattern, or search string
-> - **`2`**: Replacement string or format string
-> - **`3`**: Additional parameter (varies by action type)
->
-> For detailed documentation, see `Actions/MTA Guide.md` in this repository.
->
-> </details>
+```
+SourceName#Settings….settings
+```
+
+The `….` (ellipsis `U+2026`) distinguishes settings files from other `.settings` files. Settings are loaded automatically when you open a source's settings dialog and stored persistently in `settings.json`.
+
+### File Naming Conventions
+
+| Convention | Meaning |
+|---|---|
+| `&` prefix on a letter | Keyboard shortcut accelerator |
+| `#S` | Tag source entry point (appears in the Tag Sources menu) |
+| `#Settings….` | Settings panel file for a source |
+| `.inc` | Shared include file — not standalone, included by `.src` files |
+| `.src` | Standalone source file |
+
+### Creating & Editing Actions
+
+Actions are stored as `.mta` files in the `Actions/` directory. Each file contains one or more action definitions in a numbered INI-like format:
+
+```ini
+[#0]
+T=1
+F=_ALL
+1=Feat
+2=feat
+3=0
+```
+
+**Action types**
+
+| Type | Description | Example Use |
+|---|---|---|
+| `T=1` | Replace | Replace `"feat."` with `"ft."` |
+| `T=2` | Replace with Regex | Remove trailing parentheses |
+| `T=3` | Format Value | Set field using placeholders |
+| `T=4` | Guess Values | Parse filename into tags |
+| `T=6` | Remove Fields | Delete specific fields |
+| `T=7` | Remove Fields Except | Keep only specified fields |
+| `T=8` | Merge Duplicate Fields | Combine multiple values |
+| `T=9` | Split Field by Separator | Split field into multiple values |
+| `T=10` | Import Cover from File | Add cover art from file |
+| `T=11` | Export Cover to File | Save cover art to file |
+| `T=13` | Remove Duplicate Fields | Remove duplicate entries |
+
+**Common parameters**
+
+- **`F`**: Field name (e.g. `TITLE`, `ARTIST`, `ALBUM`, `_ALL`)
+- **`1`**: Input string, format pattern, or search string
+- **`2`**: Replacement string or format string
+- **`3`**: Additional parameter (varies by action type)
+
+For detailed documentation, see `Actions/MTA Guide.md` in this repository.
 
 **[&uarr; Back to Contents](#contents)**
 
-</details>
-
 ---
 
-<details>
-<summary>
-<a id="guides"></a><strong><a href="#guides"><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /></a>&nbsp;GUIDES</strong>
-</summary>
+## Guides
 
-
-[MTA GUIDE](./Actions/MTA Guide.md) · [HOWTO](https://community.mp3tag.de/c/howto/) · [TAG SOURCES](https://docs.mp3tag.de/tag-sources/development/) · [ACTIONS](https://docs.mp3tag.de/actions/) · [DOCS](https://docs.mp3tag.de/)
+This section provides reference material for extending the repository with your own custom tag sources and Mp3tag scripts. Whether you're building a new source for a music service or writing format strings for complex tag transformations, these guides will help you understand the underlying formats and capabilities.
 
 Reference material for extending the repo — building new tag sources from scratch and writing Mp3tag format strings.
 
-> <details>
-> <summary><a id="creating-web-sources"></a><strong>Creating Web Sources</strong></summary>
->
-> Source files use an INI-like format:
->
-> ```ini
-> [Name]=Source Name
-> [BasedOn]=www.example.com
-> [IndexUrl]=https://www.example.com/search/%s
-> [AlbumUrl]=https://api.example.com/album/
-> [WordSeparator]=%20
-> [IndexFormat]=%_preview%|%_url%|%Album%|%Artist%|%Year%
-> [SearchBy]=%Artist% %Album%
-> [Encoding]=url-utf-8
->
-> [ParserScriptIndex]=...
-> # Parser script goes here
->
-> [ParserScriptAlbum]=...
-> # Album parser goes here
-> ```
->
-> **Key parameters**
->
-> | Parameter | Description |
-> |---|---|
-> | `[Name]` | Display name for the source |
-> | `[BasedOn]` | Base website URL |
-> | `[IndexUrl]` | Search URL with `%s` placeholder |
-> | `[AlbumUrl]` | Album detail URL template |
-> | `[IndexFormat]` | Format string for search results |
-> | `[SearchBy]` | Fields used for searching |
-> | `[ParserScriptIndex]` | Script to parse search results |
-> | `[ParserScriptAlbum]` | Script to parse album details |
->
-> **Common parser commands**
->
-> - `FindLine "text"` — Find a line containing text
-> - `RegexpReplace "pattern" "replacement"` — Replace using regex
-> - `json "ON" "current"` — Enable JSON parsing
-> - `json_select "key"` — Select a JSON field
-> - `say "text"` — Output literal text
-> - `sayrest` — Output the rest of the current line
->
-> For full documentation, see the [Mp3tag Tag Sources documentation](https://docs.mp3tag.de/tag-sources/).
->
-> </details>
+### Creating Web Sources
 
-> <details>
-> <summary><a id="mp3tag-scripting"></a><strong>Mp3tag Scripting</strong></summary>
->
-> Mp3tag supports scripting functions in format strings, actions, and filters.
->
-> **Common functions**
->
-> | Function | Description |
-> |---|---|
-> | `$upper(string)` | Convert to uppercase |
-> | `$lower(string)` | Convert to lowercase |
-> | `$caps(string)` | Title case |
-> | `$replace(string,from,to)` | Replace occurrences |
-> | `$regexp(string,pattern,replacement)` | Regex replace |
-> | `$if(condition,then,else)` | Conditional |
-> | `$trim(string)` | Remove leading/trailing whitespace |
-> | `$num(number,length)` | Format number with zero-padding |
-> | `$if2(a,b)` | Return `a` if not empty, else `b` |
->
-> **Examples**
->
-> ```
-> $caps(%title%)
-> $replace(%artist%, " & ", " and ")
-> $if(%albumartist%, %albumartist%, %artist%)
-> ```
->
-> In an action (`T=3`):
->
-> ```ini
-> [#0]
-> T=3
-> F=TITLE
-> 1=$caps(%title%)
-> ```
->
-> For the full reference, see the [Mp3tag Scripting Documentation](https://docs.mp3tag.de/scripting/functions/).
->
-> </details>
+Source files use an INI-like format:
+
+```ini
+[Name]=Source Name
+[BasedOn]=www.example.com
+[IndexUrl]=https://www.example.com/search/%s
+[AlbumUrl]=https://api.example.com/album/
+[WordSeparator]=%20
+[IndexFormat]=%_preview%|%_url%|%Album%|%Artist%|%Year%
+[SearchBy]=%Artist% %Album%
+[Encoding]=url-utf-8
+
+[ParserScriptIndex]=...
+# Parser script goes here
+
+[ParserScriptAlbum]=...
+# Album parser goes here
+```
+
+**Key parameters**
+
+| Parameter | Description |
+|---|---|
+| `[Name]` | Display name for the source |
+| `[BasedOn]` | Base website URL |
+| `[IndexUrl]` | Search URL with `%s` placeholder |
+| `[AlbumUrl]` | Album detail URL template |
+| `[IndexFormat]` | Format string for search results |
+| `[SearchBy]` | Fields used for searching |
+| `[ParserScriptIndex]` | Script to parse search results |
+| `[ParserScriptAlbum]` | Script to parse album details |
+
+**Common parser commands**
+
+- `FindLine "text"` — Find a line containing text
+- `RegexpReplace "pattern" "replacement"` — Replace using regex
+- `json "ON" "current"` — Enable JSON parsing
+- `json_select "key"` — Select a JSON field
+- `say "text"` — Output literal text
+- `sayrest` — Output the rest of the current line
+
+For full documentation, see the [Mp3tag Tag Sources documentation](https://docs.mp3tag.de/tag-sources/).
+
+### Mp3tag Scripting
+
+Mp3tag supports scripting functions in format strings, actions, and filters.
+
+**Common functions**
+
+| Function | Description |
+|---|---|
+| `$upper(string)` | Convert to uppercase |
+| `$lower(string)` | Convert to lowercase |
+| `$caps(string)` | Title case |
+| `$replace(string,from,to)` | Replace occurrences |
+| `$regexp(string,pattern,replacement)` | Regex replace |
+| `$if(condition,then,else)` | Conditional |
+| `$trim(string)` | Remove leading/trailing whitespace |
+| `$num(number,length)` | Format number with zero-padding |
+| `$if2(a,b)` | Return `a` if not empty, else `b` |
+
+**Examples**
+
+```
+$caps(%title%)
+$replace(%artist%, " & ", " and ")
+$if(%albumartist%, %albumartist%, %artist%)
+```
+
+In an action (`T=3`):
+
+```ini
+[#0]
+T=3
+F=TITLE
+1=$caps(%title%)
+```
+
+For the full reference, see the [Mp3tag Scripting Documentation](https://docs.mp3tag.de/scripting/functions/).
 
 **[&uarr; Back to Contents](#contents)**
 
-</details>
-
 ---
 
-<details>
-<summary>
-<a id="faq"></a><strong><a href="#faq"><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /></a>&nbsp;FAQ</strong>
-</summary>
+## FAQ
 
-
-[COMMUNITY](https://community.mp3tag.de/categories)
+This section answers the most common questions about using this repository, troubleshooting installation issues, and understanding the design decisions behind the action prefixes and file organization.
 
 **Why don't symlinks work?**
 
@@ -843,8 +822,6 @@ python3 Scripts/retarget-paths.py
 The macOS-specific installation paths (`~/Library/Application Support/Mp3tag/`) will differ on other platforms — consult the [Mp3tag documentation](https://docs.mp3tag.de/) for the correct data directory.
 
 **[&uarr; Back to Contents](#contents)**
-
-</details>
 
 ---
 
