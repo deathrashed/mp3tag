@@ -390,11 +390,15 @@ Fetches lyrics from [genius.com](https://genius.com) and writes them to the `UNS
 
 ────────
 
-[FORMAT](./Actions/Format/README.md) · [GENRE](./Actions/Genre/README.md)  · [REGEX](./Actions/Regex/README.md) · [MAIN](./Actions/README.md) 
+<p align="center">
+
+[FORMAT](./Actions/Format/README.md) · [GENRE](./Actions/Genre/README.md)  · [REGEX](./Actions/Regex/README.md) · [MAIN](./Actions/README.md)
 
 ---
 
 [FILE SAVING](./Actions/Eksternal/README.md) · [DISC NUMBERS](./Actions/Eksternal/Disc%20Numbers/README.md) · [COMPILATIONS](./Actions/Eksternal/Compilation/README.md) · [SPLITS](./Actions/Eksternal/Splits/README.md)
+
+</p>
 
 Each category is a subfolder under `Actions/` with a `README.md` explaining every action, a `<Category>.json` file, and per-action `<Prefix> - <Name>.mta` scripts. The master importable bundle `Actions/Action Groups.json` combines all groups in a single file.
 
