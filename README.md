@@ -7,15 +7,15 @@
 
 Modular tag sources for streaming services, music databases, cover art, lyrics, and genres — each with a configurable settings panel and consistent comment style.
 
-[![MP3TAG](https://img.shields.io/badge/Mp3tag%20—%20v3.28%2B-1e1e1e?style=for-the-badge&logo=applemusic&logoColor=white)](https://www.mp3tag.de/en/)
-[![PLATFORM](https://img.shields.io/badge/macOS-1e1e1e?style=for-the-badge&logo=apple&logoColor=white)](https://www.apple.com/macos/)
-[![CONFIGURE](https://img.shields.io/badge/interactive%20wizard-1e1e1e?style=for-the-badge&logo=gnubash&logoColor=white)](./configure)
+[![MP3TAG](https://img.shields.io/badge/Mp3tag%20—%20v3.28%2B-1e1e1e?style=for-the-badge&logo=applemusic&logoColor=faa701)](https://www.mp3tag.de/en/)
+[![PLATFORM](https://img.shields.io/badge/macOS-1e1e1e?style=for-the-badge&logo=apple&logoColor=faa701)](https://www.apple.com/macos/)
+[![CONFIGURE](https://img.shields.io/badge/interactive%20wizard-1e1e1e?style=for-the-badge&logo=gnubash&logoColor=faa701)](./configure)
 
-[![SOURCES](https://img.shields.io/badge/tag%20sources%20—%2028%2B-1e1e1e?style=for-the-badge&logo=audiomack&logoColor=white)](./Sources)
-[![ACTIONS](https://img.shields.io/badge/action%20groups%20—%2012%2B-1e1e1e?style=for-the-badge&logo=audiomack&logoColor=white)](./Actions)
-[![GENRES](https://img.shields.io/badge/genre%20presets%20—%2070%2B-1e1e1e?style=for-the-badge&logo=audiomack&logoColor=white)](./Actions/Genre)
+[![SOURCES](https://img.shields.io/badge/tag%20sources%20—%208%2B-1e1e1e?style=for-the-badge&logo=audiomack&logoColor=faa701)](./Sources)
+[![ACTIONS](https://img.shields.io/badge/action%20groups%20—%2012%2B-1e1e1e?style=for-the-badge&logo=audiomack&logoColor=faa701)](./Actions)
+[![GENRES](https://img.shields.io/badge/genre%20presets%20—%2070%2B-1e1e1e?style=for-the-badge&logo=audiomack&logoColor=faa701)](./Actions/Genre)
 
-[OVERVIEW](./Assets/DOCS.md) · [SOURCES](#sources) · [ACTIONS](./Actions/README.md) · [SCRIPTS](./Scripts/README.md) · [SETTINGS](#settings) · [GUIDES](#guides) · [FAQ](#faq)
+[OVERVIEW](./Assets/DOCS.md) · [SOURCES](#sources) · [ACTIONS](./Actions/README.md) · [SCRIPTS](./Scripts/README.md) · [SETTINGS](./Assets/DOCS.md) · [GUIDES](#guides) · [FAQ](#faq)
 
 </div>
 
@@ -169,7 +169,7 @@ For more information, visit the [official Mp3tag website](https://www.mp3tag.de/
 </summary>
 ────────
 
-<p align="center">
+<p align="">
 <a href="https://performance-partners.apple.com/search-api"><strong>iTUNES</strong></a> •
 <a href="https://www.metal-archives.com/users/dethrashed"><strong>METALLUM</strong></a> •
 <a href="https://musicbrainz.org/user/deathrashed"><strong>MUSICBRAINZ</strong></a> •
@@ -390,7 +390,7 @@ Fetches lyrics from [genius.com](https://genius.com) and writes them to the `UNS
 >
 > </details>
 
-**[&uarr; Back to Contents](#contents)**
+**[&uarr;](#contents)**
 
 </details>
 
@@ -401,7 +401,7 @@ Fetches lyrics from [genius.com](https://genius.com) and writes them to the `UNS
 
 ────────
 
-<p align="center">
+<p align="">
 <a href="./Actions/Format/README.md"><strong>FORMAT</strong></a> •
 <a href="./Actions/Genre/README.md"><strong>GENRE</strong></a> •
 <a href="./Actions/Regex/README.md"><strong>REGEX</strong></a> •
@@ -411,6 +411,7 @@ Fetches lyrics from [genius.com](https://genius.com) and writes them to the `UNS
 <a href="./Actions/Eksternal/Compilation/README.md"><strong>COMPILATIONS</strong></a> •
 <a href="./Actions/Eksternal/Splits/README.md"><strong>SPLITS</strong></a>
 </p>
+
 
 Each category is a subfolder under `Actions/` with a `README.md` explaining every action, a `<Category>.json` file, and per-action `<Prefix> - <Name>.mta` scripts. The master importable bundle `Actions/Action Groups.json` combines all groups in a single file.
 
@@ -514,7 +515,7 @@ Open each `.mta` file and edit the `1=...` line under `F=_FILENAME`. The format 
 > [!TIP]
 > If you imported via the JSON bundle, duplicate an action first (**Actions → Actions… → select an action → Duplicate**), edit the copy, and leave the original untouched. This keeps the upstream file clean for future `git pull` updates.
 
-**[&uarr; Back to Contents](#contents)**
+**[&uarr;](#contents)**
 
 </details>
 
@@ -523,8 +524,6 @@ Open each `.mta` file and edit the `1=...` line under `F=_FILENAME`. The format 
 <a id="scripts"></a><strong><a href="#scripts"><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /></a>&nbsp;SCRIPTS</strong>
 </summary>
 ────────
-
-
 One-off setup and maintenance scripts that ship with the repo. None are required for day-to-day Mp3tag use — they exist to make retargeting, syncing, and other bulk edits easier.
 
 **Files:** `Scripts/retarget-paths.py`, `Scripts/layouts.py` (and the top-level wrapper `./configure`)
@@ -614,7 +613,7 @@ The bundled `.mta` files are plain text. The path string lives on the `1=...` li
 
 When you're done, update the matching entry in the relevant JSON file so the master `Action Groups.json` import bundle stays in sync. The JSON `format` value uses the same string with `/` escaped as `\/`.
 
-**[&uarr; Back to Contents](#contents)**
+**[&uarr;](#contents)**
 
 </details>
 
@@ -623,8 +622,6 @@ When you're done, update the matching entry in the relevant JSON file so the mas
 <a id="settings"></a><strong><a href="#settings"><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /></a>&nbsp;SETTINGS</strong>
 </summary>
 ────────
-
-
 Configuration formats used across sources and actions — how settings panels are wired up, the file-naming conventions that tie everything together, and how the `.mta` action format works under the hood.
 
 > <details>
@@ -694,7 +691,7 @@ Configuration formats used across sources and actions — how settings panels ar
 >
 > </details>
 
-**[&uarr; Back to Contents](#contents)**
+**[&uarr;](#contents)**
 
 </details>
 
@@ -703,13 +700,15 @@ Configuration formats used across sources and actions — how settings panels ar
 <a id="guides"></a><strong><a href="#guides"><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /></a>&nbsp;GUIDES</strong>
 </summary>
 ────────
-<p align="center">
+
+<p align="">
 <a href="./Actions/MTA%20Guide.md"><strong>MTA GUIDE</strong></a> •
 <a href="https://community.mp3tag.de/c/howto/"><strong>HOWTO</strong></a> •
 <a href="https://docs.mp3tag.de/tag-sources/development/"><strong>TAG SOURCES</strong></a> •
 <a href="https://docs.mp3tag.de/actions/"><strong>ACTIONS</strong></a> •
 <a href="https://docs.mp3tag.de/"><strong>DOCS</strong></a>
 </p>
+
 
 Reference material for extending the repo — building new tag sources from scratch and writing Mp3tag format strings.
 
@@ -801,7 +800,7 @@ Reference material for extending the repo — building new tag sources from scra
 >
 > </details>
 
-**[&uarr; Back to Contents](#contents)**
+**[&uarr;](#contents)**
 
 </details>
 
@@ -810,14 +809,14 @@ Reference material for extending the repo — building new tag sources from scra
 <a id="faq"></a><strong><a href="#faq"><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /></a>&nbsp;FAQ</strong>
 </summary>
 ────────
-
-<p align="center">
+<p align="">
 <a href="https://community.mp3tag.de/categories"><strong>COMMUNITY</strong></a> •
 <a href="https://docs.mp3tag.de/"><strong>DOCS</strong></a> •
 <a href="https://www.mp3tag.de/en/index.html"><strong>OFFICIAL</strong></a> •
 <a href="https://github.com/deathrashed/mp3tag/issues/new"><strong>ISSUES</strong></a> •
 <a href="https://github.com/deathrashed/mp3tag/issues/new"><strong>REQUESTS</strong></a> 
 </p>
+
 **Why don't symlinks work?**
 
 Both the macOS sandbox (used by the App Store version of Mp3tag) and the website version's file-access model reject symlinks to files outside the data directory. Always use `cp -R` to copy files into Mp3tag's application support folder.
@@ -854,7 +853,7 @@ python3 Scripts/retarget-paths.py
 
 The macOS-specific installation paths (`~/Library/Application Support/Mp3tag/`) will differ on other platforms — consult the [Mp3tag documentation](https://docs.mp3tag.de/) for the correct data directory.
 
-**[&uarr; Back to Contents](#contents)**
+**[&uarr;](#contents)**
 
 </details>
 
