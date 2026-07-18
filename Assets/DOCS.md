@@ -475,11 +475,11 @@ Here's the complete list of all 38 actions across the 5 groups, with their purpo
 
 ### Importing Actions
 
-All actions are pre-bundled into [`Actions/Action Groups.json`](Actions/Action%20Groups.json) — a single file you can import into Mp3tag in one go.
+All actions are pre-bundled into [`Actions/Action Groups.json`](Actions/Action%20Groups.json) — a single file you can import into Mp3tag in one go. Or each subfolder in `Actions` has individual .json and .mta files to import. 
 
-1. **Actions → Actions…** (`⌥6`) to open the Action Groups window
+1. **Actions → Actions…** (`⌘6`) to open the Action Groups window
 2. Click the **+** icon at the bottom-left of the sidebar to open its context menu
-3. Choose **Import…** and select `Actions/Action Groups.json` from this repo (individual `.mta` files can be imported the same way)
+3. Choose **Import…** and select `Actions/<filename>.json` from this repo (individual `.mta` files can be imported the same way)
 
 All groups appear in the sidebar. The `.mta` files remain useful as readable, diff-friendly source — the JSON file is the importable bundle.
 

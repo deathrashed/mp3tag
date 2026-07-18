@@ -1,0 +1,383 @@
+Music Library Layout Presets
+============================
+
+Purpose
+-------
+
+This document defines the recommended folder structure presets for the
+interactive Mp3tag configuration wizard.
+
+These layouts are reference implementations based on folder structures commonly
+used by music collectors, Plex, Jellyfin, Navidrome, Kodi, MusicBee,
+foobar2000, Roon, and large personal music libraries.
+
+The wizard does not need to implement these layouts exactly as shown. Presets
+may be renamed, refined, or expanded where appropriate, but each should remain
+distinct and include a live ASCII preview.
+
+Each preset should display:
+
+• Layout name
+• Short description
+• Folder structure
+• Live preview
+
+──────────────────────────────────────────────────────────────────────────────
+
+[1] Standard Hierarchy (Recommended)
+
+Description
+    The classic music library structure used by most collectors.
+
+Structure
+    Artist / Album / TrackNo - Title
+
+Preview
+
+    /Music/
+    └── Iron Maiden/
+        └── Powerslave/
+            └── 02 Aces High.flac
+
+──────────────────────────────────────────────────────────────────────────────
+
+[2] Artist by Year
+
+Description
+    Groups albums chronologically beneath each artist.
+
+Structure
+    Artist / Year - Album / TrackNo - Title
+
+Preview
+
+    /Music/
+    └── Iron Maiden/
+        └── 1984 - Powerslave/
+            └── 02 Aces High.flac
+
+──────────────────────────────────────────────────────────────────────────────
+
+[3] Artist → Year → Album
+
+Description
+    Places the year in its own folder instead of the album name.
+
+Structure
+    Artist / Year / Album / TrackNo - Title
+
+Preview
+
+    /Music/
+    └── Iron Maiden/
+        └── 1984/
+            └── Powerslave/
+                └── 02 Aces High.flac
+
+──────────────────────────────────────────────────────────────────────────────
+
+[4] Album (Year)
+
+Description
+    Displays the release year after the album title.
+
+Structure
+    Artist / Album (Year) / TrackNo - Title
+
+Preview
+
+    /Music/
+    └── Iron Maiden/
+        └── Powerslave (1984)/
+            └── 02 Aces High.flac
+
+──────────────────────────────────────────────────────────────────────────────
+
+[5] (Year) Album
+
+Description
+    Displays the release year before the album title.
+
+Structure
+    Artist / (Year) Album / TrackNo - Title
+
+Preview
+
+    /Music/
+    └── Iron Maiden/
+        └── (1984) Powerslave/
+            └── 02 Aces High.flac
+
+──────────────────────────────────────────────────────────────────────────────
+
+[6] Alphabetical Artist
+
+Description
+    Organises artists into alphabetical folders.
+
+Structure
+    FirstLetter / Artist / Album / TrackNo - Title
+
+Preview
+
+    /Music/
+    └── I/
+        └── Iron Maiden/
+            └── Powerslave/
+                └── 02 Aces High.flac
+
+──────────────────────────────────────────────────────────────────────────────
+
+[7] Genre → Artist → Album
+
+Description
+    Organises the collection by genre.
+
+Structure
+    Genre / Artist / Album / TrackNo - Title
+
+Preview
+
+    /Music/
+    └── Heavy Metal/
+        └── Iron Maiden/
+            └── Powerslave/
+                └── 02 Aces High.flac
+
+──────────────────────────────────────────────────────────────────────────────
+
+[8] Genre → Decade → Artist
+
+Description
+    Ideal for large genre-based collections.
+
+Structure
+    Genre / Decade / Artist / Year - Album / TrackNo - Title
+
+Preview
+
+    /Music/
+    └── Heavy Metal/
+        └── 1980s/
+            └── Iron Maiden/
+                └── 1984 - Powerslave/
+                    └── 02 Aces High.flac
+
+──────────────────────────────────────────────────────────────────────────────
+
+[9] Decade Grouping
+
+Description
+    Groups music globally by decade.
+
+Structure
+    Decade / Artist / Year - Album / TrackNo - Title
+
+Preview
+
+    /Music/
+    └── 1980s/
+        └── Iron Maiden/
+            └── 1984 - Powerslave/
+                └── 02 Aces High.flac
+
+──────────────────────────────────────────────────────────────────────────────
+
+[10] Year First
+
+Description
+    Organises the entire library by release year.
+
+Structure
+    Year / Artist / Album / TrackNo - Title
+
+Preview
+
+    /Music/
+    └── 1984/
+        └── Iron Maiden/
+            └── Powerslave/
+                └── 02 Aces High.flac
+
+──────────────────────────────────────────────────────────────────────────────
+
+[11] Multi-Disc Albums
+
+Description
+    Separates multi-disc releases into Disc folders.
+
+Structure
+    Artist / Album / Disc / TrackNo - Title
+
+Preview
+
+    /Music/
+    └── Iron Maiden/
+        └── Powerslave/
+            ├── Disc 1/
+            │   └── 02 Aces High.flac
+            └── Disc 2/
+                └── 05 The Number of the Beast.flac
+
+──────────────────────────────────────────────────────────────────────────────
+
+[12] Release Type Library
+
+Description
+    Separates albums by release type.
+
+Structure
+    Artist / Albums|EPs|Singles|Live / Album / Track
+
+Preview
+
+    /Music/
+    └── Iron Maiden/
+        ├── Albums/
+        │   └── Powerslave/
+        ├── Live/
+        ├── EPs/
+        └── Singles/
+
+──────────────────────────────────────────────────────────────────────────────
+
+[13] Flat Filename
+
+Description
+    Stores every file directly within the music folder.
+
+Structure
+    Artist - Year - Album - TrackNo - Title
+
+Preview
+
+    /Music/
+    └── Iron Maiden - 1984 - Powerslave - 02 Aces High.flac
+
+──────────────────────────────────────────────────────────────────────────────
+
+[14] Metadata Filename
+
+Description
+    Includes most metadata directly in the filename.
+
+Structure
+    TrackNo - Title - Artist - Album (Year)
+
+Preview
+
+    /Music/
+    └── 02 - Aces High - Iron Maiden - Powerslave (1984).flac
+
+──────────────────────────────────────────────────────────────────────────────
+
+[15] Compilation Library
+
+Description
+    Stores various-artist compilations separately.
+
+Structure
+    Compilations / Album / TrackNo - Artist - Title
+
+Preview
+
+    /Music/
+    └── Compilations/
+        └── Now That's What I Call Music 12/
+            └── 01 Queen - Radio Ga Ga.flac
+
+──────────────────────────────────────────────────────────────────────────────
+
+[16] Soundtrack Library
+
+Description
+    Stores soundtrack albums separately.
+
+Structure
+    Soundtracks / Title / Artist / TrackNo - Title
+
+Preview
+
+    /Music/
+    └── Soundtracks/
+        └── Doom Eternal/
+            └── Mick Gordon/
+                └── 01 At Doom's Gate.flac
+
+──────────────────────────────────────────────────────────────────────────────
+
+[17] No Layout Changes
+
+Description
+    Preserve the existing folder and filename structure.
+
+Structure
+    Keep current layout
+
+──────────────────────────────────────────────────────────────────────────────
+
+[0] Custom Layout Builder
+
+Description
+    Build a completely custom folder hierarchy and filename format.
+
+Suggested folder components
+
+    □ First Letter
+    □ Genre
+    □ Decade
+    □ Year
+    □ Artist
+    □ Album
+    □ Disc
+    □ Release Type
+
+Suggested filename components
+
+    □ Track Number
+    □ Artist
+    □ Album
+    □ Title
+    □ Year
+
+Suggested separators
+
+    • Dash (-)
+    • Dot (.)
+    • Space
+    • Underscore (_)
+    • Custom
+
+Example
+
+    Folder
+
+        Genre / Artist / Album
+
+    Filename
+
+        %track% - %title%
+
+Preview
+
+    /Music/
+    └── Heavy Metal/
+        └── Iron Maiden/
+            └── Powerslave/
+                └── 02 - Aces High.flac
+
+──────────────────────────────────────────────────────────────────────────────
+
+Implementation Notes
+--------------------
+
+• These presets should be presented as an interactive list.
+• Every preset should include a live ASCII preview.
+• Users should be able to move backwards without losing selections.
+• The wizard should remember previous selections where appropriate.
+• The Custom Layout Builder should allow users to generate layouts rather than
+  being limited to predefined presets.
+• The implementation may include additional layouts if they improve usability,
+  provided the interface remains clear and easy to navigate.
+  
+  

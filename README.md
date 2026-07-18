@@ -21,26 +21,55 @@ Modular tag sources for streaming services, music databases, cover art, lyrics, 
 
 ## Quick Start
 
-1. **Copy the folders into place.** Copy this repo's `Sources/` and `Actions/` folders into Mp3tag's data directory (see the table in [Getting Started](#getting-started) for the exact path), **or** let Mp3tag show you exactly where:
+1. **Configure the repository (recommended).** Run the interactive configuration wizard to personalise the bundled actions for your library:
 
-   - **Actions** — In Mp3tag, open **Actions → Actions…** (`⌥6`) to open the *Action Groups* window. Click the **+** icon at the bottom-left of the sidebar to open its context menu, choose **Import…**, then select `Actions/Action Groups.json` from this repo (individual `.mta` files can be imported the same way).
-   - **Sources** — Open the **Tag Sources** menu (the toolbar icon or right-click in the tag panel) and click **Open Tag Sources Folder** at the very bottom of the list. This reveals the exact folder Mp3tag reads sources from — copy everything from this repo's `Sources/` folder into it.
+   ```bash
+   chmod +x configure
+   ./configure
+   ```
+   
+   The wizard lets you:
+   
+   * Retarget bundled export paths to your own library
+   * Choose a folder layout preset
+   * Rename the parent music folder
+   * Regenerate `.mta` files and JSON action bundles
+   * Preview or write the generated files
+   
+   See [Quick Start: `./configure`](#quick-start-configure) for all available options.
 
-2. **Restart Mp3tag.** Sources appear under **Tag Sources**, actions under **Actions** (`⌥6`).
+> [!TIP]
+> **New here?** Run `./configure` first. It automatically updates the bundled actions for your library and saves you from manually editing `.mta` files.
 
-Prefer the terminal? Same result, no clicking required:
+2. **Install Tag Sources.** Copy this repository's `Sources/` folder into Mp3tag's data directory (see [Getting Started](./Assets/DOCS.md#getting-started) for the exact location), or let Mp3tag open it for you:
+
+   * Open the **Tag Sources** by selecting it from the menubar.
+   * Select **Open Tag Sources Folder** at the bottom of the menu.
+   * Copy the contents of this repository's `Sources/` folder into the folder that opens.
+
+3. **Import Action Groups.** Open **Actions → Actions…** (`⌘6`), click the **+** button in the lower-left corner, choose **Import…**, then select:
+
+   * `Actions/Action Groups.json` to import every action, or
+   * any category `.json` file to import a single action group, or
+   * individual `.mta` files to import specific actions.
+
+   See [Importing Actions](./Assets/DOCS.md#importing-actions) for more details.
+
+4. **Start tagging.** Your tag sources will appear immediately under **Tag Sources**, and imported actions will be available from **Actions** (`⌘6`).
+
+Prefer the terminal?
 
 ```bash
-DATA_DIR=~/Library/Application\ Support/Mp3tag
+DATA_DIR="$HOME/Library/Containers/app.mp3tag.Mp3tag/Data/Library/Application Support/Mp3tag"
 
 cp -R Sources "$DATA_DIR"
-cp -R Actions "$DATA_DIR"
 ```
 
 > [!NOTE]
-> **Copy, do not symlink.** Both the macOS sandbox (App Store version) and Mp3tag's file-access model reject symlinks. Use `cp -R` or the app's own **Import…** dialog instead.
+> **Copy the files—don't create symlinks.** The App Store sandbox and Mp3tag's file-access model do not support symlinked sources. Use `cp -R` or Mp3tag's **Import…** dialog instead.
 
-**[&uarr;](#contents)**
+**[↑](#contents)**
+
 
 ---
 
@@ -524,6 +553,8 @@ Open each `.mta` file and edit the `1=...` line under `F=_FILENAME`. The format 
 <a id="scripts"></a><strong><a href="#scripts"><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /></a>&nbsp;SCRIPTS</strong>
 </summary>
 ────────
+
+
 One-off setup and maintenance scripts that ship with the repo. None are required for day-to-day Mp3tag use — they exist to make retargeting, syncing, and other bulk edits easier.
 
 **Files:** `Scripts/retarget-paths.py`, `Scripts/layouts.py` (and the top-level wrapper `./configure`)
@@ -622,6 +653,8 @@ When you're done, update the matching entry in the relevant JSON file so the mas
 <a id="settings"></a><strong><a href="#settings"><img src="Assets/Icon/mp3tag-color.png" height="20" valign="middle" /></a>&nbsp;SETTINGS</strong>
 </summary>
 ────────
+
+
 Configuration formats used across sources and actions — how settings panels are wired up, the file-naming conventions that tie everything together, and how the `.mta` action format works under the hood.
 
 > <details>

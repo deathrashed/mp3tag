@@ -45,16 +45,25 @@ python3 Scripts/retarget-paths.py
 ./configure
 ```
 
+The wizard features:
+- **ASCII logo** and colour-coded output (cyan for info, yellow for examples, green for success, red for errors)
+- **Progress bars** showing completion percentage for each step
+- **Auto-detection** of mounted volumes on macOS
+- **Live layout previews** showing folder structure trees when choosing presets
+- **Animated spinners** during file processing
+- **Validation** of paths before writing
+- **Configuration save/restore** for reuse
+
 The wizard walks through **4 steps** in a logical top-down flow, each with sensible defaults so you can just press <kbd>Enter</kbd> to accept:
 
-1. **Save Location** — the foundation of the retarget: which mount path to replace, and where Mp3tag should save files. Old defaults to the bundled `/Volumes/Eksternal/Audio/` (auto-detected if you've already retargeted once); new accepts any absolute path (e.g. `/Volumes/MyExternal/Music/`, `~/Music/`, `/Volumes/Backup/Audio/`). Tilde is expanded; the script warns (but doesn't abort) if the directory doesn't exist.
-2. **Filename Structure** — builds on the save location: pick a layout preset (`standard`, `chronological`, `alphabetical`, `flat`) and optionally rename the genre subfolders from `/Audio/<Genre>/` to `/Music/<Genre>/`.
+1. **Save Location** — the foundation of the retarget: which mount path to replace, and where Mp3tag should save files. The script auto-detects mounted volumes and offers numbered choices. Old defaults to the bundled `/Volumes/Eksternal/Audio/` (auto-detected if you've already retargeted once); new accepts any absolute path (e.g. `/Volumes/MyExternal/Music/`, `~/Music/`, `/Volumes/Backup/Audio/`). Tilde is expanded; the script warns (but doesn't abort) if the directory doesn't exist.
+2. **Filename Structure** — builds on the save location: pick a layout preset (`standard`, `chronological`, `alphabetical`, `flat`) with **live visual previews** showing the folder tree structure, and optionally rename the genre subfolders from `/Audio/<Genre>/` to `/Music/<Genre>/`.
 3. **File Scope** — which files should be rewritten: both the per-action `.mta` files and the JSON action groups (default), or just the JSONs (with `--json-only`). The JSONs are usually enough for bulk retargeting; the `.mta` files can always be regenerated from the JSON.
 4. **Output Mode** — where the rewritten files go: in-place (rewrite the source files) / `--out DIR` (write a retargeted copy to a new directory, originals untouched) / `--stdout` (write the retargeted `Actions/Action Groups.json` to the terminal for piping).
 
-After step 4 the script shows a **Review** panel summarising every change, then asks for a final confirmation. The actual file modifications only happen after you say yes.
+After step 4 the script shows a **Configuration Summary** panel with validation checks, then asks for a final confirmation. The actual file modifications happen with an animated spinner, followed by a success banner showing file counts and timing (e.g. "Completed in 0.84 seconds"). The script offers to open the Actions folder and displays "Happy tagging!" on exit.
 
-If stdout is a TTY, the wizard uses ANSI colour and box-drawing characters to make the steps easy to follow (paths in yellow, prompts in green, errors in red, etc.). Pass `--no-color` to disable, or set `NO_COLOR=1` in the environment. The wizard auto-skips if stdin/stdout aren't a TTY — in that case use the CLI flags below.
+If stdout is a TTY, the wizard uses ANSI colour and box-drawing characters to make the steps easy to follow. Pass `--no-color` to disable, or set `NO_COLOR=1` in the environment. The wizard auto-skips if stdin/stdout aren't a TTY — in that case use the CLI flags below.
 
 #### Non-interactive (for scripting / CI)
 
@@ -105,6 +114,12 @@ python3 Scripts/retarget-paths.py --new '~/Music/Audio/' --yes
 python3 Scripts/retarget-paths.py --list-layouts
 python3 Scripts/retarget-paths.py --show-layout standard
 
+# Reuse previous configuration from configure.json.
+python3 Scripts/retarget-paths.py --reuse
+
+# Save current configuration to configure.json for future reuse.
+python3 Scripts/retarget-paths.py --new /Volumes/MyExternal/Music/ --layout standard --save-config
+
 # Force non-interactive mode (errors if neither --new nor --layout is given).
 python3 Scripts/retarget-paths.py --no-interactive \
     --new /Volumes/MyExternal/Music/ \
@@ -151,6 +166,39 @@ The script scans every `*.mta` and `*.json` under `Actions/` and `Sources/`. As 
 - **In-place**: re-import `Actions/Action Groups.json` into Mp3tag (or refresh the already-imported groups) so the new paths take effect. Commit the rewritten files if you forked the repo.
 - **`--out DIR`**: import `<DIR>/Actions/Action Groups.json` into Mp3tag. The `<DIR>` tree contains a complete retargeted copy of the matched files; you can `cp -R` it anywhere or `tar czf` it for transfer.
 - **`--stdout`**: paste the output into Mp3tag via **Actions → File → Import Action Groups…**, or pipe it to a file with `> "Action Groups.retargeted.json"` and import the resulting file.
+
+#### Configuration persistence
+
+The script can save and restore your configuration:
+
+- **`--save-config`**: writes your choices to `configure.json` in the repo root (mount paths, layout, scope, output mode, timestamp)
+- **`--reuse`**: loads the previous configuration from `configure.json` and skips interactive prompts
+
+This is useful for:
+- Quickly re-running the same configuration on multiple machines
+- Testing different layouts without re-entering all choices
+- CI/CD pipelines where you want deterministic configuration
+
+#### Enhanced UX features
+
+The interactive wizard includes several polish features:
+
+| Feature | Description |
+|---|---|
+| **ASCII logo** | Mp3tag-styled block letter logo at startup |
+| **Colour legend** | Shows colour meanings (cyan=info, yellow=examples, green=success, red=errors) |
+| **Progress bars** | `█████░░░░ 25%` rendering for each step |
+| **Auto-detect mounts** | Scans `/Volumes` and common paths, offers numbered choices |
+| **Live layout previews** | Shows folder tree structure (e.g. `└── Artist/Album/`) when choosing layouts |
+| **Animated spinners** | `⠋⠙⠹⠸` animation during file writes |
+| **Timing** | Shows "Completed in 0.84 seconds" after progress |
+| **Validation** | Checks paths are absolute, exist, and end with `/` before writing |
+| **Success banner** | Green bordered box with "Configuration Complete" and file counts |
+| **Next steps** | Shows "1. Open Mp3tag 2. Import Actions 3. Restart Mp3tag" |
+| **Folder prompt** | Offers "Open the Actions folder?" after completion |
+| **Nice exit** | "Happy tagging! See you next update." |
+
+Type `?` during any prompt for inline help.
 
 #### Exit codes
 
